@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+  <!-- CSS Exceptions -->
+  <style>
+  /* Container holding the image and the text */
+    .containerCentered {
+      position: relative;
+      text-align: center;
+      color: white;
+    }
+    .centered {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .portrait {
+      display: block;
+      margin-top: 5%;
+      margin-bottom: 5%;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+    }
+    .contact {
+      margin: 2rem;
+    }
+    #galleryImage {
+      filter: brightness(1);
+      transition: 0.3s;
+    }
+    #galleryImage:hover {
+      filter: brightness(0.95);
+    }
+    #textLink {
+      filter: brightness(1);
+      transition: 0.3s;
+    }
+    #textLink:hover {
+      filter: brightness(0.95);
+      color: #72B2E8;
+    }
+  </style>
+  <!-- Setting up Website Stuff, importing bulma.io -->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Madhav Malhotra</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar is-dark is-fixed-top">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item is-size-5 is-family-sans-serif" href="#" style="transition: 0.3s;">
+            Madhav Malhotra
+          </a>
+          <span class="navbar-burger burger" data-target="navMenu" style="transition: 0.3s;">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </div>
+        <div id="navMenu" class="navbar-menu">
+          <div class="navbar-end" >
+            <a href="#" class="navbar-item" style="transition: 0.3s;">About</a>
+            <a href="#" class="navbar-item" style="transition: 0.3s;">Highlights</a>
+            <a href="#" class="navbar-item" style="transition: 0.3s;">Portfolio</a>
+            <a href="#" class="navbar-item" style="transition: 0.3s;">Extracurriculars</a>
+            <a href="#" class="navbar-item" style="transition: 0.3s;">Contact</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Landing Image -->
+    <div class="containerCentered">
+      <img src="https://cdn.pixabay.com/photo/2015/03/26/09/40/business-suit-690048_960_720.jpg" style="width:100%;">
+      <div class="centered has-text-weight-light is-family-sans-serif">
+        <h1 class="" style="font-size: 7vw;">I AM MADHAV</h1>
+      </div>
+    </div>
+    <!--- About -->
+    <img class="portrait" src="portrait.jpg">
+    <section class="hero is-medium is-dark is-bold">
+      <div class="hero-body" style="padding: 4rem;">
+        <div class="container">
+          <h1 class="title">
+            About Me
+          </h1>
+          <p class="is-size-5">
+            I am a 15-year-old exploring emerging scientific and technological fields
+            including artificial intelligence, nanotechnology, and renewable energy.
+          </p>
+          <br>
+          <p class="is-size-5">
+            Some of my recent work includes consulting with Walmart Canada to decrease
+            operational costs and consulting with Wealthsimple to improve customer acquisition.
+            In addition, I am personally developing machine learning projects and publishing
+            articles and other media on the field of artificial intelligence. My
+            amazing mentors are experienced in founding and advising startups, allowing me to learn about
+            the commercial applications of groundbreaking technologies to solve major world issues.
+            Currently, I am continuing my work with artificial intelligence alongside extracurriculars
+            and high school.
+          </p>
+          <a id="galleryImage" class="button is-dark is-inverted is-outlined is-medium" style="margin-top: 2rem;">
+            <span class="icon">
+              <i class="fab fa-linkedin"></i>
+            </span>
+            <span>Connect with me on Linkedin</span>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- Highlights -->
+      <h1 class="is-size-2 has-text-centered" style="margin-top: 2%;">Highlights</h1>
+      <div class="columns is-centered" style="margin-top: 2%;">
+        <div class="column is-one-quarter">
+          <div class="containerCentered">
+            <a id="galleryImage" href="#">
+              <img src="https://pbs.twimg.com/profile_images/846659478120366082/K-kZVvT8_400x400.jpg">
+            </a>
+          </div>
+          <h1 class="title has-text-centered">Project 1</h1>
+          <p class="is-size-5 has-text-centered">I made a thing!</p>
+        </div>
+        <div class="column is-one-quarter">
+          <div class="containerCentered">
+            <a id="galleryImage" href="#">
+              <img src="https://pbs.twimg.com/profile_images/846659478120366082/K-kZVvT8_400x400.jpg">
+            </a>
+          </div>
+          <h1 class="title has-text-centered">Project 2</h1>
+          <p class="is-size-5 has-text-centered">I made a thing!</p>
+        </div>
+        <div class="column is-one-quarter">
+          <div class="containerCentered">
+            <a id="galleryImage" href="#">
+              <img src="https://pbs.twimg.com/profile_images/846659478120366082/K-kZVvT8_400x400.jpg">
+            </a>
+          </div>
+          <h1 class="title has-text-centered">Project 3</h1>
+          <p class="is-size-5 has-text-centered">I made a thing!</p>
+        </div
+      </div>
+    </div>
+    <!-- Portfolio -->
+    <div class="containerCentered">
+      <img src="https://cdn.pixabay.com/photo/2015/03/26/09/40/business-suit-690048_960_720.jpg"style="width:100%;">
+      <div class="centered has-text-weight-light is-family-sans-serif">
+        <h1 class="" style="font-size: 10vw;">PORTFOLIO</h1>
+      </div>
+    </div>
+    <!-- Presentations -->
+    <h1 class="is-size-2 has-text-centered">Presentations</h1>
+    <div class="columns is-centered" style="margin-top: 2%;">
+      <div class="column is-one-quarter">
+        <div class="containerCentered">
+          <a href="#">
+            <img id="galleryImage" src="https://pbs.twimg.com/profile_images/846659478120366082/K-kZVvT8_400x400.jpg">
+          </a>
+        </div>
+        <h1 class="title has-text-centered">Presentation 1</h1>
+        <p class="is-size-5 has-text-centered">I made a thing!</p>
+      </div>
+      <div class="column is-one-quarter">
+        <div class="containerCentered">
+          <a href="#">
+            <img id="galleryImage"src="https://pbs.twimg.com/profile_images/846659478120366082/K-kZVvT8_400x400.jpg">
+          </a>
+        </div>
+        <h1 class="title has-text-centered">Presentation 2</h1>
+        <p class="is-size-5 has-text-centered">I made a thing!</p>
+      </div>
+      <div class="column is-one-quarter">
+        <div class="containerCentered">
+          <a href="#">
+            <img id="galleryImage" src="https://pbs.twimg.com/profile_images/846659478120366082/K-kZVvT8_400x400.jpg">
+          </a>
+        </div>
+        <h1 class="title has-text-centered">Presentation 3</h1>
+        <p class="is-size-5 has-text-centered">I made a thing!</p>
+      </div
+      </div>
+    </div>
+    <!-- Articles -->
+    <h1 class="is-size-2 has-text-centered" style="margin-top:4rem;">Articles</h1>
+    <div class="columns is-centered" style="margin-top: 2%;">
+      <div class="column is-one-quarter">
+        <div class="containerCentered">
+          <a href="#">
+            <img src="https://pbs.twimg.com/profile_images/846659478120366082/K-kZVvT8_400x400.jpg">
+          </a>
+        </div>
+        <h1 class="title has-text-centered">Article 1</h1>
+        <p class="is-size-5 has-text-centered">I made a thing!</p>
+      </div>
+      <div class="column is-one-quarter">
+        <div class="containerCentered">
+          <a href="#">
+            <img id="galleryImage" src="https://pbs.twimg.com/profile_images/846659478120366082/K-kZVvT8_400x400.jpg">
+          </a>
+        </div>
+        <h1 class="title has-text-centered">Article 2</h1>
+        <p class="is-size-5 has-text-centered">I made a thing!</p>
+      </div>
+      <div class="column is-one-quarter">
+        <div class="containerCentered">
+          <a href="#">
+            <img id="galleryImage" src="https://pbs.twimg.com/profile_images/846659478120366082/K-kZVvT8_400x400.jpg">
+          </a>
+        </div>
+        <h1 class="title has-text-centered">Article 3</h1>
+        <p class="is-size-5 has-text-centered">I made a thing!</p>
+      </div
+    </div>
+    </div>
+    <!-- Projects -->
+    <h1 class="is-size-2 has-text-centered" style="margin-top:4rem;">Projects</h1>
+    <div class="columns is-centered" style="margin-top: 2%;">
+      <div class="column is-one-quarter">
+        <div class="containerCentered">
+          <a href="#">
+            <img id="galleryImage" src="https://pbs.twimg.com/profile_images/846659478120366082/K-kZVvT8_400x400.jpg">
+          </a>
+        </div>
+        <h1 class="title has-text-centered">Deck 1</h1>
+        <p class="is-size-5 has-text-centered">I made a thing!</p>
+      </div>
+      <div class="column is-one-quarter">
+        <div class="containerCentered">
+          <a href="#">
+            <img id="galleryImage" src="https://pbs.twimg.com/profile_images/846659478120366082/K-kZVvT8_400x400.jpg">
+          </a>
+        </div>
+        <h1 class="title has-text-centered">Deck 2</h1>
+        <p class="is-size-5 has-text-centered">I made a thing!</p>
+      </div>
+      <div class="column is-one-quarter">
+        <div class="containerCentered">
+          <a href="#">
+            <img id="galleryImage" src="https://pbs.twimg.com/profile_images/846659478120366082/K-kZVvT8_400x400.jpg">
+          </a>
+        </div>
+        <h1 class="title has-text-centered">Deck 3</h1>
+        <p class="is-size-5 has-text-centered">I made a thing!</p>
+      </div
+    </div>
+    </div>
+    <!-- Extracurriculars -->
+    <div class="containerCentered">
+      <img src="https://cdn.pixabay.com/photo/2015/03/26/09/40/business-suit-690048_960_720.jpg"style="width:100%;">
+      <div class="centered has-text-weight-light is-family-sans-serif">
+        <h1 class="" style="font-size: 9vw;">EXTRACURRICULARS</h1>
+      </div>
+    </div>
+    <!-- Volunteering -->
+    <h1 class="is-size-2 has-text-centered" >Volunteering</h1>
+    <div class="columns is-centered" style="margin-top: 2%;">
+      <div class="column is-one-quarter">
+        <div class="containerCentered">
+          <a href="#">
+            <img id="galleryImage" src="https://pbs.twimg.com/profile_images/846659478120366082/K-kZVvT8_400x400.jpg">
+          </a>
+        </div>
+        <h1 class="title has-text-centered">Organisation 1</h1>
+        <p class="is-size-5 has-text-centered">I work here!</p>
+      </div>
+      <div class="column is-one-quarter">
+        <div class="containerCentered">
+          <a href="#">
+            <img id="galleryImage" src="https://pbs.twimg.com/profile_images/846659478120366082/K-kZVvT8_400x400.jpg">
+          </a>
+        </div>
+        <h1 class="title has-text-centered">Organisation 2</h1>
+        <p class="is-size-5 has-text-centered">I work here!</p>
+      </div>
+      <div class="column is-one-quarter">
+        <div class="containerCentered">
+          <a href="#">
+            <img id="galleryImage" src="https://pbs.twimg.com/profile_images/846659478120366082/K-kZVvT8_400x400.jpg">
+          </a>
+        </div>
+        <h1 class="title has-text-centered">Organisation 3</h1>
+        <p class="is-size-5 has-text-centered">I work here!</p>
+      </div
+    </div>
+    </div>
+    <!-- Activities -->
+    <h1 class="is-size-2 has-text-centered" style="margin-top:4rem;">Activities</h1>
+    <div class="columns is-centered" style="margin-top: 2%;">
+      <div class="column is-one-quarter">
+        <div class="containerCentered">
+          <a href="#">
+            <img id="galleryImage" src="https://pbs.twimg.com/profile_images/846659478120366082/K-kZVvT8_400x400.jpg">
+          </a>
+        </div>
+        <h1 class="title has-text-centered">Club 1</h1>
+        <p class="is-size-5 has-text-centered">I do this!</p>
+      </div>
+      <div class="column is-one-quarter">
+        <div class="containerCentered">
+          <a href="#">
+            <img id="galleryImage" src="https://pbs.twimg.com/profile_images/846659478120366082/K-kZVvT8_400x400.jpg">
+          </a>
+        </div>
+        <h1 class="title has-text-centered">Club 2</h1>
+        <p class="is-size-5 has-text-centered">I do this!</p>
+      </div>
+      <div class="column is-one-quarter">
+        <div class="containerCentered">
+          <a href="#">
+            <img id="galleryImage" src="https://pbs.twimg.com/profile_images/846659478120366082/K-kZVvT8_400x400.jpg">
+          </a>
+        </div>
+        <h1 class="title has-text-centered">Club 3</h1>
+        <p class="is-size-5 has-text-centered">I do this!</p>
+      </div
+    </div>
+    </div>
+    <!-- Contact -->
+    <div class="containerCentered">
+      <img src="https://cdn.pixabay.com/photo/2015/03/26/09/40/business-suit-690048_960_720.jpg"style="width:100%;">
+      <div class="centered has-text-weight-light is-family-sans-serif">
+        <h1 class="" style="font-size: 10vw;">Contact</h1>
+      </div>
+    </div>
+
+    <div class="contact containerCentered">
+      <div class="columns is-desktop is-centered is-vcentered" style="margin-top: 2%;">
+        <div class="column is-one-half">
+          <div class="field">
+            <label class="label is-pulled-left">Name</label>
+            <div class="control has-icons-left">
+              <input class="input is-dark" type="text" placeholder="e.g. Andrew Parkinson">
+              <span class="icon is-small is-left">
+                <i class="fas fa-user"></i>
+              </span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label is-pulled-left">Email</label>
+            <div class="control has-icons-left">
+              <input class="input is-dark" type="email" placeholder="e.g. email@gmail.com">
+              <span class="icon is-small is-left">
+                <i class="fas fa-envelope"></i>
+              </span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label is-pulled-left">Subject</label>
+            <div class="control">
+              <textarea class="textarea is-dark" placeholder="e.g. Volunteering Experiences"></textarea>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label is-pulled-left">Message</label>
+            <div class="control">
+              <textarea class="textarea is-dark" placeholder="Enter your message here"></textarea>
+            </div>
+          </div>
+
+          <div class="field is-grouped">
+            <div class="control">
+              <button class="button is-dark is-medium" style="transition: 0.3s;">Send</button>
+            </div>
+        </div>
+        </div>
+        <div class="column is-one-half">
+          <<h1 class="title">Get in touch!</h1>
+          <a class="button is-dark is-large" href="#" style="transition: 0.3s;">
+            <span class="icon">
+              <i class="fab fa-linkedin"></i>
+            </span>
+            <span>Linkedin</span>
+          </a>
+          <a class="button is-dark is-large" href="#" style="transition: 0.3s;">
+            <span class="icon">
+              <i class="fab fa-medium"></i>
+            </span>
+            <span>Medium</span>
+          </a>
+          <a class="button is-dark is-large" href="#" style="transition: 0.3s;">
+            <span class="icon">
+              <i class="fab fa-github"></i>
+            </span>
+            <span>Github</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer class="footer is-paddingless">
+        <div class="hero is-medium is-dark is-bold">
+          <div class="hero-head">
+            <h3 class="is-5 is-italic has-text-centered" style="margin-top: 0.75rem;">
+              © Madhav Malhotra 2019
+            </h3>
+            <div class="columns"></div>
+              <div class="column" style="margin-top: 1.5rem; margin-bottom: 1rem;">
+                <div class="container has-text-centered">
+                  <h3 class="title is-4">Stay in touch with my newsletter</h3>
+                    <a class="button is-dark is-inverted is-outlined" style="transition: 0.3s;">Subscribe</a>
+                </div>
+              </div>
+              <div class="column">
+                <div class="container has-text-centered">
+                  <h3 class="title is-4">Navigation</h3>
+                  <ul>
+                    <li><a id="textLink" href="#">About</a></li>
+                    <li><a id="textLink" href="#">Highights</a></li>
+                    <li><a id="textLink" href="#">Portfolio</a></li>
+                    <li><a id="textLink" href="#">Extracurriculars</a></li>
+                    <li><a id="textLink" href="#">Contact</a></li>
+                  </ul>
+                </div>
+              </div>
+          </div>
+        </div>
+    </footer>
+    <!-- JS -->
+    <script type="text/javascript">
+      (function() {
+        var burger = document.querySelector('.burger');
+        var nav = document.querySelector('#'+burger.dataset.target);
+
+        burger.addEventListener('click', function() {
+          burger.classList.toggle('is-active');
+          nav.classList.toggle('is-active');
+        });
+      })();
+    </script>
+  </body>
+</html>
