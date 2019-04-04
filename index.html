@@ -66,24 +66,24 @@
         </div>
         <div id="navMenu" class="navbar-menu">
           <div class="navbar-end" >
-            <a href="#" class="navbar-item" style="transition: 0.3s;">About</a>
-            <a href="#" class="navbar-item" style="transition: 0.3s;">Highlights</a>
-            <a href="#" class="navbar-item" style="transition: 0.3s;">Portfolio</a>
-            <a href="#" class="navbar-item" style="transition: 0.3s;">Extracurriculars</a>
-            <a href="#" class="navbar-item" style="transition: 0.3s;">Contact</a>
+            <a href="#about_Anchor" class="navbar-item" style="transition: 0.3s;">About</a>
+            <a href="#highlights_Anchor" class="navbar-item" style="transition: 0.3s;">Highlights</a>
+            <a href="#portfolio_Anchor" class="navbar-item" style="transition: 0.3s;">Portfolio</a>
+            <a href="#extracurriculars_Anchor" class="navbar-item" style="transition: 0.3s;">Extracurriculars</a>
+            <a href="#contact_Anchor" class="navbar-item" style="transition: 0.3s;">Contact</a>
           </div>
         </div>
       </div>
     </nav>
     <!-- Landing Image -->
     <div class="containerCentered">
-      <img src="https://cdn.pixabay.com/photo/2015/03/26/09/40/business-suit-690048_960_720.jpg" style="width:100%;">
+      <img src="businessStock.jpg" style="width:100%;">
       <div class="centered has-text-weight-light is-family-sans-serif">
         <h1 class="" style="font-size: 7vw;">I AM MADHAV</h1>
       </div>
     </div>
     <!--- About -->
-    <img class="portrait" src="portrait.jpg">
+    <img id="about_Anchor" class="portrait" src="portrait.jpg">
     <section class="hero is-medium is-dark is-bold">
       <div class="hero-body" style="padding: 4rem;">
         <div class="container">
@@ -102,10 +102,11 @@
             articles and other media on the field of artificial intelligence. My
             amazing mentors are experienced in founding and advising startups, allowing me to learn about
             the commercial applications of groundbreaking technologies to solve major world issues.
-            Currently, I am continuing my work with artificial intelligence alongside extracurriculars
-            and high school.
+            Currently, I am continuing my work with artificial intelligence, amongst other extracurriculars
+            projects, and pursuing an International Baccalaureate Diploma.
           </p>
-          <a id="galleryImage" class="button is-dark is-inverted is-outlined is-medium" style="margin-top: 2rem;">
+          <a id="galleryImage" class="button is-dark is-inverted is-outlcontined is-medium"
+          href="https://www.linkedin.com/in/madhav-malhotra-8243a9175/" target="_blank" style="margin-top: 2rem;">
             <span class="icon">
               <i class="fab fa-linkedin"></i>
             </span>
@@ -115,7 +116,7 @@
       </div>
     </section>
     <!-- Highlights -->
-      <h1 class="is-size-2 has-text-centered" style="margin-top: 2%;">Highlights</h1>
+      <h1 id="highlights_Anchor" class="is-size-2 has-text-centered" style="margin-top: 2%;">Highlights</h1>
       <div class="columns is-centered" style="margin-top: 2%;">
         <div class="column is-one-quarter">
           <div class="containerCentered">
@@ -147,8 +148,8 @@
       </div>
     </div>
     <!-- Portfolio -->
-    <div class="containerCentered">
-      <img src="https://cdn.pixabay.com/photo/2015/03/26/09/40/business-suit-690048_960_720.jpg"style="width:100%;">
+    <div id="portfolio_Anchor" class="containerCentered">
+      <img src="businessStock.jpg"style="width:100%;">
       <div class="centered has-text-weight-light is-family-sans-serif">
         <h1 class="" style="font-size: 10vw;">PORTFOLIO</h1>
       </div>
@@ -250,8 +251,8 @@
     </div>
     </div>
     <!-- Extracurriculars -->
-    <div class="containerCentered">
-      <img src="https://cdn.pixabay.com/photo/2015/03/26/09/40/business-suit-690048_960_720.jpg"style="width:100%;">
+    <div id="extracurriculars_Anchor" class="containerCentered">
+      <img src="businessStock.jpg"style="width:100%;">
       <div class="centered has-text-weight-light is-family-sans-serif">
         <h1 class="" style="font-size: 9vw;">EXTRACURRICULARS</h1>
       </div>
@@ -321,71 +322,75 @@
     </div>
     </div>
     <!-- Contact -->
-    <div class="containerCentered">
-      <img src="https://cdn.pixabay.com/photo/2015/03/26/09/40/business-suit-690048_960_720.jpg"style="width:100%;">
+    <div id="contact_Anchor" class="containerCentered" >
+      <img src="businessStock.jpg"style="width:100%;">
       <div class="centered has-text-weight-light is-family-sans-serif">
-        <h1 class="" style="font-size: 10vw;">Contact</h1>
+        <h1 class="" style="font-size: 10vw;">CONTACT</h1>
       </div>
     </div>
 
     <div class="contact containerCentered">
       <div class="columns is-desktop is-centered is-vcentered" style="margin-top: 2%;">
         <div class="column is-one-half">
-          <div class="field">
-            <label class="label is-pulled-left">Name</label>
-            <div class="control has-icons-left">
-              <input class="input is-dark" type="text" placeholder="e.g. Andrew Parkinson">
-              <span class="icon is-small is-left">
-                <i class="fas fa-user"></i>
-              </span>
+          <form action="contactForm.php" method="post">
+            <div class="field">
+              <label class="label is-pulled-left">Name</label>
+              <div class="control has-icons-left">
+                <input class="input is-dark" type="text" placeholder="e.g. Andrew Parkinson">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-user"></i>
+                </span>
+              </div>
             </div>
-          </div>
-
-          <div class="field">
-            <label class="label is-pulled-left">Email</label>
-            <div class="control has-icons-left">
-              <input class="input is-dark" type="email" placeholder="e.g. email@gmail.com">
-              <span class="icon is-small is-left">
-                <i class="fas fa-envelope"></i>
-              </span>
+            <!-- Email -->
+            <div class="field">
+              <label class="label is-pulled-left">Email</label>
+              <div class="control has-icons-left">
+                <input name="email" class="input is-dark" type="email" placeholder="e.g. email@gmail.com">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-envelope"></i>
+                </span>
+              </div>
             </div>
-          </div>
-
-          <div class="field">
-            <label class="label is-pulled-left">Subject</label>
-            <div class="control">
-              <textarea class="textarea is-dark" placeholder="e.g. Volunteering Experiences"></textarea>
+            <!-- Subject -->
+            <div class="field">
+              <label class="label is-pulled-left">Subject</label>
+              <div class="control">
+                <textarea name="subject" class="textarea is-dark" placeholder="e.g. Volunteering Experiences"></textarea>
+              </div>
             </div>
-          </div>
-
-          <div class="field">
-            <label class="label is-pulled-left">Message</label>
-            <div class="control">
-              <textarea class="textarea is-dark" placeholder="Enter your message here"></textarea>
+            <!-- Message -->
+            <div class="field">
+              <label class="label is-pulled-left">Message</label>
+              <div class="control">
+                <textarea name="message" class="textarea is-dark" placeholder="Enter your message here"></textarea>
+              </div>
             </div>
-          </div>
-
-          <div class="field is-grouped">
-            <div class="control">
-              <button class="button is-dark is-medium" style="transition: 0.3s;">Send</button>
-            </div>
-        </div>
+            <!-- Send -->
+            <div class="field is-grouped">
+              <div class="control">
+                <button name="send" class="button is-dark is-medium" style="transition: 0.3s;">Send</button>
+              </div>
+          </form>
         </div>
         <div class="column is-one-half">
           <<h1 class="title">Get in touch!</h1>
-          <a class="button is-dark is-large" href="#" style="transition: 0.3s;">
+          <a class="button is-dark is-large"
+          href="https://www.linkedin.com/in/madhav-malhotra-8243a9175/" target="_blank" style="transition: 0.3s; margin-top: 1rem;">
             <span class="icon">
               <i class="fab fa-linkedin"></i>
             </span>
             <span>Linkedin</span>
           </a>
-          <a class="button is-dark is-large" href="#" style="transition: 0.3s;">
+          <a class="button is-dark is-large"
+          href="https://medium.com/@madhav.malhotra003" target="_blank" style="transition: 0.3s; margin-top: 1rem;">
             <span class="icon">
               <i class="fab fa-medium"></i>
             </span>
             <span>Medium</span>
           </a>
-          <a class="button is-dark is-large" href="#" style="transition: 0.3s;">
+          <a class="button is-dark is-large"
+          href="https://github.com/Madhav-Malhotra" target="_blank" style="transition: 0.3s; margin-top: 1rem;">
             <span class="icon">
               <i class="fab fa-github"></i>
             </span>
@@ -412,11 +417,11 @@
                 <div class="container has-text-centered">
                   <h3 class="title is-4">Navigation</h3>
                   <ul>
-                    <li><a id="textLink" href="#">About</a></li>
-                    <li><a id="textLink" href="#">Highights</a></li>
-                    <li><a id="textLink" href="#">Portfolio</a></li>
-                    <li><a id="textLink" href="#">Extracurriculars</a></li>
-                    <li><a id="textLink" href="#">Contact</a></li>
+                    <li><a id="textLink" href="#about_Anchor">About</a></li>
+                    <li><a id="textLink" href="#highlights_Anchor">Highights</a></li>
+                    <li><a id="textLink" href="#portfolio_Anchor">Portfolio</a></li>
+                    <li><a id="textLink" href="#extracurriculars_Anchor">Extracurriculars</a></li>
+                    <li><a id="textLink" href="#contact_Anchor">Contact</a></li>
                   </ul>
                 </div>
               </div>
