@@ -20,7 +20,7 @@
       margin-bottom: 5%;
       margin-left: auto;
       margin-right: auto;
-      width: 50%;
+      width: 70%;
     }
     .contact {
       margin: 2rem;
@@ -30,15 +30,21 @@
       transition: 0.3s;
     }
     #galleryImage:hover {
-      filter: brightness(0.95);
+      filter: brightness(0.90);
     }
     #textLink {
       filter: brightness(1);
       transition: 0.3s;
     }
     #textLink:hover {
-      filter: brightness(0.95);
+      filter: brightness(0.90);
       color: #72B2E8;
+    }
+    #header {
+      font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
+    }
+    #body {
+      font-family: Times, "Times New Roman", Georgia, Garamond, serif;
     }
   </style>
   <!-- Setting up Website Stuff, importing bulma.io -->
@@ -55,7 +61,7 @@
     <nav class="navbar is-dark is-fixed-top">
       <div class="container">
         <div class="navbar-brand">
-          <a class="navbar-item is-size-5 is-family-sans-serif" href="#" style="transition: 0.3s;">
+          <a target="_blank" class="navbar-item is-size-5 is-family-sans-serif" href="https://www.linkedin.com/in/madhav-malhotra-8243a9175/" style="transition: 0.3s;">
             Madhav Malhotra
           </a>
           <span class="navbar-burger burger" data-target="navMenu" style="transition: 0.3s;">
@@ -77,17 +83,17 @@
     </nav>
     <!-- Landing Image -->
     <div class="containerCentered">
-      <img src="businessStock.jpg" style="width:100%;">
+      <img src="Images/Stars1.jpg" style="width:100%;">
       <div class="centered has-text-weight-light is-family-sans-serif">
-        <h1 class="" style="font-size: 7vw;">I AM MADHAV</h1>
+        <h1 id="header" style="font-size: 7vw;">I AM MADHAV</h1>
       </div>
     </div>
     <!--- About -->
-    <img id="about_Anchor" class="portrait" src="portrait.jpg">
+    <img id="about_Anchor" class="portrait" src="Images/portrait.jpg">
     <section class="hero is-medium is-dark is-bold">
       <div class="hero-body" style="padding: 4rem;">
         <div class="container">
-          <h1 class="title">
+          <h1 class="is-size-2" style="margin-bottom: 1rem;">
             About Me
           </h1>
           <p class="is-size-5">
@@ -105,6 +111,63 @@
             Currently, I am continuing my work with artificial intelligence, amongst other extracurriculars
             projects, and pursuing an International Baccalaureate Diploma.
           </p>
+          <h1 class="is-size-2" style="margin-bottom: 2rem; margin-top: 4rem;">
+            Skillset
+          </h1>
+          <div class="columns is-desktop">
+            <div class="column is-two-thirds">
+              <p class="is-size-5">
+                Coding in Python, C++, HTML, and CSS for web and AI.
+              </p>
+            </div>
+            <div class="column is-2">
+              <i class="fas fa-code fa-2x"></i>
+            </div>
+          </div>
+
+          <div class="columns is-desktop">
+            <div class="column is-two-thirds">
+              <p class="is-size-5">
+                Digital photography, cinematography, and post-production.
+              </p>
+            </div>
+            <div class="column is-2">
+              <i class="fas fa-camera-retro fa-2x"></i>
+            </div>
+          </div>
+
+          <div class="columns is-desktop">
+            <div class="column is-two-thirds">
+              <p class="is-size-5">
+                Research, Consulting, Book-keeping, and Analysis
+              </p>
+            </div>
+            <div class="column is-2">
+              <i class="fas fa-business-time fa-2x"></i>
+            </div>
+          </div>
+
+          <div class="columns is-desktop">
+            <div class="column is-two-thirds">
+              <p class="is-size-5">
+                Public speaking, presentation design, and business pitches.
+              </p>
+            </div>
+            <div class="column is-2">
+              <i class="fas fa-microphone-alt fa-2x"></i>
+            </div>
+          </div>
+
+          <div class="columns is-desktop">
+            <div class="column is-two-thirds">
+              <p class="is-size-5">
+                Adobe photoshop, animate, premiere, and Google Suite
+              </p>
+            </div>
+            <div class="column is-2">
+              <i class="fas fa-laptop fa-2x"></i>
+            </div>
+          </div>
           <a id="galleryImage" class="button is-dark is-inverted is-outlcontined is-medium"
           href="https://www.linkedin.com/in/madhav-malhotra-8243a9175/" target="_blank" style="margin-top: 2rem;">
             <span class="icon">
@@ -118,214 +181,276 @@
     <!-- Highlights -->
       <h1 id="highlights_Anchor" class="is-size-2 has-text-centered" style="margin-top: 2%;">Highlights</h1>
       <div class="columns is-centered" style="margin-top: 2%;">
-        <div class="column is-one-quarter">
+        <div class="column is-one-half">
           <div class="containerCentered">
-            <a id="galleryImage" href="#">
-              <img src="https://pbs.twimg.com/profile_images/846659478120366082/K-kZVvT8_400x400.jpg">
+            <a target="_blank"id="galleryImage" target="_blank" href="https://drive.google.com/file/d/1U3H_zsck0DOxpAUU_F085xMHkB8eIZy4/view?usp=sharing">
+              <img src="Images/WalmartChallenge.jpg">
             </a>
           </div>
-          <h1 class="title has-text-centered">Project 1</h1>
-          <p class="is-size-5 has-text-centered">I made a thing!</p>
+          <h1 class="title has-text-centered">Walmart Challenge</h1>
+          <p class="is-size-5 has-text-centered" style="margin: 2rem;">
+            My recommendations for Walmart Canada to enhance customer experience
+            and become the go-to retailer, while reducing operational costs. I focused
+            on creating an effective digital platform through the Walmart app
+            and website to integrate in-store and digital shopping experiences.</p>
         </div>
-        <div class="column is-one-quarter">
+        <div class="column is-one-half">
           <div class="containerCentered">
-            <a id="galleryImage" href="#">
-              <img src="https://pbs.twimg.com/profile_images/846659478120366082/K-kZVvT8_400x400.jpg">
+            <a id="galleryImage" target="_blank" href="https://drive.google.com/open?id=1H7klgjCen9ek_w8_RQEIQS5CNpGcn6y9">
+              <img src="Images/WealthsimpleChallenge.jpg">
             </a>
           </div>
-          <h1 class="title has-text-centered">Project 2</h1>
-          <p class="is-size-5 has-text-centered">I made a thing!</p>
+          <h1 class="title has-text-centered">Wealthsimple Challenge</h1>
+          <p class="is-size-5 has-text-centered" style="margin: 2rem;">
+            How Wealthsimple can improve brand image and outreach to low-income
+            clients to increase access to government grants for post-secondary education.
+            I outlined key partnerships with the community and media
+            for Wealthsimple to increase its outreach, as well as how to revamp its website
+            and advertising to better suit low-income clients.
+          </p>
         </div>
-        <div class="column is-one-quarter">
-          <div class="containerCentered">
-            <a id="galleryImage" href="#">
-              <img src="https://pbs.twimg.com/profile_images/846659478120366082/K-kZVvT8_400x400.jpg">
-            </a>
-          </div>
-          <h1 class="title has-text-centered">Project 3</h1>
-          <p class="is-size-5 has-text-centered">I made a thing!</p>
-        </div
       </div>
     </div>
     <!-- Portfolio -->
     <div id="portfolio_Anchor" class="containerCentered">
-      <img src="businessStock.jpg"style="width:100%;">
+      <img src="Images/StarTrail1.jpg"style="width:100%;">
       <div class="centered has-text-weight-light is-family-sans-serif">
-        <h1 class="" style="font-size: 10vw;">PORTFOLIO</h1>
+        <h1 id="header" style="font-size: 10vw;">PORTFOLIO</h1>
       </div>
     </div>
     <!-- Presentations -->
     <h1 class="is-size-2 has-text-centered">Presentations</h1>
     <div class="columns is-centered" style="margin-top: 2%;">
-      <div class="column is-one-quarter">
+      <div class="column is-one-half">
         <div class="containerCentered">
-          <a href="#">
-            <img id="galleryImage" src="https://pbs.twimg.com/profile_images/846659478120366082/K-kZVvT8_400x400.jpg">
+          <a target="_blank" href="https://youtu.be/khX6jKwAE4g">
+            <img id="galleryImage" src="Images/HandwrittenVideo.jpg">
           </a>
         </div>
-        <h1 class="title has-text-centered">Presentation 1</h1>
-        <p class="is-size-5 has-text-centered">I made a thing!</p>
+        <h1 class="title has-text-centered">Recognising Handwritten Digits</h1>
+        <p class="is-size-5 has-text-centered" style="margin: 2rem; margin-bottom: 0rem;">
+          This is an overview of my neural network classifier for handwritten numbers.
+          From my personal experiences and challenges with the project to the technical
+          details behind it, I outline what I learned and what's next.
+        </p>
       </div>
-      <div class="column is-one-quarter">
+      <div target="_blank" class="column is-one-half">
         <div class="containerCentered">
-          <a href="#">
-            <img id="galleryImage"src="https://pbs.twimg.com/profile_images/846659478120366082/K-kZVvT8_400x400.jpg">
+          <a target="_blank" href="https://youtu.be/vvI033zoquY">
+            <img id="galleryImage" src="Images/NeuralPresentation.jpg">
           </a>
         </div>
-        <h1 class="title has-text-centered">Presentation 2</h1>
-        <p class="is-size-5 has-text-centered">I made a thing!</p>
-      </div>
-      <div class="column is-one-quarter">
-        <div class="containerCentered">
-          <a href="#">
-            <img id="galleryImage" src="https://pbs.twimg.com/profile_images/846659478120366082/K-kZVvT8_400x400.jpg">
-          </a>
-        </div>
-        <h1 class="title has-text-centered">Presentation 3</h1>
-        <p class="is-size-5 has-text-centered">I made a thing!</p>
-      </div
+        <h1 class="title has-text-centered">Introduction to Neural Networks</h1>
+        <p class="is-size-5 has-text-centered" style="margin: 2rem; margin-bottom: 0rem;">
+          This is my presentation at The Knowledge Society on the applications,
+          benefits, and potential for neural networks. It is one of my first
+          presentations on the topic and summarises my research into neural networks.
+        </p>
       </div>
     </div>
     <!-- Articles -->
     <h1 class="is-size-2 has-text-centered" style="margin-top:4rem;">Articles</h1>
     <div class="columns is-centered" style="margin-top: 2%;">
-      <div class="column is-one-quarter">
+      <div class="column is-one-half">
         <div class="containerCentered">
-          <a href="#">
-            <img src="https://pbs.twimg.com/profile_images/846659478120366082/K-kZVvT8_400x400.jpg">
+          <a target="_blank" href="https://medium.com/@madhav.malhotra003/meat-re-imagined-as-the-same-old-thing-470fde06da24">
+            <img id="galleryImage" src="Images/MeatReimagined.jpg">
           </a>
         </div>
-        <h1 class="title has-text-centered">Article 1</h1>
-        <p class="is-size-5 has-text-centered">I made a thing!</p>
+        <h1 class="title has-text-centered">Meat Re-imagined</h1>
+        <p class="is-size-5 has-text-centered" style="margin: 2rem; margin-bottom: 0rem;">
+          This summarises my research into the potential of cellular agriculture
+          and the problems with our current system of food production. I explore
+          the rapid innovations in the field and how they will affect life.
+        </p>
       </div>
-      <div class="column is-one-quarter">
+      <div class="column is-one-half">
+        <div class="containerCentered">
+          <a target="_blank" href="https://www.linkedin.com/pulse/ai-why-actually-makes-difference-madhav-malhotra/">
+            <img id="galleryImage" src="Images/AIDifference.jpg">
+          </a>
+        </div>
+        <h1 class="title has-text-centered">AI: Why it Actually Makes a Difference</h1>
+        <p class="is-size-5 has-text-centered" style="margin: 2rem; margin-bottom: 0rem;">
+          I emphasise the game-changing advantages that Artificial Intelligence
+          has over conventional algorithms. I also show specific industries
+          to look out for that AI will greatly impact in the coming years.
+        </p>
+      </div>
+    </div>
+    <!--
+    <div class="columns is-centered" style="margin-top: 2%;">
+      <div class="column is-one-half">
         <div class="containerCentered">
           <a href="#">
             <img id="galleryImage" src="https://pbs.twimg.com/profile_images/846659478120366082/K-kZVvT8_400x400.jpg">
           </a>
         </div>
-        <h1 class="title has-text-centered">Article 2</h1>
-        <p class="is-size-5 has-text-centered">I made a thing!</p>
+        <h1 class="title has-text-centered">The Largest Hurdle with AI</h1>
+        <p class="is-size-5 has-text-centered" style="margin: 2rem; margin-top: 0rem;">
+          I go over my experiences creating my first algorithm using Artificial
+          Intelligence, a neural network, without prior experience. I reflect on the project
+          from the challenges to the skills I've learned.
+        </p>
       </div>
-      <div class="column is-one-quarter">
-        <div class="containerCentered">
-          <a href="#">
-            <img id="galleryImage" src="https://pbs.twimg.com/profile_images/846659478120366082/K-kZVvT8_400x400.jpg">
-          </a>
-        </div>
-        <h1 class="title has-text-centered">Article 3</h1>
-        <p class="is-size-5 has-text-centered">I made a thing!</p>
-      </div
     </div>
-    </div>
+    -->
     <!-- Projects -->
     <h1 class="is-size-2 has-text-centered" style="margin-top:4rem;">Projects</h1>
     <div class="columns is-centered" style="margin-top: 2%;">
-      <div class="column is-one-quarter">
+      <div class="column is-one-half">
         <div class="containerCentered">
-          <a href="#">
-            <img id="galleryImage" src="https://pbs.twimg.com/profile_images/846659478120366082/K-kZVvT8_400x400.jpg">
+          <a target="_blank" href="https://github.com/Madhav-Malhotra/AI-Number-Classifier">
+            <img id="galleryImage" src="Images/HandwrittenCode.jpg">
           </a>
         </div>
-        <h1 class="title has-text-centered">Deck 1</h1>
-        <p class="is-size-5 has-text-centered">I made a thing!</p>
+        <h1 class="title has-text-centered">Handwritten Digit Classifier</h1>
+        <p class="is-size-5 has-text-centered" style="margin: 2rem;">
+          This is the first neural network I've made. While it was complex to get
+          started given requisites like calculus that I had never encountered before,
+          I was able to establish the crucial intuition for how the algorithms worked.
+        </p>
       </div>
-      <div class="column is-one-quarter">
+      <div class="column is-one-half">
         <div class="containerCentered">
-          <a href="#">
-            <img id="galleryImage" src="https://pbs.twimg.com/profile_images/846659478120366082/K-kZVvT8_400x400.jpg">
+          <a target="_blank" href="https://drive.google.com/open?id=1KesR_SuaMhXkciGsNqQH_ZtYBhLy8SH7">
+            <img id="galleryImage" src="Images/Genomics1Pager.jpg">
           </a>
         </div>
-        <h1 class="title has-text-centered">Deck 2</h1>
-        <p class="is-size-5 has-text-centered">I made a thing!</p>
+        <h1 class="title has-text-centered">Genomics and the Future</h1>
+        <p class="is-size-5 has-text-centered" style="margin: 2rem;">
+          This brief infographic highlights my key impressions from the genomics
+          session at The Knowledge Society. I go over the exponential innovations
+          in the industry along with the enormous applications to come in the future.
+        </p>
       </div>
-      <div class="column is-one-quarter">
-        <div class="containerCentered">
-          <a href="#">
-            <img id="galleryImage" src="https://pbs.twimg.com/profile_images/846659478120366082/K-kZVvT8_400x400.jpg">
-          </a>
-        </div>
-        <h1 class="title has-text-centered">Deck 3</h1>
-        <p class="is-size-5 has-text-centered">I made a thing!</p>
-      </div
     </div>
+    <!-- Newsletter -->
+    <h1 class="is-size-2 has-text-centered" style="margin-top:4rem;">Newsletters</h1>
+    <div class="columns is-centered" style="margin-top: 2%;">
+      <div class="column is-one-half">
+        <div class="containerCentered">
+          <a target="_blank" href="https://mailchi.mp/9b83a66f4ecd/february-2019">
+            <img id="galleryImage" src="Images/February2019News.jpg">
+          </a>
+        </div>
+        <h1 class="title has-text-centered">February 2019</h1>
+        <p class="is-size-5 has-text-centered" style="margin: 2rem;">
+
+        </p>
+      </div>
+      <div class="column is-one-half">
+        <div class="containerCentered">
+          <a target="_blank" href="https://mailchi.mp/445f4f5b2b67/february-88109">
+            <img id="galleryImage" src="Images/March2019News.jpg">
+          </a>
+        </div>
+        <h1 class="title has-text-centered">March 2019</h1>
+        <p class="is-size-5 has-text-centered" style="margin: 2rem;">
+
+        </p>
+      </div>
     </div>
     <!-- Extracurriculars -->
     <div id="extracurriculars_Anchor" class="containerCentered">
-      <img src="businessStock.jpg"style="width:100%;">
+      <img src="Images/CarTrail1.jpg"style="width:100%;">
       <div class="centered has-text-weight-light is-family-sans-serif">
-        <h1 class="" style="font-size: 9vw;">EXTRACURRICULARS</h1>
+        <h1 id="header" style="font-size: 9vw;">EXTRACURRICULARS</h1>
       </div>
     </div>
     <!-- Volunteering -->
     <h1 class="is-size-2 has-text-centered" >Volunteering</h1>
     <div class="columns is-centered" style="margin-top: 2%;">
-      <div class="column is-one-quarter">
+      <div class="column is-one-half">
         <div class="containerCentered">
-          <a href="#">
-            <img id="galleryImage" src="https://pbs.twimg.com/profile_images/846659478120366082/K-kZVvT8_400x400.jpg">
-          </a>
+          <img id="galleryImage" src="Images/Recycling.jpg">
         </div>
-        <h1 class="title has-text-centered">Organisation 1</h1>
-        <p class="is-size-5 has-text-centered">I work here!</p>
+        <h1 class="title has-text-centered" style="margin-left: 2rem; margin-right: 2rem;">Leader - Recycling Club</h1>
+        <p class="is-size-5 has-text-centered" style="margin: 2rem;">
+          I've worked at my school's recycling program for years. Every week,
+          I direct volunteers in managing our school's waste to reduce our
+          environmental impact. I've also created media campaigns on environmental
+          stewardship and won the Tim Walker Memorial Award to renovate our program.
+        </p>
       </div>
-      <div class="column is-one-quarter">
+      <div class="column is-one-half">
         <div class="containerCentered">
-          <a href="#">
-            <img id="galleryImage" src="https://pbs.twimg.com/profile_images/846659478120366082/K-kZVvT8_400x400.jpg">
-          </a>
+          <img id="galleryImage" src="Images/AnneFrank.jpg">
         </div>
-        <h1 class="title has-text-centered">Organisation 2</h1>
-        <p class="is-size-5 has-text-centered">I work here!</p>
+        <h1 class="title has-text-centered" style="margin-left: 2rem; margin-right: 2rem;">Guide - Anne Frank Exhibition</h1>
+        <p class="is-size-5 has-text-centered" style="margin: 2rem;">
+          Anne Frank: A History for Today is a global exhibition to educate
+          on the history of the Holocaust and how it is still relevant today.
+          When it came to my school from across the world, I took part as a
+          guide for students and the public, educating visitors
+          on Anne Frank's story and its importance today.
+        </p>
       </div>
-      <div class="column is-one-quarter">
-        <div class="containerCentered">
-          <a href="#">
-            <img id="galleryImage" src="https://pbs.twimg.com/profile_images/846659478120366082/K-kZVvT8_400x400.jpg">
-          </a>
-        </div>
-        <h1 class="title has-text-centered">Organisation 3</h1>
-        <p class="is-size-5 has-text-centered">I work here!</p>
-      </div
     </div>
+
+    <div class="columns is-centered" style="margin-top: 2%;">
+      <div class="column is-one-half">
+        <div class="containerCentered">
+          <img id="galleryImage" src="Images/KPL.jpg">
+        </div>
+        <h1 class="title has-text-centered" style="margin-left: 2rem; margin-right: 2rem;">Youth Writer - Kitchener Public Library</h1>
+        <p class="is-size-5 has-text-centered" style="margin: 2rem;">
+          I work with the KPL to create content and activities for youth in my
+          community. This ranges from writing reviews for movies, music, and other media
+          to organising competitions and free community events available to all youth.
+          I've also worked with the KPL to sponsor a community fundraiser in partnership
+          with WAYVE.
+        </p>
+      </div>
+      <div class="column is-one-half">
+        <div class="containerCentered">
+            <img id="galleryImage" src="Images/RootsShoots.jpg">
+        </div>
+        <h1 class="title has-text-centered">Roots and Shoots</h1>
+        <p class="is-size-5 has-text-centered" style="margin: 2rem;">
+          This charitable organisation at my school creates fundraisers and
+          promotion campaigns for social and environmental causes. I've helped
+          create fundraisers for mental health awareness, homeless youth,
+          and pollinator protection among other causes and have launched an
+          independent campaign to support rhino conservation and human rights
+          documentation.
+        </p>
+      </div>
     </div>
     <!-- Activities -->
-    <h1 class="is-size-2 has-text-centered" style="margin-top:4rem;">Activities</h1>
+    <h1 class="is-size-2 has-text-centered" style="margin-top:2rem;">Activities</h1>
     <div class="columns is-centered" style="margin-top: 2%;">
-      <div class="column is-one-quarter">
+      <div class="column is-one-half">
         <div class="containerCentered">
-          <a href="#">
-            <img id="galleryImage" src="https://pbs.twimg.com/profile_images/846659478120366082/K-kZVvT8_400x400.jpg">
-          </a>
+          <img id="galleryImage" src="Images/Musician.jpg">
         </div>
-        <h1 class="title has-text-centered">Club 1</h1>
-        <p class="is-size-5 has-text-centered">I do this!</p>
+        <h1 class="title has-text-centered">Musician</h1>
+        <p class="is-size-5 has-text-centered" style="margin: 2rem;">
+          I've played the trumpet, tuba, and percussion at multiple ensembles
+          throughout high school, as well as bass vocals. This includes jazz,
+          classical, and non-western music. I've organised and performed at
+          concerts at venues including the Jazz Room and Kitchener City Hall.
+        </p>
       </div>
-      <div class="column is-one-quarter">
+      <div class="column is-one-half">
         <div class="containerCentered">
-          <a href="#">
-            <img id="galleryImage" src="https://pbs.twimg.com/profile_images/846659478120366082/K-kZVvT8_400x400.jpg">
-          </a>
+          <img id="galleryImage" src="Images/Photographer.jpg">
         </div>
-        <h1 class="title has-text-centered">Club 2</h1>
-        <p class="is-size-5 has-text-centered">I do this!</p>
+        <h1 class="title has-text-centered">Photographer</h1>
+        <p class="is-size-5 has-text-centered" style="margin: 2rem;">
+          Photography is one of my longest-standing hobbies. I've been taking
+          photos on every single adventure I go on for years. From natural
+          photography to urban showcases, I like to explore with new projects.
+          I also have experience with cinematography and post-production for
+          audio, video, and photos.
+        </p>
       </div>
-      <div class="column is-one-quarter">
-        <div class="containerCentered">
-          <a href="#">
-            <img id="galleryImage" src="https://pbs.twimg.com/profile_images/846659478120366082/K-kZVvT8_400x400.jpg">
-          </a>
-        </div>
-        <h1 class="title has-text-centered">Club 3</h1>
-        <p class="is-size-5 has-text-centered">I do this!</p>
-      </div
-    </div>
     </div>
     <!-- Contact -->
     <div id="contact_Anchor" class="containerCentered" >
-      <img src="businessStock.jpg"style="width:100%;">
+      <img src="Images/NorthernLights.jpg"style="width:100%;">
       <div class="centered has-text-weight-light is-family-sans-serif">
-        <h1 class="" style="font-size: 10vw;">CONTACT</h1>
+        <h1 id="header" style="font-size: 10vw;">CONTACT</h1>
       </div>
     </div>
 
@@ -412,7 +537,7 @@
             <div class="columns"></div>
               <div class="column" style="margin-top: 1.5rem; margin-bottom: 1rem;">
                 <div class="container has-text-centered">
-                  <h3 class="title is-4">Stay in touch with my newsletter</h3>
+                  <h3 class="title is-4">Keep up to date with my newsletter</h3>
                     <a class="button is-dark is-inverted is-outlined" style="transition: 0.3s;">Subscribe</a>
                 </div>
               </div>
