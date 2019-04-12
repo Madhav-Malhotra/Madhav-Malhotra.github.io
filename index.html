@@ -70,7 +70,7 @@
             <span></span>
           </span>
         </div>
-        <div id="navMenu" class="navbar-menu">
+        <div id="navMenu" class="navigation navbar-menu">
           <div class="navbar-end" >
             <a href="#about_Anchor" class="navbar-item" style="transition: 0.3s;">About</a>
             <a href="#highlights_Anchor" class="navbar-item" style="transition: 0.3s;">Highlights</a>
@@ -527,46 +527,48 @@
         </div>
       </div>
     </div>
-    <!-- Footer -->
-    <footer class="footer is-paddingless">
-        <div class="hero is-medium is-dark is-bold">
-          <div class="hero-head">
-            <h3 class="is-5 is-italic has-text-centered" style="margin-top: 0.75rem;">
-              © Madhav Malhotra 2019
-            </h3>
-            <div class="columns"></div>
-              <div class="column" style="margin-top: 1.5rem; margin-bottom: 1rem;">
-                <div class="container has-text-centered">
-                  <h3 class="title is-4">Keep up to date with my newsletter</h3>
-                    <a class="button is-dark is-inverted is-outlined" style="transition: 0.3s;">Subscribe</a>
-                </div>
-              </div>
-              <div class="column">
-                <div class="container has-text-centered">
-                  <h3 class="title is-4">Navigation</h3>
-                  <ul>
-                    <li><a id="textLink" href="#about_Anchor">About</a></li>
-                    <li><a id="textLink" href="#highlights_Anchor">Highights</a></li>
-                    <li><a id="textLink" href="#portfolio_Anchor">Portfolio</a></li>
-                    <li><a id="textLink" href="#extracurriculars_Anchor">Extracurriculars</a></li>
-                    <li><a id="textLink" href="#contact_Anchor">Contact</a></li>
-                  </ul>
-                </div>
-              </div>
-          </div>
-        </div>
-    </footer>
-    <!-- JS -->
-    <script type="text/javascript">
-      (function() {
-        var burger = document.querySelector('.burger');
-        var nav = document.querySelector('#'+burger.dataset.target);
-
-        burger.addEventListener('click', function() {
-          burger.classList.toggle('is-active');
-          nav.classList.toggle('is-active');
-        });
-      })();
-    </script>
   </body>
+  <!-- Footer -->
+  <footer class="footer is-paddingless">
+      <div class="hero is-medium is-dark is-bold">
+        <div class="hero-head">
+          <h3 class="is-5 is-italic has-text-centered" style="margin-top: 0.75rem;">
+            © Madhav Malhotra 2019
+          </h3>
+          <div class="columns"></div>
+            <div class="column" style="margin-top: 1.5rem; margin-bottom: 1rem;">
+              <div class="container has-text-centered">
+                <h3 class="title is-4">Keep up to date with my newsletter</h3>
+                  <a class="button is-dark is-inverted is-outlined" style="transition: 0.3s;">Subscribe</a>
+              </div>
+            </div>
+            <div class="column">
+              <div class="navigation container has-text-centered">
+                <h3 class="title is-4">Navigation</h3>
+                <ul class="navigation">
+                  <li><a id="textLink" href="#about_Anchor">About</a></li>
+                  <li><a id="textLink" href="#highlights_Anchor">Highights</a></li>
+                  <li><a id="textLink" href="#portfolio_Anchor">Portfolio</a></li>
+                  <li><a id="textLink" href="#extracurriculars_Anchor">Extracurriculars</a></li>
+                  <li><a id="textLink" href="#contact_Anchor">Contact</a></li>
+                </ul>
+              </div>
+            </div>
+        </div>
+      </div>
+  </footer>
+  <!-- JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="main.js"></script>
+  <script type="text/javascript">
+    (function() {
+      var burger = document.querySelector('.burger');
+      var nav = document.querySelector('#'+burger.dataset.target);
+
+      burger.addEventListener('click', function() {
+        burger.classList.toggle('is-active');
+        nav.classList.toggle('is-active');
+      });
+    })();
+  </script>
 </html>
