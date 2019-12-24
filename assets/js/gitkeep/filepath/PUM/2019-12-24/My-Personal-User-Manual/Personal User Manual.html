@@ -1,0 +1,580 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Personal User Manual</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+	scroll-behavior: smooth;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	opacity: 0.5;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif; }
+.mono { font-family: Nitti, 'Microsoft YaHei', '微软雅黑', monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, Nitti, 'Microsoft YaHei', '微软雅黑', monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+</style></head><body><article id="db1aac6c-3ae5-4476-b4bf-31bb1622f7ff" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/gradients_10.jpg" style="object-position:center 40%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">👤</span></div><h1 class="page-title">Personal User Manual</h1></header><div class="page-body"><a name="top" style="text-decoration: none;"><h2 id="42ce6381-18b1-465b-8b24-18b4924617f2" class=""><strong>Dear User:</strong></h2></a><p id="ed049dd0-5b8d-4ac4-b147-8067ed34a04b" class=""><mark class="highlight-red"><a href="#inCaseOfEmergency">IN CASE OF EMERGENCY</a></mark></p><p id="06abb207-6461-4562-b621-d04784d27a0f" class="">This is a guide to me. I wrote a bunch about the way I think and my downsides and upsides. For whatever reason, it ended up being more focused around how to deal with my downsides, but that&#x27;s useful I guess. 😅</p><ul id="1ecaa122-2d1d-40a1-9499-4b580bd84c89" class="block-color-yellow_background bulleted-list"><li>Information about me as a person: <a href="#myPersonalityType">My Personality Type</a>, <a href="#myWorstPersonalityTraits">My Worst Personality Traits</a>, <a href="#myBestPersonalityTraits">My Best Personality Traits</a></li></ul><ul id="48fffadc-8fee-473a-9695-a0db864fa85b" class="block-color-teal_background bulleted-list"><li>Information on how to communicate with me: <a href="#guideToApproachingMe">Guide to Approaching Me</a> or <a href="#howToGiveMeFeedback">How to Give Me Feedback</a></li></ul><ul id="2b473ee3-54cd-4bed-9522-fcf399eb1922" class="block-color-pink_background bulleted-list"><li>Information on how to work with me: <a href="#myWorkPreferences">My Work Preferences</a> or <a href="#howIMakeDecisions">How I Make Decisions</a></li></ul><ul id="32c8b1ba-5ff0-407d-b976-09ecd4f339a5" class="block-color-orange_background bulleted-list"><li>Information on how I see others: <a href="#whatIValueInPeople">What I Value in People</a> or <a href="#howICommunicateWithOthers">How I Communicate With Others</a></li></ul><ul id="74a9d2ac-d79f-4992-8051-8c96bd131174" class="block-color-blue_background bulleted-list"><li>Things you should beware of 😱: <a href="#whatDrivesMeNuts">What Drives Me Nuts</a>, <a href="#myRandomQuirks">My Random Quirks</a>, and <a href="#whatYouMightMisunderstand">What You Might Misunderstand</a></li></ul><p id="9757c0cd-9fe2-4f28-a27e-bde866e9cbf8" class="">
+</p><a name="myPersonalityType" style="text-decoration: none;"><h2 id="2b9f61bc-5a59-4373-b782-b423faae14a6" class="block-color-yellow_background">My Personality Type: INTJ</h2></a><ul id="f384966a-6cda-4f74-8a22-fbf860eba1ba" class="toggle"><li><details><summary><em>I&#x27;m very focused on my inner world of thoughts</em></summary><p id="e68d42da-bc9f-4129-8ecf-e68ec9afea1e" class="">In technical terms, I&#x27;m an introvert who has the function stack Ni → Te → Fi → Se.
+</p><p id="ba125655-62d7-4da0-a133-d65a0757d2c4" class="">Translation: First of all, my strongest mental ability is to analyse my thoughts and ideas deeply. I&#x27;ll spend a lot of time just thinking about past events, present moments, and what the ideal future outcomes are. My second (complimentary) strength is to impose logic and efficiency on my external environment. This makes me prioritise action, greatly value productivity, and be results-driven. </p><p id="7c818f1b-1cd7-4179-8d6d-9df29602c698" class="">My first weakness that I&#x27;ll have to spend a long time working on is picking up on others&#x27; emotions in my external environment and maintaining the norms/peace in that environment. My second weakness (that I&#x27;m going to have a much harder time overcoming) is to organise/process my internal memories and remember the past as it happened.</p></details></li></ul><p id="51c57374-b6bf-4b7b-b53f-67726ef130f4" class=""><a href="#top">Scroll to Top</a> ☝️</p><p id="b8fae3fc-9b1a-4021-9c22-cc6b0c4e78b8" class="">
+</p><a name="myWorstPersonalityTraits" style="text-decoration: none;"><h2 id="be16e61e-4eea-4b91-ad35-f318635deddc" class="block-color-yellow_background"><strong>My Worst Personality Traits:</strong></h2></a><ul id="0971f241-cb5f-4b7d-9255-71dd7455edf5" class="toggle"><li><details><summary><em>I want perfect things instead of satisfactory ones</em></summary><ol id="0b15408b-e120-4cf1-96ff-257e696e5e47" class="numbered-list" start="1"><li>I have a habit of getting caught up in the little details and making things EXACTLY the way I want them. I even do better when I have <em>too little </em>time to work on something than <em>too much</em> (which would lead to endless revisions, iterations, rehearsals, and changes). If you’re working with me on something, this will definitely be a major challenge as I have relentless standards and often don’t realise when they’re hurting rather than helping.</li></ol><ol id="a9f79a55-1d69-476e-b1e6-97623d77e8fb" class="numbered-list" start="2"><li>If you’re running into this issue, please consult <a href="https://www.notion.so/tksmadhav/Personal-User-Manual-db1aac6c3ae54476b4bf31bb1622f7ff#4ba877eba821433a8f310ceac74a0cac">If I’m Micromanaging</a> or <a href="https://www.notion.so/tksmadhav/Personal-User-Manual-db1aac6c3ae54476b4bf31bb1622f7ff#7a9c3355f55744aca729a1f9d5400d0c">If I’m Stubborn</a>.</li></ol></details></li></ul><ul id="1604994b-c2ef-4aea-a799-1fa89b85e918" class="toggle"><li><details><summary><em>I get tunnel-vision on my goals</em></summary><ol id="990f06c0-8543-4ccc-9ddf-1b274322612c" class="numbered-list" start="1"><li>Also relating to the perfectionism above, I don’t know when to stop chasing an outcome. Sometimes, this makes me more determined, but it also decreases my adaptability to new situations. I can be very stubborn about my goals and beliefs, which makes it hard to show me when my ideas are wrong and make constructive change.</li></ol><ol id="add21b23-134c-4f36-bb1d-e4b22334daa6" class="numbered-list" start="2"><li>If you’re running into this issue, please consult <a href="https://www.notion.so/tksmadhav/Personal-User-Manual-db1aac6c3ae54476b4bf31bb1622f7ff#ebe20e077be64a9994699072bd8e8d99">If I’m Oblivious</a> or <a href="https://www.notion.so/tksmadhav/Personal-User-Manual-db1aac6c3ae54476b4bf31bb1622f7ff#7a9c3355f55744aca729a1f9d5400d0c">If I’m Stubborn</a>.</li></ol></details></li></ul><ul id="935a305a-ed33-4f1f-9f8e-6e5b3c44bc81" class="toggle"><li><details><summary><em>I&#x27;m scared of social situations at my core</em></summary><ol id="8c31bffc-1b3e-4e8a-8aeb-40dcc2dd0163" class="numbered-list" start="1"><li>I’m getting better and better at managing this by actively working on it, but I am BAD AT PEOPLE at my very core. I do NOT like networking, large groups, non-1-on-1 discussions, big presentations, etc. Since I am out of my comfort in any group environment, I can never never ever sustain that activity for too long 😱. If you’re in a social situation with me and I start acting weird, that’s a signal that I’ve spent too long there and I need to get out.</li></ol><ol id="9806182b-ddda-46a2-aa33-bad1fa32954e" class="numbered-list" start="2"><li>If you’re running into this issue, please consult <a href="https://www.notion.so/tksmadhav/Personal-User-Manual-db1aac6c3ae54476b4bf31bb1622f7ff#6001c864e1174391a5d40aaa356b194f">If I’m Sad</a> or <a href="https://www.notion.so/tksmadhav/Personal-User-Manual-db1aac6c3ae54476b4bf31bb1622f7ff#e3a0db0eeab941b2950278d35538ea99">If I’m Acting Distant</a>.</li></ol></details></li></ul><ul id="062d9a1b-a4ab-4a40-8d23-d80df33c4713" class="toggle"><li><details><summary><em>I can seem too frank/judgemental</em></summary><ol id="d3a17a1e-6153-4216-a0ee-618a9499c191" class="numbered-list" start="1"><li>While I AM working on this, sometimes I can come across as too direct or judgemental when it comes to others’ ideas. Especially when I’m giving feedback or advice, it might seem like I don’t care about you or empathise with your worries. I don’t do a very good job of explaining my thoughts to others either so I can seem completely indifferent to others’ confusion when they don’t look at a situation the same way I do.</li></ol><ol id="f3826927-0765-4e7b-b4ef-252e8f800e7c" class="numbered-list" start="2"><li>If you’re running into this issue, please consult If <a href="https://www.notion.so/tksmadhav/Personal-User-Manual-db1aac6c3ae54476b4bf31bb1622f7ff#ca6def1fbc90403db91f354c2e25cfb3">I Seem Like a Jerk</a>.</li></ol></details></li></ul><ul id="e10c9b66-8a37-4959-8855-827e2f346f49" class="toggle"><li><details><summary><em>My competitiveness can get out of control</em></summary><ol id="bbd5c867-0032-4a0c-8948-485b9103c310" class="numbered-list" start="1"><li>I’m very motivated by competition to do better than others around me. That’s helpful in giving me drive, but it can also make me difficult to deal with and spiral into negative emotions. I might even get jealous of someone else’s success without acknowledging all the work that went on behind it. Also, this can make me unempathetic and focused solely on the outcome (which often comes at the expense of maintaining relationships).</li></ol><ol id="e0982c25-5046-4fa3-ab9f-9a5fe2dd1873" class="numbered-list" start="2"><li>If you’re running into this issue, please consult <a href="https://www.notion.so/tksmadhav/Personal-User-Manual-db1aac6c3ae54476b4bf31bb1622f7ff#ca6def1fbc90403db91f354c2e25cfb3">I Seem Like a Jerk</a> or <a href="https://www.notion.so/tksmadhav/Personal-User-Manual-db1aac6c3ae54476b4bf31bb1622f7ff#7a9c3355f55744aca729a1f9d5400d0c">If I’m Stubborn</a>.</li></ol></details></li></ul><p id="fc01f503-2509-46ef-bc10-6261cc38007c" class=""><a href="#top">Scroll to Top</a> ☝️</p><p id="eecc680b-0621-4439-8336-36d6f778d6a1" class="">
+</p><a name="myBestPersonalityTraits" style="text-decoration: none;"><h2 id="299ed631-6f26-4fc4-977e-08b894f0bfc6" class="block-color-yellow_background"><strong>My Best Personality Traits:</strong></h2></a><ul id="9e3f07bb-83d0-4585-a175-63f00e8a4c7f" class="toggle"><li><details><summary><em>I stay determined to accomplish goals</em></summary><p id="bf840df5-035c-44a8-b202-32ef76d3c45f" class="">I’m very good at surviving harsh times. Even when life throws a wrench in my plan or I fall down, I just keep carrying on towards my objective. This is especially true for dealing with external factors that come up (I’m more inclined to accepting things out of my control and moving forward than many people I know). If you’re working with me, you’ll find this to be a helpful quality in making sure we overcome whatever issues come up.</p></details></li></ul><ul id="f978054b-b9b9-4762-adb9-d38787687804" class="toggle"><li><details><summary><em>I&#x27;m a reliable teammate and figure things out</em></summary><p id="a462be4a-4eb9-4d43-8dc4-659f9ad7bfa8" class="">I’m good at getting things done no matter what. I’m not one to let someone down (firstly because of my determination and secondly because I hate being that kind of person). I’ll keep changing strategies and keep working on a problem up to the best of my ability, which has helped me develop skills in learning more quickly and figuring things out as I go. If you’re working with me, you won’t find that I don’t bear my share of the load.</p></details></li></ul><ul id="54c8c5e9-d5e8-45ab-ba0e-49e7eabb103c" class="toggle"><li><details><summary><em>I care about others&#x27; well-being</em></summary><p id="b8fd8ca0-be50-42e7-b8aa-0d3ebdddc14e" class="">I don’t care a lot about most people to be honest, but once I start caring about you I like to consistently be helpful. No doubt there is conflict (I think it’s often because of me 😅) but I get over that eventually and go back to doing my best to be helpful. It makes me intrinsically happy to have a positive impact I guess. If you’re someone I care a lot about, you’ll know it based on how willing I am to make sacrifices to help. If you’re not… well I’m still <del>usually</del> (often?) nice!</p></details></li></ul><ul id="a692afb7-7a9c-40ba-bebf-d1a9243648ac" class="toggle"><li><details><summary><em>I have a drive to do something bigger</em></summary><p id="fb8642d3-e34c-4aaa-8935-fbea074e2920" class="">I think whenever I’m not working at my limitations, I can’t raise them any higher. I relentlessly pursue progress on current goals and growth in setting future goals higher. I literally CANNOT be happy with performing at the average level. If you’re working with me and we’re aligned on this, I’ll always be driving us forward to new heights. If we’re not aligned on this, you’ll be very tired and frustrated of how I just won’t let things be.</p></details></li></ul><ul id="203c74a7-7bd3-4668-b061-911e007536ea" class="toggle"><li><details><summary><em>I go about life with a funny spirit</em></summary><p id="46b2daf0-897c-4c23-ab00-ee632925a644" class="">I have a general demeanour of, “Oh well… at least I’m not like Alan over there!” when it comes to life’s challenges 😄. Sometimes, I’m optimistic about the wrong things at the wrong time, but in most cases I can lighten the mood by making jokes and keeping a positive spirit. While I am capable of being rational and serious, I just prefer to go about life having more fun along the way. If you’re working with me, you’ll like this (shallow) side of me most of the time, but might think I’m being awkward or saying the wrong things sometimes.</p></details></li></ul><p id="edb33310-c88f-456c-bbdd-49bfe123a7fd" class=""><a href="#top">Scroll to Top</a> ☝️</p><p id="cbac8437-2c2f-4a4d-95d2-54d7c80018e0" class="">
+</p><a name="guideToApproachingMe" style="text-decoration: none;"><h2 id="33e6259e-ad33-482b-90c0-d73221fccc40" class="block-color-teal_background"><strong>Guide to Approaching Me:</strong></h2></a><ul id="77a954dc-b11e-4087-bd81-fe24e625d77b" class="toggle"><li><details><summary>Get <em>To The Point</em></summary><ol id="d96b8046-4b89-4e36-8d98-7590cf804e12" class="numbered-list" start="1"><li>Don’t worry about pleasantries. Just cut straight to what you need and when you need it by.</li></ol><ol id="b32a15ac-1b00-46c5-8a14-eddd70a9dca4" class="numbered-list" start="2"><li>Ex. your first line goes, “I need help figuring out how to set up Tensorflow Nightly with pip install by the end of today.”</li></ol></details></li></ul><ul id="cd04ffe4-88df-4018-9fd6-d22e0a43a492" class="toggle"><li><details><summary><em>Be Specific</em></summary><ol id="97dab943-757a-41cc-8346-219016e92dd0" class="numbered-list" start="1"><li>Come to me with the exact details of what you want - not some vague description.</li></ol><ol id="982b3e72-76e5-4280-8499-5601af38912e" class="numbered-list" start="2"><li>Ex. “Can you look into Google Venture’s investments in self-driving cars for a recommendation on how to boost their return on equity?”</li></ol></details></li></ul><ul id="74d9104f-4759-48df-8937-2f35e76d3056" class="toggle"><li><details><summary><em>Give Me The Why</em></summary><ol id="fa7d2948-9cb0-4a13-ab58-06437efd3365" class="numbered-list" start="1"><li>Give me a reason to act. That might be all the other things you’ve tried that have failed (which is where I come in ;-) or what the rewards/consequences are.</li></ol><ol id="172f24b6-1298-4662-ba1e-b146f3ffb768" class="numbered-list" start="2"><li>Ex. “I’ve tried using Spyder and Jupyter on Anaconda and even Google Colab and Repl.it. I always get a Path not Found error when pip installing. Nadeem says he’ll give you 5 cookies if you help me figure this out by tomorrow. <strong>😁</strong>”</li></ol></details></li></ul><ul id="53a5ec99-4e43-474e-a542-3e61f3164e5f" class="toggle"><li><details><summary><em>Do It On Slack/Email</em></summary><ol id="48155af8-39a2-462f-9ea7-18a7977b77d8" class="numbered-list" start="1"><li>I’m pretty bad at responding to anything not in-person (I hate social media and it hates me), but your best bet is to reach out on Slack or email (<a href="mailto:madhav.malhotra003@gmail.com">madhav.malhotra003@gmail.com</a>). If I don’t have a project/event/thing, I’ll probably get back within a day.</li></ol></details></li></ul><p id="71bb3a56-ceeb-480b-8e0d-36367f47c0b0" class=""><a href="#top">Scroll to Top</a> ☝️</p><p id="55472c17-0712-4529-96f1-cd3e6f88277d" class="">
+</p><a name="howToGiveMeFeedback" style="text-decoration: none;"><h2 id="bd38ccb2-1522-488d-b8ef-53d103ea1d98" class="block-color-teal_background"><strong>How to Give Me Feedback:</strong></h2></a><ul id="c7c4f83e-8749-48e6-94c2-8f2cd763f098" class="toggle"><li><details><summary><em>Show me What Was Wrong and Why</em></summary><ol id="f0bd4cc6-42a4-406f-b7cc-17e3cedf8480" class="numbered-list" start="1"><li>Be specific on which part I need to improve on and why it doesn’t make sense the way it is.</li></ol><ol id="c33e5e2d-7e0b-4929-9ba2-e106d3c9e80b" class="numbered-list" start="2"><li>Ex. “Your article’s heading in the Plato section is awkward because it compares him to Mr. Clean and the rest of the content seems really professional… 😕”</li></ol></details></li></ul><ul id="2b5e18ea-e2fb-4a08-bdb8-9cffe53fe323" class="toggle"><li><details><summary><em>Tell me What Would be Better</em></summary><ol id="b30e8ba0-5fe0-42d4-b230-702724499780" class="numbered-list" start="1"><li>Give me a suggestion on how to fix the issue in this specific context.</li></ol><ol id="23212b5f-1ba2-47ef-9ee8-2fb6ec6eb22e" class="numbered-list" start="2"><li>Ex. “Instead, I would stick with the professional tone by writing ‘Plato Prioritised Mental Purification and Focus’”</li></ol></details></li></ul><ul id="04464e3d-edb8-4f59-a569-49987c5ba718" class="toggle"><li><details><summary><em>Tell me How to Change my Approach</em></summary><ol id="2736a3ba-7333-4108-b2b1-5ad573b6722b" class="numbered-list" start="1"><li>Let me know where my thought process went wrong in general.</li></ol><ol id="8de7a8ed-f7ed-4f62-ac68-c1a821ce264b" class="numbered-list" start="2"><li>Ex. “I realise you like having humour in your article, but you have to consider how it doesn’t fit in with your target audience in the future.”</li></ol></details></li></ul><p id="8d71e7a6-9378-45b3-ac7f-dbc625133475" class=""><a href="#top">Scroll to Top</a> ☝️</p><p id="68883bd1-ed91-4c19-a956-9b6670fe2272" class="">
+</p><a name="myWorkPreferences" style="text-decoration: none;"><h2 id="824415a4-d96d-4f3b-98af-20502548f78f" class="block-color-pink_background"><strong>My Work Preferences:</strong></h2></a><ul id="2e649550-e583-49f9-9388-abfdd859bc29" class="toggle"><li><details><summary><em>I like to do things one at a time</em></summary><p id="347e4e6c-862a-49d0-8f3f-8b909e89ea90" class="">I like doing things one after the other in a way that flows well for me. Another weird part of that is that I actually NEED to flow from one thing to the next. I always work on one thing at a time, but I can’t keep doing that all day long. If you’re working with me, you’ll notice me organising work in separate steps and allotting specific goals or timelines for each step.</p></details></li></ul><ul id="d2376a73-245e-42bb-b8aa-d2953e74e94e" class="toggle"><li><details><summary><em>I need deadlines to help me prioritise</em></summary><p id="1fa64ae5-8494-4879-87b7-ebd99405d47a" class="">I work GREAT under pressure! When something has a specific timeline, I find it easy to organise myself and stick to plans. I might not have enough time to make everything perfect, but I can effectively prioritise and keep the end goal in sight. If you&#x27;re working with me, you definitely want to make sure I have some kind of deadline so that I prioritise the work. </p></details></li></ul><ul id="e27e1ab6-46e9-4856-baf2-cba8e026e2b9" class="toggle"><li><details><summary><em>I need to know the results/consequences for motivation</em></summary><p id="7c23a92b-ab26-4e19-bdb4-d99090b3bf29" class="">If there aren&#x27;t explicit rewards for accomplishing an objective or explicit consequences for falling behind on something, I&#x27;ll usually have little motivation to get that goal done. This ties into deadlines in that I need some pressure to incentivise me to work on one thing over another. If you&#x27;re working with me, make sure we&#x27;re on the same page about the importance of getting to the outcome. </p></details></li></ul><ul id="41f160e3-2359-474d-8c76-128c0a295824" class="toggle"><li><details><summary><em>My best thinking comes during alone time</em></summary><p id="d05c90bd-2d35-45f7-a373-88ecd1923b40" class="">In most cases, I do my best work and get the most insightful ideas away from the group by myself. That&#x27;s when I have time to gather the data I need to support my decisions and consider some possible scenarios in my head. If you&#x27;re working with me, I&#x27;ll contribute the most when I have time to go think by myself and then come back to the group and share my ideas. </p></details></li></ul><p id="125c11ed-0aa5-45be-8c13-1af06eda6f79" class=""><a href="#top">Scroll to Top</a> ☝️</p><p id="952275db-77e4-41e5-a2ba-7e5ab30b60ef" class="">
+</p><a name="howIMakeDecisions" style="text-decoration: none;"><h2 id="07c7eeec-627a-4b96-8692-b67a9de09154" class="block-color-pink_background"><strong>How I Make Decisions:</strong></h2></a><ul id="e7819cc4-add2-41d9-a12f-6746942fdcc0" class="toggle"><li><details><summary><em>I plan things out rationally</em></summary><p id="cd232828-b730-4f32-a378-02f99e4a75a9" class="">This is how I develop ideas and take actions in the long-term. I prefer to consider a variety of data and especially think about a bunch of different outcomes that could come about based on different decisions. I wouldn&#x27;t do this unless I realise I have some time to make a decision (but it can be hard to recognise that all the time, so this can be a downside when it comes to thinking on my feet). Most of the time though, this is a personal strength that allows me to contribute justifiable perspectives in making decisions. </p></details></li></ul><ul id="b0812bff-2548-4f50-929b-d8eff600c988" class="toggle"><li><details><summary><em>I react to things intuitively</em></summary><p id="56426274-8738-48b1-89a8-bf7a3a7376df" class="">This is how you&#x27;ll see me thinking in most social contexts. I&#x27;m thinking on my feet and using my general intuition to generate ideas. I&#x27;m not as strong when it comes to this, as I prefer to consider different perspectives and outcomes before making a decision. That being said, when I&#x27;m put on the spot, this is what I default to. If you&#x27;re working with me, you&#x27;ll find that I can contribute better when I have a chance to think things through when possible instead of relying on my intuition. </p></details></li></ul><p id="29ec50a3-34c5-4cb2-94b7-58c26fd8a2a6" class=""><a href="#top">Scroll to Top</a> ☝️</p><p id="072f3e04-3335-4f55-af29-c42cfcc0144a" class="">
+</p><a name="whatIValueInPeople" style="text-decoration: none;"><h2 id="976ed2aa-ee3b-4076-886d-6e5e76699476" class="block-color-orange_background"><strong>What I Value in People:</strong></h2></a><ul id="06f5c298-b705-444d-a6ff-b4a662978796" class="toggle"><li><details><summary><em>I respect others&#x27; social skills</em></summary><p id="0d69525d-1c84-4c53-aefd-0b90e002d3de" class="">I&#x27;m not all that strong when it comes to being a natural at networking, quickly forming new relationships, etc. When I see someone else that has that skill, I respect that because I know it&#x27;s a challenge for myself personally. If you&#x27;re someone with these skills (whether they&#x27;re trained or whether they come naturally), know that I recognise and am trying to learn from that part of you. </p></details></li></ul><ul id="e387b6b3-7811-4da7-b491-7dffa0a9db3a" class="toggle"><li><details><summary><em>I appreciate humour in relationships</em></summary><p id="3b313850-5db3-4baf-919f-70b6e7c117ed" class="">I&#x27;ve always preferred to go through life without worrying too much and trying to keep a light view of things. I enjoy having people around me that can stay positive consistently, even in rough times. If you&#x27;re also a humorous person, we can probably interact well together in most scenarios. </p></details></li></ul><ul id="1f100913-8330-41ea-b2da-d5062a0df273" class="toggle"><li><details><summary><em>I trust those I can rely on</em></summary><p id="4af3120b-cc75-4b99-bf1d-757a0ddfcb05" class="">The people I prefer to work with are the ones I can count on time and time again to be there for me. If I&#x27;m ever working in groups, I want to know that my teammates will do their best to climb towards that end goal on their side as well. If we haven&#x27;t worked together much, I&#x27;m likely going to be trying to figure out if I trust you based on how reliable you are. </p></details></li></ul><ul id="811dce1b-3c39-4542-aeae-187bf0880cf7" class="toggle"><li><details><summary><em>I&#x27;m very close to those I trust</em></summary><p id="3eb4e7d5-fafc-4858-a617-30efdf2966f5" class="">I don&#x27;t trust many people and I&#x27;m not close to many people because of that. The select few that I do trust are people who I feel comfortable sharing personal thoughts with, those that I know will support me through the good times and the bad, and those that I feel good being around and that I know feel good being around me. Even if I don&#x27;t trust you though (and I don&#x27;t trust most people), that just means that you&#x27;re not the one I come to for personal advice or as the first responders in times of trouble. (ie. It&#x27;s okay - we can still be friends and you just have less complaining to deal with 😉) </p></details></li></ul><p id="9c01dce7-e9d0-43d4-9a90-6ca73c60ea1b" class=""><a href="#top">Scroll to Top</a> ☝️</p><p id="0a4db779-e31b-48a8-a8ea-fd8b15b830b1" class="">
+</p><a name="howICommunicateWithOthers" style="text-decoration: none;"><h2 id="d7661add-6c1c-4df8-a0b9-38f66bc43891" class="block-color-orange_background"><strong>How I Communicate With Others:</strong></h2></a><ul id="c03709bc-28c6-4154-9486-d576ab564b45" class="toggle"><li><details><summary><em>I can too blunt in work conversations</em></summary><p id="cb184c15-ed3a-4945-9ee6-c53c0c4737f2" class="">Often with technical work, I have a habit of getting right to the point in what I want to say. Sometimes, this helps keep things moving and concise. Other times, I might say something critical without much emotion/empathy, so I can come across as rude. If you&#x27;re talking to me about work-related things and I&#x27;m being blunt, know that I don&#x27;t mean to attack anyone (I&#x27;m too focused on putting the details together and not concentrating on effective communications). </p></details></li></ul><ul id="b2c42a96-09b4-41f4-b724-577799e0fab4" class="toggle"><li><details><summary><em>I default to being funny when socialising</em></summary><p id="d625ea5a-7ea3-4f90-bf27-9e4f8caca44f" class="">When I&#x27;m intentionally socialising, then I&#x27;ll often be joking around and be energetic (to varying levels) with almost everyone. When I&#x27;m doing this, I&#x27;m not thinking about work related details, so you&#x27;ll need to be aware of that if you need me to get something done. Sometimes, I can be too over the top with this, so the best thing would be to give me a cue that it&#x27;s time to settle down or I&#x27;m saying something unsuitable without realising it. </p></details></li></ul><ul id="eaa062bb-ca92-4b08-875d-575bff02b930" class="toggle"><li><details><summary><em>I&#x27;m sometimes intentionally indirect</em></summary><p id="66036028-7dc7-4309-9a65-2eabc7f6bd09" class="">Opposite to my blunt communication style, I can also be very cognisant of how I&#x27;m making others feel - although this doesn&#x27;t come about naturally and I have to intentionally be doing this. You&#x27;ll find me doing this more so when I&#x27;m trying to give suggestions or advice in a non-critical manner (also when I ask for favours 😁). It&#x27;s likely hard to understand exactly what I might be saying when I&#x27;m doing this, so just ask me to clarify things when I seem like I&#x27;m not getting to the point. </p></details></li></ul><ul id="66bf130c-4fce-4ff6-a04a-dc61892de2a8" class="toggle"><li><details><summary><em>If I get stuck, I can be impatient</em></summary><p id="88ef74bb-9aef-495e-af47-bb8db110ee7d" class="">This is more so when we&#x27;re close or already have a work relationship established. I can be impatient when people don&#x27;t understand the things that make sense in my head. This isn&#x27;t all that bad in most cases, except when I&#x27;m trying to teach people things. It can be hard for me to teach people with different styles of thinking than myself, which doesn&#x27;t help me or the person trying to learn. If I come across like this, the best thing would be to take a break with whatever we&#x27;re doing and continue later. </p></details></li></ul><p id="5c9b2a90-7902-461c-a406-eef0ccbbf183" class=""><a href="#top">Scroll to Top</a> ☝️</p><p id="948950c9-fa8e-4f19-9933-57eea86fba9e" class="">
+</p><a name="whatDrivesMeNuts" style="text-decoration: none;"><h2 id="7a4aba2f-6f7d-464f-a097-2d52c596b47a" class="block-color-blue_background"><strong>What Drives Me Nuts:</strong></h2></a><ul id="cbb94d97-ffcb-4592-9276-ec12e4d11661" class="toggle"><li><details><summary><em>I don&#x27;t empathise much with flakeyness</em></summary><p id="7f54e779-9d81-42bc-9e92-691dba1dcaa9" class="">I really don&#x27;t like it when people don&#x27;t meet goals and deadlines (myself included). I try to be empathetic and hear out people because they have their own circumstances, but my default mode is to be frustrated. If you&#x27;re working with me, I think both of us should communicate ahead of time if we can&#x27;t meet a certain requirement. </p></details></li></ul><ul id="b4a458a8-70b7-4f85-b498-bfb9e5ad606c" class="toggle"><li><details><summary><em>Procrastination is a deadly evil</em></summary><p id="6015d4d9-1788-4a02-b92c-a6ced92fad47" class="">This is more so something I judge myself for. Whenever I get in a cycle of procrastination (usually not being productive for one specific day), I feel frustrated at having wasted that time. Even if I&#x27;m constantly improving my work habits, my goals for what constitutes as productive get higher and higher as well, so this is a constant thing to avoid for me. If you&#x27;re working with me, I usually don&#x27;t judge others when they procrastinate, but I may get irritated if you cause me to waste time. </p></details></li></ul><ul id="4a26b540-daa7-4123-8841-11216ece411e" class="toggle"><li><details><summary><em>Explaining myself isn&#x27;t a strong point</em></summary><p id="8d56dd10-d3a6-486d-8240-4b26dc4f003b" class="">As I mentioned, I can get impatient when trying to explain something, but the other person not understanding (or even worse... <em>constantly </em>interrupting 😬) Don&#x27;t get me wrong - I&#x27;m not a strict, emotionless person who expects others to understand everything I say. But I do have a weakness of getting annoyed at having to repeat the same ideas without any indication of progress. If you don&#x27;t understand something I&#x27;m saying, it might be best to leave it and come back to it later. </p></details></li></ul><ul id="04f721f5-612d-4b13-895a-a51a41c6c5aa" class="toggle"><li><details><summary><em>Being stuck and not knowing why</em></summary><p id="83bc659a-d332-46ee-bc99-8b56bd8240e3" class="">I&#x27;m good at persevering through challenges, but I also do have a limit. (Not that often) I will hit a barrier where I have no clear idea of what the problem is or why it&#x27;s occurring and how I could get around it. In these cases, I would only make myself (and possibly others) more frustrated by continuing to work on it. If you notice me just getting more and more frustrated and not making much progress on an issue (again, not that common), I would really appreciate a nudge to move on to another issue for the time being. </p></details></li></ul><ul id="28354c11-28fd-4d42-80d0-e65500a5b7d7" class="toggle"><li><details><summary><em>Authority without reasoning is frustrating</em></summary><p id="e6e87d22-b701-4263-a7a2-3df53a105ad4" class="">Just like I don&#x27;t like not knowing why a problem exists, I don&#x27;t like not knowing why I&#x27;m being told to do something. When people exert authority over me, I find it hard to find the motivation to do something that I don&#x27;t understand (or agree with). I realise it can slow things down, but I would appreciate you explaining your reasoning or motive if you need me to do something and we&#x27;re in disagreement. </p></details></li></ul><p id="61b9f5e5-466d-408b-a668-c3a6f37f7273" class=""><a href="#top">Scroll to Top</a> ☝️</p><p id="10d590d1-bbd4-49e4-ad1b-c84827fbff9e" class="">
+</p><a name="myRandomQuirks" style="text-decoration: none;"><h2 id="63f1ac97-03f3-4e30-8f7a-598c221622ea" class="block-color-blue_background"><strong>My Random Quirks:</strong></h2></a><ul id="b86bbc7b-6469-4bc3-bfcd-ae7414fa3a07" class="toggle"><li><details><summary><em>I can get strangely childish</em></summary><p id="6d065868-84ce-4c95-8998-13bdc0eefb5f" class="">I guess this relates to the humour thing. I don’t like to act like a grown up and be serious because I think it’s more fun to be zany 😜. I’m very down-to-earth when I’m working, but I’m creative and random when I’m having fun! You probably won’t see this side of me unless we’re close.</p></details></li></ul><ul id="e719b197-e488-41f9-a36f-5ff29f45c085" class="toggle"><li><details><summary><em>I need to maintain organisation</em></summary><p id="5dabb25f-4fc4-4752-b9ab-7b3fb9f6c6b3" class="">I have a habit of doing things in a way that make sense to me and I need them to be that way. If something isn’t a priority (ex. an organised desk) then it won’t do much good to keep reminding me about it. If something is a priority (ex. NOT A BILLION TABS OPEN) then I will fix it no matter who’s in the way 😈.</p></details></li></ul><ul id="fe8759aa-55f3-4e5a-b3c4-2e80d22ae658" class="toggle"><li><details><summary><em>I value spontaneity from time to time</em></summary><p id="a82c2290-f066-47a4-ae79-df1d75e4f145" class="">My work is usually pre-planned all the time, but my play is completely do whatever seems fun in the moment. Sometimes, that carries over to work in the way I set new goals (just do it instead of thinking lots about it). Ex. I just randomly ask people to solve riddles, you’ll find me speaking in French for no reason, or I might start writing with my non-dominant hand with some weird rationale behind it.</p></details></li></ul><ul id="0f59ef41-065d-4e85-8d81-6b34d9b5935c" class="toggle"><li><details><summary><em>I can be picky about small things</em></summary><p id="2cb658b5-f7d9-4cbe-9d1d-1f0bd91755dd" class="">I’m working on getting over this, but I can be very specific about things I will and will not do. If you find me repeatedly doing something or refusing to do something, it’s likely not something that will change in the short-term. (Although I can push myself to do things I’m uncomfortable with - they just aren’t the norm/natural) Ex. eating cooked onions, having my tabs in a specific order, my stretching routine.</p></details></li></ul><p id="11f19dee-d34d-4297-8f17-9c0b2a028770" class=""><a href="#top">Scroll to Top</a> ☝️</p><p id="0405e6b3-28f2-4d79-99a8-99487908c982" class="">
+</p><a name="whatYouMightMisunderstand" style="text-decoration: none;"><h2 id="b920e969-f45c-4551-a687-d7bd13b3c628" class="block-color-blue_background"><strong>What You Might Misunderstand:</strong></h2></a><ul id="2a9667f1-2a90-4e32-9c22-2633bb24379a" class="toggle"><li><details><summary><em>I don&#x27;t always realise when I seem rude</em></summary><p id="f5abb2f4-73c7-49bb-a40a-56f92777c533" class="">Sometimes, I can be too direct and it seems like I&#x27;m trying to insult you or be inconsiderate. That being said, 99.99999% of the time I&#x27;m not. Often, it&#x27;s just that I don&#x27;t realise how what I&#x27;m saying comes across to the other person and I might just be thinking about something else at that moment. If I come across this way in a situation, please refer to <a href="https://www.notion.so/tksmadhav/Personal-User-Manual-db1aac6c3ae54476b4bf31bb1622f7ff#ca6def1fbc90403db91f354c2e25cfb3">If I Seem Like a Jerk</a>.</p></details></li></ul><ul id="3b118b94-639f-4d0c-86fe-758807066a3a" class="toggle"><li><details><summary><em>I&#x27;m not trying to disrupt work</em></summary><p id="4a24c15b-f01a-4588-8c4a-165cb15cefd7" class="">Mainly when I&#x27;m in socialising mode, it can be frustrating when I&#x27;m off task or doing random/silly things. In these situations, I don&#x27;t want to disrupt other people&#x27;s plans or get in the way, but I do need a cue to tell me that I&#x27;m doing the wrong thing at the wrong time. If you&#x27;re working with me and need to handle that situation, please refer to <a href="https://www.notion.so/tksmadhav/Personal-User-Manual-db1aac6c3ae54476b4bf31bb1622f7ff#ebe20e077be64a9994699072bd8e8d99">If I&#x27;m Oblivious</a>.</p></details></li></ul><ul id="1923ff98-b305-4efc-afa3-2002b2f7df02" class="toggle"><li><details><summary><em>Social situations don&#x27;t work well forever</em></summary><p id="f2d9d162-dec3-466c-8792-ebaded352de2" class="">I do have a part of me that seems friendly and outgoing - especially when I&#x27;m trying to be humorous. That being said, this isn&#x27;t something that&#x27;s natural for me and I can&#x27;t keep doing it forever. You&#x27;ll start to notice that I start to make worse and worse decisions if I&#x27;m too tired of being around others. If you&#x27;re with me in groups like these, please refer to <a href="https://www.notion.so/tksmadhav/Personal-User-Manual-db1aac6c3ae54476b4bf31bb1622f7ff#661c51d893fd4173a38a7da9c7daafcc">If I&#x27;m Tired</a>.</p></details></li></ul><ul id="f22d5c97-cb5e-4035-82f0-dbd7116fd92b" class="toggle"><li><details><summary><em>I&#x27;m not ‘smart’ like you think</em></summary><p id="3220de3a-3d9a-446e-ae16-c662a90a42c8" class="">People often call me smart, especially when they don&#x27;t know me very well. I don&#x27;t like that. :-( When someone doesn&#x27;t know me very well, they don&#x27;t realise all the effort I have to put in to get any results. I know people who have natural aptitudes towards certain things, but that&#x27;s often not me. I have to work harder than those people to get the same results, but I&#x27;m willing to do it. When someone labels me as smart it just creates more pressure to live up to a certain standard which isn&#x27;t helpful. If you find yourself in that position, please consult <a href="https://www.notion.so/tksmadhav/Personal-User-Manual-db1aac6c3ae54476b4bf31bb1622f7ff#e3a0db0eeab941b2950278d35538ea99">If I&#x27;m Acting Distant</a></p></details></li></ul><p id="6839a85f-6443-4e5b-924a-0e191d3d8590" class=""><a href="#top">Scroll to Top</a> ☝️</p><p id="ceeac877-4397-47ba-9a32-5ee867847c7e" class="">
+</p><a name="inCaseOfEmergency" style="text-decoration: none;"><h2 id="55afb176-d578-40d7-81b3-5b0733ee6fd4" class="block-color-red"><strong>IN CASE OF EMERGENCY:</strong></h2></a><ul id="82c95cec-5d77-4d02-82dc-ca42f805eeef" class="toggle"><li><details><summary><em>If I’m Angry</em></summary><p id="330b2712-ce0c-4719-ae7b-9181ff9055bb" class="">This doesn&#x27;t happen around people I&#x27;m not close to, so you likely won&#x27;t run into this issue. If you do, however, things can get ugly. I&#x27;m not the best at controlling my temper in the moment (it&#x27;s a skill I actively have to work towards). So if we end up in a conflict where things just keep getting heated and I&#x27;m not understanding what you&#x27;re trying to convey, the best thing is to let me go take a break for at least half an hour. It helps avoid me doing things I regret and makes it more likely that I think about your point rationally. </p></details></li></ul><ul id="7f1e1607-326a-4d4d-8b4e-fd8f0cbc1483" class="toggle"><li><details><summary><em>If I’m Sad</em></summary><p id="6001c864-e117-4391-a5d4-0aaa356b194f" class="">This happens from time to time, but I always get over it eventually. In the moment, I might be feeling lonely, have conflict with people I&#x27;m close to, not have made progress on some work, or not be grateful/excited about life. Since I&#x27;ve never been that outward with my emotions, most people don&#x27;t notice this and I&#x27;m back to normal in a little while. If you&#x27;re close to me and you notice me being quiet and detached in a social context, it&#x27;s okay to ask me if I&#x27;m doing well. I may or may not respond honestly, so don&#x27;t worry about it if I don&#x27;t. I&#x27;ll just need some time to cheer up again :-)</p></details></li></ul><ul id="be184d39-c3ed-4945-96d9-ceb9f26618e8" class="toggle"><li><details><summary><em>If I&#x27;m Tired</em></summary><p id="661c51d8-93fd-4173-a38a-7da9c7daafcc" class="">When I&#x27;m tired, people can SEE I&#x27;m tired. I&#x27;ll be slouching, I won&#x27;t speak much, my face will reflect my lack of energy, etc. Most of the time, this comes about because I&#x27;ve spent too much energy on one objective and I need to recuperate. Often, this is when I spend too much time working on something. Rarely, this is when I&#x27;ve spent too much time socialising. In either case, I probably just need some sleep. If you&#x27;re worried about me, you could suggest that I get some rest, but I&#x27;m not really that great at listening so... 😁(just give it a day or two)</p></details></li></ul><ul id="74038dff-8fad-4d40-8e32-cf80b4b197b2" class="toggle"><li><details><summary><em>If I’m Oblivious</em></summary><p id="ebe20e07-7be6-4a99-9469-9072bd8e8d99" class="">This is a broad category. In all cases, I&#x27;m not getting it when you&#x27;re trying to get to the deeper meaning, trying to hint at something, trying to get on task, trying to switch the topic, or are upset by something I say. The common problem for me in all these situations is that I have weaknesses in picking up on social cues and understanding subtle emotions. I&#x27;m not trying to be in the way or be slow, but I need a cue as to what I need to do. The best thing would be to give me an <em>explicit </em>instruction as to what you&#x27;d like me to do or how you&#x27;d like me to do it instead. </p></details></li></ul><ul id="74455cde-acb6-4acd-8d1f-c2ba8bceea61" class="toggle"><li><details><summary><em>If I Seem Like a Jerk</em></summary><p id="ca6def1f-bc90-403d-b91f-354c2e25cfb3" class="">In most situations, I don&#x27;t mean it. I&#x27;m trying to convey a point, but I&#x27;m not doing it in a friendly manner. Likely, this is because I&#x27;m focusing on the content of what I&#x27;m saying but not how I&#x27;m saying it. If you&#x27;re in this situation, know that I&#x27;m not trying to be hurtful. Just stop me in what I&#x27;m saying/doing and tell me that I&#x27;m going too far in the particular context. I&#x27;ll likely have been oblivious to that beforehand, so I would greatly appreciate you making me realise that. </p></details></li></ul><ul id="8de619c8-98f2-4e28-862f-42fa467c3420" class="toggle"><li><details><summary><em>If I’m Too Close for Comfort</em></summary><p id="46fa8dee-51cf-4a46-8199-f444d001071a" class="">With my personality, when I really care about someone, I have a habit of going overboard with it. I want to help people with the tiniest things, give them advice all the time, or spend time doing random/childish things. I&#x27;m starting to understand how this can make people feel like they&#x27;re being smothered, being seen as incapable of doing things themselves, or overloaded with spending time together (especially if you&#x27;re an extravert and need time to go out there in the real world). I never mean anything negative in these situations, so please just let me know I&#x27;m making you uncomfortable or that you need space (I&#x27;ll always respect that choice). </p></details></li></ul><ul id="590aeeff-9ec6-41a7-846c-c1923cf06e63" class="toggle"><li><details><summary><em>If I’m Acting Distant</em></summary><p id="e3a0db0e-eab9-41b2-9502-78d35538ea99" class="">First thing - there&#x27;s nothing wrong with you. I&#x27;m the one that&#x27;s having changing emotions. If you find me like this the first time you approach me, it was likely that I didn&#x27;t value that particular interaction as much as I could have. It might just have been that I was dealing with some other things at that time, so feel free to reach out to me again. If it&#x27;s something more repeated, then don&#x27;t take it to heart. Perhaps, we just have different ways of approaching how we socialise and different priorities/values. The last more serious case is if we used to be closer and now I&#x27;m acting distant. In this case, I&#x27;m likely making some very intentional changes in my life (and I don&#x27;t know if they&#x27;ll work or won&#x27;t work). The best thing to do would be to give it some time and see if you like the new me (or if I go back to the old me ;-)</p></details></li></ul><ul id="784d8199-ca70-4d3b-9630-5e545ebf621a" class="toggle"><li><details><summary><em>If I’m Micromanaging</em></summary><p id="4ba877eb-a821-433a-8f31-0ceac74a0cac" class="">I can be very insistent in getting things done exactly how I want them. This sometimes backfires (the outcome ends up worse) and often makes group work more challenging. If we&#x27;re working together and you disagree with the way I want to do things, don&#x27;t be afraid to let me know. I&#x27;ll likely defend my point, so make sure you defend yours as well (I won&#x27;t be offended - debate is natural for me 😉). And in the end, if we just can&#x27;t come to a consensus, just tell me something like, &quot;While your approach might work well for you, I think I can make more effective progress if I do things my way.&quot; And if you&#x27;re trying to give me a suggestion for my own work, it would be great if you had an example of where your suggestion was implemented and actually worked out. </p></details></li></ul><ul id="134f16be-9101-4bbf-a642-465d8cb01ca5" class="toggle"><li><details><summary><em>If I’m Stubborn</em></summary><p id="7a9c3355-f557-44ac-a729-a1f9d5400d0c" class="">This applies to a LARGE variety of situations. While I&#x27;m good at viewing things from different perspectives, it&#x27;s hard to persuade me to another point once I&#x27;ve made a decision and haven&#x27;t collected results to reflect on yet. Most of the time though, I appreciate other people providing their perspective on decisions (even if it isn&#x27;t all that fun most of the time). If I come across as stubborn in a group setting, definitely keep raising ideas - if not at that moment, then bring it up again later. That being said, if I&#x27;m angry/frustrated AND being stubborn at the same time, it definitely won&#x27;t be productive to keep trying to get me to change my mind - I can&#x27;t think rationally in those moments, so it would be best to talk about the matter later. </p></details></li></ul><p id="8958cf83-82c4-4971-91d7-ead4a37adbee" class=""><a href="#top">Scroll to Top</a> ☝️</p></div></article></body></html>
