@@ -276,7 +276,7 @@ a{
  .main-menu ul.navbar-nav li a {
      color: #fff;
      font-weight: 300;
-     font-size: 16px;
+     font-size: 12px;
      padding: 30px 13px;
      -webkit-transition: all 0.4s ease-in-out;
      transition: all 0.4s ease-in-out;
@@ -287,6 +287,7 @@ a{
  }
  .custom-navbar.top-nav-collapse .logo a {
      margin-top: 15px;
+     color: #DB3F58;
  }
  .custom-navbar.top-nav-collapse .main-menu ul.navbar-nav li a {
      color: #444;
