@@ -835,8 +835,8 @@ ul.work-list li.active{
      font-size: 16px;
      text-transform: uppercase;
  }
- .t-content {
-     margin-top: 25px;
+ div.t-content p {
+     margin-top: 40px;
  }
  .t-author {
      padding-left: 85px;
