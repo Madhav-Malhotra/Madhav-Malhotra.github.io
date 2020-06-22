@@ -1254,6 +1254,15 @@ h3.comment-form-title{
     transition: 0.4s;
 }
 
+.blog-heading {
+    margin-top: 2em;
+}
+
+.blog-img {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
 
  /*================================================
         13. FOOTER SECTION
