@@ -122,7 +122,7 @@ NOTE: This is responsive stylesheet of the template, This file contains the styl
         transition: all 0.4s ease-in-out;
     }
     .custom-navbar .navbar-toggle .icon-bar {
-        background: #333 none repeat scroll 0 0
+        background: #DB3F58 none repeat scroll 0 0
     }
     .custom-navbar.top-nav-collapse .navbar-header {
         margin-top: 0px;

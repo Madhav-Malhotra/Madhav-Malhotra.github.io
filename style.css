@@ -81,7 +81,8 @@ a{
  input:-webkit-autofill,
  input:-webkit-autofill:hover,
  input:-webkit-autofill:focus {
-     -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+    box-shadow: 0 0 0px 1000px white inset !important;
+    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
  }
 
  /*================================================
@@ -305,7 +306,6 @@ a{
  }
  .custom-navbar.top-nav-collapse .main-menu ul.navbar-nav li.active a:after {
      opacity: 1;
-     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
  }
  /*================================================
         4 WELCOME AREA
@@ -332,7 +332,6 @@ a{
      height: 100%;
      background: #000;
      opacity: .6;
-     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
      z-index: -1;
  }
  .welcome-table {
@@ -451,9 +450,6 @@ h4.about-heading {
     line-height: 26px;
      text-transform: uppercase;
  }
-.tab-content p {
-
-}
 .social-links {
 	padding: 0;
 	margin: 30px 0 0;
@@ -534,9 +530,6 @@ h4.about-heading {
      -webkit-transition: 0.4s;
      transition: 0.4s;
  }
-.single-service:hover{
-
-}
  .service-img {
      height: 65px;
      width: 60px;
@@ -585,14 +578,10 @@ h4.about-heading {
  .single-service:hover .service-overlay {
 	top: 0;
 }
- .single-service:hover {}
 
  /*================================================
         7 WORK AREA
 ==================================================*/
-.work-area{
-
-}
  .work-inner .mix {
      display: none;
  }
@@ -610,9 +599,7 @@ h4.about-heading {
      -webkit-transition: 0.4s;
      transition: 0.4s;
  }
-ul.work-list li.active{
 
-}
  .single-work {
      position: relative;
      overflow: hidden;
@@ -639,7 +626,6 @@ ul.work-list li.active{
      transition: 0.4s;
      z-index: 1;
      opacity: 0;
-     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
      -webkit-transition: 0.6s;
      transition: 0.6s;
  }
@@ -652,7 +638,6 @@ ul.work-list li.active{
      left: 0;
      background: #000;
      opacity: 0;
-     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
      visibility: hidden;
      z-index: -1;
      -webkit-transition: 0.4s;
@@ -660,12 +645,10 @@ ul.work-list li.active{
  }
  .single-work:hover .item-hover:before {
      opacity: 0.7;
-     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
      visibility: visible;
  }
  .single-work:hover .item-hover {
      opacity: 1;
-     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
  }
  .work-table {
      display: table;
@@ -677,7 +660,7 @@ ul.work-list li.active{
      display: table-cell;
      vertical-align: middle;
  }
- .single-work:hover .hover-content {} .hover-content h4,
+ .hover-content h4,
  .hover-content p {
      color: #fff;
      margin: 0;
@@ -809,7 +792,7 @@ ul.work-list li.active{
 ==================================================*/
 
 
- .testimonial-area {} .single-testimonial {
+ .single-testimonial {
      position: relative;
      background-color: #fff;
      padding: 15px 20px;
@@ -895,9 +878,6 @@ a.button {
  /*================================================
         11 CONTACT INFO AREA
 ==================================================*/
- .contact-form,
- .author-adress {
- }
  .contact-form .form-group {
      margin-bottom: 15px;
      position: relative;
@@ -945,7 +925,6 @@ a.button {
      box-shadow: none;
      cursor: not-allowed;
      opacity: 1;
-     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
  }
  .btn.btn-effect.disabled {
      cursor: not-allowed;
@@ -1030,9 +1009,6 @@ a.button {
 .widget {
   padding: 20px;
     background-color: #fff;
-}
-.widget.search{
-
 }
 .search-form {
     background-color: #f7f7f7;
@@ -1277,3 +1253,14 @@ h3.comment-form-title{
      color: #fff;
      margin: 0px;
  }
+
+ /* =============================================
+    14. Blog
+    ============================================= */
+
+hr.blog {
+    color: #ccc; 
+    margin-top: 3em; 
+    margin-bottom: 3em; 
+    border: 1px dashed #ccc;
+}
