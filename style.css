@@ -1255,7 +1255,7 @@ h3.comment-form-title{
  }
 
  /* =============================================
-    14. Blog
+    14. Blog and Full Portfolio
     ============================================= */
 
 hr.blog {
@@ -1263,4 +1263,32 @@ hr.blog {
     margin-top: 3em; 
     margin-bottom: 3em; 
     border: 1px dashed #ccc;
+}
+
+#collapsible-heading {
+    width: 100%;
+    background-color: #DB3F58;
+    color: white;
+    opacity:1;
+    transition: 300ms;
+    text-decoration: none;
+    outline-width: 0;
+
+}
+
+#collapsible-heading:hover {
+    opacity: 0.9;
+    text-decoration: none;
+    outline-width: 0;
+}
+
+#collapsible-heading h2{
+    color: white;
+    text-align: left;
+}
+
+#collapsible-heading .section-title {
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 10px 0;
 }
