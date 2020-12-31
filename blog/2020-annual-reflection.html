@@ -596,12 +596,12 @@
         </div>
       </div>
     </div>
-    <audio id="music" autoplay loop>
+    <audio id="music" loop>
       <source src="../assets/img/blog/2020-yearly/KomikuBleuEdited.mp3" type="audio/mpeg">
       Your browser does not support the audio element.
     </audio>
     <div class="audio-player">
-      <button class="btn" id="music-button" onclick="musicButton()">Music On</button>
+      <button class="btn" id="music-button" onclick="musicButton()">Music Off</button>
     </div>
   </div>
 
@@ -610,6 +610,7 @@
   <script>
     /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
     particlesJS.load('particles-js', '../assets/js/particles.js/particlesjs-config.json');
+    //document.getElementById('music').play();
 
     function musicButton() {
       var music = document.getElementById('music');
