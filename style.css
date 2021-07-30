@@ -581,7 +581,7 @@ NOTE: This is main stylesheet of the template.
 ==================================================*/
  
  .services-area {
-     background-color: #f7f7f7;
+     background-color: #fff;
  }
  
  .single-service {
@@ -656,7 +656,10 @@ NOTE: This is main stylesheet of the template.
  /*================================================
         7 WORK AREA
 ==================================================*/
- 
+.work-area {
+    background-color: #f7f7f7;
+}
+
  .work-inner .mix {
      display: none;
  }
@@ -896,9 +899,15 @@ NOTE: This is main stylesheet of the template.
  
  .single-testimonial {
      position: relative;
-     background-color: #fff;
      padding: 15px 20px;
+     background-color: #fff;
      border: 1px solid #ddd;
+     transition: 0.5s;
+     border-radius: 5px;
+ }
+
+ .single-testimonial:hover {
+    border-color: #000;
  }
  
  .t-image {
@@ -947,14 +956,11 @@ NOTE: This is main stylesheet of the template.
      background-color: transparent;
      border: 1px solid #444;
  }
- 
- .t-image {
-     filter: brightness(1);
- }
- 
- .t-image:hover {
-     filter: brightness(0.8);
-     transition: 0.5s;
+
+  .testimonial-wrapper-link {
+     border: 0;
+     background-color: rgba(0,0,0,0);
+     text-align: left;
  }
  /*================================================
         10 CTA AREA
@@ -1477,4 +1483,9 @@ NOTE: This is main stylesheet of the template.
 
  tiny, small {
      font-size: 1.3rem;
+ }
+
+ .vcentre-column {
+     display: flex;
+     align-items:center;
  }
