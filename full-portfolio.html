@@ -1365,13 +1365,18 @@
 
                     <br>
 
-                    <p>&copy;2020 <strong>Madhav Malhotra</strong></p>
+                    <p id="copyright">&copy;2020 <strong>Madhav Malhotra</strong></p>
                 </div>
             </div>
         </div>
     </footer>
     <!--====== END FOOTER AREA ======-->
 
+    <script>
+        var copy = document.getElementById('copyright')
+        var year = new Date().getFullYear()
+        copy.innerHTML = "&copy;" + year + " <strong>Madhav Malhotra</strong>"
+    </script>
 
     <!--== plugins js ==-->
     <script src="assets/js/plugins.js"></script>

@@ -20,7 +20,7 @@
         content="mhbthemes, resume, cv, portfolio, personal, developer, designer,personal resume, onepage, clean, modern">
     <meta name="author" content="Madhav Malhotra">
 
-    <title>Madhav Malhotra - Blog</title>
+    <title>Blog Page 1</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="assets/img/favicon.png" type="image/png">
@@ -126,6 +126,43 @@
             <div class="row">
                 <div class="col-md-8">
 
+                    <!-- The Train Window -->
+                    <div class="single-post wow fadeInUp" data-wow-delay="0.4s">
+                        <!-- single post -->
+                        <div class="post-featured-content">
+                            <img src="/assets/img/blog/trainWindow/trainWindow.jpg" class="img-responsive" alt="">
+                        </div>
+                        <h2>Looking Out the Train Window</h2>
+                        <div class="post-meta">
+                            <span><i class="fa fa-calendar"></i> 18 August 2021</span>
+                            <span><i class="fa fa-folder-open"></i> Lessons</span>
+                            <span><i class="fa fa-clock-o"></i> Reading time: 2 minutes</span>
+                        </div>
+                        <div class="entry-content">
+                            <p>This meditation helps me cope with negative thoughts.</p>
+                            <a href="blog/train-window.html" class="read-more-btn">read more</a>
+                        </div>
+                    </div>
+
+                    <!-- Alien Meditation -->
+                    <div class="single-post wow fadeInUp" data-wow-delay="0.4s">
+                        <!-- single post -->
+                        <div class="post-featured-content">
+                            <img src="https://cdn-images-1.medium.com/max/1200/1*wBuvH_OKxiordPigaP6n8A.jpeg"
+                                class="img-responsive" alt="">
+                        </div>
+                        <h2>The Alien Meditation</h2>
+                        <div class="post-meta">
+                            <span><i class="fa fa-calendar"></i> 06 August 2021</span>
+                            <span><i class="fa fa-folder-open"></i> Lessons</span>
+                            <span><i class="fa fa-clock-o"></i> Reading time: 3 minutes</span>
+                        </div>
+                        <div class="entry-content">
+                            <p>I created this meditation to take a third-person perspective on tough problems.</p>
+                            <a href="blog/alien-meditation.html" class="read-more-btn">read more</a>
+                        </div>
+                    </div>
+
                     <!-- Playing with Plots -->
                     <div class="single-post wow fadeInUp" data-wow-delay="0.4s">
                         <!-- single post -->
@@ -182,43 +219,6 @@
                         </div>
                     </div>
 
-                    <!-- Depression -->
-                    <div class="single-post wow fadeInUp" data-wow-delay="0.4s">
-                        <!-- single post -->
-                        <div class="post-featured-content">
-                            <img src="./assets/img/blog/depression/depression.jpg" class="img-responsive" alt="">
-                        </div>
-                        <h2>Things that Help When I'm Depressed</h2>
-                        <div class="post-meta">
-                            <span><i class="fa fa-calendar"></i> 13 March, 2021</span>
-                            <span><i class="fa fa-folder-open"></i> Reflections</span>
-                            <span><i class="fa fa-clock-o"></i> Reading time: 1 minute</span>
-                        </div>
-                        <div class="entry-content">
-                            <p>Nothing fancy. Just a simple list.</p>
-                            <a href="blog/depression-tips.html" class="read-more-btn">read more</a>
-                        </div>
-                    </div>
-
-                    <!-- 2020 Yearly -->
-                    <div class="single-post wow fadeInUp" data-wow-delay="0.4s">
-                        <!-- single post -->
-                        <div class="post-featured-content">
-                            <img src="assets/img/blog/2020-yearly/reflection.jpg" class="img-responsive" alt="">
-                        </div>
-                        <h2>Growing Forward from 2020</h2>
-                        <div class="post-meta">
-                            <span><i class="fa fa-calendar"></i> 31 December, 2020</span>
-                            <span><i class="fa fa-folder-open"></i> Lesson</span>
-                            <span><i class="fa fa-clock-o"></i> Reading time: 50 minutes</span>
-                        </div>
-                        <div class="entry-content">
-                            <p>2020 was hard, but I learned a lot of insightful lessons that I don't want to forget.
-                                That's why I wrote this reflection.</p>
-                            <a href="blog/2020-annual-reflection.html" class="read-more-btn">read more</a>
-                        </div>
-                    </div>
-
                     <!--
                         <div class="single-post wow fadeInUp" data-wow-delay="0.6s"> <!- single post ->
                             <div class="post-featured-content">
@@ -244,6 +244,7 @@
                             <li><a href="blog-page-2.html">2</a></li>
                             <li><a href="blog-page-3.html">3</a></li>
                             <li><a href="blog-page-4.html">4</a></li>
+                            <li><a href="blog-page-5.html">5</a></li>
                             <!--
                                <li><a href="#">3</a></li>
                              -->
@@ -307,13 +308,18 @@
 
                     <br>
 
-                    <p>&copy;2020 <strong>Madhav Malhotra</strong></p>
+                    <p id="copyright">&copy;2020 <strong>Madhav Malhotra</strong></p>
                 </div>
             </div>
         </div>
     </footer>
     <!--====== END FOOTER AREA ======-->
 
+    <script>
+        var copy = document.getElementById('copyright')
+        var year = new Date().getFullYear()
+        copy.innerHTML = "&copy;" + year + " <strong>Madhav Malhotra</strong>"
+    </script>
 
     <!--== plugins js ==-->
     <script src="assets/js/plugins.js"></script>

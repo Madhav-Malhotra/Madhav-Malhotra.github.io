@@ -51,7 +51,7 @@ NOTE: This is main stylesheet of the template.
  h5,
  h6 {
      font-family: 'Montserrat', sans-serif;
-     margin: 0 0 15px;
+     margin: 15px 0 15px;
      font-weight: 700;
      color: #222;
      line-height: 1.2;
