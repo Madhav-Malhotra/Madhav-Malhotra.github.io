@@ -1509,3 +1509,11 @@ NOTE: This is main stylesheet of the template.
      display: flex;
      align-items:center;
  }
+
+ .custom-404 {
+    background-image: url(assets/img/screaming.webp);
+ }
+
+ div.custom-404 div.welcome-table {
+    background-color: rgba(0,0,0,0.5);
+ }
