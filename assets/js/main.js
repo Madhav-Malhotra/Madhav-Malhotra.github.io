@@ -73,9 +73,9 @@ NOTE: This is the custom jQuery file for the template
         var element = $(".element");
         $(function() {
             element.typed({
-                strings: ["Graphic Designer", "Cofounder", "Front-end developer", "Podcast host"],
+                strings: ["I think", "I learn", "I wait", "I ask", "I write", "I code", "I lead", "I design"],
                 typeSpeed: 100,
-				backDelay: 1000,
+				backDelay: 1200,
                 loop: true,
             });
         });
