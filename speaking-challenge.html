@@ -84,11 +84,12 @@
       color: white;
     }
 
-    #date-list>.col-12>a {
+    #date-list>.col-12>span,
+    #date-list>.col-12>span>a {
       color: white;
     }
 
-    #date-list>.col-12>a:hover {
+    #date-list>.col-12>span>a:hover {
       text-decoration: underline;
     }
 
@@ -201,9 +202,10 @@
 
 
     const links = {
-      "Sun Oct 10 2021": ["https://youtu.be/1YF7KurH8Dg", "Thank God For Indian Food"],
-      "Sun Oct 17 2021": ["https://youtu.be/ZKFQLNeIBqs", "Overly Dramatic PSA"],
-      "Sun Oct 24 2021": ["https://youtu.be/XmzvgUjQf4Y", "A Historical Parody"],
+      "Sun Oct 10 2021": ["https://youtu.be/1YF7KurH8Dg", "https://docs.google.com/document/d/1PRS59UMFEKijtkVH_G616B3PRH9-6LpvL51m_f0ulE8/edit?usp=sharing", "Thank God For Indian Food"],
+      "Sun Oct 17 2021": ["https://youtu.be/ZKFQLNeIBqs", "https://quizlet.com/ca/626869343", "Overly Dramatic PSA"],
+      "Sun Oct 24 2021": ["https://youtu.be/XmzvgUjQf4Y", "https://quizlet.com/ca/632717024", "A Historical Parody"],
+      "Sun Oct 31 2021": ["https://youtu.be/p5qn-5ucGM8", "https://quizlet.com/ca/629919820", "An Odd Supermarket Inquiry"],
     }
 
 
@@ -238,20 +240,17 @@
       const li = document.createElement("div")
       li.className = "col-12";
       const header = document.createElement("h2");
-      const subtitle = document.createElement("a")
-      subtitle.setAttribute("target", "_blank");
+      const subtitle = document.createElement("span")
       const options = { month: 'long', day: 'numeric' };
 
       //If past, just add past date and link
       if (past) {
-        header.innerText = "✔️ " + time.toLocaleDateString("en-US", options) + ": " + link[1];
-        subtitle.innerText = "See this week's challenge...";
-        subtitle.href = link[0];
+        header.innerText = "✔️ " + time.toLocaleDateString("en-US", options) + ": " + link[2];
+        subtitle.innerHTML = `<a href="${link[0]}" target="_blank">This Week's Challenge</a> | <a href="${link[1]}" target="_blank">This Week's Notes</a>`;
         if (!link[0]) {
           header.innerText = "❌" + header.innerText.slice(1);
           li.className = 'col-12 miss';
-          subtitle.innerText = "Humiliate me for missing a challenge...";
-          subtitle.href = "https://www.linkedin.com/in/madhav-malhotra"
+          subtitle.innerHTML = `<a href="https://www.linkedin.com/in/madhav-malhotra" target="_blank">Humiliate me for missing a challenge...</a>`;
         }
       } else { //If future, just tag and add date to expect.
         header.innerText = "❔ " + time.toLocaleDateString("en-US", options) + ": ";
