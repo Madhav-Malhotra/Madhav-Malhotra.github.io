@@ -202,7 +202,7 @@
 
 
     const links = {
-      "Sun Oct 10 2021": ["https://youtu.be/1YF7KurH8Dg", "https://docs.google.com/document/d/1PRS59UMFEKijtkVH_G616B3PRH9-6LpvL51m_f0ulE8/edit?usp=sharing", "Thank God For Indian Food"],
+      "Sun Oct 10 2021": ["https://youtu.be/1YF7KurH8Dg", "https://quizlet.com/ca/635881863/", "Thank God For Indian Food"],
       "Sun Oct 17 2021": ["https://youtu.be/ZKFQLNeIBqs", "https://quizlet.com/ca/626869343", "Overly Dramatic PSA"],
       "Sun Oct 24 2021": ["https://youtu.be/XmzvgUjQf4Y", "https://quizlet.com/ca/632717024", "A Historical Parody"],
       "Sun Oct 31 2021": ["https://youtu.be/p5qn-5ucGM8", "https://quizlet.com/ca/629919820", "An Odd Supermarket Inquiry"],
@@ -210,7 +210,8 @@
       "Sun Nov 14 2021": ["https://youtu.be/7qsHXDINjN4", "https://quizlet.com/_alqly4", "A Twisted Story about Pretzels"],
       "Sun Nov 21 2021": ["https://youtu.be/Z2Lu_spE9mw", "https://quizlet.com/_an6ay9", "5 Children's Classics With 10 Emotions"],
       "Sun Nov 28 2021": ["https://youtu.be/xUnMw-HZv3Y", "https://quizlet.com/_aoema0", "An Actually Green Greenhouse"],
-      "Sun Dec 05 2021": ["https://youtu.be/XB8rzJAh-W4", "https://quizlet.com/_aqecj1", "The Problem with Peels"]
+      "Sun Dec 05 2021": ["https://youtu.be/XB8rzJAh-W4", "https://quizlet.com/_aqecj1", "The Problem with Peels"],
+      "Sun Dec 12 2021": ["https://youtu.be/fTa92ksILXM", "https://quizlet.com/_arwvxy", "A Memo from the Future"]
     }
 
 
@@ -232,7 +233,7 @@
 
     //Check whether each date is in past.
     const today = new Date()
-    //today.setUTCDate(today.getDate() + 1)
+    today.setUTCDate(today.getDate() + 1)
     deadlines.forEach(time => {
       const past = (time < today);
       let selected = links[time.toDateString()]
