@@ -233,7 +233,7 @@
 
     //Check whether each date is in past.
     const today = new Date()
-    today.setUTCDate(today.getDate() + 1)
+    //today.setUTCDate(today.getDate() + 1)
     deadlines.forEach(time => {
       const past = (time < today);
       let selected = links[time.toDateString()]
