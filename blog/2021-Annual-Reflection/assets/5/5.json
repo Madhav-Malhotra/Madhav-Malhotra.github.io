@@ -1,0 +1,38 @@
+{"frames": {
+
+"Head5.png":
+{
+	"frame": {"x":38,"y":1,"w":234,"h":249},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":72,"y":90,"w":234,"h":249},
+	"sourceSize": {"w":500,"h":700}
+},
+"SadEye5.png":
+{
+	"frame": {"x":1,"y":1,"w":35,"h":29},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":109,"y":221,"w":35,"h":29},
+	"sourceSize": {"w":500,"h":700}
+},
+"SideBody5.png":
+{
+	"frame": {"x":1,"y":237,"w":276,"h":291},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":152,"y":323,"w":276,"h":291},
+	"sourceSize": {"w":500,"h":700}
+}},
+"animations": {
+},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "5.png",
+	"format": "RGBA8888",
+	"size": {"w":293,"h":514},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:8ac6e0e63f40717f41b3713179964ce2:fa149fe1b0064415966d5b619e2e313f:9addbf21a64760fa23b46a82ab6e4587$"
+}
+}

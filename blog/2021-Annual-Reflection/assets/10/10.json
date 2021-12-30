@@ -1,0 +1,20 @@
+{"frames": {
+
+"Ashes10.png":
+{
+	"frame": {"x":1,"y":1,"w":563,"h":347},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":75,"y":353,"w":563,"h":347},
+	"sourceSize": {"w":700,"h":700}
+}},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "10.png",
+	"format": "RGBA8888",
+	"size": {"w":565,"h":349},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:61cafbf0c194f3a1ce89d0fe92b8f887:4fd057302e978e5785e3e10891bff8f3:e2c9be1b49d03cc38aafeff96da146a7$"
+}
+}

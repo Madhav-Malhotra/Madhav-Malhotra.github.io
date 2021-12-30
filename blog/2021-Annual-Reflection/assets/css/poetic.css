@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css?family=Comforter');
+@import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light');
+
+/* =============== SIZING ================== */
+
+body {
+  margin-left: 0;
+  margin-right: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: #202020;
+  color: white;
+}
+
+div.row {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  align-items: stretch;
+}
+
+div.row > div {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+*.vcentre {
+  margin: auto;
+}
+
+div.row > div#left {
+  padding-left: 20px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-right: 20px;
+  overflow-y: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  max-height: 100vh;
+}
+
+/* =============== CONTROLS ================== */
+
+div.menu {
+  position: fixed;
+  margin-top: 1em;
+  margin-left: 35vw;
+}
+
+div.menu > a {
+  padding: 4px 12px;
+  border-radius: 15px;
+  background-color: rgba(255,255,255,0.5);
+  margin-right: 6px;
+  transition: 0.3s;
+}
+
+div.menu > a.active {
+  background-color: rgba(255,255,255);
+}
+
+div.menu > a:hover {
+  background-color: rgba(255,255,255);
+  text-decoration: none;
+}
+
+img#home-button {
+  position: absolute;
+  width: 40px;
+  top: 10px;
+  left: 10px;
+  transition: 0.3s;
+}
+
+img#home-button:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+img#home-button.light {
+  filter: invert(1);
+  width: 30px;
+}
+
+button#music-button {
+  font-family: 'Shadows Into Light';
+  color: black;
+  background-color: white;
+  border-radius: 20px;
+  padding: 0 15px;
+  border: 0px;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  transition: 0.3s;
+}
+
+button#music-button:hover {
+  filter: brightness(0.8);
+  cursor: pointer;
+}
+
+button#music-button.dark {
+  color: white;
+  background-color: black;
+}
+
+
+/* =============== COLOURS ================== */
+div.row { background-color: #202020; }
+
+div.row > div.dark {
+  background-color: #202020;
+  color: #FFF;
+}
+
+div.row > div.button:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+div#left > button.poetic {
+  background-color: rgba(0,0,0,0);
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;  
+  padding: 0.2em 0.8em;
+  border: dashed 2px white;
+  border-radius: 5px;
+}
+
+div#left > button.poetic:hover {
+  border: solid 2px white;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,1);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255,255,255,0.7);
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0);
+  border: dashed 2px white;
+  border-radius: 10px;
+}
+
+/* ===================== FONTS ===================== */
+
+div.poetic h1, div.poetic h2, div.poetic h3 {
+  font-family: 'Comforter';
+}
+
+div.poetic p, div.poetic button {
+  font-family: 'Shadows Into Light';
+}
+
+h1 { font-size: 10rem; }
+h2 { font-size: 5.5rem; }
+p, button { font-size: 2.8rem; }
+p.break { margin-bottom: 0.7em; }
+
+p.error {
+  margin: 50px 10px;
+  text-align: center;
+  font-family: "Shadows Into Light";
+}
