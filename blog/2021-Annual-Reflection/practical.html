@@ -1111,7 +1111,6 @@
     function start() {
       const intro = document.querySelector(".intro");
       if (!intro.style.opacity) intro.style.opacity = 1;
-      document.body.style.overflowY = "auto";
 
       const fade = setInterval(() => {
         if (intro.style.opacity < 0.01) {
