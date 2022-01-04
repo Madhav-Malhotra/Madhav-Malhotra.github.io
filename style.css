@@ -1485,7 +1485,7 @@ h3.comment-form-title {
 
 
 /*================================================
-        13. FOOTER SECTION
+        13. FOOTER SECTION AND MISC
 ==================================================*/
 
 .footer {
@@ -1499,6 +1499,11 @@ h3.comment-form-title {
   margin: 0px;
 }
 
+@media only screen and (max-width: 767px) {
+  ul {
+    padding-inline-start: 0 !important;
+  }
+}
 
 /* =============================================
     14. Blog and Full Portfolio
