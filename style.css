@@ -1505,6 +1505,12 @@ h3.comment-form-title {
   }
 }
 
+@media only screen and (max-width: 767px) {
+  .hide-if-mobile {
+    display: none;
+  }
+}
+
 /* =============================================
     14. Blog and Full Portfolio
     ============================================= */
