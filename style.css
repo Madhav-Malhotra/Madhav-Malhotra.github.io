@@ -519,9 +519,9 @@ input:-webkit-autofill:focus {
 }
 
 h4.about-heading {
-  font-size: 16px;
+  font-size: 24px;
   font-weight: 600;
-  line-height: 26px;
+  line-height: 34px;
   text-transform: uppercase;
 }
 
