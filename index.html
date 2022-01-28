@@ -816,12 +816,14 @@
   <script>
     function hashScroll() {
       if (window.location.hash.length > 0) {
+        history.scrollRestoration = "manual"
         const id = window.location.hash;
         const el = document.querySelector(id);
-        window.scrollTop(el.offset().top);
+        window.scrollTo(0, el.offsetTop);
       }
     }
-    window.onload = hashScroll();
+    window.onbeforeunload = () => window.scrollTo(0, 0);
+    window.onload = setTimeout(() => hashScroll(), 300);
 
     var copy = document.getElementById('copyright')
     var year = new Date().getFullYear()
