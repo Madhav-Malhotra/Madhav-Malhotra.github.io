@@ -824,11 +824,10 @@
     }
     window.onbeforeunload = () => window.scrollTo(0, 0);
     window.onload = setTimeout(() => hashScroll(), 300);
-
-    var copy = document.getElementById('copyright')
-    var year = new Date().getFullYear()
-    copy.innerHTML = "&copy;" + year + " <strong>Madhav Malhotra</strong>"
   </script>
+
+  <script src="/assets/js/insertParts/customCopyright.js"></script>
+  <script src="/assets/js/insertParts/customSocialLinks.js"></script>
 
   <script src="assets/js/timelines.js"></script>
 
