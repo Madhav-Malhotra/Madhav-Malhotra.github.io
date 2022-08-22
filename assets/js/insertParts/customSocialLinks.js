@@ -9,7 +9,7 @@ const linkInsert = `
     <a href="https://github.com/Madhav-Malhotra" target="_blank"><i class="fa fa-github"></i></a>
   </li>
   <li>
-    <a href="https://www.youtube.com/channel/UCWopBNISjL7qCH2Qch58Skw" target="_blank"><i class="fa fa-youtube-play"></i></a>
+    <a href="https://www.youtube.com/c/MadhavMalhotra003" target="_blank"><i class="fa fa-youtube-play"></i></a>
   </li>
 `;
 
