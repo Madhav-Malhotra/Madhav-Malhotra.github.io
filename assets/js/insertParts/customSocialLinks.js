@@ -13,7 +13,7 @@ const linkInsert = `
   </li>
 `;
 
-const links = document.querySelectorAll("ul.social-links");
-for (l of links) {
+const socialInsertLinks = document.querySelectorAll("ul.social-links");
+for (l of socialInsertLinks) {
   l.innerHTML = linkInsert;
 }
