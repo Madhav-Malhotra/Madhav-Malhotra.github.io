@@ -264,11 +264,20 @@ input:-webkit-autofill:focus {
   text-align: center;
 }
 
+div.section-title.text-left {
+  text-align: left;
+  margin-bottom: 40px;
+}
+
 .section-title h2 {
   font-size: 45px;
   margin-bottom: 5px;
   letter-spacing: 2px;
   font-weight: 900;
+}
+
+div.section-title.text-left h2 {
+  margin-top: 0;
 }
 
 .section-title p {
@@ -594,6 +603,10 @@ h4.about-heading {
   font-weight: 600;
 }
 
+div.about-area div.author-image>img {
+  border-radius: 20px;
+}
+
 
 /*================================================
         6 SERVICES AREA
@@ -614,7 +627,11 @@ h4.about-heading {
   box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   -webkit-transition: 0.4s;
-  transition: 0.4s;
+  transition: 0.3s;
+}
+
+.single-service:hover {
+  border-color: black;
 }
 
 .service-img {
@@ -628,8 +645,9 @@ h4.about-heading {
 .single-service h3 {
   font-size: 18px;
   font-weight: 600;
-  margin: 15px 0;
+  margin: 0;
   text-transform: capitalize;
+  transition: 0.3s
 }
 
 .single-service p {
@@ -715,6 +733,7 @@ ul.work-list li {
   position: relative;
   overflow: hidden;
   margin-bottom: 30px;
+  border-radius: 20px;
 }
 
 .single-work img {
@@ -811,6 +830,7 @@ ul.work-list li {
   width: 45px;
   transition: 0.6s;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .modal-content {
@@ -845,7 +865,7 @@ ul.work-list li {
   color: #222;
   margin-bottom: 0;
   margin-right: 0;
-  width: 120px;
+  min-width: 60px;
   font-weight: 600;
 }
 
@@ -1446,6 +1466,52 @@ h3.comment-form-title {
   }
 }
 
+popover {
+  padding: 5px 13px;
+  border: solid 1px;
+  border-radius: 25px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: 0.3s;
+  z-index: 10;
+  position: relative;
+}
+
+popover:hover {
+  border-color: #D83F58;
+  color: #D83F58;
+}
+
+popover[data-target="about-author-image-index"] {
+  top: 2.2em;
+  left: 0.5em;
+  color: black;
+  font-weight: 600;
+  border: 2px solid black;
+}
+
+popover[data-target="about-author-image-index"]:hover {
+  border-color: #771828;
+  color: #771828;
+}
+
+div.popover-modal-custom-made {
+  border: 1px solid;
+  font-size: small;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 1em;
+  display: none;
+  background-color: white;
+}
+
+div.popover-modal-custom-made.active {
+  display: inline;
+  position: absolute;
+  left: 5.5em;
+  top: 2.2em;
+}
+
 /* =============================================
     14. Blog and Full Portfolio
     ============================================= */
@@ -1473,6 +1539,10 @@ hr.blog {
   outline-width: 0;
 }
 
+button#collapsible-heading[aria-expanded="true"] {
+  margin-bottom: 2em;
+}
+
 #collapsible-heading h2 {
   color: white;
   text-align: left;
@@ -1493,6 +1563,8 @@ small {
   display: flex;
   align-items: center;
 }
+
+/* 404 */
 
 .custom-404 {
   background-image: url(assets/img/screaming.webp);
@@ -1531,6 +1603,7 @@ div.timeline-item {
   align-content: center;
   flex-direction: column;
   transition: 0.3s;
+  border-radius: 20px;
 }
 
 div.timeline-item:hover {
@@ -1558,6 +1631,7 @@ div.timeline-modal.active {
   padding-bottom: 0px;
   max-height: 400px;
   overflow-y: auto;
+  border-radius: 1.2em;
 }
 
 div.timeline-modal>h3,
@@ -1575,4 +1649,58 @@ div.timeline-modal a {
 
 .timeline-modal.active .button-close-modal:hover {
   cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 16px;
+  background-color: #ccc;
+}
+
+div::-webkit-scrollbar {
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #D83F58;
+  border-radius: 8px;
+}
+
+/* Education */
+
+div.education-filter-buttons>div.primary-filter-buttons {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 6em;
+}
+
+div.education-filter-buttons>div.primary-filter-buttons>button.active {
+  background-color: #DB3F58;
+  color: white;
+  padding: 6px 10px;
+  border: none;
+  cursor: default;
+}
+
+div.education-filter-buttons>div.primary-filter-buttons>button {
+  color: #DB3F58;
+  background-color: white;
+  min-width: 100px;
+  border-radius: 15px;
+  padding: 3px 10px;
+  border: 3px #DB3F58 solid;
+  transition: 0.3s
+}
+
+div.education-filter-buttons>div.primary-filter-buttons>button:hover {
+  background-color: #DB3F58;
+  color: white;
+  padding: 6px 10px;
+  border: none;
+}
+
+h4.modal-title.portfolio {
+  color: #DB3F58;
 }

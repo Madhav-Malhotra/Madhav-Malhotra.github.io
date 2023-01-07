@@ -56,12 +56,6 @@
   <!--== jQuery ==-->
   <script src="assets/js/jquery-2.1.4.min.js"></script>
 
-
-
-  <!--[if lt IE 9]>
-        <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
 </head>
 
 <body>
@@ -147,6 +141,12 @@
         <div class="row vcentre-column">
           <div class="col-md-5 hide-if-mobile">
             <div class="author-image">
+              <popover data-target="about-author-image-index">?</popover>
+              <div class="popover-modal-custom-made" id="about-author-image-index">
+                To get myself excited about learning AI, I transferred the style of The
+                Scream by Edvard Munch to this picture.
+                <br />
+              </div>
               <img src="assets/img/paintedProfilePicture.jpg" alt="Author Image">
               <!--=== about image ===-->
             </div>
@@ -162,13 +162,13 @@
                   </h4>
                   <p>I would describe myself as an immigrant. Immigrating to Canada created lots of challenges growing
                     up. But it also taught me <b>my three core values:
-                      helpfulness, reliability, and resourcefulness.</b> Everything I do, I do because of these values.
+                      helpfulness, resourcefulness, and reliability.</b> Everything I do, I do because of these values.
                   </p>
 
                   <p>Currently, I'm <a href="https://resources.madhavmalhotra.com/global-problem-research"
-                      target="_blank"><span id="accentColor">researching</span></a> innovative funding models for mental
-                    health. And researching how people can be happier at <a href="https://happierlivesinstitute.org"
-                      target="_blank"><span id="accentColor">The Happier Lives Instute</span></a>. Also, I'm
+                      target="_blank"><span id="accentColor">researching</span></a> how cybersecurity affects AI and
+                    emerging biotechnologies. I'm working with some data scientists at the Public Health Agency of
+                    Canada. Also, I'm
                     interviewing niche scientists on <a href="https://www.bit.ly/theKnowledgeArchives"
                       target="_blank"><span id="accentColor">my
                         podcast</span></a>. &#129299;
@@ -255,14 +255,13 @@
           <div class="col-md-4 col-sm-6 col-xs-12 mix presentations">
             <!-- Single Work -->
             <div class="single-work">
-              <a href="https://www.youtube.com/watch?v=2TKmqXiDvpE" target="_blank"><img class=""
-                  src="assets/img/work/TKS Showcase.jpg" alt=""></a>
+              <img class="" src="assets/img/work/TKS Showcase.jpg" alt="">
               <div class="item-hover">
                 <div class="work-table">
                   <div class="work-tablecell">
                     <div class="hover-content">
                       <h4>TEDxCorktown - Plastic Pollution</h4>
-                      <a href="https://www.youtube.com/watch?v=ocjyPyITILY" class="work-link" target="_blank"><i
+                      <a href="#" class="work-link" data-toggle="modal" data-target="#pModTEDx"><i
                           class="fa fa-link"></i></a>
                     </div>
                   </div>
@@ -281,8 +280,8 @@
                   <div class="work-tablecell">
                     <div class="hover-content">
                       <h4>Indisposable Podcast Interview</h4>
-                      <a href="https://open.spotify.com/episode/4fxARpAZvnEAyIN8rKqOql" class="work-link"
-                        target="_blank"><i class="fa fa-link"></i></a>
+                      <a href="#" class="work-link" data-toggle="modal" data-target="#pModIndisposable"><i
+                          class="fa fa-link"></i></a>
                     </div>
                   </div>
                 </div>
@@ -293,13 +292,13 @@
           <div class="col-md-4 col-sm-6 col-xs-12 mix articles">
             <!-- Single Work -->
             <div class="single-work">
-              <img class="" src="assets/img/work/Nuclear Fusion Future.jpg" alt="">
+              <img class="" src="assets/img/work/animated.jpg" alt="">
               <div class="item-hover">
                 <div class="work-table">
                   <div class="work-tablecell">
                     <div class="hover-content">
                       <h4>Animated Annual Reflection</h4>
-                      <a href="/blog/2021-Annual-Reflection/index.html" class="work-link" target="_blank"><i
+                      <a class="work-link" data-toggle="modal" data-target="#pModAnnualReflection"><i
                           class="fa fa-link"></i></a>
                     </div>
                   </div>
@@ -317,7 +316,7 @@
                   <div class="work-tablecell">
                     <div class="hover-content">
                       <h4>Opportunities in Carbon Capture</h4>
-                      <a href="/blog/carbon-capture-wild-west.html" class="work-link" target="_blank"><i
+                      <a class="work-link" data-toggle="modal" data-target="#pModCarbonCapture"><i
                           class="fa fa-link"></i></a>
                     </div>
                   </div>
@@ -329,14 +328,13 @@
           <div class="col-md-4 col-sm-6 col-xs-12 mix design">
             <!-- Single Work -->
             <div class="single-work">
-              <img class="" src="assets/img/work/SWL Recommendation.jpg" alt="">
+              <img class="" src="assets/img/work/children.jpg" alt="">
               <div class="item-hover">
                 <div class="work-table">
                   <div class="work-tablecell">
                     <div class="hover-content">
-                      <h4>Sidewalk Labs Recommendation Deck</h4>
-                      <a href="https://drive.google.com/file/d/1IVTrph6ewMaZKt12pnX_jbZ_DD5hodNZ/view?usp=sharing"
-                        class="work-link" target="_blank"><i class="fa fa-link"></i></a>
+                      <h4>Kidogo Consultation Deck</h4>
+                      <a class="work-link" data-toggle="modal" data-target="#pModKidogo"><i class="fa fa-link"></i></a>
                     </div>
                   </div>
                 </div>
@@ -353,8 +351,8 @@
                   <div class="work-tablecell">
                     <div class="hover-content">
                       <h4>Legal CRM Mockup</h4>
-                      <a href="https://www.figma.com/proto/uX318JhjwrMju3giWDcNvg/PRIVATE-LEGAL-MOCKUP?node-id=483%3A55&scaling=scale-down"
-                        class="work-link" target="_blank"><i class="fa fa-link"></i></a>
+                      <a class="work-link" data-toggle="modal" data-target="#pModLegalCRM"><i
+                          class="fa fa-link"></i></a>
                     </div>
                   </div>
                 </div>
@@ -371,7 +369,7 @@
                   <div class="work-tablecell">
                     <div class="hover-content">
                       <h4>Creativity Trainer</h4>
-                      <a href="https://creativity-trainer.web.app" class="work-link" target="_blank"><i
+                      <a class="work-link" data-toggle="modal" data-target="#pModCreativityTrainer"><i
                           class="fa fa-link"></i></a>
                     </div>
                   </div>
@@ -389,8 +387,8 @@
                   <div class="work-tablecell">
                     <div class="hover-content">
                       <h4>The Plastic Shift Manifesto</h4>
-                      <a href="https://theplasticshift.com/manifesto" class="work-link" target="_blank"><i
-                          class="fa fa-link"></i></a>
+                      <a href="https://madhav-malhotra.github.io/ThePlasticShift/manifesto" class="work-link"
+                        data-toggle="modal" data-target="#pModPlasticShiftManifesto"><i class="fa fa-link"></i></a>
                     </div>
                   </div>
                 </div>
@@ -425,7 +423,7 @@
                   <div class="work-tablecell">
                     <div class="hover-content">
                       <h4>Animated Eve</h4>
-                      <a href="https://youtu.be/pl6ABxX_MBA" class="work-link" target="_blank"><i
+                      <a class="work-link" data-toggle="modal" data-target="#pModAnimatedEve"><i
                           class="fa fa-link"></i></a>
                     </div>
                   </div>
@@ -452,51 +450,227 @@
             </div>
           </div>
 
-          <!-- Example Portfolio Entry
-                        <div class="col-md-4 col-sm-6 col-xs-12 mix design"> <!- Single Work ->
-                            <div class="single-work">
-                                <img src="assets/img/work/6.jpg" alt="">
-                                <div class="item-hover">
-                                    <div class="work-table">
-                                        <div class="work-tablecell">
-                                            <div class="hover-content">
-                                                <h4>Your Project Name</h4>
-                                                <a href="#" class="work-link" data-toggle="modal" data-target="#projectModal7"><i class="fa fa-link"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        -->
-
           <div class="col-md-12">
+
             <!-- /.modal -->
+            <div tabindex="0" class="modal fade" id="pModTEDx">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title portfolio">TEDxCorktown</h4>
+                  </div>
+                  <div class="modal-body">
+                    <p>This was my first time giving a TED talk. Though I was nervous, I surprised myself with my
+                      ability to stay calm! Because 0.4s into the talk, I realised I'd forgotten my clicker &#128561;
+                      Still,
+                      the show must go on. So I used my <a
+                        href='https://creativity-trainer.web.app/improv-presentations' target='_blank'
+                        id='accentColor'>improv training</a> to nonchalantly ignore the cartoon image stuck on the
+                      screen the entire time &#128517;</p>
+                    <ul class="list-unstyled project-list">
+                      <li><label>Listen and laugh: </label> <a href="https://youtu.be/ocjyPyITILY"
+                          target="_blank">Youtube</a></li>
+                    </ul>
+                  </div>
+                </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
             <!-- End Work Modal  -->
 
-            <!-- Example Work Modal
-                            <div  tabindex="0" class="modal fade" id="projectModal1">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                            <h4 class="modal-title">Project Overview</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <img src="assets/img/work/1.jpg" alt="work-1">
-                                            <h3>Project Name Here</h3>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer porttitor massa sed velit egestas vulputate. Morbi turpis tellus, porta in cursus at, finibus vitae dui. Nam mollis quam a sem iaculis euismod. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed ac pharetra justo, vel dapibus tortor.</p>
-                                             <ul class="list-unstyled project-list" >
-                                                <li><label>Client : </label> John Doe</li>
-                                                <li><label>Category :</label> Web Design</li>
-                                                <li><label>Date : </label> 12 october 2017</li>
-                                                <li><label>Project Url : </label> <a href="#">www.example.net</a></li>
-                                            </ul>
-                                      </div>
-                                    </div><!- /.modal-content ->
-                                </div><!- /.modal-dialog ->
-                            </div><!- /.modal ->
-                          -->
+            <!-- /.modal -->
+            <div tabindex="0" class="modal fade" id="pModIndisposable">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title portfolio">Indisposable Podcast Interview</h4>
+                  </div>
+                  <div class="modal-body">
+                    <p>A friend and I wanted to analyse plastic pollution at its ROOT. After interviewing dozens of
+                      scientists and activists, we found thousands of global beach
+                      cleanups ineffective. After a lot of hustling, a charity decided to feature our
+                      take in this podcast.</p>
+                    <ul class="list-unstyled project-list">
+                      <li><label>Hear us out: </label> <a href="https://open.spotify.com/episode/4fxARpAZvnEAyIN8rKqOql"
+                          target="_blank">Spotify</a></li>
+                    </ul>
+                  </div>
+                </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+            <!-- End Work Modal  -->
+
+            <!-- /.modal -->
+            <div tabindex="0" class="modal fade" id="pModAnnualReflection">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title portfolio">Animated Annual Reflection</h4>
+                  </div>
+                  <div class="modal-body">
+                    <p>2021 really hurt. Several close relationships in my life had broken after the
+                      pandemic. I was learning lots about the depths of the human experience. I wanted to capture the
+                      beauty of this, so I mixed art + tech to create an animated reflection.</p>
+                    <ul class="list-unstyled project-list">
+                      <li><label>Take a look: </label> <a href="/blog/2021-Annual-Reflection/index.html"
+                          target="_blank">Blog</a></li>
+                    </ul>
+                  </div>
+                </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+            <!-- End Work Modal  -->
+
+            <!-- /.modal -->
+            <div tabindex="0" class="modal fade" id="pModCarbonCapture">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title portfolio">Carbon Capture Analysis</h4>
+                  </div>
+                  <div class="modal-body">
+                    <p>I love simplicity. Especially when analysing huge problems. After months of
+                      research on carbon capture flaws, I wanted even high-school students (like me) to understand my
+                      results. So I spent 50+ hours writing this megaseries.</p>
+                    <ul class="list-unstyled project-list">
+                      <li><label>Learn with me: </label> <a href="/blog/carbon-capture-wild-west.html"
+                          target="_blank">Blog</a></li>
+                    </ul>
+                  </div>
+                </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+            <!-- End Work Modal  -->
+
+            <!-- /.modal -->
+            <div tabindex="0" class="modal fade" id="pModKidogo">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title portfolio">Kidogo Recommendation Deck</h4>
+                  </div>
+                  <div class="modal-body">
+                    <p>Kidogo is an early childcare startup in Kenya. They want to transform unimaginable chidcare
+                      conditions into <i>world</i>-leading childcare. With the hardest-working team
+                      I've ever had, I presented these recommendations to Kidogo's founders to help them expand.</p>
+                    <ul class="list-unstyled project-list">
+                      <li><label>Interested in Our Ideas? </label> <a
+                          href="https://drive.google.com/file/d/1qaWlc9O5DTVQ8bhS1IFPaeHrFtJZ1Sq7/view?usp=sharing"
+                          target="_blank">Pitch</a></li>
+                    </ul>
+                  </div>
+                </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+            <!-- End Work Modal  -->
+
+            <!-- /.modal -->
+            <div tabindex="0" class="modal fade" id="pModLegalCRM">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title portfolio">Legal CRM Mockup</h4>
+                  </div>
+                  <div class="modal-body">
+                    <p>I made this prototype in Figma for some executives at Fasken LLP, a Canadian law firm. I wanted
+                      to make <i>real</i> a customer problem I'd researched in the legal industry. After mentors
+                      complimented me for the detail-oriented mockup, this project showed me the value of my last-minute
+                      refinements!</p>
+                    <ul class="list-unstyled project-list">
+                      <li><label>Click Around: </label> <a
+                          href="https://www.figma.com/proto/uX318JhjwrMju3giWDcNvg/PRIVATE-LEGAL-MOCKUP?node-id=483%3A55&scaling=scale-down"
+                          target="_blank">Figma</a></li>
+                    </ul>
+                  </div>
+                </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+            <!-- End Work Modal  -->
+
+            <!-- /.modal -->
+            <div tabindex="0" class="modal fade" id="pModCreativityTrainer">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title portfolio">Creativity Trainer</h4>
+                  </div>
+                  <div class="modal-body">
+                    <p>When learning React, I wanted to work projects that excited <i>me</i>. Given my interest in
+                      psychology, I thought of the study of creativity. And I made a few games to
+                      train creativity. This paid off when I had to improv a <a href="https://youtu.be/ocjyPyITILY"
+                        target='_blank' id='accentColor'>TED talk</a>
+                      after forgetting a clicker.</p>
+                    <ul class="list-unstyled project-list">
+                      <li><label>Try it Out: </label> <a href="https://creativity-trainer.web.app"
+                          target="_blank">Game</a></li>
+                    </ul>
+                  </div>
+                </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+            <!-- End Work Modal  -->
+
+            <!-- /.modal -->
+            <div tabindex="0" class="modal fade" id="pModPlasticShiftManifesto">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title portfolio">Plastic Shift Manifesto</h4>
+                  </div>
+                  <div class="modal-body">
+                    <p>This article is the product of nearly a year of research into plastic pollution.
+                      My friend and I took inspiration from the personal tone of Bill and Melinda Gates. It helped us
+                      weave together our stories and the global problem we uncovered.</p>
+                    <ul class="list-unstyled project-list">
+                      <li><label>Read and Learn: </label> <a
+                          href="https://madhav-malhotra.github.io/ThePlasticShift/manifesto" target="_blank">Article</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+            <!-- End Work Modal  -->
+
+            <!-- /.modal -->
+            <div tabindex="0" class="modal fade" id="pModAnimatedEve">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title portfolio">Animated Eve</h4>
+                  </div>
+                  <div class="modal-body">
+                    <p>I wanted to learn 3D animation with projects that personally mattered. My favourite animated
+                      movie ever is Wall-E. So I decided to animate Eve from Wall-E. It was one of the most
+                      <i>delightful</i>
+                      projects I've worked on.
+                    </p>
+                    <ul class="list-unstyled project-list">
+                      <li><label>Take a Look: </label> <a href="https://youtu.be/pl6ABxX_MBA" target="_blank">Video</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+            <!-- End Work Modal  -->
 
           </div>
         </div>
@@ -532,114 +706,69 @@
   <div id="services" class="services-area section-padding">
     <div class="container">
       <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12">
-          <div class="section-title">
-            <h2>My Skills</h2>
+        <div class="col-lg-5 col-md-12">
+          <div class="section-title text-left">
+            <h2>My Education is <span id="accentColor">My Job</span></h2>
           </div>
+          <p>Our world is changing faster than ever. So I believe my curiosity and
+            resourcefulness are too important to pursue passively. Just 'showing up' to traditional education isn't
+            enough. So I took things into my own hands.</p>
         </div>
-      </div>
-      <!--/.row-->
 
-      <div class="row">
-        <div class="col-md-4 col-sm-6">
-          <!-- Single Service -->
-          <div class="single-service text-center wow fadeInUp" data-wow-delay="0.4s">
-            <div class="service-img" style="background-image: url(assets/img/service/artificial-intelligence.png) ">
-            </div>
-            <h3>Data Science</h3>
-            <p>I taught myself statistics, AI, and network analysis to work with data.</p>
-            <div class="service-overlay text-left">
-              <ul class="clearfix">
-                <li><i class="fa fa-long-arrow-right"></i> Python </li>
-                <li><i class="fa fa-long-arrow-right"></i> Microsoft Excel </li>
-                <li><i class="fa fa-long-arrow-right"></i> Pytorch </li>
-                <li><i class="fa fa-long-arrow-right"></i> Gephi </li>
-              </ul>
-            </div>
+        <div class="col-lg-7 col-md-12">
+          <div class="col-md-4 col-sm-6">
+            <!-- Single Service -->
+            <a href="/education.html?subject=math" class="ed-link" target="_blank">
+              <div class="single-service text-center wow fadeInUp" data-wow-delay="0.3s">
+                <h3>Math</h3>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <!-- Single Service -->
+            <a href="/education.html?subject=science" class="ed-link" target="_blank">
+              <div class="single-service text-center wow fadeInUp" data-wow-delay="0.3s">
+                <h3>Science</h3>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <!-- Single Service -->
+            <a href="/education.html?subject=software" class="ed-link" target="_blank">
+              <div class="single-service text-center wow fadeInUp" data-wow-delay="0.3s">
+                <h3>Software</h3>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-md-4 col-sm-6">
+            <!-- Single Service -->
+            <a href="/education.html?subject=soft-skills" class="ed-link" target="_blank">
+              <div class="single-service text-center wow fadeInUp" data-wow-delay="0.3s">
+                <h3>Soft Skills</h3>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-md-4 col-sm-6">
+            <!-- Single Service -->
+            <a href="/education.html?subject=research" class="ed-link" target="_blank">
+              <div class="single-service text-center wow fadeInUp" data-wow-delay="0.3s">
+                <h3>Research</h3>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-md-4 col-sm-6">
+            <!-- Single Service -->
+            <a href="/education.html?subject=art" class="ed-link" target="_blank">
+              <div class="single-service text-center wow fadeInUp" data-wow-delay="0.3s">
+                <h3>Art</h3>
+              </div>
+            </a>
           </div>
         </div>
-        <div class="col-md-4 col-sm-6">
-          <!-- Single Service -->
-          <div class="single-service text-center wow fadeInUp" data-wow-delay="0.5s">
-            <div class="service-img" style="background-image: url(assets/img/service/website.png) "></div>
-            <h3>Web Development</h3>
-            <p>I've worked with startups & side projects on front-end development.</p>
-            <div class="service-overlay text-left">
-              <ul class="clearfix">
-                <li><i class="fa fa-long-arrow-right"></i> React.js / React Native </li>
-                <li><i class="fa fa-long-arrow-right"></i> Wordpress, Webflow, Firebase </li>
-                <li><i class="fa fa-long-arrow-right"></i> PIXI.js, TweenJS </li>
-                <li><i class="fa fa-long-arrow-right"></i> Speed Optimisation </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-6">
-          <!-- Single Service -->
-          <div class="single-service text-center wow fadeInUp" data-wow-delay="0.6s">
-            <div class="service-img" style="background-image: url(assets/img/service/design.png) "></div>
-            <h3>Graphic Design</h3>
-            <p>I've made infographics, keynotes, & UI mock-ups for side projects.</p>
-            <div class="service-overlay text-left">
-              <ul class="clearfix">
-                <li> <i class="fa fa-long-arrow-right"></i> Figma Mockups </li>
-                <li> <i class="fa fa-long-arrow-right"></i> Photoshop Infographics </li>
-                <li> <i class="fa fa-long-arrow-right"></i> Business Pitches </li>
-                <li> <i class="fa fa-long-arrow-right"></i> 2D Animations </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-6">
-          <!-- Single Service -->
-          <div class="single-service text-center wow fadeInUp" data-wow-delay="0.7s">
-            <div class="service-img" style="background-image: url(assets/img/service/video-camera.png) ">
-            </div>
-            <h3>CAD Modelling</h3>
-            <p>I've worked with startups to test in-house prototypes.</p>
-            <div class="service-overlay text-left">
-              <ul class="clearfix">
-                <li><i class="fa fa-long-arrow-right"></i> Fusion 360 </li>
-                <li><i class="fa fa-long-arrow-right"></i> Blender </li>
-                <li><i class="fa fa-long-arrow-right"></i> 3D Rendering </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-6">
-          <!-- Single Service -->
-          <div class="single-service text-center wow fadeInUp" data-wow-delay="0.8s">
-            <div class="service-img" style="background-image: url(assets/img/service/microphone.png) ">
-            </div>
-            <h3>Public Speaking</h3>
-            <p>Whether for TED talks, podcasts, or just on Youtube :D</p>
-            <div class="service-overlay text-left">
-              <ul class="clearfix">
-                <li><i class="fa fa-long-arrow-right"></i> Keynote Presentations </li>
-                <li> <i class="fa fa-long-arrow-right"></i> Business Pitches </li>
-                <li> <i class="fa fa-long-arrow-right"></i> Podcast Interviews </li>
-                <li> <i class="fa fa-long-arrow-right"></i> <a href="./speaking-challenge.html" target="_blank"
-                    class="link-white">Historical Research</a> </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-6">
-          <!-- Single Service -->
-          <div class="single-service text-center wow fadeInUp" data-wow-delay="0.9s">
-            <div class="service-img" style="background-image: url(assets/img/service/analysis.png) "></div>
-            <h3>Research</h3>
-            <p>I've worked with startups to do business and scientific research.</p>
-            <div class="service-overlay text-left">
-              <ul class="clearfix">
-                <li> <i class="fa fa-long-arrow-right"></i> Root Cause Analysis </li>
-                <li><i class="fa fa-long-arrow-right"></i> Business Models </li>
-                <li><i class="fa fa-long-arrow-right"></i> Literature Review </li>
-                <li><i class="fa fa-long-arrow-right"></i> Partnerships & Outreach </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+
         <!-- Example Experience
           <div class="col-md-4 col-sm-6"> <!- Single Service ->
                 <div class="single-service text-center wow fadeInUp" data-wow-delay="1.2s">
@@ -689,7 +818,7 @@
   <!--==== END NEWSLETTER AREA =====-->
 
   <!--==== NEWSLETTER SIGNUP AREA =====-->
-  <div class="cta-area section-padding" style="background-image: url(/assets/img/newsletterBGcrop.jpg)">
+  <!-- <div class="cta-area section-padding" style="background-image: url(/assets/img/newsletterBGcrop.jpg)">
     <div class="container">
       <div class="row">
         <div class="col-md-12 text-center">
@@ -700,7 +829,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   <!--==== END NEWSLETTER SIGNUP AREA =====-->
 
   <!--====== CONTACT INFO AREA ======-->
@@ -815,13 +944,14 @@
           <br>
 
           <p id="copyright">&copy;2020 <strong>Madhav Malhotra</strong></p>
-          <p>Icons by <a href="https://flaticon.com" style="color: white;">Flaticon.com</a></p>
+          <p>Icons by Font Awesome</p>
         </div>
       </div>
     </div>
   </footer>
   <!--====== END FOOTER AREA ======-->
 
+  <!--====== Scroll script ======-->
   <script>
     function hashScroll() {
       if (window.location.hash.length > 0) {
@@ -869,6 +999,9 @@
 
   <!--== main js ==-->
   <script src="assets/js/main.js"></script>
+
+  <!--== popover js ==-->
+  <script src="assets/js/popover.js" defer></script>
 </body>
 
 </html>
