@@ -736,6 +736,10 @@ ul.work-list li {
   border-radius: 20px;
 }
 
+div[id*="full-portfolio"] .single-work {
+  border: 1px solid black;
+}
+
 .single-work img {
   -webkit-transform: scale(1.15);
   transform: scale(1.15);
