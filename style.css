@@ -1669,6 +1669,10 @@ div.timeline-modal a {
   cursor: pointer;
 }
 
+.timeline-modal::-webkit-scrollbar {
+  border-radius: 0px 8px 8px 0px;
+}
+
 ::-webkit-scrollbar {
   width: 16px;
   background-color: #ccc;
