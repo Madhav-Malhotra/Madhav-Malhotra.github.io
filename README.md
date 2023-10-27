@@ -1,5 +1,5 @@
 # madhavmalhotra.com
-This is a personal website I've built over the years. I use it as a place to share blog posts, add my portfolio, share resources I've grown from, etc. 
+This is a personal website I've built over the years. I use it as a place to share blog posts, my portfolio, resources I've grown from, and really... who I am :-)
 
 You can visit the website at [madhavmalhotra.com](madhavmalhotra.com)
 
