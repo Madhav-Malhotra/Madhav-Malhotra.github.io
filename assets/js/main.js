@@ -69,7 +69,7 @@ NOTE: This is the custom jQuery file for the template
             $("#projectModal1 iframe, #projectModal2 iframe, #projectModal3 iframe, #projectModal3 iframe, #projectModal4 iframe, #projectModal5 iframe, #projectModal6 iframe, #projectModal7 iframe, #projectModal8 iframe, #projectModal9 iframe").attr("src", $("projectModal1 iframe, #projectModal2 iframe, #projectModal3 iframe, #projectModal3 iframe, #projectModal4 iframe, #projectModal5 iframe, #projectModal6 iframe, #projectModal7 iframe, #projectModal8 iframe, #projectModal9 iframe").attr("src"));
         });
 
-        /*======== Intro typer ===========*/
+        /*======== Intro typer ===========
         var element = $(".element");
         $(function() {
             element.typed({
@@ -78,7 +78,7 @@ NOTE: This is the custom jQuery file for the template
 				backDelay: 1200,
                 loop: true,
             });
-        });
+        });*/
 
         /*======== Parallax js ===========*/
         $window.stellar({

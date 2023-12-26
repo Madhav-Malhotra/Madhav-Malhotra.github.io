@@ -117,12 +117,14 @@
           <div class="row">
             <div class="col-md-8 col-md-offset-2">
               <div class="welcome-text">
-                <h1 class="theme-color gradient">Madhav Malhotra</h1>
+                <h1 id="mm-splash-header" class="theme-color gradient">Madhav Malhotra</h1>
                 <div class="element"></div>
 
               </div>
               <div class="home-arrow">
-                <a href="#about" class="smoth-scroll"><i class="fa fa-angle-double-down"></i></a>
+                <a id="mm-splash-header" href="#about" class="smoth-scroll">
+                  <i class="fa fa-angle-double-down"></i>
+                </a>
               </div>
             </div>
           </div>
@@ -143,8 +145,9 @@
             <div class="author-image">
               <popover data-target="about-author-image-index">?</popover>
               <div class="popover-modal-custom-made" id="about-author-image-index">
-                To get myself excited about learning AI, I transferred the style of The
-                Scream by Edvard Munch to this picture.
+                I had a slump of boredom when learning AI theory. 
+                So I remotivated myself by adding the style of 
+                The Scream by Edvard Munch onto this photo!
                 <br />
               </div>
               <img src="assets/img/paintedProfilePicture.jpg" alt="Author Image">
@@ -184,9 +187,6 @@
                     <!--=== social-links ===-->
                     <li><a href="https://www.linkedin.com/in/madhav-malhotra/" target="_blank"><i
                           class="fa fa-linkedin"></i></a></li>
-                    <li><a href="https://forum.effectivealtruism.org/users/madhav-malhotra" target="_blank">
-                        <img src="assets/img/service/EALogo.svg" />
-                      </a></li>
                     <li><a href="https://madhav-malhotra003.medium.com/" target="_blank"><i
                           class="fa fa-medium"></i></a></li>
                     <li><a href="https://www.youtube.com/c/MadhavMalhotra003" target="_blank"><i
@@ -221,12 +221,14 @@
       <div class="row">
         <ul class="work-list text-center">
           <li class="filter" data-filter="all">All</li>
+          <li class="filter" data-filter=".projects">Projects</li>
+          <!-- <li class="filter" data-filter=".presentations">Speaking</li> -->
+          <li class="filter" data-filter=".articles">Writing</li>
+          <!-- <li class="filter" data-filter=".design">Design</li> -->
+          <li onclick="window.open('https://github.com/Madhav-Malhotra','_blank')">Technical
+          </li>
           <li onclick="window.open('https://resources.madhavmalhotra.com/global-problem-research','_blank')">Research
           </li>
-          <li class="filter" data-filter=".presentations">Speaking</li>
-          <li class="filter" data-filter=".articles">Writing</li>
-          <li class="filter" data-filter=".design">Design</li>
-          <li class="filter" data-filter=".projects">Projects</li>
         </ul>
       </div>
       <!--/.row-->
@@ -234,17 +236,17 @@
       <div class="work-inner">
         <div class="row">
 
-          <div class="col-md-4 col-sm-6 col-xs-12 mix presentations">
-            <!-- Single Presentation -->
+          <div class="col-md-4 col-sm-6 col-xs-12 mix projects">
+            <!-- Single Work -->
             <div class="single-work">
-              <img class="" src="assets/img/work/52WeeksSpeakingStock.jpg" alt="" loading="lazy">
+              <img class="" src="assets/img/work/design-team.jpg" alt="" loading="lazy">
               <div class="item-hover">
                 <div class="work-table">
                   <div class="work-tablecell">
                     <div class="hover-content">
-                      <h4>52 Weeks of Speaking</h4>
-                      <a href="/speaking-challenge.html" class="work-link" target="_blank"><i
-                          class="fa fa-link"></i></a>
+                      <h4>AI Design Team Blog</h4>
+                      <a href="https://wataicyber.substack.com" class="work-link"
+                        target="_blank" data-toggle="modal" data-target="#pModWatAI"><i class="fa fa-link"></i></a>
                     </div>
                   </div>
                 </div>
@@ -252,17 +254,17 @@
             </div>
           </div>
 
-          <div class="col-md-4 col-sm-6 col-xs-12 mix presentations">
+          <div class="col-md-4 col-sm-6 col-xs-12 mix projects">
             <!-- Single Work -->
             <div class="single-work">
-              <img class="" src="assets/img/work/TKS Showcase.jpg" alt="" loading="lazy">
+              <img class="" src="assets/img/work/tutorial.jpg" alt="" loading="lazy">
               <div class="item-hover">
                 <div class="work-table">
                   <div class="work-tablecell">
                     <div class="hover-content">
-                      <h4>TEDxCorktown - Plastic Pollution</h4>
-                      <a href="#" class="work-link" data-toggle="modal" data-target="#pModTEDx"><i
-                          class="fa fa-link"></i></a>
+                      <h4>Grade 8 Math to AI</h4>
+                      <a href="https://www.youtube.com/playlist?list=PLqgr5FD_y_wLYetqEkzc68eReW2gHK14Q" class="work-link"
+                        target="_blank" data-toggle="modal" data-target="#pModG8Math2AI"><i class="fa fa-link"></i></a>
                     </div>
                   </div>
                 </div>
@@ -270,16 +272,52 @@
             </div>
           </div>
 
-          <div class="col-md-4 col-sm-6 col-xs-12 mix presentations">
+          <div class="col-md-4 col-sm-6 col-xs-12 mix projects">
             <!-- Single Work -->
             <div class="single-work">
-              <img class="" src="assets/img/work/IndisposablePodcastInterview.jpg" alt="" loading="lazy">
+              <img class="" src="assets/img/work/knowledgeArchives.jpg" alt="" loading="lazy">
               <div class="item-hover">
                 <div class="work-table">
                   <div class="work-tablecell">
                     <div class="hover-content">
-                      <h4>Indisposable Podcast Interview</h4>
-                      <a href="#" class="work-link" data-toggle="modal" data-target="#pModIndisposable"><i
+                      <h4>The Knowledge Archives</h4>
+                      <a href="https://www.youtube.com/channel/UCRBGFeAh48DcVIFQ11OFw1g" class="work-link"
+                        target="_blank"><i class="fa fa-link"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6 col-xs-12 mix projects">
+            <!-- Single Work -->
+            <div class="single-work">
+              <img class="" src="assets/img/work/trash-bin.jpg" alt="" loading="lazy">
+              <div class="item-hover">
+                <div class="work-table">
+                  <div class="work-tablecell">
+                    <div class="hover-content">
+                      <h4>The Plastic Shift</h4>
+                      <a href="https://madhav-malhotra.github.io/ThePlasticShift/" class="work-link"
+                        data-toggle="modal" data-target="#pModPlasticShiftManifesto"><i class="fa fa-link"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6 col-xs-12 mix articles">
+            <!-- Single Work -->
+            <div class="single-work">
+              <img class="" src="assets/img/work/carbon-capture.jpg" alt="" loading="lazy">
+              <div class="item-hover">
+                <div class="work-table">
+                  <div class="work-tablecell">
+                    <div class="hover-content">
+                      <h4>Opportunities in Carbon Capture</h4>
+                      <a class="work-link" data-toggle="modal" data-target="#pModCarbonCapture"><i
                           class="fa fa-link"></i></a>
                     </div>
                   </div>
@@ -298,24 +336,6 @@
                     <div class="hover-content">
                       <h4>Animated Annual Reflection</h4>
                       <a class="work-link" data-toggle="modal" data-target="#pModAnnualReflection"><i
-                          class="fa fa-link"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 col-sm-6 col-xs-12 mix articles">
-            <!-- Single Work -->
-            <div class="single-work">
-              <img class="" src="assets/img/work/carbon-capture.jpg" alt="" loading="lazy">
-              <div class="item-hover">
-                <div class="work-table">
-                  <div class="work-tablecell">
-                    <div class="hover-content">
-                      <h4>Opportunities in Carbon Capture</h4>
-                      <a class="work-link" data-toggle="modal" data-target="#pModCarbonCapture"><i
                           class="fa fa-link"></i></a>
                     </div>
                   </div>
@@ -359,88 +379,16 @@
             </div>
           </div>
 
-          <div class="col-md-4 col-sm-6 col-xs-12 mix projects">
-            <!-- Single Work -->
+          <div class="col-md-4 col-sm-6 col-xs-12 mix presentations">
+            <!-- Single Presentation -->
             <div class="single-work">
-              <img class="" src="assets/img/work/random-objects.jpg" alt="" loading="lazy">
+              <img class="" src="assets/img/work/52WeeksSpeakingStock.jpg" alt="" loading="lazy">
               <div class="item-hover">
                 <div class="work-table">
                   <div class="work-tablecell">
                     <div class="hover-content">
-                      <h4>Creativity Trainer</h4>
-                      <a class="work-link" data-toggle="modal" data-target="#pModCreativityTrainer"><i
-                          class="fa fa-link"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 col-sm-6 col-xs-12 mix projects">
-            <!-- Single Work -->
-            <div class="single-work">
-              <img class="" src="assets/img/work/trash-bin.jpg" alt="" loading="lazy">
-              <div class="item-hover">
-                <div class="work-table">
-                  <div class="work-tablecell">
-                    <div class="hover-content">
-                      <h4>The Plastic Shift Manifesto</h4>
-                      <a href="https://madhav-malhotra.github.io/ThePlasticShift/manifesto" class="work-link"
-                        data-toggle="modal" data-target="#pModPlasticShiftManifesto"><i class="fa fa-link"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 col-sm-6 col-xs-12 mix projects">
-            <!-- Single Work -->
-            <div class="single-work">
-              <img class="" src="assets/img/work/knowledgeArchives.jpg" alt="" loading="lazy">
-              <div class="item-hover">
-                <div class="work-table">
-                  <div class="work-tablecell">
-                    <div class="hover-content">
-                      <h4>The Knowledge Archives</h4>
-                      <a href="https://www.youtube.com/channel/UCRBGFeAh48DcVIFQ11OFw1g" class="work-link"
-                        target="_blank"><i class="fa fa-link"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 col-sm-6 col-xs-12 mix projects">
-            <!-- Single Work -->
-            <div class="single-work">
-              <img class="" src="assets/img/work/Eve.png" alt="" loading="lazy">
-              <div class="item-hover">
-                <div class="work-table">
-                  <div class="work-tablecell">
-                    <div class="hover-content">
-                      <h4>Animated Eve</h4>
-                      <a class="work-link" data-toggle="modal" data-target="#pModAnimatedEve"><i
-                          class="fa fa-link"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 col-sm-6 col-xs-12 mix projects">
-            <!-- Single Work -->
-            <div class="single-work">
-              <img class="" src="assets/img/work/network-min.jpg" alt="" loading="lazy">
-              <div class="item-hover">
-                <div class="work-table">
-                  <div class="work-tablecell">
-                    <div class="hover-content">
-                      <h4>Blockchain Network Analysis</h4>
-                      <a href="https://youtu.be/f8C8evNKSVI" class="work-link" target="_blank"><i
+                      <h4>52 Weeks of Speaking</h4>
+                      <a href="/speaking-challenge.html" class="work-link" target="_blank"><i
                           class="fa fa-link"></i></a>
                     </div>
                   </div>
@@ -452,25 +400,24 @@
           <div class="col-md-12">
 
             <!-- /.modal -->
-            <div tabindex="0" class="modal fade" id="pModTEDx">
+            <div tabindex="0" class="modal fade" id="pModWatAI">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                         aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title portfolio">TEDxCorktown</h4>
+                    <h4 class="modal-title portfolio">AI Design Team</h4>
                   </div>
                   <div class="modal-body">
-                    <p>This was my first time giving a TED talk. Though I was nervous, I surprised myself with my
-                      ability to stay calm! Because 0.4s into the talk, I realised I'd forgotten my clicker &#128561;
-                      Still,
-                      the show must go on. So I used my <a
-                        href='https://creativity-trainer.web.app/improv-presentations' target='_blank'
-                        id='accentColor'>improv training</a> to nonchalantly ignore the cartoon image stuck on the
-                      screen the entire time &#128517;</p>
+                    <p>At the University of Waterloo, I lead a student design 
+                      team on AI and cybersecurity. We've been working on
+                      algorithms to detect hackers on smart devices. If you're 
+                      a fellow programmer, we've been publishing our findings at
+                      our blog! 
+                    </p>
                     <ul class="list-unstyled project-list">
-                      <li><label>Listen and laugh: </label> <a href="https://youtu.be/ocjyPyITILY"
-                          target="_blank">Youtube</a></li>
+                      <li><label>Take a look: </label> <a href="https://wataicyber.substack.com"
+                          target="_blank">Blog</a></li>
                     </ul>
                   </div>
                 </div><!-- /.modal-content -->
@@ -478,22 +425,69 @@
             </div><!-- /.modal -->
 
             <!-- /.modal -->
-            <div tabindex="0" class="modal fade" id="pModIndisposable">
+            <div tabindex="0" class="modal fade" id="pModG8Math2AI">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                         aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title portfolio">Indisposable Podcast Interview</h4>
+                    <h4 class="modal-title portfolio">Grade 8 Math to AI</h4>
                   </div>
                   <div class="modal-body">
-                    <p>A friend and I wanted to analyse plastic pollution at its ROOT. After interviewing dozens of
-                      scientists and activists, we found thousands of global beach
-                      cleanups ineffective. After a lot of hustling, a charity decided to feature our
-                      take in this podcast.</p>
+                    <p>
+                      I spent years trying to learn ML, only to be derailed by
+                      niche math I didn't understand. Eventually, I finally slogged
+                      through enough to connect the dots on which pieces mattered.
+                      That's why I created this course to help others trying to learn AI, 
+                      starting from grade 8 fundamentals like solving equations.
+                    </p>
                     <ul class="list-unstyled project-list">
-                      <li><label>Hear us out: </label> <a href="https://open.spotify.com/episode/4fxARpAZvnEAyIN8rKqOql"
-                          target="_blank">Spotify</a></li>
+                      <li><label>Learn along: </label> <a href="https://www.youtube.com/playlist?list=PLqgr5FD_y_wLYetqEkzc68eReW2gHK14Q"
+                          target="_blank">Tutorials</a></li>
+                    </ul>
+                  </div>
+                </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+
+            <!-- /.modal -->
+            <div tabindex="0" class="modal fade" id="pModAnnualReflection">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title portfolio">Animated Annual Reflection</h4>
+                  </div>
+                  <div class="modal-body">
+                    <p>2021 really hurt. Several close relationships in my life had broken after the
+                      pandemic. I was learning lots about the depths of the human experience. I wanted to capture the
+                      beauty of this, so I mixed art + tech to create an animated reflection.</p>
+                    <ul class="list-unstyled project-list">
+                      <li><label>Take a look: </label> <a href="/blog/2021-Annual-Reflection/index.html"
+                          target="_blank">Blog</a></li>
+                    </ul>
+                  </div>
+                </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+
+            <!-- /.modal -->
+            <div tabindex="0" class="modal fade" id="pModAnnualReflection">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title portfolio">Animated Annual Reflection</h4>
+                  </div>
+                  <div class="modal-body">
+                    <p>2021 really hurt. Several close relationships in my life had broken after the
+                      pandemic. I was learning lots about the depths of the human experience. I wanted to capture the
+                      beauty of this, so I mixed art + tech to create an animated reflection.</p>
+                    <ul class="list-unstyled project-list">
+                      <li><label>Take a look: </label> <a href="/blog/2021-Annual-Reflection/index.html"
+                          target="_blank">Blog</a></li>
                     </ul>
                   </div>
                 </div><!-- /.modal-content -->
@@ -948,8 +942,8 @@
   <!--== plugins js - needed for mobile nav ==-->
   <script src="assets/js/plugins.js"></script>
 
-  <!--== typed js ==-->
-  <script src="assets/js/typed.js"></script>
+  <!--== typed js - removed the typing into thingy ==
+  <script src="assets/js/typed.js"></script> -->
 
   <!--== stellar js ==-->
   <script src="assets/js/jquery.stellar.min.js" defer></script>
@@ -975,7 +969,7 @@
   <!--== main js ==-->
   <script src="assets/js/main.js"></script>
 
-  <!--== popover js ==-->
+  <!--== popover js - custom script to handle tooltip over about me modal ==-->
   <script src="assets/js/popover.js" defer></script>
 </body>
 

@@ -7,16 +7,8 @@ function pop_mouse_over(e) {
   const mod = pop.parentNode.querySelector(`div#${target}`);
 
   // Animated modal display
-  let currOpacity = 0;
-  mod.style.opacity = currOpacity;
+  mod.style.opacity = 1.0;
   mod.classList.add('active');
-
-  const interval = setInterval(() => {
-    if (mod.style.opacity < 1) {
-      currOpacity += 0.01;
-      mod.style.opacity = currOpacity;
-    } else clearInterval(interval);
-  }, 2)
 }
 
 function pop_mouse_exit(e) {
@@ -26,18 +18,8 @@ function pop_mouse_exit(e) {
   const mod = pop.parentNode.querySelector(`div#${target}`);
 
   // Animated modal display
-  let currOpacity = 1;
-  mod.style.opacity = currOpacity;
-
-  const interval = setInterval(() => {
-    if (mod.style.opacity > 0) {
-      currOpacity -= 0.01;
-      mod.style.opacity = currOpacity;
-    } else {
-      clearInterval(interval);
-      mod.classList.remove('active');
-    }
-  }, 2)
+  mod.style.opacity = 0.0;
+  mod.classList.remove('active');
 }
 
 // =========== ADD EVENT HANDLERS ===============
