@@ -1,17 +1,22 @@
-STATE = {
+const STATE = {
     '0': {
         'img': {
-            '/blog/2024-summer-travels/img/banff-highway-mountain.jpg': null,
-            '/blog/2024-summer-travels/img/vancouver-tower-beach-sunset.jpg': null
+            '/blog/2024-summer-travels/img/0/banff-mountain.webp': null,
+            '/blog/2024-summer-travels/img/0/jasper-lake.webp': null,
+            '/blog/2024-summer-travels/img/0/campbell-river-dock.webp': null,
+            '/blog/2024-summer-travels/img/0/sunset-beach-vancouver.webp': null,
+            '/blog/2024-summer-travels/img/0/train-kamloops.webp': null,
+            '/blog/2024-summer-travels/img/0/train-winnipeg.webp': null,
+            '/blog/2024-summer-travels/img/0/ubc-rose-garden-vancouver.webp': null
         },
         'audio': {
-            '/blog/2024-summer-travels/audio/intro.mp3': null
+            '/blog/2024-summer-travels/audio/0/wonder-paint-the-skies.mp3': null
         },
         'video': {}
     }
 };
 
-async function loadSection(section, delay = 'urgent', callback = () => null,
+async function loadSection(section, delay = 0, callback = () => null,
     enableCache = true, refreshCache = false) {
     /*
     Controller function to initiate the loading of a section's media files.
@@ -20,10 +25,8 @@ async function loadSection(section, delay = 'urgent', callback = () => null,
     section (type: string)
     - Name of section to load. Must correspond to valid key in STATE object.
     
-    delay (type: string, default: urgent)
-    - Can be 'urgent' or 'background'. 
-    - 'urgent' loading will load all media files sequentially without delays.
-    - 'background' loading will load media files with 0.1s delay between each file.
+    delay (type: number, default: 0)
+    - Specify the amount of delay in milliseconds between each file.
     
     callback (type: function, default: () => null)
     - Function to execute after all media files have been loaded.
@@ -50,7 +53,6 @@ async function loadSection(section, delay = 'urgent', callback = () => null,
         cache = await caches.open(`madhavmalhotra-blog-summer-2024-travels-${section}`);
     } else cache = null;
 
-
     // Go through img, audio, video sections
     const mediaTypes = Object.keys(STATE[section]);
     for (let type of mediaTypes) {
@@ -64,14 +66,23 @@ async function loadSection(section, delay = 'urgent', callback = () => null,
             if (cache && !refreshCache) response = await cache.match(file);
             if (!response) {
                 response = await fetch(file);
+                if (!response.ok) {
+                    console.error(`Failed to load media file: ${file}`);
+                    return;
+                }
                 if (cache) await cache.put(file, response.clone());
             }
 
             // Store response in STATE object and wait 0.1s if background loading
-            STATE[section][type][file] = response.blob();
-            if (delay === 'background') {
-                await new Promise(resolve => setTimeout(resolve, 100));
+            STATE[section][type][file] = await response.blob();
+            if (delay > 0) {
+                await new Promise(resolve => setTimeout(resolve, delay));
             }
         }
-    }   
+    }
+    
+    // Execute callback function upon succesful load
+    callback();
 }
+
+export { loadSection, STATE };
