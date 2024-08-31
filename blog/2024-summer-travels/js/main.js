@@ -1,7 +1,18 @@
 import { loadSection, STATE } from './loader.js';
 
+const sliders = document.querySelectorAll('.volume-slider');
+
+for (let slider of sliders) {
+    slider.addEventListener('input', function() {
+        const value = this.value;
+        this.style.setProperty('--value', `${value}%`);
+    });
+}
+
 function setup0() {
     // Load all media files for section 0
+    let clickedStart = false;
+
     loadSection('0', 0, () => {
         // Start DOM rendering
         window.inspectSTATE = STATE;
@@ -70,12 +81,21 @@ function setup0() {
             startButton.classList.toggle('active');
         }, 500);
 
+        setTimeout(() => {
+            if (!clickedStart) {
+                document.querySelector('#temporary-hint').classList.add('active');
+            }
+        }, 10000);
+
         startButton.onclick = () => {
             // Update CSS transitions occurring
             clearInterval(alternateButton);
             startButton.classList.remove('active');
             startButton.classList.add('expanding');
             startButton.classList.add('fading');
+
+            clickedStart = true;
+            document.querySelector('#temporary-hint').classList.remove('active');
 
             // Start narration audio
             setTimeout(() => {
