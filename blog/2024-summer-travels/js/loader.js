@@ -2,7 +2,7 @@ const STATE = {
     '0': {
         'img': {
             '/blog/2024-summer-travels/img/0/banff-mountain.webp': null,
-            '/blog/2024-summer-travels/img/0/jasper-lake.webp': null,
+            '/blog/2024-summer-travels/img/0/jasper-lake-2.webp': null,
             '/blog/2024-summer-travels/img/0/campbell-river-dock.webp': null,
             '/blog/2024-summer-travels/img/0/sunset-beach-vancouver.webp': null,
             '/blog/2024-summer-travels/img/0/train-kamloops.webp': null,
