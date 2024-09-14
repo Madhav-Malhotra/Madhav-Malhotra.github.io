@@ -1,4 +1,6 @@
-/* GENERAL */
+/* =========================================== */
+/* ================= GENERAL ================= */
+/* =========================================== */
 p {
     font-family: 'Poppins', 'Roboto', sans-serif;
 }
@@ -14,9 +16,102 @@ p {
     justify-content: center;
 }
 
+/* Audio controls */
+#audio-controls {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#audio-controls,
+#music-controls,
+#narration-controls {
+    height: 0;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+#audio-controls.active,
+#music-controls.active,
+#narration-controls.active {
+    height: auto;
+    opacity: 1;
+}
+
+#music-controls.active,
+#narration-controls.active {
+    padding: 18px;
+}
+
+#audio-controls #music-controls, 
+#audio-controls #narration-controls {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+#audio-controls .switches-container {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+#audio-controls > div {
+    padding: 0px 20px;
+}
+
+#audio-controls p {
+    margin-bottom: 6px;
+    margin-top: 6px;
+}
+
+.audio-button {
+    cursor: pointer;
+    background-color: #db3f58;
+    color: white;
+    padding: 5px;
+    width: 28px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    transition: opacity 0.5s ease;
+}
+
+.audio-button.disabled {
+    cursor: not-allowed;
+    filter: grayscale(1);
+}
+
+.audio-button:hover {
+    opacity: 0.75;
+}
+
+.audio-button svg {
+    width: 15px;
+    height: 15px;
+    margin-top: 2px;
+    margin-left: 2px;
+}
+
+.audio-button.skip svg {
+    width: 20px;
+    height: 20px;
+    margin-top: 0px;
+    margin-left: -4px;
+}
+
+.audio-button.speed span {
+    margin-left: -1px;
+}
+
+.audio-button.speed {
+    min-width: 50px;
+    border-radius: 15px;
+}
+
 .volume-slider {
 	font-size: 1.5rem;
-	width: 12.5em;
+	width: 7em;
 }
 
 .volume-slider {
@@ -174,7 +269,15 @@ p {
 
 
 
-/* SECTION 0 */
+
+/* ============================================ */
+/* ================= SECTION 0 ================ */
+/* ============================================ */
+body.section-0 {
+    overflow-y: hidden;
+}
+
+/* Image carousel */
 section#section-0 #image-carousel {
     width: 100%;
     height: 90vh;
@@ -212,6 +315,41 @@ section#section-0 #image-carousel img {
     height: 100%;
 }
 
+section#section-0 #carousel-controls {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    margin: 16px;
+    z-index: 10;
+}
+
+section#section-0 #carousel-controls button {
+    background-color: #db3f58;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transition: 0.3s;
+    opacity: 0.5;
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+
+section#section-0 #carousel-controls button.active,
+section#section-0 #carousel-controls button:hover {
+    opacity: 0.95;
+}
+
+section#section-0 #carousel-controls button:focus {
+    outline: 3px solid black;
+    opacity: 0.95;
+}
+
+
+/* Start button */
 section#section-0 #start-button {
     position: absolute;
     top: 50%;
@@ -252,76 +390,14 @@ section#section-0 #start-button button.fading {
 
 section#section-0 #temporary-hint {
     opacity: 0;
-    margin-top: 10px;
     transition: opacity 1.5s ease;
     height: 0;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
 }
 
 section#section-0 #temporary-hint.active {
     opacity: 0.95;
     height: auto;
-}
-
-section#section-0 #carousel-controls {
-    position: absolute;
-    bottom: 25px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-    margin: 16px;
-    z-index: 10;
-}
-
-section#section-0 #carousel-controls button {
-    background-color: #db3f58;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    transition: 0.3s;
-    opacity: 0.5;
-    cursor: pointer;
-    outline: none;
-    border: none;
-}
-
-section#section-0 #carousel-controls button.active,
-section#section-0 #carousel-controls button:hover {
-    opacity: 0.95;
-}
-
-section#section-0 #carousel-controls button:focus {
-    outline: 3px solid black;
-    opacity: 0.95;
-}
-
-#section-0 #audio-controls {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-#section-0 #audio-controls #music-controls, 
-#section-0 #audio-controls #narration-controls {
-    display: flex;
-    flex-grow: 1;
-    gap: 25px;
-    align-items: center;
-}
-
-#section-0 .play-pause {
-    cursor: pointer;
-    background-color: #db3f58;
-    padding: 12px;
-    border-radius: 50%;
-    border: none;
-    transition: opacity 0.5s ease;
-}
-
-#section-0 .play-pause:hover {
-    opacity: 0.75;
-}
-
-#section-0 .play-pause svg {
-    width: 25px;
-    height: 25px;
 }

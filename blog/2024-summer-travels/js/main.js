@@ -85,7 +85,7 @@ function setup0() {
             if (!clickedStart) {
                 document.querySelector('#temporary-hint').classList.add('active');
             }
-        }, 10000);
+        }, 6000);
 
         startButton.onclick = () => {
             // Update CSS transitions occurring
@@ -95,16 +95,115 @@ function setup0() {
             startButton.classList.add('fading');
 
             clickedStart = true;
-            document.querySelector('#temporary-hint').classList.remove('active');
+            const hint = document.querySelector('#temporary-hint');
+            hint.classList.remove('active');
 
             // Start narration audio
             setTimeout(() => {
+                // Update what's visible
+                hint.style.display = 'none';
                 startButton.style.display = 'none';
-                console.log('Narration audio started');
-            }, 1000);
+                document.querySelector('#audio-controls').classList.add('active');
+
+                // Start playing music
+                document.querySelector('#music-controls').classList.add('active');
+                const musicPlayer = document.querySelector('#music-player');
+                musicPlayer.src = URL.createObjectURL(STATE['0']['audio']['/blog/2024-summer-travels/audio/0/Xinjiang by Zimpzon.mp3']);
+                musicPlayer.loop = true;
+                musicPlayer.volume = 0.5;
+                musicPlayer.load();
+                musicPlayer.play();
+
+                setTimeout(() => {
+                    const musicVolume = document.querySelector('#music-controls .volume-slider');
+                    let i = 0;
+
+                    const increaseMusicVolume = setInterval(() => {
+                        musicVolume.value = Math.sin(i)/2 + 0.001;
+                        i += 0.005;
+                        if (musicVolume.value >= 0.5) clearInterval(increaseMusicVolume);
+                    }, 10);
+                }, 600);
+
+                // Setup event listeners
+                const musicSlider = document.querySelector('#music-controls .volume-slider');
+                const musicPause = document.querySelector('#music-controls .play-pause');
+                const musicSkip = document.querySelector('#music-controls .skip');
+
+                musicSlider.addEventListener('input', function() {
+                    musicPlayer.volume = this.value;
+                });
+                musicPause.onclick = () => {
+                    if (musicPlayer.paused) musicPlayer.play();
+                    else musicPlayer.pause();
+                };
+                musicSkip.classList.add('disabled');
+                musicSkip.ariaDisabled = true;        
+
+                // Start playing narration
+                const narrationPlayer = document.querySelector('#narration-player');
+                narrationPlayer.src = URL.createObjectURL(STATE['0']['audio']['/blog/2024-summer-travels/audio/0/Intro (4.25min).mp3']);
+                narrationPlayer.volume = 0.5;
+                narrationPlayer.load();
+
+                // Setup event listeners
+                const narrationSlider = document.querySelector('#narration-controls .volume-slider');
+                const narrationPause = document.querySelector('#narration-controls .play-pause');
+                const narrationSpeed = document.querySelector('#narration-controls .speed');
+
+                narrationSlider.addEventListener('input', function() {
+                    narrationPlayer.volume = this.value;
+                });
+                narrationPause.onclick = () => {
+                    if (narrationPlayer.paused) narrationPlayer.play();
+                    else narrationPlayer.pause();
+                };
+                narrationSpeed.onclick = () => {
+                    if (narrationPlayer.playbackRate === 1) {
+                        narrationPlayer.playbackRate = 1.5;
+                        narrationSpeed.textContent = '1.5x';
+                    } else if (narrationPlayer.playbackRate === 1.5) {
+                        narrationPlayer.playbackRate = 2;
+                        narrationSpeed.textContent = '2x';
+                    } else if (narrationPlayer.playbackRate === 2) {
+                        narrationPlayer.playbackRate = 2.5;
+                        narrationSpeed.textContent = '2.5x';
+                    } else if (narrationPlayer.playbackRate === 2.5) {
+                        narrationPlayer.playbackRate = 3;
+                        narrationSpeed.textContent = '3x';
+                    } else if (narrationPlayer.playbackRate === 3) {
+                        narrationPlayer.playbackRate = 1;
+                        narrationSpeed.textContent = '1x';
+                    }
+                };
+
+                setTimeout(() => {
+                    document.querySelector('#narration-controls').classList.add('active');
+
+                    setTimeout(() => {
+                        const narrationVolume = document.querySelector('#narration-controls .volume-slider');
+                        const musicVolume = document.querySelector('#music-controls .volume-slider');
+                        let i = 0;
+                        narrationPlayer.play();
+
+                        const increaseNarrationVolume = setInterval(() => {
+                            narrationVolume.value = Math.sin(i)*1.0 + 0.001;
+                            narrationPlayer.volume = narrationVolume.value;
+
+                            if (musicVolume.value > 0.1) {
+                                musicVolume.value -= 0.01;
+                                musicPlayer.volume = musicVolume.value;
+                            }
+                            
+                            i += 0.01;
+                            if (narrationVolume.value >= 0.99) clearInterval(increaseNarrationVolume);
+                        }, 10);
+                    }, 600);
+                }, 16000)
+            }, 500);
         }
 
-    }, true, false);
+    }, true, true);
 }
 
 document.addEventListener('DOMContentLoaded', setup0);

@@ -28,7 +28,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Just+Another+Hand&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
 </head>
-<body style="margin: 0;">
+<body class="section-0" style="margin: 0;">
     <section id="section-0">
         <div class="container">
             <div class="row" id="image-carousel">
@@ -45,40 +45,62 @@
                 </div>
             </div>
             <div class="row text-centre" id="temporary-hint">
-                <p>Hint: If you haven't considered it, you might wish to try clicking the GIANT, flashing start button...</p>
+                <p>Hint: If you haven't considered it, try clicking the GIANT, flashing start button...</p>
             </div>
             <div class="row" id="audio-controls">
                 <div id="music-controls">
-                    <button class="play-pause">
-                        <svg width="1080" height="1080" viewBox="0 0 1080 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_91_15)">
-                            <path d="M917.5 519.689C940.833 533.161 940.833 566.839 917.5 580.311L227.5 978.683C204.167 992.154 175 975.315 175 948.372L175 151.628C175 124.685 204.167 107.846 227.5 121.317L917.5 519.689Z" fill="#D9D9D9"/>
-                            </g>
-                            <defs>
-                            <clipPath id="clip0_91_15">
-                            <rect width="1080" height="1080" fill="white"/>
-                            </clipPath>
-                            </defs>
-                        </svg>
-                    </button>
-                    <input type="range" class="volume-slider" min="0" max="1" step="0.01" value="0.5">
-                    <p id="music-label"></p>
+                    <p id="music-label">Music playing: Xinjiang by Zimpzon</p>
+                    <div class="switches-container">
+                        <button class="audio-button play-pause" alt="Play or pause music" role="button" aria-label="Play or pause music">
+                            <svg width="1080" height="1080" viewBox="0 0 1080 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_91_15)">
+                                <path d="M917.5 519.689C940.833 533.161 940.833 566.839 917.5 580.311L227.5 978.683C204.167 992.154 175 975.315 175 948.372L175 151.628C175 124.685 204.167 107.846 227.5 121.317L917.5 519.689Z" fill="#D9D9D9"/>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0_91_15">
+                                <rect width="1080" height="1080" fill="white"/>
+                                </clipPath>
+                                </defs>
+                            </svg>
+                        </button>
+                        <button class="audio-button skip" alt="Skip the current song" role="button" aria-label="Skip the current song">
+                            <svg width="1080" height="1080" viewBox="0 0 1080 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0)">
+                                  <path d="M827.5 519.689C850.833 533.161 850.833 566.839 827.5 580.311L387.5 828.689C364.167 842.161 335 825.315 335 798.372V281.628C335 254.685 364.167 237.846 387.5 251.317L827.5 519.689Z" fill="white"/>
+                                  <rect x="900" y="250" width="120" height="600" fill="white"/>
+                                </g>
+                                <defs>
+                                  <clipPath id="clip0">
+                                    <rect width="1080" height="1080" fill="white"/>
+                                  </clipPath>
+                                </defs>
+                            </svg>
+                        </button>
+                        <input type="range" class="volume-slider" min="0" max="1" step="0.01" value="0">
+                    </div>
+                    <audio id="music-player" style="display: none;"></audio>
                 </div>
                 <div id="narration-controls">
-                    <button class="play-pause">
-                        <svg width="1080" height="1080" viewBox="0 0 1080 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_91_15)">
-                            <path d="M917.5 519.689C940.833 533.161 940.833 566.839 917.5 580.311L227.5 978.683C204.167 992.154 175 975.315 175 948.372L175 151.628C175 124.685 204.167 107.846 227.5 121.317L917.5 519.689Z" fill="#D9D9D9"/>
-                            </g>
-                            <defs>
-                            <clipPath id="clip0_91_15">
-                            <rect width="1080" height="1080" fill="white"/>
-                            </clipPath>
-                            </defs>
-                        </svg>                            
-                    </button>
-                    <input type="range" class="volume-slider" min="0" max="1" step="0.01" value="0.5">
-                    <p id="narration-label"></p>
+                    <p id="narration-label">Narration playing: Intro (4.25m)</p>
+                    <div class="switches-container">
+                        <button class="audio-button play-pause" alt="Play or pause narration" role="button" aria-label="Play or pause narration">
+                            <svg width="1080" height="1080" viewBox="0 0 1080 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_91_15)">
+                                <path d="M917.5 519.689C940.833 533.161 940.833 566.839 917.5 580.311L227.5 978.683C204.167 992.154 175 975.315 175 948.372L175 151.628C175 124.685 204.167 107.846 227.5 121.317L917.5 519.689Z" fill="#D9D9D9"/>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0_91_15">
+                                <rect width="1080" height="1080" fill="white"/>
+                                </clipPath>
+                                </defs>
+                            </svg>
+                        </button>
+                        <button class="audio-button speed" alt="Change narration speed" role="button" aria-label="Change narration speed">
+                            <span>1x</span>
+                        </button>
+                        <input type="range" class="volume-slider" min="0" max="1" step="0.01" value="0">
+                    </div>
+                    <audio id="narration-player" style="display: none;"></audio>
                 </div>
             </div>
         </div>
