@@ -10,7 +10,7 @@ const STATE = {
             '/blog/2024-summer-travels/img/0/ubc-rose-garden-vancouver.webp': null
         },
         'audio': {
-            '/blog/2024-summer-travels/audio/0/Intro (4.25min).mp3': null,
+            '/blog/2024-summer-travels/audio/0/Housekeeping (45s).mp3': null,
             '/blog/2024-summer-travels/audio/0/Xinjiang by Zimpzon.mp3': null
         },
         'video': {}

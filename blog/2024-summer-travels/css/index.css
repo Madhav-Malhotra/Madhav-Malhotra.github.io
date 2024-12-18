@@ -287,16 +287,22 @@ section#section-0 #image-carousel {
 
 section#section-0 #image-carousel .slide {
     opacity: 0;
-    transition: 0.5s;
     z-index: -10;
     height: 0;
     transition: opacity 0.9s ease-in-out;
+    position: absolute;
 }
 
 section#section-0 #image-carousel .slide.active {
     opacity: 1;
-    z-index: 0;
+    z-index: 1;
     height: 100%;
+}
+
+section#section-0 #image-carousel .slide.fade-out {
+    opacity: 0;
+    height: 100%;
+    z-index: 2;
 }
 
 section#section-0 #image-carousel .slide p.image-caption {
