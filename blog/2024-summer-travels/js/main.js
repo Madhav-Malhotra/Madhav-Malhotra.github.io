@@ -2,6 +2,7 @@ import { loadSection, STATE } from './loader.js';
 
 // Setup audio controls
 const sliders = document.querySelectorAll('.volume-slider');
+let sliderAutoplay;
 
 for (let slider of sliders) {
     slider.addEventListener('input', function() {
@@ -13,6 +14,53 @@ for (let slider of sliders) {
 // ==============================
 // SECTION 0: INTRODUCTION
 // ==============================
+
+// Sets up menu bar
+function menuHelper() {    
+    // Setup event listeners
+    let toExpanded, toCollapsed;
+
+    toExpanded = () => {
+        const menu = document.querySelector('#menu-bar');
+        const exit = document.querySelector('#menu-bar .exit');
+
+        // Update menu to next state based on current state
+        if (menu.classList.contains('state-collapsed')) {
+            // CSS animation
+            menu.classList.remove('state-collapsed');
+            menu.classList.add('state-expand-vert');
+
+            setTimeout(() => menu.classList.add('state-expand-horiz'), 500);
+            setTimeout(() => {
+                // Unregister event listener after transition
+                menu.onclick = () => null;
+                // Register toCollapsed event listener
+                exit.onclick = toCollapsed;
+            }, 1000);
+        }
+    };
+
+    toCollapsed = () => {
+        const menu = document.querySelector('#menu-bar');
+        const exit = document.querySelector('#menu-bar .exit');
+
+        // CSS animation
+        menu.classList.remove('state-expand-horiz');
+        menu.classList.add('state-expand-vert');
+        setTimeout(() => {
+            menu.classList.remove('state-expand-vert');
+            menu.classList.add('state-collapsed');
+        }, 500);
+        setTimeout(() => {
+            // Unregister event listener after transition
+            exit.onclick = () => null;
+            // Register toExpanded event listener
+            menu.onclick = toExpanded;
+        }, 1000);
+    }
+
+    document.querySelector('#menu-bar').onclick = toExpanded;
+}
 
 // Sets up image carousel
 function carouselHelper(STATE) {
@@ -74,11 +122,28 @@ function carouselHelper(STATE) {
             // Fade out current slide via CSS transition
             currentSlide.classList.remove('active');
             currentSlide.classList.add('fade-out');
-            setTimeout(() => currentSlide.classList.remove('fade-out'), 1000);
+
             // Make new switch active
+            const currentToggle = document.querySelector('.switch.active');
+            currentToggle.classList.remove('active');
             toggle.classList.add('active');
+
+            // Cleanup fade-out transition
+            setTimeout(() => currentSlide.classList.remove('fade-out'), 1000);
         };
     });
+
+    // Autoplay every 15 seconds
+    sliderAutoplay = setInterval(() => {
+        const currentSlide = document.querySelector('.slide.active');
+        let num = parseInt(currentSlide.id.split('-')[1]);
+        num = num === 7 ? 1 : num + 1;
+
+        // Click on the next switch
+        const nextSwitch = document.querySelector(`.switch[data-num="${num}"]`);
+        nextSwitch.click();
+        nextSwitch.focus();
+    }, 15000);
 }
 
 // Sets up narration audio and then music audio
@@ -157,7 +222,7 @@ function audioHelper(STATE) {
     // Setup music controls
     const musicPlayer = document.querySelector('#music-player');
     musicPlayer.src = URL.createObjectURL(STATE['0']['audio']['/blog/2024-summer-travels/audio/0/Xinjiang by Zimpzon.mp3']);
-    musicPlayer.volume = 0.5;
+    musicPlayer.volume = 0.3;
     musicPlayer.load();
 
     // Setup event listeners
@@ -196,12 +261,11 @@ function audioHelper(STATE) {
         const increaseMusicVolume = setInterval(() => {
             musicVolume.value = Math.sin(i)/2 + 0.001;
             i += 0.005;
-            if (musicVolume.value >= 0.5) clearInterval(increaseMusicVolume);
+            if (musicVolume.value >= 0.3) clearInterval(increaseMusicVolume);
         }, 10);
     }
 
     narrationPlayer.onended = () => {
-        document.querySelector('#narration-controls .play-pause').textContent = 'Play';
         document.querySelector('#narration-controls .speed').textContent = '1x';
         narrationPlayer.currentTime = 0;
         narrationPlayer.pause();
@@ -220,6 +284,9 @@ function setup0() {
     loadSection('0', 0, () => {
         // Start DOM rendering
         window.inspectSTATE = STATE;
+        
+        // Setup menu bar
+        menuHelper();
 
         // Setup image carousel
         carouselHelper(STATE);
@@ -245,6 +312,8 @@ function setup0() {
 
             clickedStart = true;
             document.querySelector('#temporary-hint').classList.remove('active');
+            document.querySelector('#menu-bar').classList.remove('state-invisible');
+            document.querySelector('#menu-bar').classList.add('state-collapsed');
 
             // Start narration audio 1s after start button is clicked
             setTimeout(() => {

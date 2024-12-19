@@ -1,7 +1,7 @@
 /* =========================================== */
 /* ================= GENERAL ================= */
 /* =========================================== */
-p {
+p, li, a {
     font-family: 'Poppins', 'Roboto', sans-serif;
 }
 
@@ -15,6 +15,137 @@ p {
     flex-wrap: wrap;
     justify-content: center;
 }
+
+/* Menu bar */
+
+/* Invis state */
+section#menu-bar.state-invisible {
+    opacity: 0;
+    height: 0px;
+}
+
+/* Collapsed state */
+section#menu-bar, 
+section#menu-bar.state-collapsed {
+    position: absolute;
+    right: 0;
+    top: 40vh;
+    z-index: 10;
+    opacity: 1;
+    height: 45px;
+    width: 34px;
+    background-color: white;
+    padding: 5px;
+    padding-top: 10px;
+    padding-bottom: 0;
+    cursor: pointer;
+    border-radius: 5px 0px 0px 5px;
+    border-left: solid 2px black;
+    border-top: solid 2px black;
+    border-bottom: solid 3px black;
+    transition: height 0.5s ease;
+    transition: background-color 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out;
+}
+
+section#menu-bar.state-collapsed .expanded {
+    display: none;
+}
+
+section#menu-bar.state-collapsed:hover,
+section#menu-bar.state-collapsed.highlight {
+    background-color: #db3f58;
+    color: white;
+}
+
+#menu-bar.state-collapsed .collapsed {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+#menu-bar.state-collapsed .collapsed svg {
+    fill: black;
+    transition: fill 0.3s ease-in-out;
+}
+
+#menu-bar.state-collapsed .collapsed:hover svg,
+#menu-bar.state-collapsed .collapsed.highlight svg {
+    fill: white;
+}
+
+/* Expand vertically state */
+section#menu-bar.state-expand-vert {
+    height: 325px;
+    width: 34px;
+    transition: height 0.5s ease;
+}
+
+section#menu-bar.state-expand-vert .collapsed {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+section#menu-bar.state-expand-vert .expanded {
+    opacity: 0;
+    display: none;
+    transition: opacity 0.5s ease;
+}
+
+/* Expand horizontally state */
+section#menu-bar.state-expand-horiz {
+    height: 325px;
+    width: 250px;
+    transition: width 0.5s ease;
+    cursor: default;
+}
+
+section#menu-bar.state-expand-horiz .collapsed {
+    display: none;
+}
+
+section#menu-bar.state-expand-horiz .expanded {
+    display: block;
+    position: relative;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+section#menu-bar.state-expand-horiz .expanded .exit {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    cursor: pointer;
+}
+
+section#menu-bar.state-expand-horiz .expanded .exit svg {
+    fill: black;
+    transition: fill 0.3s ease-in-out;
+}
+
+section#menu-bar.state-expand-horiz .expanded .exit:hover svg {
+    fill: #db3f58;
+}
+
+section#menu-bar.state-expand-horiz .expanded .menu-items h4 {
+    font-family: 'Just Another Hand', cursive;
+    font-size: 60px;
+    position: absolute;
+    margin: 0;
+    top: -8px;
+    left: 10px;
+}
+
+section#menu-bar.state-expand-horiz .expanded .menu-items ul {
+    position: absolute;
+    left: 0px;
+    top: 48px;
+}
+
+section#menu-bar.state-expand-horiz .expanded .menu-items ul li a {
+    color: #db3f58;
+}
+
+
 
 /* Audio controls */
 #audio-controls {
@@ -394,7 +525,7 @@ section#section-0 #start-button button.fading {
     transition: opacity 1s ease, font-size 1s ease, outline 1s ease;
 }
 
-section#section-0 #temporary-hint {
+#temporary-hint {
     opacity: 0;
     transition: opacity 1.5s ease;
     height: 0;
@@ -403,7 +534,7 @@ section#section-0 #temporary-hint {
     width: 100%;
 }
 
-section#section-0 #temporary-hint.active {
+#temporary-hint.active {
     opacity: 0.95;
     height: auto;
 }
