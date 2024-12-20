@@ -43,9 +43,7 @@ section#menu-bar.state-collapsed {
     border-left: solid 2px black;
     border-top: solid 2px black;
     border-bottom: solid 3px black;
-    transition: height 0.5s ease;
-    transition: background-color 0.3s ease-in-out;
-    transition: color 0.3s ease-in-out;
+    transition: all 0.5s ease;
 }
 
 section#menu-bar.state-collapsed .expanded {
@@ -75,27 +73,27 @@ section#menu-bar.state-collapsed.highlight {
 
 /* Expand vertically state */
 section#menu-bar.state-expand-vert {
-    height: 325px;
+    height: 350px;
     width: 34px;
-    transition: height 0.5s ease;
+    transition: all 0.5s ease;
 }
 
 section#menu-bar.state-expand-vert .collapsed {
     opacity: 0;
-    transition: opacity 0.5s ease;
+    transition: all 0.5s ease;
 }
 
 section#menu-bar.state-expand-vert .expanded {
     opacity: 0;
     display: none;
-    transition: opacity 0.5s ease;
+    transition: all 0.5s ease;
 }
 
 /* Expand horizontally state */
 section#menu-bar.state-expand-horiz {
-    height: 325px;
+    height: 350px;
     width: 250px;
-    transition: width 0.5s ease;
+    transition: all 0.5s ease;
     cursor: default;
 }
 
@@ -107,7 +105,7 @@ section#menu-bar.state-expand-horiz .expanded {
     display: block;
     position: relative;
     opacity: 1;
-    transition: opacity 0.5s ease;
+    transition: all 0.5s ease;
 }
 
 section#menu-bar.state-expand-horiz .expanded .exit {

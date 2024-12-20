@@ -14,7 +14,8 @@ const STATE = {
             '/blog/2024-summer-travels/audio/0/Xinjiang by Zimpzon.mp3': null
         },
         'video': {}
-    }
+    }, 
+    'intervals': {}
 };
 
 async function loadSection(section, delay = 0, callback = () => null,
