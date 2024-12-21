@@ -403,18 +403,19 @@ section#menu-bar.state-expand-horiz .expanded .menu-items ul li a {
 /* ================= SECTION 0 ================ */
 /* ============================================ */
 body.section-0 {
-    overflow-y: hidden;
+    overflow: hidden;
+    margin: 0;
 }
 
 /* Image carousel */
-section#section-0 #image-carousel {
+.section-0 #main-body #image-carousel {
     width: 100%;
     height: 90vh;
     overflow: hidden;
     position: relative;
 }
 
-section#section-0 #image-carousel .slide {
+.section-0 #main-body #image-carousel .slide {
     opacity: 0;
     z-index: -10;
     height: 0;
@@ -422,19 +423,19 @@ section#section-0 #image-carousel .slide {
     position: absolute;
 }
 
-section#section-0 #image-carousel .slide.active {
+.section-0 #main-body #image-carousel .slide.active {
     opacity: 1;
     z-index: 1;
     height: 100%;
 }
 
-section#section-0 #image-carousel .slide.fade-out {
+.section-0 #main-body #image-carousel .slide.fade-out {
     opacity: 0;
     height: 100%;
     z-index: 2;
 }
 
-section#section-0 #image-carousel .slide p.image-caption {
+.section-0 #main-body #image-carousel .slide p.image-caption {
     color: white;
     position: absolute;
     right: 10px;
@@ -445,12 +446,12 @@ section#section-0 #image-carousel .slide p.image-caption {
     margin: 0;
 }
 
-section#section-0 #image-carousel img {
+.section-0 #main-body #image-carousel img {
     width: 100%;
     height: 100%;
 }
 
-section#section-0 #carousel-controls {
+.section-0 #main-body #carousel-controls {
     position: absolute;
     bottom: 25px;
     left: 50%;
@@ -461,7 +462,7 @@ section#section-0 #carousel-controls {
     z-index: 10;
 }
 
-section#section-0 #carousel-controls button {
+.section-0 #main-body #carousel-controls button {
     background-color: #db3f58;
     width: 30px;
     height: 30px;
@@ -473,19 +474,19 @@ section#section-0 #carousel-controls button {
     border: none;
 }
 
-section#section-0 #carousel-controls button.active,
-section#section-0 #carousel-controls button:hover {
+.section-0 #main-body #carousel-controls button.active,
+.section-0 #main-body #carousel-controls button:hover {
     opacity: 0.95;
 }
 
-section#section-0 #carousel-controls button:focus {
+.section-0 #main-body #carousel-controls button:focus {
     outline: 3px solid black;
     opacity: 0.95;
 }
 
 
 /* Start button */
-section#section-0 #start-button {
+.section-0 #main-body #start-button {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -493,7 +494,7 @@ section#section-0 #start-button {
     z-index: 10;
 }
 
-section#section-0 #start-button button {
+.section-0 #main-body #start-button button {
     background-color: transparent;
     padding: 25px 50px;
     font-size: 8rem;
@@ -505,20 +506,20 @@ section#section-0 #start-button button {
     transition: opacity 0.5s ease, font-size 1s ease, outline 0.5s ease;
 }
 
-section#section-0 #start-button button.active {
+.section-0 #main-body #start-button button.active {
     opacity: 0.95;
 }
 
-section#section-0 #start-button button:hover, 
-section#section-0 #start-button button:focus {
+.section-0 #main-body #start-button button:hover, 
+.section-0 #main-body #start-button button:focus {
     outline: solid 10px white;
 }
 
-section#section-0 #start-button button.expanding {
+.section-0 #main-body #start-button button.expanding {
     font-size: 24rem;
 }
 
-section#section-0 #start-button button.fading {
+.section-0 #main-body #start-button button.fading {
     opacity: 0;
     transition: opacity 1s ease, font-size 1s ease, outline 1s ease;
 }

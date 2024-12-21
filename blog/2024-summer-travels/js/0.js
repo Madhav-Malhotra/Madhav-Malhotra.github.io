@@ -109,6 +109,9 @@ function carouselHelper(STATE) {
             const num = toggle.dataset.num;
             // Get current active slide
             const currentSlide = document.querySelector('.slide.active');
+            
+            // Don't do anything if the clicked slide is already active
+            if (currentSlide.id === `slide-${num}`) return;
 
             // Make new slide active
             document.querySelector(`#slide-${num}`).classList.add('active');
