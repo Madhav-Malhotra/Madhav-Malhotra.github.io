@@ -15,6 +15,17 @@ for (let slider of sliders) {
     });
 }
 
+function imageEnlarger() {
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+        img.addEventListener('click', () => {
+        // Open the image in a new tab
+        const src = img.getAttribute('src');
+        window.open(src, '_blank');
+        });
+    });
+}
+
 // Transition between sections
 function clearMainContent(postTransitionCB = () => null) {
     // Add a transition mask
@@ -38,8 +49,10 @@ function clearMainContent(postTransitionCB = () => null) {
         postTransitionCB();
 
         // Remove the transition mask
-        document.querySelector('.transition-mask').classList.remove('hide');
-        setTimeout(() => document.querySelector('.transition-mask').remove(), 500);
+        setTimeout(() => {
+            document.querySelector('.transition-mask').classList.remove('hide');
+            setTimeout(() => document.querySelector('.transition-mask').remove(), 500);
+        }, 500);
     }, 525);
 }
 
@@ -85,6 +98,7 @@ function buildContent(section) {
     leftCol.innerHTML = marked.parse(md);
 
     document.body.classList.add('section-md');
+    setTimeout(() => imageEnlarger(), 1000);
 }
 
 // Get anchor URL event handler for section navigation
@@ -180,5 +194,6 @@ document.addEventListener('DOMContentLoaded', () => setup0(() => {
     // WARNING: need to set enableCache = true, but refreshCache should be false in production
     if (hash === '') loadSection('quebec', 30, () => null, true, true);
 
-    // If there is a hash, unlock the audio bar and menu bar and get rid of the hint
+    // If there is a hash, unlock the audio bar, unlock the menu bar, get rid of the hint,
+    // and clear intervals
 }));

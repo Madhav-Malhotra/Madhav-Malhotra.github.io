@@ -1,8 +1,49 @@
 /* =========================================== */
 /* ================= GENERAL ================= */
 /* =========================================== */
-p, li, a {
+body {
+    overflow-x: hidden;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Just Another Hand', cursive;
+    margin: 10px 0px;
+}
+
+h1 {
+    font-size: 70px;
+}
+
+h2 {
+    font-size: 50px;
+}
+
+h3 {
+    font-size: 35px;
+}
+
+h4 {
+    font-size: 25px;
+}
+
+p, li, a, figcaption, blockquote {
     font-family: 'Poppins', 'Roboto', sans-serif;
+}
+
+figcaption {
+    margin-top: -1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #555;
+}
+
+blockquote {
+    border-left: 5px solid #db3f58;
+    padding: 10px 0px 10px 15px;
+    margin: 10px 0px;
+    font-size: 1.2rem;
+    color: #333;
 }
 
 .text-centre {
@@ -23,7 +64,7 @@ p, li, a {
     left: 50%;
     width: 0;
     height: 100%;
-    background-color: white;
+    background-color: #db3f58;
     transform: translateX(-50%);
     transition: width 0.5s ease-in-out;
     z-index: 10;
@@ -173,6 +214,7 @@ section#audio-bar {
     bottom: 0;
     width: 100%;
     background-color: white;
+    border-top: solid 1px black;
 }
 
 #audio-controls {
@@ -590,19 +632,33 @@ body.section-md #temporary-hint {
     flex-direction: row;
     justify-content: center;
     gap: 20px;
+    background-color: #f7f7f7;
+    padding-bottom: 50px;
 }
 
 .section-md #main-body .container > .left-col {
-    width: 80%;
+    width: 70%;
     max-width: 1200px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: white;
+    margin: 40px 0px;
 }
 
 .section-md #main-body .container > .left-col img {
     width: 100%;
+    margin: 10px auto;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.section-md #main-body .container > .left-col img:hover {
+    transform: scale(1.05);
 }
 
 .section-md #main-body .container > .right-col {
     width: 20%;
     max-width: 300px;
     min-width: 100px;
+    margin: 40px 0px;
 }
