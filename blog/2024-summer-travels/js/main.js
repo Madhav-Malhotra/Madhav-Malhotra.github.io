@@ -40,16 +40,72 @@ function clearMainContent(postTransitionCB = () => null) {
         // Remove the transition mask
         document.querySelector('.transition-mask').classList.remove('hide');
         setTimeout(() => document.querySelector('.transition-mask').remove(), 500);
-    }, 6000);
+    }, 525);
+}
+
+// Build content from markdown
+// Note: this function runs AFTER the STATE object has loaded all necessary 
+// content AND AFTER the main content has been cleared
+function buildContent(section) {
+    // Clean up classes
+    document.body.classList = '';
+    document.body.classList.add(`section-${section}`);
+    
+    // Check for section 0 (special)
+    if (section === '0') {
+        setup0();
+        return;
+    }
+
+    // Load markdown content for other sections
+    // Start by setting up page structure
+    let md = STATE[section]['md'];
+    const container = document.querySelector('#main-body .container');
+    const leftCol = document.createElement('div');
+    const rightCol = document.createElement('div');
+
+    leftCol.classList.add('left-col');
+    rightCol.classList.add('right-col');
+    container.appendChild(leftCol);
+    container.appendChild(rightCol);
+
+    // Clean the markdown by replacing image URLs with object URLs + trimming whitespace
+    for (let url in STATE[section]['img']) {
+        if (STATE[section]['img'][url] === null) {
+            console.error('Image not loaded:', url);
+            continue;
+        }
+        const objURL = URL.createObjectURL(STATE[section]['img'][url]);
+        md = md.replace(url, objURL);
+    }
+
+    md = md.split('\n').map(line => line.trimStart()).join('\n');
+
+    console.log('Started parsing markdown: ', md);
+    leftCol.innerHTML = marked.parse(md);
+
+    document.body.classList.add('section-md');
 }
 
 // Get anchor URL event handler for section navigation
 function anchorHandler() {
     const hash = window.location.hash.substring(1);
     
+    // Skip if empty hash
     if (hash === '') {
-        console.log('No hash');
-    } else console.log(`Navigating to section ${hash}`);
+        return hash;
+    }
+
+    // Otherwise, load media for section in hash
+    console.log('Started clearing main content');
+    clearMainContent(() => {
+        console.log('Started loading new content');
+        // WARNING: need to set enableCache = true, but refreshCache should be false in production
+        loadSection(hash, 0, () => {
+            buildContent(hash);
+            console.log('Started building new content');
+        }, true, true);
+    });
 
     return hash;
 }
@@ -122,5 +178,7 @@ document.addEventListener('DOMContentLoaded', () => setup0(() => {
     
     // Preload media for default next section, if no hash
     // WARNING: need to set enableCache = true, but refreshCache should be false in production
-    if (hash === '') loadSection('quebec', 50, () => null, true, true);
+    if (hash === '') loadSection('quebec', 30, () => null, true, true);
+
+    // If there is a hash, unlock the audio bar and menu bar and get rid of the hint
 }));

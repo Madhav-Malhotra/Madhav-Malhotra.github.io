@@ -25,7 +25,7 @@ const STATE = {
             '/blog/2024-summer-travels/img/quebec/LongshotChateauTrim.webp': null,
             '/blog/2024-summer-travels/img/quebec/MaraisTrim.webp': null,
             '/blog/2024-summer-travels/img/quebec/QuebecBridgeTrim.webp': null,
-            '/blog/2024-summer-travels/img/quebec/UniLavalPaintingTrim.webp': null,
+            '/blog/2024-summer-travels/img/quebec/UniLavalTrim.webp': null,
         },
         'audio': {
             '/blog/2024-summer-travels/audio/quebec/Art inspiration (1m).mp3': null,

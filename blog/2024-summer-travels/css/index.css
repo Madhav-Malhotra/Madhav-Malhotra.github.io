@@ -168,7 +168,11 @@ section#menu-bar.state-expand-horiz .expanded .menu-items ul li a {
 /* Audio controls */
 section#audio-bar {
     overflow-y: auto;
-    max-height: 10vh;
+    height: 10vh;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
 }
 
 #audio-controls {
@@ -564,4 +568,41 @@ body.section-0 {
 #temporary-hint.active {
     opacity: 0.95;
     height: auto;
+}
+
+
+
+/* ============================================ */
+/* ================= MARKDOWN ================= */
+/* ============================================ */
+body.section-md, 
+body.section-md #main-body, 
+body.section-md #main-body .container {
+    width: 100%;
+}
+
+body.section-md #temporary-hint {
+    display: none;
+}
+
+.section-md #main-body .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+}
+
+.section-md #main-body .container > .left-col {
+    width: 80%;
+    max-width: 1200px;
+}
+
+.section-md #main-body .container > .left-col img {
+    width: 100%;
+}
+
+.section-md #main-body .container > .right-col {
+    width: 20%;
+    max-width: 300px;
+    min-width: 100px;
 }
