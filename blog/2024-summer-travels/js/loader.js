@@ -16,7 +16,67 @@ const STATE = {
         'md': null
     },
     'quebec': {
-        'md': null
+        'img': {
+            '/blog/2024-summer-travels/img/quebec/CitadelleTrim.webp': null,
+            '/blog/2024-summer-travels/img/quebec/DinnerTrim.webp': null,
+            '/blog/2024-summer-travels/img/quebec/EscaliersTrim.webp': null,
+            '/blog/2024-summer-travels/img/quebec/FlowersTrim.webp': null,
+            '/blog/2024-summer-travels/img/quebec/GrassyHouseTrim.webp': null,
+            '/blog/2024-summer-travels/img/quebec/LongshotChateauTrim.webp': null,
+            '/blog/2024-summer-travels/img/quebec/MaraisTrim.webp': null,
+            '/blog/2024-summer-travels/img/quebec/QuebecBridgeTrim.webp': null,
+            '/blog/2024-summer-travels/img/quebec/UniLavalPaintingTrim.webp': null,
+        },
+        'audio': {
+            '/blog/2024-summer-travels/audio/quebec/Art inspiration (1m).mp3': null,
+            '/blog/2024-summer-travels/audio/quebec/Dot com era (35s).mp3': null,
+            '/blog/2024-summer-travels/audio/quebec/Sentier (1m).mp3': null,
+            '/blog/2024-summer-travels/audio/quebec/Trip context (1m).mp3': null,
+        },
+        'md': `
+        ## Ville de Québec
+
+        ![Longshot of Le Château Frontenac](/blog/2024-summer-travels/img/quebec/LongshotChateauTrim.webp)
+
+        ### Travels
+
+        I'm surprised looking back at how nervous I was when I first got to Québec. I didn't feel comfortable speaking French and I didn't really know what to expect. I tend to go 0 to 1 real quick in a lot of domains, including when it comes to “easing into” my first solo trip :D I remember feeling nervous as I paid over a thousand dollars for my AirBnB thinking: “Wow, am I really doing this? There's literally nothing to determine whether to press the button other than what my heart decides.” 
+
+        * Foreshadowed lesson: press the @\#(\*\#@$ button\!
+
+        As I arrived in Québec, tiny things started to go right to ease my nervousness. First off, I was living in such a lucky middlespot between Université Laval and Vieux Québec. My hosts were kind enough to lend me their bike and so I biked everywhere. Every destination had a journey of literal effort behind it, which made me appreciate each expedition that much more. I was even lucky enough to have a house on a bike only corridor so I'd just explore \- start riding in one direction to see how far the road went and then do the same in the other.   
+        ![Pont champlain](/blog/2024-summer-travels/img/quebec/QuebecBridgeTrim.webp)  
+        ![Random grass-covered house](/blog/2024-summer-travels/img/quebec/GrassyHouseTrim.webp)  
+        
+        Warning: Québec used to be a fortress built on top of a hill :D I'd ask Google Maps to show me a nearby grocery store. It'd show me that it's not so far away\! So I'd go biking off happily, only to end up carrying a bike and groceries up and down “les escaliers de la pente douce” (The stairs of the soft slope, which was not at all soft :D)   
+        ![Escaliers de la pente not so douce](/blog/2024-summer-travels/img/quebec/EscaliersTrim.webp)
+
+        One time I decided to bike 25 km to Marais du Nord. That was an interesting decision :D The marsh was okay. The post-trip leg pains were monumental :D   
+        ![Marais du Nord](/blog/2024-summer-travels/img/quebec/MaraisTrim.webp)
+
+        That said, I also stopped at the Huron-Wendat museum while I was to the north of Charlesbourg. Forced myself to get the French tour even though I was nervous. I couldn't understand how rapidly my guide Daphné spoke at first. Though I got used to it pretty quickly. Glad I got into that habit. Turns out that I really like guided tours in general. And I wouldn't even have tried a single one without my goal of learning French :D I kept doing French tours throughout the rest of my trip. One interesting note for you: if you're in Canada and you speak French \- you're MUCH more likely to get private tours. Especially if you go to places on rainy days where all the local francophones are too smart to show up :D  
+        ![Garisson in Québec](/blog/2024-summer-travels/img/quebec/CitadelleTrim.webp)
+
+        ### Brigitte and Ghislain
+
+        Brigitte and Ghislain were basically the best hosts I could ask for (and that I met for my entire trip :O). I really felt more like I was with a host family than with AirBnB hosts. Brigitte was very mothering since they also had their own daughters just ten years older than me. Ghislain was the most thirty-year-old-seeming 60-year-old you've never met in your life :O I was a developer and he wasn't, so I'd try to simplify what I did when describing my work to him. Then, he'd surprise me by starting to talk about failures in cryptographic security with the advent of quantum computers and I'd be like :OOOOO The icing on the cake was that their French was easy for me to understand from ~~day~~ all-too-late-night one :D
+
+        We were lucky enough to have dinner together twice. Nevermind the “you're only as good as your training” BS. I rose up to the occasion\! Prettiest meals I've ever cooked for someone on the very first time I tried :D   
+        ![Aesthetic dinner](/blog/2024-summer-travels/img/quebec/DinnerTrim.webp)  
+        
+        I have such a heartwarming lovely picture of us at the last dinner, even though I forgot to smile for the camera :D Also, turns out they quite like Indian food \- as I've already noted in life, thank the universe for Indian food \- one of the best ways to make friends :D The dinners also let us talk about the more personal stuff like politics and I was quite surprised how much a twenty year old gen zoomer and sixty year old boomers can have in common :D All things considered, I'm even more glad and lucky to have met Brigitte and Ghislain now than when I started the trip :-)
+
+        ### Meeting Students
+
+        I had a pretty hard time meeting students to be honest. Most of the clubs I found were pretty inactive and the entire university was summarised to me as “vide” (empty) during the summer. I did see a random facebook post for a group mural painting activity thingy and just randomly showed up. To my great chagrin, the activity combined three fears all at once: talking to girls, talking to pretty girls, and talking to pretty girls in French :O Anyways, Noémie and Laurence were quite a bit more talented at drawing than I was. Laurence drew this incredible sunset. I drew the fake “symbole chinois” since they didn't bother to ask for details :D  
+        ![Mural at Université de Laval](/blog/2024-summer-travels/img/quebec/UniLavalPaintingTrim.webp) 
+
+        I also got to meet Nathaniel from the AI club at Université Laval. I got to have my “talk to someone about the oncoming AI singularity” conversation of the trip :D It was interesting how different our viewpoints were. It was one of many times where I met people and thought: “**Hey, this person lives life totally differently than me. I appreciate learning something new here\! Boy, would I not like to have their life though :D**” I will say, though, Nathaniel seemed a lot more happy and focused on the present. I wish him good luck with his grad studies ~~and running from the AI overlords :D~~  
+        
+        Also, funny story \- my French was @\#$\!() as usual with Nathaniel, but I managed to communicate. Over time, I built up confidence and started talking to the other people visiting Nathaniel's club (we were at a science fair type event). I proceeded to give this one girl a fluent French intro to the club, felt so proud, and then her mom starts talking to her in English with an American accent and I feel like a dunce realising they're Ohlahomians who didn't understand a word of what I said :D Though I perked right up after hearing Nathaniel giving them instructions in English and realising his English was just as @\#$@& as my French :D
+
+        ![Random flower montage from the botanical gardens at Université Laval](/blog/2024-summer-travels/img/quebec/FlowersTrim.webp)
+        `
     },
     'intervals': {}
 };
