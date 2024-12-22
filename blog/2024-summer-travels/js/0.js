@@ -23,7 +23,10 @@ function menuHelper() {
                 window.inspectSTATE['intervals']['sliderAutoInterval'] = null;
             }
 
-            setTimeout(() => menu.classList.add('state-expand-horiz'), 500);
+            setTimeout(() => {
+                menu.classList.remove('state-expand-vert');
+                menu.classList.add('state-expand-horiz');
+            }, 500);
             setTimeout(() => {
                 // Unregister event listener after transition
                 menu.onclick = () => null;
@@ -233,12 +236,12 @@ function audioHelper(STATE) {
         if (musicPlayer.paused) {
             musicPlayer.play();
             document.querySelector('#music-controls #music-label').innerHTML =
-                "Music Playing: Xinjiang by Zimpzon";
+                "Music playing: Xinjiang by Zimpzon";
         }
         else {
             musicPlayer.pause();
             document.querySelector('#music-controls #music-label').innerHTML =
-                "Music Paused: Xinjiang by Zimpzon";
+                "Music paused: Xinjiang by Zimpzon";
         }
     };
 
