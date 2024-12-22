@@ -13,6 +13,10 @@ const STATE = {
             '/blog/2024-summer-travels/audio/0/Housekeeping (45s).mp3': null,
             '/blog/2024-summer-travels/audio/0/Xinjiang by Zimpzon.mp3': null
         },
+        'md': null
+    },
+    'quebec': {
+        'md': null
     },
     'intervals': {}
 };
@@ -57,6 +61,7 @@ async function loadSection(section, delay = 0, callback = () => null,
     // Go through img, audio, video sections
     const mediaTypes = Object.keys(STATE[section]);
     for (let type of mediaTypes) {
+        if (type === 'md') continue;
 
         // Get all media files for current type
         const mediaFiles = Object.keys(STATE[section][type]);
