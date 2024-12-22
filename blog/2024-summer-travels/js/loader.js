@@ -13,8 +13,7 @@ const STATE = {
             '/blog/2024-summer-travels/audio/0/Housekeeping (45s).mp3': null,
             '/blog/2024-summer-travels/audio/0/Xinjiang by Zimpzon.mp3': null
         },
-        'video': {}
-    }, 
+    },
     'intervals': {}
 };
 

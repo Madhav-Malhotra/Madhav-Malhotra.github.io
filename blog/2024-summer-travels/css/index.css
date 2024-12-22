@@ -16,6 +16,23 @@ p, li, a {
     justify-content: center;
 }
 
+/* Transition mask */
+#main-body .transition-mask {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0;
+    height: 100%;
+    background-color: white;
+    transform: translateX(-50%);
+    transition: width 0.5s ease-in-out;
+    z-index: 10;
+  }
+  
+#main-body .transition-mask.hide {
+    width: 100%; /* Expand the mask horizontally */
+}
+
 /* Menu bar */
 
 /* Invis state */

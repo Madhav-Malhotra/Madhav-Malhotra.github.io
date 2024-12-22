@@ -1,6 +1,10 @@
 import { loadSection, STATE } from './loader.js';
 import { menuHelper, carouselHelper, audioHelper } from './0.js';
 
+// ==============================
+// GENERAL CODE
+// ==============================
+
 // Setup audio controls
 const sliders = document.querySelectorAll('.volume-slider');
 
@@ -10,6 +14,48 @@ for (let slider of sliders) {
         this.style.setProperty('--value', `${value}%`);
     });
 }
+
+// Transition between sections
+function clearMainContent(postTransitionCB = () => null) {
+    // Add a transition mask
+    const transitionMask = document.createElement('div');
+    document.querySelector('#main-body').appendChild(transitionMask);
+    transitionMask.classList.add('transition-mask');
+    setTimeout(() => transitionMask.classList.add('hide'), 10);
+
+    setTimeout(() => {
+        // Get rid of the old content
+        const toClear = document.querySelector('#main-body .container');
+        toClear.innerHTML = '';
+
+        // Clear any intervals
+        for (let interval in STATE['intervals']) {
+            clearInterval(STATE['intervals'][interval]);
+            delete STATE['intervals'][interval];
+        }
+
+        // Load the new content
+        postTransitionCB();
+
+        // Remove the transition mask
+        document.querySelector('.transition-mask').classList.remove('hide');
+        setTimeout(() => document.querySelector('.transition-mask').remove(), 500);
+    }, 6000);
+}
+
+// Get anchor URL event handler for section navigation
+function anchorHandler() {
+    const hash = window.location.hash.substring(1);
+    
+    if (hash === '') {
+        console.log('No hash');
+    } else console.log(`Navigating to section ${hash}`);
+
+    return hash;
+}
+
+window.addEventListener('hashchange', anchorHandler);
+
 
 // ==============================
 // SECTION 0: INTRODUCTION
@@ -70,4 +116,11 @@ function setup0(post0LoadCB = () => null) {
     }, true, true);
 }
 
-document.addEventListener('DOMContentLoaded', () => setup0());
+document.addEventListener('DOMContentLoaded', () => setup0(() => {
+    // Check if hash is set
+    const hash = anchorHandler();
+    
+    // Preload media for default next section, if no hash
+    // WARNING: need to set enableCache = true, but refreshCache should be false in production
+    if (hash === '') loadSection('quebec', 50, () => null, true, true);
+}));
