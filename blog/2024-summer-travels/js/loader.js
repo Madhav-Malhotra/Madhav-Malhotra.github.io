@@ -96,6 +96,8 @@ const STATE = {
     'intervals': {}
 };
 
+window.inspectSTATE = STATE;
+
 async function loadSection(section, delay = 0, callback = () => null,
     enableCache = true, refreshCache = false) {
     /*

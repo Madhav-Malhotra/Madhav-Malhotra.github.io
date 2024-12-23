@@ -1,5 +1,7 @@
+import { audioTransition } from './utils.js';
+
 // Sets up image carousel
-function carouselHelper(STATE) {
+function carouselHelper() {
     // Get data for image carousel
     const carousel = document.querySelector('#image-carousel');
     const controls = document.querySelector('#carousel-controls');
@@ -14,10 +16,10 @@ function carouselHelper(STATE) {
     }
 
     let id = 2;
-    for (let url in STATE['0']['img']) {
+    for (let url in window.inspectSTATE['0']['img']) {
         // Skip existing item
         if (url.includes('campbell-river')) continue;
-        if (!STATE['0']['img'].hasOwnProperty(url)) continue;
+        if (!window.inspectSTATE['0']['img'].hasOwnProperty(url)) continue;
         
         // Assemble slide
         const slide = document.createElement('div');
@@ -25,7 +27,7 @@ function carouselHelper(STATE) {
         slide.id = `slide-${id}`;
 
         const img = document.createElement('img');
-        img.src = URL.createObjectURL(STATE['0']['img'][url]);
+        img.src = URL.createObjectURL(window.inspectSTATE['0']['img'][url]);
         img.alt = CAPTIONS[url];
 
         const caption = document.createElement('p');
@@ -86,7 +88,7 @@ function carouselHelper(STATE) {
 }
 
 // Sets up narration audio and then music audio
-function audioHelper(STATE) {
+function audioHelper() {
     // Update what's visible
     document.querySelector('#temporary-hint').style.display = 'none';
     const startButton = document.querySelector('#start-button button');
@@ -98,30 +100,36 @@ function audioHelper(STATE) {
     document.querySelector('#narration-controls #narration-label').innerHTML = 
         "Narration playing: Housekeeping (45s)";
 
+    audioTransition(
+        true, // isNarration
+        URL.createObjectURL(window.inspectSTATE['0']['audio']['/blog/2024-summer-travels/audio/0/Housekeeping (45s).mp3']),
+        0.5,  // finalVolume
+        true  // fadeIn
+    )
     const narrationPlayer = document.querySelector('#narration-player');
-    narrationPlayer.src = URL.createObjectURL(STATE['0']['audio']['/blog/2024-summer-travels/audio/0/Housekeeping (45s).mp3']);
-    narrationPlayer.loop = false;
-    narrationPlayer.volume = 0;
-    narrationPlayer.load();
-    narrationPlayer.play();
+    // narrationPlayer.src = URL.createObjectURL(window.inspectSTATE['0']['audio']['/blog/2024-summer-travels/audio/0/Housekeeping (45s).mp3']);
+    // narrationPlayer.loop = false;
+    // narrationPlayer.volume = 0;
+    // narrationPlayer.load();
+    // narrationPlayer.play();
 
-    // Fade in volume slider
-    const narrationVolume = document.querySelector('#narration-controls .volume-slider');
-    let i = 0;
+    // // Fade in volume slider
+    // const narrationVolume = document.querySelector('#narration-controls .volume-slider');
+    // let i = 0;
 
-    const increaseNarrationVolume = setInterval(() => {
-        narrationVolume.value = Math.sin(i)/2 + 0.001;
-        narrationPlayer.volume = narrationVolume.value;
-        i += 0.01;
-        if (narrationVolume.value >= 0.5) {
-            clearInterval(increaseNarrationVolume);
-            narrationPlayer.volume = 0.5;
-        }
-    }, 10);
+    // const increaseNarrationVolume = setInterval(() => {
+    //     narrationVolume.value = Math.sin(i)/2 + 0.001;
+    //     narrationPlayer.volume = narrationVolume.value;
+    //     i += 0.01;
+    //     if (narrationVolume.value >= 0.5) {
+    //         clearInterval(increaseNarrationVolume);
+    //         narrationPlayer.volume = 0.5;
+    //     }
+    // }, 10);
 
     // Setup music controls
     const musicPlayer = document.querySelector('#music-player');
-    musicPlayer.src = URL.createObjectURL(STATE['0']['audio']['/blog/2024-summer-travels/audio/0/Xinjiang by Zimpzon.mp3']);
+    musicPlayer.src = URL.createObjectURL(window.inspectSTATE['0']['audio']['/blog/2024-summer-travels/audio/0/Xinjiang by Zimpzon.mp3']);
     musicPlayer.volume = 0.3;
     musicPlayer.load();
 
