@@ -1,63 +1,3 @@
-// Sets up menu bar
-function menuHelper() {    
-    // Setup event listeners
-    let toExpanded, toCollapsed;
-
-    toExpanded = () => {
-        const menu = document.querySelector('#menu-bar');
-        const exit = document.querySelector('#menu-bar .exit');
-
-        // Update menu to next state based on current state
-        if (menu.classList.contains('state-collapsed')) {
-            // CSS animation
-            menu.classList.remove('state-collapsed');
-            menu.classList.add('state-expand-vert');
-
-            // If intervals still active, clear them - user has clicked on menu
-            if (window.inspectSTATE['intervals']['hintInterval']) {
-                clearInterval(window.inspectSTATE['intervals']['hintInterval']);
-                window.inspectSTATE['intervals']['hintInterval'] = null;
-            }
-            if (window.inspectSTATE['intervals']['sliderAutoInterval']) {
-                clearInterval(window.inspectSTATE['intervals']['sliderAutoInterval']);
-                window.inspectSTATE['intervals']['sliderAutoInterval'] = null;
-            }
-
-            setTimeout(() => {
-                menu.classList.remove('state-expand-vert');
-                menu.classList.add('state-expand-horiz');
-            }, 500);
-            setTimeout(() => {
-                // Unregister event listener after transition
-                menu.onclick = () => null;
-                // Register toCollapsed event listener
-                exit.onclick = toCollapsed;
-            }, 1000);
-        }
-    };
-
-    toCollapsed = () => {
-        const menu = document.querySelector('#menu-bar');
-        const exit = document.querySelector('#menu-bar .exit');
-
-        // CSS animation
-        menu.classList.remove('state-expand-horiz');
-        menu.classList.add('state-expand-vert');
-        setTimeout(() => {
-            menu.classList.remove('state-expand-vert');
-            menu.classList.add('state-collapsed');
-        }, 500);
-        setTimeout(() => {
-            // Unregister event listener after transition
-            exit.onclick = () => null;
-            // Register toExpanded event listener
-            menu.onclick = toExpanded;
-        }, 1000);
-    }
-
-    document.querySelector('#menu-bar').onclick = toExpanded;
-}
-
 // Sets up image carousel
 function carouselHelper(STATE) {
     // Get data for image carousel
@@ -149,13 +89,14 @@ function carouselHelper(STATE) {
 function audioHelper(STATE) {
     // Update what's visible
     document.querySelector('#temporary-hint').style.display = 'none';
-    document.querySelector('#start-button button').style.display = 'none';
+    const startButton = document.querySelector('#start-button button');
+    if (startButton) startButton.style.display = 'none';
     document.querySelector('#audio-controls').classList.add('active');
 
     // Start playing narration
     document.querySelector('#narration-controls').classList.add('active');
     document.querySelector('#narration-controls #narration-label').innerHTML = 
-        "Narration Playing: Housekeeping (45s)";
+        "Narration playing: Housekeeping (45s)";
 
     const narrationPlayer = document.querySelector('#narration-player');
     narrationPlayer.src = URL.createObjectURL(STATE['0']['audio']['/blog/2024-summer-travels/audio/0/Housekeeping (45s).mp3']);
@@ -178,72 +119,13 @@ function audioHelper(STATE) {
         }
     }, 10);
 
-    // Setup event listeners
-    const narrationSlider = document.querySelector('#narration-controls .volume-slider');
-    const narrationPause = document.querySelector('#narration-controls .play-pause');
-    const narrationSpeed = document.querySelector('#narration-controls .speed');
-    
-    narrationSlider.addEventListener('input', function() {
-        narrationPlayer.volume = this.value;
-    });
-    narrationPause.onclick = () => {
-        if (narrationPlayer.paused) {
-            narrationPlayer.play();
-            document.querySelector('#narration-controls #narration-label').innerHTML =
-                "Narration Playing: Housekeeping (45s)";
-        }
-        else {
-            narrationPlayer.pause();
-            document.querySelector('#narration-controls #narration-label').innerHTML =
-                "Narration Paused: Housekeeping (45s)";
-        }
-    };
-    
-    narrationSpeed.onclick = () => {
-        if (narrationPlayer.playbackRate === 1) {
-            narrationPlayer.playbackRate = 1.5;
-            narrationSpeed.textContent = '1.5x';
-        } else if (narrationPlayer.playbackRate === 1.5) {
-            narrationPlayer.playbackRate = 2;
-            narrationSpeed.textContent = '2x';
-        } else if (narrationPlayer.playbackRate === 2) {
-            narrationPlayer.playbackRate = 2.5;
-            narrationSpeed.textContent = '2.5x';
-        } else if (narrationPlayer.playbackRate === 2.5) {
-            narrationPlayer.playbackRate = 3;
-            narrationSpeed.textContent = '3x';
-        } else if (narrationPlayer.playbackRate === 3) {
-            narrationPlayer.playbackRate = 1;
-            narrationSpeed.textContent = '1x';
-        }
-    };
-
     // Setup music controls
     const musicPlayer = document.querySelector('#music-player');
     musicPlayer.src = URL.createObjectURL(STATE['0']['audio']['/blog/2024-summer-travels/audio/0/Xinjiang by Zimpzon.mp3']);
     musicPlayer.volume = 0.3;
     musicPlayer.load();
 
-    // Setup event listeners
-    const musicSlider = document.querySelector('#music-controls .volume-slider');
-    const musicPause = document.querySelector('#music-controls .play-pause');
     const musicSkip = document.querySelector('#music-controls .skip');
-    
-    musicSlider.addEventListener('input', function() {
-        musicPlayer.volume = this.value;
-    });
-    musicPause.onclick = () => {
-        if (musicPlayer.paused) {
-            musicPlayer.play();
-            document.querySelector('#music-controls #music-label').innerHTML =
-                "Music playing: Xinjiang by Zimpzon";
-        }
-        else {
-            musicPlayer.pause();
-            document.querySelector('#music-controls #music-label').innerHTML =
-                "Music paused: Xinjiang by Zimpzon";
-        }
-    };
 
     musicSkip.classList.add('disabled');
     musicSkip.ariaDisabled = true;
@@ -292,4 +174,4 @@ function audioHelper(STATE) {
     }
 }
 
-export { menuHelper, carouselHelper, audioHelper };
+export { carouselHelper, audioHelper };

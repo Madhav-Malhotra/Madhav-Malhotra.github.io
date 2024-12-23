@@ -85,7 +85,7 @@ section#menu-bar.state-invisible {
 /* Collapsed state */
 section#menu-bar, 
 section#menu-bar.state-collapsed {
-    position: absolute;
+    position: fixed;
     right: 0;
     top: 40vh;
     z-index: 10;
@@ -654,6 +654,14 @@ body.section-md #temporary-hint {
 
 .section-md #main-body .container > .left-col img:hover {
     transform: scale(1.05);
+}
+
+.section-md #main-body .container > .left-col h1,
+.section-md #main-body .container > .left-col h2,
+.section-md #main-body .container > .left-col h3,
+.section-md #main-body .container > .left-col h4,
+.section-md #main-body .container > .left-col h5 {
+    color: #db3f58;
 }
 
 .section-md #main-body .container > .right-col {
