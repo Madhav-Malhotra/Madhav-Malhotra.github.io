@@ -289,8 +289,20 @@ section#audio-bar {
 .audio-button svg {
     width: 15px;
     height: 15px;
-    margin-top: 2px;
+    margin-top: 0px;
     margin-left: 2px;
+}
+
+#narration-controls .audio-button svg {
+    margin-left: 2.5px;
+}
+
+.audio-button.play-pause svg {
+    display: none;
+}
+
+.audio-button.play-pause svg.active {
+    display: block;
 }
 
 .audio-button.skip svg {

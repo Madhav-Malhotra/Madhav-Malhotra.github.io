@@ -43,6 +43,9 @@ function setup0(post0LoadCB = () => null) {
             startButton.classList.add('expanding');
             startButton.classList.add('fading');
 
+            // Don't do anything if the user's trying to get to another page
+            if (hash) return;
+
             clickedStart = true;
             document.querySelector('#temporary-hint').classList.remove('active');
             document.querySelector('#menu-bar').classList.remove('state-invisible');

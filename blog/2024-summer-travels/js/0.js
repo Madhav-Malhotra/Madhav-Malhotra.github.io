@@ -97,61 +97,35 @@ function audioHelper() {
 
     // Start playing narration
     document.querySelector('#narration-controls').classList.add('active');
-    document.querySelector('#narration-controls #narration-label').innerHTML = 
-        "Narration playing: Housekeeping (45s)";
 
     audioTransition(
         true, // isNarration
         URL.createObjectURL(window.inspectSTATE['0']['audio']['/blog/2024-summer-travels/audio/0/Housekeeping (45s).mp3']),
         0.5,  // finalVolume
         true  // fadeIn
-    )
-    const narrationPlayer = document.querySelector('#narration-player');
-    // narrationPlayer.src = URL.createObjectURL(window.inspectSTATE['0']['audio']['/blog/2024-summer-travels/audio/0/Housekeeping (45s).mp3']);
-    // narrationPlayer.loop = false;
-    // narrationPlayer.volume = 0;
-    // narrationPlayer.load();
-    // narrationPlayer.play();
-
-    // // Fade in volume slider
-    // const narrationVolume = document.querySelector('#narration-controls .volume-slider');
-    // let i = 0;
-
-    // const increaseNarrationVolume = setInterval(() => {
-    //     narrationVolume.value = Math.sin(i)/2 + 0.001;
-    //     narrationPlayer.volume = narrationVolume.value;
-    //     i += 0.01;
-    //     if (narrationVolume.value >= 0.5) {
-    //         clearInterval(increaseNarrationVolume);
-    //         narrationPlayer.volume = 0.5;
-    //     }
-    // }, 10);
+    );
 
     // Setup music controls
-    const musicPlayer = document.querySelector('#music-player');
-    musicPlayer.src = URL.createObjectURL(window.inspectSTATE['0']['audio']['/blog/2024-summer-travels/audio/0/Xinjiang by Zimpzon.mp3']);
-    musicPlayer.volume = 0.3;
-    musicPlayer.load();
-
     const musicSkip = document.querySelector('#music-controls .skip');
-
     musicSkip.classList.add('disabled');
     musicSkip.ariaDisabled = true;
 
-    // Fade in music when the narration is done
-    function fadeInMusic() {
-        const musicVolume = document.querySelector('#music-controls .volume-slider');
+    const narrationPlayer = document.querySelector('#narration-player');
+    narrationPlayer.onended = () => {
+        document.querySelector('#narration-controls .speed').textContent = '1x';
+        narrationPlayer.currentTime = 0;
+        narrationPlayer.pause();
+        document.querySelector('#narration-controls .play-pause svg.play').classList.add('active');
+        document.querySelector('#narration-controls .play-pause svg.pause').classList.remove('active');
+
+        audioTransition(
+            false, // isNarration
+            URL.createObjectURL(window.inspectSTATE['0']['audio']['/blog/2024-summer-travels/audio/0/Xinjiang by Zimpzon.mp3']),
+            0.3,  // finalVolume
+            true  // fadeIn
+        )
+
         document.querySelector('#music-controls').classList.add('active');
-        musicPlayer.loop = true;
-        musicPlayer.play();
-
-        let i = 0;
-
-        const increaseMusicVolume = setInterval(() => {
-            musicVolume.value = Math.sin(i)/2 + 0.001;
-            i += 0.005;
-            if (musicVolume.value >= 0.3) clearInterval(increaseMusicVolume);
-        }, 10);
 
         // Also add hint to click on menu button
         window.inspectSTATE['intervals']['hintInterval'] = setInterval(() => {
@@ -169,16 +143,9 @@ function audioHelper() {
                 }, 2000);
             }
         }, 15000);
-    }
 
-    narrationPlayer.onended = () => {
-        document.querySelector('#narration-controls .speed').textContent = '1x';
-        narrationPlayer.currentTime = 0;
-        narrationPlayer.pause();
-        document.querySelector('#narration-controls #narration-label').innerHTML =
-            "Narration stopped: Housekeeping (45s)";
-
-        fadeInMusic();
+        // Unregister event listener
+        narrationPlayer.onended = null;
     }
 }
 

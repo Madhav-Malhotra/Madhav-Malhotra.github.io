@@ -26,16 +26,15 @@ function audioEventListeners() {
         narrationPlayer.volume = this.value;
     });
     narrationPause.onclick = () => {
-        const title = document.querySelector('#narration-label').dataset.title;
         if (narrationPlayer.paused) {
             narrationPlayer.play();
-            document.querySelector('#narration-controls #narration-label').innerHTML =
-                `Narration playing: ${title}`;
+            document.querySelector('#narration-controls .play-pause svg.play').classList.remove('active');
+            document.querySelector('#narration-controls .play-pause svg.pause').classList.add('active');
         }
         else {
             narrationPlayer.pause();
-            document.querySelector('#narration-controls #narration-label').innerHTML =
-                `Narration paused: ${title}`;
+            document.querySelector('#narration-controls .play-pause svg.play').classList.add('active');
+            document.querySelector('#narration-controls .play-pause svg.pause').classList.remove('active');
         }
     };
     
@@ -70,13 +69,13 @@ function audioEventListeners() {
     musicPause.onclick = () => {
         if (musicPlayer.paused) {
             musicPlayer.play();
-            document.querySelector('#music-controls #music-label').innerHTML =
-                "Music playing: Xinjiang by Zimpzon";
+            document.querySelector('#music-controls .play-pause svg.play').classList.remove('active');
+            document.querySelector('#music-controls .play-pause svg.pause').classList.add('active');
         }
         else {
             musicPlayer.pause();
-            document.querySelector('#music-controls #music-label').innerHTML =
-                "Music paused: Xinjiang by Zimpzon";
+            document.querySelector('#music-controls .play-pause svg.play').classList.add('active');
+            document.querySelector('#music-controls .play-pause svg.pause').classList.remove('active');
         }
     };
 
@@ -89,12 +88,13 @@ function audioEventListeners() {
 // set fadeOut = false and src = null. fadeIn will control smooth vs instant 
 // volume change.
 // Alternatively, if using to just stop audio playing, set src = ''.
-function audioTransition(narrationPlayer, src, volume, fadeIn = false, fadeOut = false, loop = false) {
+function audioTransition(narrationPlayer, src, volume, fadeIn = false, fadeOut = false, loop = false, speed = null) {
     // Select the right player
     let player, slider;
     if (narrationPlayer) {
         player = document.querySelector('#narration-player');
         slider = document.querySelector('#narration-controls .volume-slider');
+        if (speed) document.querySelector('#narration-controls .speed').textContent = `${speed}x`;
     } else {
         player = document.querySelector('#music-player');
         slider = document.querySelector('#music-controls .volume-slider');
@@ -103,15 +103,21 @@ function audioTransition(narrationPlayer, src, volume, fadeIn = false, fadeOut =
     // Fade out current audio with sine function
     if (fadeOut) {
         const OGVolume = player.volume;
-        slider.value = player.volume;
         let currentVolume = player.volume;
+        slider.value = player.volume;
         let i = 0;
-        while (currentVolume > 0.001) {
-            currentVolume = OGVolume - (OGVolume * Math.sin(i) + 0.001);
-            slider.value = currentVolume;
-            player.volume = slider.value;
-            i += 0.01;
-        }
+
+        const fadeOutInterval = setInterval(() => {
+            if (currentVolume > 0.001) {
+                currentVolume = OGVolume - (OGVolume * Math.sin(i) + 0.001);
+                slider.value = currentVolume;
+                player.volume = slider.value;
+                i += 0.01;
+            } else {
+                clearInterval(fadeOutInterval);
+            }
+        }, 10);
+        
         player.volume = 0;
         slider.value = 0;
     }
@@ -130,16 +136,23 @@ function audioTransition(narrationPlayer, src, volume, fadeIn = false, fadeOut =
     if (fadeIn) {
         let i = 0;
         let currentVolume = player.volume;
-        while (currentVolume < volume) {
-            currentVolume = volume * Math.sin(i) + 0.001;
-            player.volume = currentVolume;
-            slider.value = player.volume;
-            i += 0.01;
-        }
+        const fadeInInterval = setInterval(() => {
+            if (currentVolume < volume) {
+                currentVolume = volume * Math.sin(i) + 0.001;
+                player.volume = currentVolume;
+                slider.value = player.volume;
+                i += 0.01;
+            } else {
+                clearInterval(fadeInInterval);
+            }
+        }, 10);
     }
+
+    // Update settings
     player.volume = volume;
     slider.value = volume;
     player.loop = loop;
+    if (speed) player.playbackRate = speed;
 }
 
 // Allow people to click on images to make them larger.
@@ -232,26 +245,49 @@ function buildContent(section) {
     document.body.classList.add('section-md');
     setTimeout(() => imageEnlarger(), 1000);
 
-    // Todo: Unlock the audio bar, get rid of the hint
+    // Todo: get rid of the hint
+    document.querySelector('#temporary-hint').classList.remove('active');
+
     // Unlock the menu bar, ensure its handlers work properly
     document.querySelector('#menu-bar').classList = '';
     document.querySelector('#menu-bar').classList.add('state-collapsed');
     menuHelper();
 
-    // Unlock the audio controls, make sure audio is reset
+    // Unlock the audio controls
     document.querySelector('#audio-controls').classList.add('active');
     document.querySelector('#narration-controls').classList.add('active');
     document.querySelector('#music-controls').classList.add('active');
 
-    const narrationPlayer = document.querySelector('#narration-player');
-    narrationPlayer.src = '';
+    // Fadeout current audio
+    audioTransition(
+        true,   // isNarration
+        '',     // src
+        0,      // volume
+        false,  // fadeIn
+        true,   // fadeOut
+        false,  // loop
+        1       // speed
+    );
 
+    audioTransition(
+        false,  // isNarration
+        '',     // src
+        0,      // volume
+        false,  // fadeIn
+        true    // fadeOut
+    );
+
+    // Reset labels
     document.querySelector('#narration-controls #narration-label').innerHTML = 
         "No narration selected.";
     document.querySelector('#music-controls #music-label').innerHTML =
         "No music selected.";
-    
-    
+
+    // Reset to to play icon
+    document.querySelector('#narration-controls .play-pause svg.play').classList.add('active');
+    document.querySelector('#narration-controls .play-pause svg.pause').classList.remove('active');
+    document.querySelector('#music-controls .play-pause svg.play').classList.add('active');
+    document.querySelector('#music-controls .play-pause svg.pause').classList.remove('active');
 }
 
 // Get anchor URL event handler for section navigation
