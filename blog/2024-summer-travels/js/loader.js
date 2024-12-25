@@ -108,7 +108,27 @@ const STATE = {
         <figcaption>Random flower montage from the under-rated botanical gardens at Université Laval. Ghislain gave me an illustrated bande-dessiné of Sapiens to read, which I rather quite enjoyed in the evening sun after my photography session :-)</figcaption>
         `
     },
-    'intervals': {}
+    'intervals': {},
+    'playingMusic': {
+        'audio': {}
+    }, 
+    'unplayedMusic': {
+        'audio': {
+            '/blog/2024-summer-travels/audio/music/Amusement Park by Pecan Pie.mp3': null,
+            '/blog/2024-summer-travels/audio/music/Bring it on By Noise Cake.mp3': null,
+            '/blog/2024-summer-travels/audio/music/Dorisha by Mountaineer.mp3': null,
+            '/blog/2024-summer-travels/audio/music/Nod Your Head by Hey Pluto.mp3': null,
+            '/blog/2024-summer-travels/audio/music/Stage 2 by Mountaineer.mp3': null,
+            '/blog/2024-summer-travels/audio/music/Still by Ilya Kuznetsov.mp3': null,
+            '/blog/2024-summer-travels/audio/music/Summer Bumble by Paul Yudin.mp3': null,
+        }
+    },
+    'playedMusic': {
+        'audio': {}
+    },
+    'flags': {
+        'musicSkip': true
+    }
 };
 
 window.inspectSTATE = STATE;

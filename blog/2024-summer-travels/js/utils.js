@@ -79,21 +79,180 @@ function audioEventListeners() {
         }
     };
 
-    // Todo: Add skip functionality
-    const musicSkip = document.querySelector('#music-controls .skip');
 }
 
 function mdSectionAudioEventListeners() {
-    // Need an onended event listener for narration player
+    // onended event listener for narration player
+    const narrationPlayer = document.querySelector('#narration-player');
+    narrationPlayer.onended = () => {
+        // Pause the player
+        narrationPlayer.currentTime = 0;
+        narrationPlayer.pause();
+        // Reset the speed
+        document.querySelector('#narration-controls .speed').textContent = '1x';
+        narrationPlayer.playbackRate = 1;
+        // Update the play/pause button
+        document.querySelector('#narration-controls .play-pause svg.play').classList.add('active');
+        document.querySelector('#narration-controls .play-pause svg.pause').classList.remove('active');
+    };
+
+    function playNext() {
+        // If no valid songs, load more
+        const otherKeys = Object.keys(window.inspectSTATE['playingMusic']['audio']);
+        if (otherKeys.length === 0) {
+            initPlayingMusic();
+        }
+
+        // Start playing next valid song
+        else {
+            const nextKey = otherKeys[0];
+            audioTransition(
+                false,  // isNarration
+                URL.createObjectURL(window.inspectSTATE['playingMusic']['audio'][nextKey]), // src
+                0.3,    // volume
+                true,   // fadeIn
+                false,  // fadeOut
+                false,  // loop
+                1       // speed
+            );
+
+            // Update the label
+            const musicLabel = document.querySelector('#music-controls #music-label');
+            musicLabel.dataset.title = nextKey.split('/').pop().split('.')[0];
+            musicLabel.innerHTML = `Music: ${musicLabel.dataset.title}`;
+
+            // Move the song to playedMusic
+            window.inspectSTATE['playedMusic']['audio'][nextKey] = 
+                window.inspectSTATE['playingMusic']['audio'][nextKey];
+            delete window.inspectSTATE['playingMusic']['audio'][nextKey];
+        }
+    }
 
     // Need an onended event listener for music player
+    const musicPlayer = document.querySelector('#music-player');
+    musicPlayer.onended = () => {
+        // Move current song to playedMusic
+        const currentTitle = document.querySelector('#music-controls #music-label').dataset.title;
+        const key = `/blog/2024-summer-travels/music/${currentTitle}.mp3`;
+        windows.inspectState['playedMusic']['audio'][key] = 
+            windows.inspectState['playingMusic']['audio'][key];
+        delete windows.inspectState['playingMusic']['audio'][key];
+
+        playNext();
+    }
 
     // Need to setup music skip button onclick, ariaDisabled.
+    const musicSkip = document.querySelector('#music-controls .skip');
+    musicSkip.ariaDisabled = false;
+    musicSkip.classList.remove('disabled');
+    musicSkip.onclick = () => {
+        if (windows.inspectSTATE['flags']['musicSkip']) {
+            windows.inspectSTATE['flags']['musicSkip'] = false;
+            playNext();
+            // Debounce double clicks
+            setTimeout(() => windows.inspectSTATE['flags']['musicSkip'] = true, 500);
+        } else return;
+    };
 }
 
-// Todo: Setup music selection for section and start playing first song
-function initMdSectionMusic() {
+// Credit: bryc https://stackoverflow.com/a/47593316/9179875
+function splitmix32(a) {
+    return function() {
+        a |= 0;
+        a = a + 0x9e3779b9 | 0;
+        let t = a ^ a >>> 16;
+        t = Math.imul(t, 0x21f0aaad);
+        t = t ^ t >>> 15;
+        t = Math.imul(t, 0x735a2d97);
+        return ((t = t ^ t >>> 15) >>> 0) / 4294967296;
+    }
+}
 
+async function initPlayingMusic() {
+    const prng = splitmix32(new Date().getTime())
+
+    function startFirstSong(randomURL) {
+        // Start playing first song
+        audioTransition(
+            false,  // isNarration
+            URL.createObjectURL(window.inspectSTATE['playingMusic']['audio'][randomURL]), // src
+            0.2,    // volume
+            true,   // fadeIn
+            false,  // fadeOut
+            false,  // loop
+            1       // speed
+        );
+
+        // Update the label
+        const musicLabel = document.querySelector('#music-controls #music-label');
+        musicLabel.dataset.title = randomURL.split('/').pop().split('.')[0];
+        musicLabel.innerHTML = `Music: ${musicLabel.dataset.title}`;
+
+        // Update the play/pause button
+        document.querySelector('#music-controls .play-pause svg.play').classList.remove('active');
+        document.querySelector('#music-controls .play-pause svg.pause').classList.add('active');
+
+        // Move the song to playedMusic
+        window.inspectSTATE['playedMusic']['audio'][randomURL] = 
+            window.inspectSTATE['playingMusic']['audio'][randomURL];
+        delete window.inspectSTATE['playingMusic']['audio'][randomURL];
+    }
+
+    // Move 4 songs from STATE['unplayedMusic'] to STATE['playingMusic']
+    const unplayedURLs = Object.keys(window.inspectSTATE['unplayedMusic']['audio']);
+    let outOfSongs = false;
+    
+    for (let i = 0; i < 4; i++) {
+        // Move the song
+        const randomIndex = Math.floor(prng() * unplayedURLs.length);
+        const randomURL = unplayedURLs[randomIndex];
+        window.inspectSTATE['playingMusic']['audio'][randomURL] = 
+            window.inspectSTATE['unplayedMusic']['audio'][randomURL];
+        delete window.inspectSTATE['unplayedMusic']['audio'][randomURL];
+        unplayedURLs.splice(randomIndex, 1);
+
+        // Always preload first song
+        if (i === 0) {
+            // WARNING: need to set enableCache = true, but refreshCache should be false in production
+            await loadSection('playingMusic', 0, () => null, true, true);
+
+            // wait for prior transitions to finish before starting new ones
+            if (
+                window.inspectSTATE['intervals']['fadeOutInterval'] || window.inspectSTATE['intervals']['fadeInIntervals']
+            ) {
+                const localInterval = setInterval(() => {
+                    if (
+                        window.inspectSTATE['intervals']['fadeOutInterval'] || window.inspectSTATE['intervals']['fadeInIntervals']
+                    ) return;
+
+                    // Prior audio transition done, start new one.
+                    else {
+                        clearInterval(localInterval);
+                        startFirstSong(randomURL);
+                    }
+                }, 100)
+            }
+        }
+
+        // error checking if out of unplayed songs
+        if (unplayedURLs.length === 0) {
+            outOfSongs = true;
+            break;
+        }
+    }
+
+    // If out of songs, move all songs back to unplayed
+    if (outOfSongs) {
+        for (let url in window.inspectSTATE['playedMusic']['audio']) {
+            window.inspectSTATE['unplayedMusic']['audio'][url] = 
+                window.inspectSTATE['playedMusic']['audio'][url];
+            delete window.inspectSTATE['playedMusic']['audio'][url];
+        }
+    }
+
+    // Lazy load the rest of the music
+    // WARNING: need to set enableCache = true, but refreshCache should be false in production
+    loadSection('playingMusic', 200, () => null, true, true);
 }
 
 // Audio transitions
@@ -388,8 +547,7 @@ function buildContent(section) {
     document.querySelector('#music-controls .play-pause svg.play').classList.add('active');
     document.querySelector('#music-controls .play-pause svg.pause').classList.remove('active');
 
-    // Todo: Setup music selection for section and start playing
-    initMdSectionMusic();
+    initPlayingMusic();
 }
 
 // Get anchor URL event handler for section navigation
