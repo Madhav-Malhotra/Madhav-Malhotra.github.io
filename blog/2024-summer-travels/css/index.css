@@ -27,7 +27,7 @@ h4 {
     font-size: 25px;
 }
 
-p, li, a, figcaption, blockquote {
+p, li, a, figcaption, blockquote, button {
     font-family: 'Poppins', 'Roboto', sans-serif;
 }
 
@@ -274,7 +274,7 @@ section#audio-bar {
     height: 30px;
     border-radius: 50%;
     border: none;
-    transition: opacity 0.5s ease;
+    transition: all 0.5s ease;
 }
 
 .audio-button.disabled {
@@ -283,7 +283,7 @@ section#audio-bar {
 }
 
 .audio-button:hover {
-    opacity: 0.75;
+    filter: brightness(1.2);
 }
 
 .audio-button svg {
@@ -393,6 +393,7 @@ section#audio-bar {
 		var(--clip-edges) 100%,
 		var(--clip-further) var(--clip-further)
 	);
+    transition: all 0.5s ease;
 }
 
 .volume-slider:hover::-webkit-slider-thumb {
@@ -435,6 +436,7 @@ section#audio-bar {
 	width: var(--thumb-width, var(--thumb-height));
 	border-radius: var(--thumb-width, var(--thumb-height));
 	cursor: grab;
+    transition: all 0.5s ease;
 }
 
 .volume-slider:active::-moz-range-thumb {
@@ -642,19 +644,19 @@ body.section-md #temporary-hint {
 .section-md #main-body .container {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: start;
     gap: 20px;
     background-color: #f7f7f7;
     padding-bottom: 50px;
 }
 
 .section-md #main-body .container > .left-col {
-    width: 70%;
+    width: 50%;
     max-width: 1200px;
     padding: 20px;
     border-radius: 20px;
     background-color: white;
-    margin: 40px 0px;
+    margin: 40px 7vw;
 }
 
 .section-md #main-body .container > .left-col img {
@@ -676,9 +678,30 @@ body.section-md #temporary-hint {
     color: #db3f58;
 }
 
-.section-md #main-body .container > .right-col {
-    width: 20%;
-    max-width: 300px;
-    min-width: 100px;
-    margin: 40px 0px;
+.section-md button.narration-button {
+    display: flex;
+    background-color: #db3f58;
+    padding: 10px;
+    border: 0px;
+    border-radius: 20px;
+    min-width: 200px;
+    color: white;
+    gap: 20px;
+    position: absolute;
+    left: var(--narration-button-offset);
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.section-md .narration-button:hover {
+    filter: brightness(1.2);
+}
+
+.section-md .narration-button svg {
+    fill: white;
+    height: 20px;
+}
+
+.section-md .narration-button.narration-button-gap {
+    translate: 0 60px;
 }

@@ -83,6 +83,18 @@ function audioEventListeners() {
     const musicSkip = document.querySelector('#music-controls .skip');
 }
 
+function mdSectionAudioEventListeners() {
+    // Need an onended event listener for narration player
+
+    // Need an onended event listener for music player
+
+    // Need to setup music skip button onclick, ariaDisabled.
+}
+
+function initMdSectionMusic() {
+
+}
+
 // Audio transitions
 // Note: if using to simply transition volume without changing audio source, 
 // set fadeOut = false and src = null. fadeIn will control smooth vs instant 
@@ -200,13 +212,43 @@ function clearMainContent(postTransitionCB = () => null) {
     }, 525);
 }
 
+// Event handler for narration button click
+function onNarrationClick(event) {
+    const section = document.body.className.replace('section-md', '').trim().replace('section-', '');
+    const button = event.target;
+    const src = button.dataset.src;
+    const title = src.split('/').pop().split('.')[0];
+
+    // Update the label
+    const narrationLabel = document.querySelector('#narration-controls #narration-label');
+    narrationLabel.dataset.title = title;
+    narrationLabel.innerHTML = `Narration: ${title}`;
+
+    // Todo: bugs occur if you switch rapidly between narrations
+    // Update the audio
+    const narrationPlayer = document.querySelector('#narration-player');
+    audioTransition(
+        true,   // isNarration
+        URL.createObjectURL(window.inspectSTATE[section]['audio'][src]), // src
+        0.4,    // volume
+        true,   // fadeIn
+        // fade out if narration player isn't paused
+        !narrationPlayer.paused, // fadeOut
+        false,  // loop
+    );
+
+    // Update the play/pause button
+    document.querySelector('#narration-controls .play-pause svg.play').classList.remove('active');
+    document.querySelector('#narration-controls .play-pause svg.pause').classList.add('active');
+}
+
 // Build content from markdown
 // Note: this function runs AFTER the STATE object has loaded all necessary 
 // content AND AFTER the main content has been cleared
 function buildContent(section) {
     // Clean up classes
     document.body.classList = '';
-    document.body.classList.add(`section-${section}`);
+    document.body.classList.add(`section-${section}`); // added section-md later
     
     // Check for section 0 (special)
     if (section === '0') {
@@ -219,12 +261,9 @@ function buildContent(section) {
     let md = window.inspectSTATE[section]['md'];
     const container = document.querySelector('#main-body .container');
     const leftCol = document.createElement('div');
-    const rightCol = document.createElement('div');
 
     leftCol.classList.add('left-col');
-    rightCol.classList.add('right-col');
     container.appendChild(leftCol);
-    container.appendChild(rightCol);
 
     // Clean the markdown by replacing image URLs with object URLs + trimming whitespace
     for (let url in window.inspectSTATE[section]['img']) {
@@ -243,7 +282,33 @@ function buildContent(section) {
 
     // Prep other DOM elements
     document.body.classList.add('section-md');
-    setTimeout(() => imageEnlarger(), 1000);
+    setTimeout(() => {
+        const microphoneSVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512"><path d="M176 352c53.02 0 96-42.98 96-96V96c0-53.02-42.98-96-96-96S80 42.98 80 96v160c0 53.02 42.98 96 96 96zm160-160h-16c-8.84 0-16 7.16-16 16v48c0 74.8-64.49 134.82-140.79 127.38C96.71 376.89 48 317.11 48 250.3V208c0-8.84-7.16-16-16-16H16c-8.84 0-16 7.16-16 16v40.16c0 89.64 63.97 169.55 152 181.69V464H96c-8.84 0-16 7.16-16 16v16c0 8.84 7.16 16 16 16h160c8.84 0 16-7.16 16-16v-16c0-8.84-7.16-16-16-16h-56v-33.77C285.71 418.47 352 344.9 352 256v-48c0-8.84-7.16-16-16-16z"/></svg>`;
+
+        // Add decorative microphone icon and event handlers to narration buttons
+        const narrationButtons = document.querySelectorAll('.section-md #main-body .narration-button');
+        for (let button of narrationButtons) {
+            const label = button.innerText;
+            button.innerHTML = microphoneSVG + label;
+            button.onclick = onNarrationClick;
+        }
+
+        // Set --narration-button-offset CSS variable
+        const column = document.querySelector('.section-md .left-col');
+        const styles = window.getComputedStyle(column);
+
+        // Calculate total width (column width + left margin + 60px padding)
+        const totalWidth = column.offsetWidth + parseFloat(styles.marginLeft) + 60;
+
+        // Update the CSS variable dynamically
+        document.documentElement.style.setProperty('--narration-button-offset', `${totalWidth}px`);    
+    }, 25);
+
+    // Initing event handlers
+    setTimeout(() => {
+        imageEnlarger();
+        mdSectionAudioEventListeners();
+    }, 500);
 
     // Todo: get rid of the hint
     document.querySelector('#temporary-hint').classList.remove('active');
@@ -283,11 +348,14 @@ function buildContent(section) {
     document.querySelector('#music-controls #music-label').innerHTML =
         "No music selected.";
 
-    // Reset to to play icon
+    // Reset to play icon
     document.querySelector('#narration-controls .play-pause svg.play').classList.add('active');
     document.querySelector('#narration-controls .play-pause svg.pause').classList.remove('active');
     document.querySelector('#music-controls .play-pause svg.play').classList.add('active');
     document.querySelector('#music-controls .play-pause svg.pause').classList.remove('active');
+
+    // Setup music selection for section and start playing
+    initMdSectionMusic();
 }
 
 // Get anchor URL event handler for section navigation

@@ -36,6 +36,13 @@ const STATE = {
         'md': `
         # Ville de Québec
 
+        <button data-src="/blog/2024-summer-travels/audio/quebec/Trip context (1m).mp3" class="narration-button">
+            Why I went on this trip
+        </button>
+        <button data-src="/blog/2024-summer-travels/audio/quebec/Art inspiration (1m).mp3" class="narration-button narration-button-gap">
+            Why I made this site
+        </button>
+
         ![Longshot of Le Château Frontenac](/blog/2024-summer-travels/img/quebec/LongshotChateauTrim.webp)
         <figcaption>Long shot of Le Château Frontenac from a ferry</figcaption>
 
@@ -47,6 +54,10 @@ const STATE = {
 
         As I arrived in Québec, tiny things started to go right to ease my nervousness. First off, I was living in such a lucky middlespot between Université Laval and Vieux Québec. My hosts were kind enough to lend me their bike and so I biked everywhere. Every destination had a journey of literal effort behind it, which made me appreciate each expedition that much more. I was even lucky enough to have a house on a bike only corridor so I'd just explore \- start riding in one direction to see how far the road went and then do the same in the other.   
         
+        <button data-src="/blog/2024-summer-travels/audio/quebec/Sentier (1m).mp3" class="narration-button">
+            Hidden jewels in the city
+        </button>
+
         ![Pont de Québec](/blog/2024-summer-travels/img/quebec/QuebecBridgeTrim.webp)
         <figcaption>Pont de Québec. It's nice to bike to next to the river :-)</figcaption> 
 
@@ -70,6 +81,10 @@ const STATE = {
         ## Brigitte and Ghislain
 
         Brigitte and Ghislain were basically the best hosts I could ask for (and that I met for my entire trip :O). I really felt more like I was with a host family than with AirBnB hosts. Brigitte was very mothering since they also had their own daughters just ten years older than me. Ghislain was the most thirty-year-old-seeming 60-year-old you've never met in your life :O I was a developer and he wasn't, so I'd try to simplify what I did when describing my work to him. Then, he'd surprise me by starting to talk about failures in cryptographic security with the advent of quantum computers and I'd be like :OOOOO The icing on the cake was that their French was easy for me to understand from ~~day~~ all-too-late-night one :D
+
+        <button data-src="/blog/2024-summer-travels/audio/quebec/Dot com era (35s).mp3" class="narration-button">
+            Dot com era adventures
+        </button>
 
         We were lucky enough to have dinner together twice. Nevermind the “you're only as good as your training” BS. I rose up to the occasion\! Prettiest meals I've ever cooked for someone on the very first time I tried :D   
         
