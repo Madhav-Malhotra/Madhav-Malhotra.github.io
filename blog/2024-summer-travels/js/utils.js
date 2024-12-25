@@ -91,6 +91,7 @@ function mdSectionAudioEventListeners() {
     // Need to setup music skip button onclick, ariaDisabled.
 }
 
+// Todo: Setup music selection for section and start playing first song
 function initMdSectionMusic() {
 
 }
@@ -112,6 +113,7 @@ function audioTransition(narrationPlayer, src, volume, fadeIn = false, fadeOut =
         slider = document.querySelector('#music-controls .volume-slider');
     }
     
+    // Todo: currently, fadeOut OR fadeIn is supported. Not both at once.
     // Fade out current audio with sine function
     if (fadeOut) {
         const OGVolume = player.volume;
@@ -119,16 +121,17 @@ function audioTransition(narrationPlayer, src, volume, fadeIn = false, fadeOut =
         slider.value = player.volume;
         let i = 0;
 
-        const fadeOutInterval = setInterval(() => {
+        window.inspectSTATE['intervals']['fadeOutInterval'] = setInterval(() => {
             if (currentVolume > 0.001) {
                 currentVolume = OGVolume - (OGVolume * Math.sin(i) + 0.001);
                 slider.value = currentVolume;
                 player.volume = slider.value;
                 i += 0.01;
             } else {
-                clearInterval(fadeOutInterval);
+                clearInterval(window.inspectSTATE['intervals']['fadeOutInterval']);
+                window.inspectSTATE['intervals']['fadeOutInterval'] = null;
             }
-        }, 10);
+        }, 3);
         
         player.volume = 0;
         slider.value = 0;
@@ -148,16 +151,17 @@ function audioTransition(narrationPlayer, src, volume, fadeIn = false, fadeOut =
     if (fadeIn) {
         let i = 0;
         let currentVolume = player.volume;
-        const fadeInInterval = setInterval(() => {
+        window.inspectSTATE['intervals']['fadeInIntervals'] = setInterval(() => {
             if (currentVolume < volume) {
                 currentVolume = volume * Math.sin(i) + 0.001;
                 player.volume = currentVolume;
                 slider.value = player.volume;
                 i += 0.01;
             } else {
-                clearInterval(fadeInInterval);
+                clearInterval(window.inspectSTATE['intervals']['fadeInIntervals']);
+                window.inspectSTATE['intervals']['fadeInIntervals'] = null;
             }
-        }, 10);
+        }, 3);
     }
 
     // Update settings
@@ -219,27 +223,57 @@ function onNarrationClick(event) {
     const src = button.dataset.src;
     const title = src.split('/').pop().split('.')[0];
 
-    // Update the label
-    const narrationLabel = document.querySelector('#narration-controls #narration-label');
-    narrationLabel.dataset.title = title;
-    narrationLabel.innerHTML = `Narration: ${title}`;
+    // If already title already in the narration label, do nothing
+    if (document.querySelector('#narration-controls #narration-label').dataset.title === title) return;
 
-    // Todo: bugs occur if you switch rapidly between narrations
-    // Update the audio
-    const narrationPlayer = document.querySelector('#narration-player');
-    audioTransition(
-        true,   // isNarration
-        URL.createObjectURL(window.inspectSTATE[section]['audio'][src]), // src
-        0.4,    // volume
-        true,   // fadeIn
-        // fade out if narration player isn't paused
-        !narrationPlayer.paused, // fadeOut
-        false,  // loop
-    );
+    function changeNarration() {
+        // Update the label
+        const narrationLabel = document.querySelector('#narration-controls #narration-label');
+        narrationLabel.dataset.title = title;
+        narrationLabel.innerHTML = `Narration: ${title}`;
 
-    // Update the play/pause button
-    document.querySelector('#narration-controls .play-pause svg.play').classList.remove('active');
-    document.querySelector('#narration-controls .play-pause svg.pause').classList.add('active');
+        // Update the audio
+        const narrationPlayer = document.querySelector('#narration-player');
+        audioTransition(
+            true,   // isNarration
+            URL.createObjectURL(window.inspectSTATE[section]['audio'][src]), // src
+            0.4,    // volume
+            true,   // fadeIn
+            // fade out if narration player isn't paused
+            !narrationPlayer.paused, // fadeOut
+            false,  // loop,
+            1       // speed
+        );
+
+        // Update the play/pause button
+        document.querySelector('#narration-controls .play-pause svg.play').classList.remove('active');
+        document.querySelector('#narration-controls .play-pause svg.pause').classList.add('active');
+    }
+
+    // wait for prior transitions to finish before starting new ones
+    if (
+        window.inspectSTATE['intervals']['fadeOutInterval'] || window.inspectSTATE['intervals']['fadeInIntervals']
+    ) {
+        // Most recent click is the one that'll get played after polling ends
+        if (window.inspectSTATE['intervals']['pollingNarrationInterval']) 
+            clearInterval(window.inspectSTATE['intervals']['pollingNarrationInterval']);
+
+        window.inspectSTATE['intervals']['pollingNarrationInterval'] = setInterval(() => {
+            if (
+                window.inspectSTATE['intervals']['fadeOutInterval'] || window.inspectSTATE['intervals']['fadeInIntervals']
+            ) return;
+
+            // Prior audio transition done, start new one.
+            else {
+                clearInterval(window.inspectSTATE['intervals']['pollingNarrationInterval']);
+                window.inspectSTATE['intervals']['pollingNarrationInterval'] = null;
+                changeNarration();
+            }
+        }, 100)
+    }
+
+    // No prior transition, just run the logic without polling
+    else changeNarration();
 }
 
 // Build content from markdown
@@ -290,6 +324,7 @@ function buildContent(section) {
         for (let button of narrationButtons) {
             const label = button.innerText;
             button.innerHTML = microphoneSVG + label;
+            button.title = `Play narration`;
             button.onclick = onNarrationClick;
         }
 
@@ -310,7 +345,6 @@ function buildContent(section) {
         mdSectionAudioEventListeners();
     }, 500);
 
-    // Todo: get rid of the hint
     document.querySelector('#temporary-hint').classList.remove('active');
 
     // Unlock the menu bar, ensure its handlers work properly
@@ -354,7 +388,7 @@ function buildContent(section) {
     document.querySelector('#music-controls .play-pause svg.play').classList.add('active');
     document.querySelector('#music-controls .play-pause svg.pause').classList.remove('active');
 
-    // Setup music selection for section and start playing
+    // Todo: Setup music selection for section and start playing
     initMdSectionMusic();
 }
 

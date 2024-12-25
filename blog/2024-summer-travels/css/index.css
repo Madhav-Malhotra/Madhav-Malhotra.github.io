@@ -277,7 +277,8 @@ section#audio-bar {
     transition: all 0.5s ease;
 }
 
-.audio-button.disabled {
+.audio-button.disabled,
+.audio-button.disabled:hover {
     cursor: not-allowed;
     filter: grayscale(1);
 }
@@ -681,10 +682,10 @@ body.section-md #temporary-hint {
 .section-md button.narration-button {
     display: flex;
     background-color: #db3f58;
-    padding: 10px;
+    padding: 10px 20px;
     border: 0px;
     border-radius: 20px;
-    min-width: 200px;
+    min-width: 225px;
     color: white;
     gap: 20px;
     position: absolute;
