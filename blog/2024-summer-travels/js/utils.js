@@ -276,6 +276,7 @@ function audioTransition(narrationPlayer, src, volume, fadeIn = false, fadeOut =
     }
     
     // Todo: currently, fadeOut OR fadeIn is supported. Not both at once.
+    // Todo: keep volume unchanged when switching from one track to next.
     // Fade out current audio with sine function
     if (fadeOut) {
         const OGVolume = player.volume;
