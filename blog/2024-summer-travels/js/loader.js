@@ -50,7 +50,7 @@ const STATE = {
 
         I'm surprised looking back at how nervous I was when I first got to Québec. I didn't feel comfortable speaking French and I didn't really know what to expect. I tend to go 0 to 100 real quick in a lot of domains. I guess that includes "easing into" my first solo trip &#128517;
         
-        I remember feeling nervous as I paid thousands of dollars for my AirBnB (my first purchase that large) thinking: “Wow, am I really doing this? There's literally nothing to determine whether to press the button other than what my heart decides.” 
+        I remember feeling nervous as I paid thousands of dollars for my AirBnB (my first purchase that large) thinking: "Wow, am I really doing this? There's literally nothing to determine whether to press the button other than what my heart decides." 
 
         <blockquote>Foreshadowed lesson: press the @\#(\*\#@$ button\!</blockquote>
 
@@ -66,7 +66,7 @@ const STATE = {
         ![Random grass-covered house](/blog/2024-summer-travels/img/quebec/GrassyHouseTrim.webp) 
         <figcaption>Pretty house en route to Université Laval to the West. It reminded me of Lord of the Rings &#128513;</figcaption> 
         
-        Warning: Québec used to be a fortress built on top of a hill. I'd ask Google Maps to show me a nearby grocery store. It'd show me one just a kilometre away, so I'd go biking off happily\! Little did I know I'd end up carrying a bike AND groceries up and down “les escaliers de la pente douce” (The stairs of the "soft" slope &#128558;)
+        Warning: Québec used to be a fortress built on top of a hill. I'd ask Google Maps to show me a nearby grocery store. It'd show me one just a kilometre away, so I'd go biking off happily\! Little did I know I'd end up carrying a bike AND groceries up and down "les escaliers de la pente douce" (The stairs of the "soft" slope &#128558;)
         
         ![Escaliers de la pente not so douce](/blog/2024-summer-travels/img/quebec/EscaliersTrim.webp)
         <figcaption>Escaliers de la pente not so douce if you'll pardon my French &#128517;</figcaption>
@@ -97,7 +97,7 @@ const STATE = {
             Dot com era adventures
         </button>
 
-        We were lucky enough to have dinner together twice. Nevermind the “you're only as good as your training” BS. I rose up to the occasion\! Prettiest meals I've ever cooked for someone on the very first time I tried &#128513;   
+        We were lucky enough to have dinner together twice. Nevermind the "you're only as good as your training" BS. I rose up to the occasion\! Prettiest meals I've ever cooked for someone on the very first time I tried &#128513;   
         
         ![Aesthetic dinner](/blog/2024-summer-travels/img/quebec/DinnerTrim.webp)  
         <figcaption>I basically never take photos of food so pardon the underwhelming backdrop</figcaption>
@@ -108,19 +108,83 @@ const STATE = {
 
         ## Meeting Students
 
-        I had a pretty hard time meeting students to be honest. Most of the clubs I found were pretty inactive. The entire university was summarised to me as “vide” (empty) during the summer. 
+        I had a pretty hard time meeting students to be honest. Most of the clubs I found were pretty inactive. The entire university was summarised to me as "vide" (empty) during the summer. 
         
         I did see a random facebook post for a group mural painting activity thingy and just randomly showed up. To my great chagrin, the activity combined three fears all at once: talking to girls, talking to pretty girls, and talking to pretty girls in French &#128558; Anyways, Noémie and Laurence were much more talented at drawing than I was. Laurence drew this incredible supernova sunset. I drew the fake "symbole chinois" since they didn't bother to ask for details &#128517;  
         
         ![Mural at Université de Laval](/blog/2024-summer-travels/img/quebec/UniLavalTrim.webp) 
         <figcaption>I like to play a game where I ask people to guess which one I drew. No one's ever guessed right &#128513;</figcaption>
 
-        I also got to meet Nathaniel from the AI club at Université Laval. That was nice. I finally had my “talk to someone about the oncoming AI singularity” conversation of the trip &#128517; It was interesting how different our viewpoints were. It was one of many times where I met people and thought: “**Hey, this person lives life totally differently than me. I appreciate learning something new here\! But boy, I would not like to have their life &#128517;**” I will say, though, Nathaniel seemed a lot more happy and focused on the present. I wish him good luck with his grad studies ~~and running from the AI overlords :D~~  
+        I also got to meet Nathaniel from the AI club at Université Laval. That was nice. I finally had my "talk to someone about the oncoming AI singularity" conversation of the trip &#128517; It was interesting how different our viewpoints were. It was one of many times where I met people and thought: "**Hey, this person lives life totally differently than me. I appreciate learning something new here\! But boy, I would not like to have their life &#128517;**" I will say, though, Nathaniel seemed a lot more happy and focused on the present. I wish him good luck with his grad studies ~~and running from the AI overlords :D~~  
         
         Also, funny story \- my French was @\#($\!) as usual with Nathaniel, but I managed to communicate. Over time, I built up confidence and started talking to the other people visiting Nathaniel's club (we were at a science fair type event). I proceeded to give this one girl a fluent French intro to the club, felt so proud, and then her mom starts talking to her in English with an American accent and I feel like a dunce realising they're Ohlahomians who didn't understand a word of what I'd said &#128557; Though I perked right up after hearing Nathaniel giving them instructions in English and realising his English was just as @\#$@& as my French &#128513;
 
         ![Random flower montage from the botanical gardens at Université Laval](/blog/2024-summer-travels/img/quebec/FlowersTrim.webp)
         <figcaption>Random flower montage from the under-rated botanical gardens at Université Laval. Ghislain gave me an illustrated bande-dessiné of Sapiens to read, which I rather quite enjoyed in the evening sun after my photography session :-)</figcaption>
+        `
+    },
+    'winnipeg': {
+        'img': {
+            '/blog/2024-summer-travels/img/winnipeg/amongUs.webp': null,
+            '/blog/2024-summer-travels/img/winnipeg/blueWhale.webp': null,
+            '/blog/2024-summer-travels/img/winnipeg/brokenDoor.webp': null,
+            '/blog/2024-summer-travels/img/winnipeg/herbarium.webp': null,
+            '/blog/2024-summer-travels/img/winnipeg/humanRightsMuseum.webp': null,
+        },
+        'audio': {
+            '/blog/2024-summer-travels/audio/winnipeg/Herbarium nerds (50s).mp3': null,
+            '/blog/2024-summer-travels/audio/winnipeg/Up or out (30s).mp3': null,
+        },
+        'md': `
+        # Winnipeg
+
+        ![The museum of human rights](/blog/2024-summer-travels/img/winnipeg/humanRightsMuseum.webp)
+        <figcaption>The Museum of Human Rights. If you're like me, you'll go on Monday and be pleasantly surprised to see how not busy it is. Unfortunately, you'll also be like me, walk up, and realise it's closed on Mondays ;-;</figcaption>
+
+        ## Travel
+
+        I lived in one of the worst parts of town in Winnipeg. If you left a car on the street, it'd be smashed the next day. If you left your door unlocked, someone would vandalise the place. There were boarded up windows, shuttered-down businesses, rows of homeless people sitting on main street, alleyways of people doing drugs, people walking around half-naked with no shoes, and more. One block, it seemed like I was in Canada, and the next seemed like a third-world country.  
+        <img class="vert" src="/blog/2024-summer-travels/img/winnipeg/brokenDoor.webp" alt="A broken door" />
+        <figcaption>Nothing special about this door. One of many on my part of main street.</figcaption> 
+
+        Amidst all of this mess, there were rows of non-profits with paradoxical messages about hope and museums selling indigenous-branded paraphernalia for tourists. It all seemed like some sort of dystopian joke, given the vast majority of the homeless population was indigenous. When I went to BC, there were museums about indigenous culture and people would get annoyed at cultural appropriation with totem poles being placed everywhere like trophies. In Winnipeg, cultural appropriation was the least of people's problems.   
+        <img class="vert" src="/blog/2024-summer-travels/img/winnipeg/amongUs.webp" alt="Ancestors Among Us T-shirt at a Museum" />
+        
+        I don't mention any of the above to complain about Winnipeg. I'm really glad I went to Winnipeg so I could see how enormous of a difference there can be in the day-to-day reality of two Canadians. **Inequality exists everywhere; in the place I lived, the inequality was just more stark**. A librarian I met at the University of Winnipeg summarised it perfectly: "Are you unsafe, or do you *feel* unsafe?" I was uncomfortable, but I was learning. I share this experience hoping that more people know about these hidden corners in the country that don't get talked about enough. It certainly opened my eyes to a side of the experience of Indigenous people in Canada that NEVER got talked about in any of the several museums I went to throughout the trip.
+
+        <button data-src="/blog/2024-summer-travels/audio/winnipeg/Up or out (30s).mp3" class="narration-button">
+            The surprising University of Winnipeg
+        </button>
+
+        ## David
+
+        I learned a lot from my AirBnB host. We shared a lot of personal stories about challenges faced in the different environments we grew up, though I'll keep personal stories personal. Suffice it to say, I really appreciated that David reinforced for me the importance of listening and not assuming that everyone has the same goals and problems as I do. It was one of my first experiences where I saw the dual paradox that **humans of very different backgrounds end up simultaneously different and alike. It just matters where you look**. 
+
+        On a more playful note, I chose to stay at David's place since I'd been scared of dogs after one clawed me as a kid. David fostered dogs so there was always a puppy looking to be pet :D I really took to one of the dogs, who we called Bear since he had the size (and fur) of a teenage black bear. We don't know exactly what he was, but he looked like a giant version of a [German Spitz](https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/24152054/German-Spitz-standing-in-profile-outdoors.jpg).   
+        
+        The one thing that summarised Bear was that he loved attention :D Whenever I came into the house, he'd jump up and put his paws on my chest and just stay there waiting for pets. Every morning, I'd here a bump on my door and he'd just lay outside like a giant carpet until I went out to pet him :D David had a glass dinner table, which was unhelpful because he'd just sit underneath the table and stare up at me through the glass with puppy dog eyes begging for food. Very hard to get work done with Bear around, but I miss him too :/
+
+        ## Dr. Bruce and the Herbaria
+
+        When I visited the University of Manitoba, the Faculty of Science encouraged people to visit their herbarium. I didn't know what a herbarium was, but I saw a room number and started knocking on doors :D I accidentally ran into the retired curator of the herbarium, Dr. Bruce, who just happened to be there on a Friday afternoon. Dr. Bruce introduced me to the hidden world of herbaria for the rest of my trip\!
+
+        A herbarium is a collection of dried plant (and potentially fungal) specimens. The plants are dried and pressed into pages, where they can be stored for over a century.   
+        ![Herbarium specimens from a public dataset](/blog/2024-summer-travels/img/winnipeg/herbarium.webp)  
+        <figcaption>Specimens from public datasets on Zenodo \- [1](https://zenodo.org/records/1483766), [2](https://zenodo.org/records/1480546)</figcaption>
+
+        The University of Manitoba's Herbarium had specimens which were over 100 years old, including specimens called holotypes which are the 'reference' standard to define new species. Dr. Bruce collected some holotypes himself through his global travels. In particular, he identified new species of grasses in Vietnam. I thought it was the coolest job I'd never heard of, so I took up Dr. Bruce's suggestion to visit the herbaria at other universities I went to\! 
+
+        In Saskatoon, I went to the University of Saskatchewan and found a much larger herbarium whose unique specialty was sunflower-like plants. Turns out most sunflowers are SO much smaller than the stuff you see growing in gardens :D The curator, Denver, had actually come back from Toronto just last week, while I was coming in from Toronto. So we had fun conversations about travelling. He also took the time to explain the challenges of digitising the herbaria collections so that centuries worth of data could be used for more studies. 
+
+        <button data-src="/blog/2024-summer-travels/audio/winnipeg/Herbarium nerds (50s).mp3" class="narration-button">
+            Herbaria digitisation nerds
+        </button>
+
+        After Saskatoon, I went to the University of Alberta's Herbarium in Edmonton. I went to the non-vascular herbarium in particular, which focused on fungi and plants called bryophytes. There, I was again lucky enough to run into the retired curator, Dr. Catherine. She told me how she and her husband often did studies in the Arctic. I was fascinated by the travel involved in her work. She was fascinated by the plants :D I asked her about how she wanted to spend her time in retirement and she told me how she'd much rather spend time analysing her herbarium samples than travelling or picking up everyday hobbies. Like I said, herbarium curators are some of the most unique people in the world 😀I say this jokingly, but serious respect to them. It's a level of patience and willingness to follow your passion like no other.
+
+        I finally went to the herbarium at the University of British Columbia. It's in the Beaty Biodiversity Museum, alongside animal specimens. If you're looking for an easy-to-get-to herbarium, you just have to pay money and not talk to anyone to get in there. It does have a giant blue whale skeleton that's interesting. Though I didn't like it much personally since I didn't get to talk to any curators. **Turns out I was more interested in studying the people studying the plants than studying the plants themselves :D**  
+        ![A massive blue whale skeleton at the Beaty Biodiversity Museum](/blog/2024-summer-travels/img/winnipeg/blueWhale.webp)
+        <figcaption>Massive blue whale skeleton at the Beaty Biodiversity Museum. You can see the tiny people on the stairs for a size comparison.</figcaption>
         `
     },
     'intervals': {},

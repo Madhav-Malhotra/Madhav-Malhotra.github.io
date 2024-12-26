@@ -31,6 +31,10 @@ p, li, a, figcaption, blockquote, button {
     font-family: 'Poppins', 'Roboto', sans-serif;
 }
 
+a {
+    color: #db3f58;
+}
+
 figcaption {
     margin-top: -1.5rem;
     margin-bottom: 1.5rem;
@@ -673,6 +677,11 @@ body.section-md #temporary-hint {
     margin: 10px auto;
     cursor: pointer;
     transition: all 0.5s ease;
+}
+
+.section-md #main-body .container > .left-col img.vert {
+    width: 60%;
+    margin: 20px 20%;
 }
 
 .section-md #main-body .container > .left-col img:hover {
