@@ -193,6 +193,76 @@ const STATE = {
         <figcaption>Massive blue whale skeleton at the Beaty Biodiversity Museum. You can see the tiny people on the stairs for a size comparison. Yes, the jaws are half the length of the skeleton.</figcaption>
         `
     },
+    'saskatoon': {
+        'img': {
+            '/blog/2024-summer-travels/img/saskatoon/downtownMural.webp': null,
+            '/blog/2024-summer-travels/img/saskatoon/kentridge.webp': null,
+            '/blog/2024-summer-travels/img/saskatoon/riverLongshot.webp': null,
+            '/blog/2024-summer-travels/img/saskatoon/riversLanding.webp': null,
+        }, 
+        'audio': {
+            '/blog/2024-summer-travels/audio/saskatoon/Group will (1.75m).mp3': null,
+            '/blog/2024-summer-travels/audio/saskatoon/Judgement (35s).mp3': null,
+            '/blog/2024-summer-travels/audio/saskatoon/Micromobility (25s).mp3': null,
+        }, 
+        'md': `
+        # Saskatoon
+
+        ![South Saskatchewan River along the 100+km long Meewasin trail](/blog/2024-summer-travels/img/saskatoon/riverLongshot.webp)
+        <figcaption><del>A very picturesque traffic cone &#128128;</del> South Saskatchewan River along the 100+km long Meewasin trail.</figcaption>
+
+        ## A Very Cute City
+
+        One lesson that quickly became obvious in my trip was 'High expectations, low happiness. Low expectations, high happiness.' And in Saskatoon, I had no expectations soooo &#128517; 
+        
+        I didn't want to stop in Saskatoon. I was planning to head to Edmonton and it just happened that Saskatoon made sense as a stop geographically. As it turns out, Saskatoon was my favourite *destination* throughout the trip\!
+
+        The city has a population similar to Waterloo, where I study. Though I'm blown away by how much more *scenic* Saskatoon is\! In the middle of the city is the South Saskatchewan river. There's a pretty linear park around the river (great place for morning strolls) and lots of aesthetic bridges. Every evening, people go canoeing off of River's Landing. That's right next to my favourite museum from the entire trip: the Remai Modern. (More rantage on this in the Arts section &#128548;)  
+        ![River's landing next to the Remai Modern](/blog/2024-summer-travels/img/saskatoon/riversLanding.webp) 
+        <figcaption>River's landing next to the Remai Modern</figcaption>
+
+        Downtown Saskatoon is quaint and still walkable. There are pretty murals around and lots of e-scooters if you want to try riding for the first time. If you're the kind of spontaneous person that just sees a small shop or cinema and walks in to see what happens, try walking down 20th St W near Avenue C South.   
+        
+        <button data-src="/blog/2024-summer-travels/audio/saskatoon/Micromobility (25s).mp3" class="narration-button">
+            Vote Madhav for Micromobility
+        </button>
+        
+        ![Downtown mural](/blog/2024-summer-travels/img/saskatoon/downtownMural.webp)
+        <figcaption>A pretty mural downtown :-)</figcaption>
+
+        ## The Farm Kids
+
+        The University of Saskatchewan was nice to visit, albeit empty during the summer term. Luckily, when the students were away, I was able to talk to Mike, who coordinated the engineering student design teams. He told me about his decades seeing technological change at the university. In older days, the big agricultural city used to primarily get engineering students who grew up on farms from neighbouring towns. Agricultural companies would come to the university to specifically recruit students of this background. They knew they were hiring some of the most hands-on engineers in the country. 
+
+        <button data-src="/blog/2024-summer-travels/audio/saskatoon/Group will (1.75m).mp3" class="narration-button">
+            The New Gods
+        </button>
+
+        These days, there's more and more software automation in farm equipment and it's becoming much harder for any farmer to repair their equipment themselves. There are fewer 'farm kids' from neighbouring towns and more students from urban cities all around the world. Personally, I felt a little sad hearing this. 
+        
+        It made me think about how increasing globalisation around the world is making the numbers look better. More profits, yield, … Though we keep losing the special skills that people of different origins would develop as everyone becomes increasingly similar. To me, **it feels like the heat death of the universe; when there's no diversity, when everything is the same, everything feels stagnant.** There's nothing re*mark*able when everything's the same. Yes, the numbers look better, but does life *feel* more worth living when there's less and less to discover?  
+        ![The Old Gods Have Retired by William Kentridge](/blog/2024-summer-travels/img/saskatoon/kentridge.webp)  
+        <figcaption>The Old Gods Have Retired by William Kentridge at the Remai Modern. I'd encourage you to click on/zoom into the photo to read the captions.</figcaption>
+
+        ## Tosin
+
+        At my AirBnB, my flatmates were a Nigerian couple. They both seemed young and the wife, Funke, told me she was doing her masters. So I assumed they were just students like me. One day, I'm talking to the husband, Tosin, and he told me he was 38\! He'd already had a multiyear career as a dentist in Nigeria and had moved to Canada to be with his wife. He did that despite his credentials no longer being accepted; he had to make ends meet as a menial labourer. 
+
+        Having immigrated to Canada with my family, I tried to share some tips that had helped my family settle down. I was just following my natural tendencies. Still, Tosin trusted me a lot more after he saw I was trying to help without anything in it for me. It led us to the lucky position where I was able to ask him about how he stayed motivated to keep going despite all the stresses his family faced as recent immigrants. 
+
+        Tosin told me about the huge role of faith in helping him through difficult moments in his life. He then started encouraging me to start investigating which god is real so I could come to the right conclusion. Given my background being in between many worlds, the topic of the conversation made me very uncomfortable. Though instead of making an excuse to get out of what made me uncomfortable, I made one of many great decisions throughout my journey to lean into discomfort. 
+        
+        I asked Tosin more about if he'd thought a lot about which god to believe in. That led us to have a much deeper conversation where he shared his doubts about faith as a teenager and how the challenges of poverty when he was my age made him start to read about different religions of the world a lot more. It gave me a much richer understanding of how dynamic people can be throughout life and the anchors of hope/community for many humans all around the world. 
+
+        <button data-src="/blog/2024-summer-travels/audio/saskatoon/Judgement (35s).mp3" class="narration-button">
+            Ashes to ashes
+        </button>
+
+        Sometimes in life, you note yourself sailing into an unknown horizon with the assumptions holding you up sinking beneath your feet. Sometimes you have the ability to steer and sometimes you don't. You could turn around the raft if you do. You'd be comfortable that way. Stable that way. 
+        
+        Though I'd recommend you **hold your breath and plunge in the water every time you have that control. You'll see a new world on the other side**.
+        `
+    },
     'intervals': {},
     'playingMusic': {
         'audio': {}
