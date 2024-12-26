@@ -57,6 +57,10 @@ blockquote {
     justify-content: center;
 }
 
+body.section-md .left-col strong {
+    color: #db3f58;
+}
+
 /* Transition mask */
 #main-body .transition-mask {
     position: absolute;
@@ -263,6 +267,10 @@ section#audio-bar {
 #audio-controls p {
     margin-bottom: 6px;
     margin-top: 6px;
+}
+
+#audio-controls p#music-label {
+    min-width: 342px;
 }
 
 .audio-button {

@@ -134,9 +134,9 @@ function mdSectionAudioEventListeners() {
         // Move current song to playedMusic
         const currentTitle = document.querySelector('#music-controls #music-label').dataset.title;
         const key = `/blog/2024-summer-travels/music/${currentTitle}.mp3`;
-        windows.inspectState['playedMusic']['audio'][key] = 
-            windows.inspectState['playingMusic']['audio'][key];
-        delete windows.inspectState['playingMusic']['audio'][key];
+        window.inspectSTATE['playedMusic']['audio'][key] = 
+            window.inspectSTATE['playingMusic']['audio'][key];
+        delete window.inspectSTATE['playingMusic']['audio'][key];
 
         playNext();
     }
@@ -146,11 +146,11 @@ function mdSectionAudioEventListeners() {
     musicSkip.ariaDisabled = false;
     musicSkip.classList.remove('disabled');
     musicSkip.onclick = () => {
-        if (windows.inspectSTATE['flags']['musicSkip']) {
-            windows.inspectSTATE['flags']['musicSkip'] = false;
+        if (window.inspectSTATE['flags']['musicSkip']) {
+            window.inspectSTATE['flags']['musicSkip'] = false;
             playNext();
             // Debounce double clicks
-            setTimeout(() => windows.inspectSTATE['flags']['musicSkip'] = true, 500);
+            setTimeout(() => window.inspectSTATE['flags']['musicSkip'] = true, 500);
         } else return;
     };
 }
@@ -231,7 +231,10 @@ async function initPlayingMusic() {
                         startFirstSong(randomURL);
                     }
                 }, 100)
-            }
+            } 
+
+            // otherwise, just run the logic without polling
+            else startFirstSong(randomURL); 
         }
 
         // error checking if out of unplayed songs
