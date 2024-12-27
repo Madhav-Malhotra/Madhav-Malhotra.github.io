@@ -262,6 +262,134 @@ const STATE = {
         
         Though I'd recommend you **hold your breath and plunge in the water every time you have that control. You'll see a new world on the other side**.
         `
+    }, 
+    'edmonton': {
+        'img': {
+            '/blog/2024-summer-travels/img/edmonton/cambodiaLidar.webp': null,
+            '/blog/2024-summer-travels/img/edmonton/cambodianStatue.webp': null,
+            '/blog/2024-summer-travels/img/edmonton/edmontonMall.webp': null,
+            '/blog/2024-summer-travels/img/edmonton/royalAlbertaMuseum.webp': null
+        },
+        'audio': {
+            '/blog/2024-summer-travels/audio/edmonton/Parents (1.2m).mp3': null,
+        },
+        'md': `
+        # Edmonton
+
+        ![Gallery at the Royal Alberta Museum](/blog/2024-summer-travels/img/edmonton/royalAlbertaMuseum.webp)
+        <figcaption>Gallery at the Royal Alberta Museum. It was nice to sit in the hall underneath the banners of massive mountains.</figcaption>
+
+        I guess the lack of memories I have in Edmonton is telling. The problem isn't that I was only in Edmonton for three days; I loved spending just three hours in Jasper (more in the next section). Unfortunately, I just didn't meet that many people in Edmonton. 
+        
+        Instead, a bunch of my time was spent on touristy activities. Sure, West Edmonton Mall had unique parts. I went go kart racing, saw a ship, and saw an ice skating rink \- all indoors &#129300; Still, I just checked things off and forgot about them.   
+        ![An indoor mini waterpark at the West Edmonton Mall](/blog/2024-summer-travels/img/edmonton/edmontonMall.webp)
+        <figcaption>An indoor mini waterpark at the West Edmonton Mall. Why not.</figcaption>
+
+        The only touristy activity that I did appreciate in a marked way was visiting the Royal Alberta Museum. Not even all of it; I spent two hours in their temporary exhibition on the history of Cambodia and twenty minutes speedrunning the rest &#128513; I'd never looked into Cambodian culture before and the things the exhibit taught me were incredible\! 
+
+        * I was staggered to see the monumental medieval-age city planning. Angkor had the world's largest enclosed water reservoirs during its medieval era. To this day, the traces of this engineering are still visible from overhead LIDAR\! I'd never realised cities of that scale existed in medieval Asia.  
+        
+        ![LIDAR image of Angkor](/blog/2024-summer-travels/img/edmonton/cambodiaLidar.webp)
+        <figcaption>LIDAR image of Angkor. Even with only the stone remnants, the massive engineering feats from hundreds of years ago are still visible.</figcaption>
+        
+        * I was staggered to see the influence of Hinduism in Cambodia. My parents are Hindu so I always just associated Hinduism as this 'private family' thing. To see how it influenced geopolitics in countries outside of India really shook my assumptions. I saw sculptures that had been broken so pillagers could steal gemstones or remove faces from statues and it angered me personally. Just looking on at the exhibition, I had this desire to see temples like Angkor Wat in their prime before the fall of the Khmer empire. It's like I could emotionally 'feel' history and the passage of time in this way I'd never felt before.  
+        
+        <button data-src="/blog/2024-summer-travels/audio/edmonton/Parents (1.2m).mp3" class="narration-button">
+            Questions about parenting
+        </button>
+        
+        <img src="/blog/2024-summer-travels/img/edmonton/cambodianStatue.webp" alt="Broken statue of a Cambodian deity" class="vert" />
+        <figcaption>Pieces of a statue of a Cambodian deity. Most other statues were in worse condition</figcaption>
+
+        I think **one of the signs of a good education is questioning not only the world, but how you see yourself fit in it.** Growing up as an immigrant, I'd never really strongly felt any cultural beliefs. Neither here nor there. People with identities and strong cultural beliefs seemed irrational. 'Culture' was a slightly bland word. 
+        
+        For the first time at this exhibition, I felt all the "irrationality" coursing through me and I appreciated it\! What someone of a different background would dismiss as a boring stroll around some old, broken rocks held two hours of meaningful inquiry for me. It gives me hope that maybe the whole 'fitting in' thing isn't some lost endeavour I should cynically dismiss. Maybe I've just been looking for the culture and beliefs that speak to me too close to home.
+        `
+    },
+    'strangers': {
+        'img': {
+            '/blog/2024-summer-travels/img/strangers/badLandsCollage.webp': null,
+            '/blog/2024-summer-travels/img/strangers/jasperLake.webp': null,
+            '/blog/2024-summer-travels/img/strangers/trainNight.webp': null
+        },
+        'audio': {
+            '/blog/2024-summer-travels/audio/strangers/Jasper at sunrise (2m).mp3': null,
+            '/blog/2024-summer-travels/audio/strangers/Tech support (15s).mp3': null,
+            '/blog/2024-summer-travels/audio/strangers/The dome car (25s).mp3': null
+        },
+        'md': `
+        # Interlude A: Talking to Strangers
+
+        ![Train heading west into sunset near Winnipeg](/blog/2024-summer-travels/img/strangers/trainNight.webp)
+        <figcaption>Train heading west into sunset near Winnipeg. I went up to the dome car every night to see the sunset :-)</figcaption>
+
+        This is a tribute to all the fantastic human beings I learned from while (technically not?) on the road.
+
+        ## The Mother
+
+        The first stranger I met was on my plane from Toronto to Winnipeg. The woman next to me was an immigrant from Nigeria who had just finished her masters and was now starting her first job in Canada. Since she was a student, I thought she'd graduated recently like me. As I talked to her, I come to find out that she was in fact 40 and already a mother &#128558;
+        
+        <button data-src="/blog/2024-summer-travels/audio/strangers/Tech support (15s).mp3" class="narration-button">
+            Sample size equals two
+        </button>
+
+        I asked her about her family and she told me about how she'd split up from her husband and her son was still living with him in Nigeria. She said she didn't want to bring him to Canada until she was settled because she didn't want him to see her struggle. Now that she'd finished her masters, it was her chance to be able to support him and finally see him after two years. 
+
+        I've often seen ambitious people around me looking down on "normal people." People who just want to get a degree don't have goals and are just looking for security. 
+
+        Or maybe not. 
+
+        Maybe some of us don't always see smiling faces and open doors. 
+
+        Maybe some of us just can't imagine the pain of not seeing their child for years as they claw their way out of hardship. 
+
+        **Maybe some of us are ambitious and privileged, while others are ambitious and not.** 
+
+        ## The French
+
+        I made more friends in two hours on a train because I could speak French than I did in all my time in Québec while surrounded by francophones. Let's just say, when someone's in foreign territory and **when you're the only one who can speak their language, you might be a 5/10 on a great day, but you're an absolute oasis in a desert on that day &#128517;**
+
+        Jokes aside, for the first time in life, I felt like it was SO easy to make friends. Whenever I'd hear someone speaking French in Western Canada, I'd throw in a "Vous venez d'où?" and it was off to the races :-) 
+
+        In Winnipeg, I met my housemate, Morgan, who was taking a break from the frustrations of French academia to explore all of Canada. She wasn't so confident in her English, but also so eager to learn. Often, people won't want to correct others with language mistakes in fear of seeming rude. I have the perspective of a language learner who wishes so badly that others would correct them to help them learn. So I helped Morgan with her English in that way, which helped us connect more\! We continued our separate journeys, but one day, she hopes to come back to Canada and work full time as a teacher. 
+
+        En route to Saskatoon, I met a couple, François and Rafaelle, taking a break from work to explore Jasper. They got there a month before it burned down; I got there three weeks before it burned down and took a spontaneous and much appreciated three-hour sunrise hike with a retiree from West Virginia I met on the halfway mark. We were all graced by unimaginable luck as we explored this beautiful setting at sunrise before a horrifying set of events.  
+        ![Lake Beauvert at 7 AM near Jasper](/blog/2024-summer-travels/img/strangers/jasperLake.webp)
+        <figcaption>Lake Beauvert at 7 AM on a spontaneous hike near Jasper.</figcaption>
+
+        <button data-src="/blog/2024-summer-travels/audio/strangers/Jasper at sunrise (2m).mp3" class="narration-button">
+            Jasper at sunrise
+        </button>
+
+        Anyways, Rafaelle and François introduced me to another French friend they made on the train, Marianne. At my random suggestion, we all started playing Uno with me trying to explain my friendship-destroying rules in broken French and François scaring the daylights out of me by asking me questions with a perfect English accent before revealing that half his family was Scottish &#128561; &#128517;
+
+        After an interlude in Edmonton, I got back on my way to Vancouver. On the BC ferry, I swear I must have a French magnet or something. I was on the aft deck, facing gale force winds, missing all the whale sightings, but somehow managing to strike up a conversation with the only Frenchman on deck &#128513; This Monsieur used to be an electrotechnician at a hydroelectric dam in France and was now road tripping across North America with his wife. I was freezing cold in jeans and jacket, but still trying to be sociable nonetheless. He was OUT-OF-HIS-MIND COLD in shorts, but still the allure of finding someone to speak your language transcends physical comfort I guess?
+
+        I'm very appreciative of all the strangers willing to lend me an ear throughout this trip. My plans to spend an exchange term in France have now been cancelled. Please don't take offense \- all of you were so lovely that I couldn't imagine any more learning or any better an experience ahead  :-)
+
+        ## The Swiss
+
+        Out of all my time actively *moving* from one place to another, my favourite experience was the train from Edmonton to Vancouver. It was a 2-day train ride and I felt a bit bored when the train got past the main stop, Jasper. Eventually, I convinced myself to do a discomfort challenge and go talk to the passenger who'd stepped on board in Edmonton with me: Heidi, a grandmother from Switzerland taking her first trip since retirement. 
+
+        Now, you'd think that a 21-year old brown male from India and a grandmother-year-old white female from Switzerland wouldn't have very much in common. Certainly, I felt a bit nervous just approaching her for no reason other than "I'm bored, will you talk to me?" &#128073;&#128072; Though as soon as I got out of my head and started listening to her, Heidi and I became excellent friends with a lot in common :-) 
+
+        Immediately, I sensed Heidi was a bit nervous and timid talking to me. Her English wasn't perfect, so starting the conversation already was a big step for her. As soon as I heard she was Swiss, I offered to speak to her in French. As it turns out, Heidi's from the German-speaking part of Switzerland, so that was more of a step backward instead of forward, since now both of us didn't fully understand how to say what we wanted to say &#128517; Still, despite the language and cultural barrier, both of us benefited a lot from overpowering the nervousness and talking to each other :-) It taught me how people of different origins/stages of life can experience similar challenges and growth.
+
+        Throughout the journey, Heidi told me more about her grandchildren in Switzerland and how this was her first big trip since retirement, including her first time back in Canada after several decades. I told her about all the wonderful people I'd met on my travels. We taught each other card games in a mix of English, French, and German to pass the time. Our wagon's very funny steward from Québec, Danné, pretended to be offended when he discovered we could speak French but talked to him in English &#128513;
+
+        Later in the trip, we hit peak beauty when we hit the driest region of British Columbia. It was like we'd miraculously arrived in a world of badlands in [Steelhead Provincial Park](https://www.google.com/maps/place/Steelhead+Provincial+Park/@50.7562843,-120.8672523,17z/data=!3m1!4b1!4m6!3m5!1s0x5480258a9ad2f4cf:0xfad1b3451316ffaa!8m2!3d50.7562843!4d-120.8646774!16zL20vMGM2bDd0?entry=ttu&g_ep=EgoyMDI0MDgyMy4wIKXMDSoASAFQAw%3D%3D) near Kamloops. It was 42 degrees celsius, so we didn't dare step outside, but the dome viewing car offered plenty of nice views :-)  
+
+        <button data-src="/blog/2024-summer-travels/audio/strangers/The dome car (25s).mp3" class="narration-button">
+            The dome car
+        </button>
+
+        ![A collage of the badlands in Steelhead Provincial Park](/blog/2024-summer-travels/img/strangers/badLandsCollage.webp)
+        <figcaption>A collage of the badlands in Steelhead Provincial Park. Unexpected jewel in the middle of nowhere.</figcaption>
+
+        In that *single* dome car, there were 5 people from Switzerland to my great surprise :-) I introduced Heidi to Marcus and Theresa, a retired couple on vacation. Marcus was an economist by training who'd worked a lot in public policy and was asked to be the mayor of his village in Switzerland before he retired. I'd never met a mayor before, so I was quite full of questions. If you don't know, Switzerland has one of the best train systems in the world. Though as it turns out, the behind-the-scenes transportation politics are quite extensive &#128064;
+
+        After a *very* lovely train ride, we finally got to Vancouver at around 5 AM the next morning. The bags were delayed and Heidi needed to figure out how to get to the right ferry. So I helped her sort out an Uber and get to where she needed to go. As I later learned, you can't order an Uber for someone else *and* yourself at the same time 😅 Still, Vancouver's sky train was quite pretty (and <a href="https://drive.google.com/file/d/1xDNqC45OkVAlFXTfUeuI5bX8pAhPmxy2/view?usp=sharing" target="_blank">automatic</a>) &#128558; I was *so* surprised when I got on the train and there was no driver. In any case, no regrets and I'm really glad I chose to not just sit on a train being bored for two days instead of making lots of new friends :-) Maybe I'll see Heidi again some day if the winds take me to Switzerland.
+        `
     },
     'intervals': {},
     'playingMusic': {
