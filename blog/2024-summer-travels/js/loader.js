@@ -391,6 +391,81 @@ const STATE = {
         After a *very* lovely train ride, we finally got to Vancouver at around 5 AM the next morning. The bags were delayed and Heidi needed to figure out how to get to the right ferry. So I helped her sort out an Uber and get to where she needed to go. As I later learned, you can't order an Uber for someone else *and* yourself at the same time 😅 Still, Vancouver's sky train was quite pretty (and <a href="https://drive.google.com/file/d/1xDNqC45OkVAlFXTfUeuI5bX8pAhPmxy2/view?usp=sharing" target="_blank">automatic</a>) &#128558; I was *so* surprised when I got on the train and there was no driver. In any case, no regrets and I'm really glad I chose to not just sit on a train being bored for two days instead of making lots of new friends :-) Maybe I'll see Heidi again some day if the winds take me to Switzerland.
         `
     },
+    'vancouver': {
+        'img': {
+            '/blog/2024-summer-travels/img/vancouver/canoe.webp': null,
+            '/blog/2024-summer-travels/img/vancouver/foxy.mp4': null,
+            '/blog/2024-summer-travels/img/vancouver/lodge.webp': null,
+            '/blog/2024-summer-travels/img/vancouver/skyline.webp': null,
+            '/blog/2024-summer-travels/img/vancouver/trustfall.png': null
+        },
+        'audio': {
+            '/blog/2024-summer-travels/audio/vancouver/Alive (40s).mp3': null,
+            '/blog/2024-summer-travels/audio/vancouver/Foxy (30s).mp3': null
+        },
+        'md': `
+        # Vancouver
+
+        ![Skyline of downtown Vancouver near Stanley Park](/blog/2024-summer-travels/img/vancouver/skyline.webp)
+        <figcaption>Skyline of downtown Vancouver near Stanley Park. I was watching seaplanes land and take off from the harbour.</figcaption>
+
+        I rationally say Vancouver was just like Toronto. Still traffic and noise on the streets. And **from up close, a lake looks like an ocean**. But WOW, did I ever get graced by the gift of meeting incredible people during my two weeks there. After the desert of Edmonton (metaphorically *and* it was literally 40 degrees when I was there &#128548;), the oceans of Vancouver are much appreciated in retrospect.
+
+        ## AP and AS
+
+        AP and AS were my AirBnB flatmates, alongside this adorable little treasure, Foxy \<3.
+        
+        <button data-src="/blog/2024-summer-travels/audio/vancouver/Foxy (30s).mp3" class="narration-button">
+            When Foxy learned to trust me
+        </button>
+        
+        <video controls="false" autoplay loop muted playsinline class="vert">
+            <source src="/blog/2024-summer-travels/img/vancouver/foxy.mp4" type="video/mp4">
+        </video>
+        <figcaption>Foxy loved tug. I loved Foxy :D</figcaption>
+
+        They were a couple who'd just arrived in Canada three days ago and taught me a lot about the struggles of new immigrants in Canada. I heard their concerns with banking companies, finding housing, even day to day basics like buying furniture without having a car to drive it to their place. Until I listened, I just couldn't realise what I assumed and took for granted. 
+
+        Sharing about our culture with each other, we became very good friends\! I'd learn surprising things like how AP and AS watched bollywood movies like me &#128064; As AP taught me, the Ukrainian film industry is relatively small, so bollywood and hollywood films are more commonly watched. AP told me he liked the "colour and energy" of bollywood films, which I guess I'd never thought of since I can understand Hindi and was too busy listening to the dialogue. I really hope they get to visit Toronto one day so I can also share Indian food I like with them :-)
+
+        I also learned a lot from asking them about their family in Ukraine. It taught me about how humans are simultaneously different, yet connected \- and that's the most beautiful way for things to be. For example, I'd *hear* AS tell me about feeling a constant stress knowing her parents lived in a city on the battlefront. Though I knew I'd never *understand* what she was trying to tell me until I lived it. At the same time, I was lucky to listen to AP telling me about his worries trying to choose which apartment to rent given hidden terms he didn't understand. After talking to me, he'd try to manage a *fourth* language to tell me: "It feels good… just to be heard from somebody." I happily told him about the word "venting" in English. I was happy because **even with our different origins and different languages, I understood what he was feeling. Because that feeling wasn't Ukrainian or Canadian, that feeling was human**. 
+
+        ## Natalie
+
+        Even as I write this, I can't help but grinning and shaking my head in disbelief at the things we got up to. Natalie was a schoolmate of mine when I was still in middle school. Back in the day, she used to be timid, respectful, … the kind of person I expected to end up in a career where I said "Oh, that's quite nice for her; I'm glad she's doing well." I moved out East, she moved out West, and 8 years later, I thought it'd be nice to check up on her since we'd talked online a few times. 
+
+        WOW, was I ever surprised at what happened next &#128558;
+
+        I sent her a message feeling kind of nervous reaching out and asking to meet up in Vancouver after all these years. In my head, that was a trust fall moment. She replies and essentially says: "Yay\! Let me get my diving board\!"  
+        ![A cartoon of a trust fall](/blog/2024-summer-travels/img/vancouver/trustfall.png)
+
+        As of writing, Natalie's currently working as an outdoor educator in the middle of nowhere on Vancouver Island. She proceeded to then invite me to cross the Salish sea and travel 300 km to reach aforementioned-middle-of-nowhere for a weekend trip. Either I was about to get murdered or have a memory of a lifetime. So I said: "You're only young once" and just went &#128064;
+
+        Foreshadowing: I wasn't murdered &#128517; I actually had an incredible time. When I first saw Natalie, it was like the happiest person I've seen in the world showed up from some happier-ever-after Disney fairy tale wearing bright clothes and singing to herself as we walked. She said she wanted to run some errands and pick up some books... an hour later, I was trying to bribe my new pal Jonathan (the owner of the bookstore) to try and get her out of there &#128548;
+
+        When we got to Natalie's camp, it was calm and pretty.   
+        ![The lake and mountains at Natalie's camp](/blog/2024-summer-travels/img/vancouver/lodge.webp)
+        <figcaption>Can't beat here for a sunrise to wake up to :-)</figcaption>
+
+        I wanted to talk to her to figure out all the things that had changed in 8 years. She kept suggesting outdoorsy non-talking activities we could do with the energy of a hamster who'd eaten a _whole_ sugar cube &#128514;
+
+        We reached a compromise to canoe out to the middle of the lake and then we would talk. It was literally my second time in life in a canoe, so I was pretty careful. The funniest moment that evening was when she daintily picked up the canoe (strength of an ox &#128558;), cheerfully stepped onboard, and flipped the canoe LITERALLY two seconds after she stepped in &#128513; I was like, "Ummmm… I'm pretty sure we need you to be the expert between the two of us???"   
+        ![Hanging the canoe out to dry](/blog/2024-summer-travels/img/vancouver/canoe.webp)
+        <figcaption>Leaving the canoe out to dry in the sun. I'd gotten the hang of paddling by then :-)</figcaption>
+
+        After getting rid of the giggles, Natalie taught me how to steer a canoe. It was pretty fun, though I have to admit I was thinking about control systems and hysteresis off in engineering land &#128513; When we got back, we learned a fun board game with Natalie's friends where I was doing supply chain analysis, David and Emma were being the resident comedians, Carly was being the friendly host, and Natalie/Abbio were being the silent schemers secretly inching closer to victory &#128064; After dinner, Natalie and I played a game called <a href="https://www.notion.so/Existential-Questions-Courtesy-of-Mishaal-Lakhani-adf8a45ef00942c1a732c698c75b7fa6" target="_blank">We're Not Really Strangers</a> where we ask each other deep questions. I told her about my habit of discomfort challenges. So she challenged me to go to a party dressed as a traffic sign wearing her neon mountain climbing gear. I told her I would if she went in a surfsuit &#128541; A lot of persuasive non-persuasion later, she agreed.   
+        
+        It was interesting for me to note how much I didn't care what anyone thought of me because I knew I'd be out of there the very next day. The only thing that made me nervous was how nervous she was; I don't usually 'call out' / challenge people based on what they tell me they value / where they want to grow. I've only done it two times (very scientific sample size) and both times I noted people start acting very unlike their 'usual' self. In this case, it seemed like a switch had gone off and all Natalie could think about was what I'd said. I really mean this literally; the conversation was like: "Me: monologue. Natalie: previous topic. Me: monologue. Natalie: previous topic. Me: You okay? Natalie: previous topic." &#128558; 
+        
+        So a disorienting while later, we're outside the party in the dark and now I'm trying to persuasively non-persuade her to stop and make sure she actually wants to do this so she doesn't have regrets... Suddenly, she just runs in the room :OOOOO I just do my routine of being unashamed, dancing like a stick, staying for four songs (which is one more than the bare minimum, mind you), and then going to sleep because my bedtime is 10 PM and it's midnight, thank you very much.   
+
+        <button data-src="/blog/2024-summer-travels/audio/vancouver/Alive (40s).mp3" class="narration-button">
+            Much respect to Natalie
+        </button>
+
+        For Natalie, it's like another switch went off. I have never seen someone dance like she did. She danced like the visual incarnation of music, just flowing in this way that I can only describe as <a href="https://www.zenpencils.com/comic/83-howard-thurman-ask-yourself/" target="_blank">truly alive</a>. It gave me a memory of my own to understand what the movie <a href="https://youtu.be/vbBVrfkFe2I?si=LR7dNq5X6gtY02ej&t=38" target="_blank">Soul was trying to show</a>: the revelation and beauty of regular old living.
+        `
+    },
     'intervals': {},
     'playingMusic': {
         'audio': {}

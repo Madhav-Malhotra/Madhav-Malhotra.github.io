@@ -672,14 +672,16 @@ body.section-md #temporary-hint {
     margin: 40px 7vw;
 }
 
-.section-md #main-body .container > .left-col img {
+.section-md #main-body .container > .left-col img,
+.section-md #main-body .container > .left-col video {
     width: 100%;
     margin: 10px auto;
     cursor: pointer;
     transition: all 0.5s ease;
 }
 
-.section-md #main-body .container > .left-col img.vert {
+.section-md #main-body .container > .left-col img.vert,
+.section-md #main-body .container > .left-col video.vert {
     width: 60%;
     margin: 20px 20%;
 }
