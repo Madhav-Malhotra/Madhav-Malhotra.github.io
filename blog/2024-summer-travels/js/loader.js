@@ -620,6 +620,60 @@ const STATE = {
         <figcaption>To end off the day, Tristan dropped me off at a nearby beach where I was marvelling at the colours of life changing as the sunset hit the rocks.</figcaption> 
         `
     },
+    'calgary': {
+        'img': {
+            '/blog/2024-summer-travels/img/calgary/banffMountains.webp': null,
+            '/blog/2024-summer-travels/img/calgary/banffSpring.webp': null,
+            '/blog/2024-summer-travels/img/calgary/fairview.webp': null,
+            '/blog/2024-summer-travels/img/calgary/fishCreekPark.webp': null,
+        },
+        'audio': {
+            '/blog/2024-summer-travels/audio/calgary/Science majors (40s).mp3': null
+        },
+        'md': `
+        # Calgary
+
+        ![Fish creek Provincial Park, Marshall Springs](/blog/2024-summer-travels/img/calgary/fishCreekPark.webp)
+        <figcaption>Fish Creek Provincial Park, Marshall Springs. I used to spend hours wandering around here every week when I was a teen.</figcaption>
+
+        When my family first moved to Canada, we used to live in Calgary. I grew up in a lot of cities, but the one I most associate with 'hometown' feelings is Calgary. It was my great privilege to be able to see several of my old classmates from middle school again after seven years. Happiness vibes through the roof. Also sadness / nostalgia underneath the basement.
+
+        ## Andre
+
+        The first person I met in Calgary was my closest friend from middle school. Andre and I used to go hiking in Fish Creek Provincial Park, be angsty tweens walking around the school at lunch, rollerblade around our neighbourhood (which seemed oh so worldly big at the time), and so much more. It was one of the times in life where I remembered simply feeling carelessly happy. I could just run around in circles in a park and be happy for no reason. **In adult life, the type of happiness changed; it's not carelessly happy, it's happiness in-spite-of**. I can feel happy, but it's in spite of X, Y, Z in my head. 
+
+        Anyways, when I first ran into Andre, it struck me as odd how things were different compared to when we were in middle school. We both knew the other had changed but we didn't precisely know *how* the other had changed. Still, initial awkwardness out of the way, we had good conversations about the ups and downs of life since we'd last seen each other. He now studies biology, which I only mention to set up forthcoming jokes &#128513;
+
+        One evening, I just randomly messaged him to go on our careless adventures again and visit Fish Creek provincial park and the pond with the ducks and muskrat. I offered astute observations such as "You know, we're probably looking at the ancestor ducks of the ducks we used to see when we were kids" and "What are biologists good for if they can't tell me what the plural of muskrat is?"
+        
+        We then decided to drive to our old middle school at 10 PM. I offered quality grandfather banter such as: "This is where the buses would use to line up and they would stretch around the *whole* block\!" We relived a lot of memories just seeing the different places around the school where we would hang out. Each bench, rock, basketball hoop had a different story. We ended off the night sad that our very reasonable request of walking inside the school in the summer at 10 PM at night couldn't be fulfilled... 
+        ![Fairview Middle School](/blog/2024-summer-travels/img/calgary/fairview.webp)
+        <figcaption>No apologies for the 10 PM shenanigan quality photos &#128517;</figcaption>
+
+        We wrapped up the trip by driving out to Banff on my last day in Calgary. It was gorgeous… nuff said.  
+        ![Mountains en route to Banff](/blog/2024-summer-travels/img/calgary/banffMountains.webp)
+        ![Glacial spring near the border of Alberta and BC](/blog/2024-summer-travels/img/calgary/banffSpring.webp)
+        <figcaption>Mountains en route to Banff and a glacial spring near the border of Alberta and BC.</figcaption>
+
+        ## Daniel
+
+        When I first arrived in Canada, suffice it to say I was FRESH OFF. My condolences to teachers that had to try and deal with me as I figured out what to say and do. I guess one of my teachers must have taken pity on me in elementary school since she assigned me a 'welcome buddy', who was Daniel. Daniel would introduce me to friends, be the first person I ask questions to, etc.
+
+        Unfortunately, I don't remember too much from that time period. Daniel and I were classmates in middle school, but we didn't talk all that much. So when I reached out after 7 years, with both of us now in university, I didn't know what to expect. Though I was SO glad I reached out! Throughout the *entire* trip, I have not met *anyone* as happy as he was :-)
+        
+        I'm happy to report that Daniel is now almost about to graduate, has his own apartment, has moved in with his girlfriend, and just radiates positivity like you would not believe. I don't get to hear about good things happening to others enough so maybe this was just all the pent up emotion. But talking to him, I was thinking of all the people I grew up with like, "Finally\! One of us made it\!\!\!" It does help a lot in these tumultuous times. Just to know there's happiness, not just 'somewhere out there', but in your little corner of the world.
+
+        ## Family Friends
+
+        There's a big difference between knowing someone for ages and meeting them again after a long time. When you know someone for ages, it's easy to take things for granted. Appreciating gives way to bickering. **It's easy to forget to be thankful if you don't know when it'll be gone**. 
+
+        That's one of the upsides of moving a lot. As I say about my university program, having four months to study and four months to work keeps **forcing me to appreciate the current phase of life, since that phase comes with a deadline**. With my travels, I accelerated that to appreciating every day since I was moving to a new city every week. And when I saw old family friends of ours after a long time, it was nothing but good feelings since we didn't have a minute to spare. Seven years of history to make up for in a few hours. 
+
+        Most of my experience can be summed up by saying that I still feel like a kid in life. I don't feel like I'm ready to witness the enormous changes occuring in the world, but life waits for no one. I visited the house of one of my family friends and saw the same sofa where I'd sat holding their baby seven years ago. The baby was now a tall tween for her age &#128558; She didn't have a personality when I was holding her seven years ago. The most interesting thing to notice was, "Wow, her nose is the size of my pinky" Now, she's a human with thoughts and feelings and her own personality. The miracle of life and growth in a way I'd never felt as a kid. And yet, in the same week, we learned our former neighbour's mother was going to die of cancer with a week left to live. 
+
+        It made me stop to appreciate time. The clock is ticking for all of us at the same pace. It doesn't matter if we use that time to grow, to cry, to stand, to pass, to feel, to drown, to jump, or to jolt. There's **no having time, no saving time, no making time, no spending time \- all you can do is experience its current flow by**. 
+        `
+    },
     'intervals': {},
     'playingMusic': {
         'audio': {}
