@@ -573,6 +573,53 @@ const STATE = {
         <figcaption>The Wagon by Kim Adams at the Winnipeg Art Gallery</figcaption>
         `
     },
+    'victoria': {
+        'img': {
+            '/blog/2024-summer-travels/img/victoria/finnertyGardens.webp': null,
+            '/blog/2024-summer-travels/img/victoria/hollydenePark.webp': null,
+            '/blog/2024-summer-travels/img/victoria/sunset.webp': null
+        }, 
+        'audio': {
+           '/blog/2024-summer-travels/audio/victoria/Grace (30s).mp3': null,
+            '/blog/2024-summer-travels/audio/victoria/Learning to listen (1m).mp3': null
+        }, 
+        'md': `
+        # Victoria
+
+        ![Sunset on the Salish Sea near Victoria](/blog/2024-summer-travels/img/victoria/sunset.webp)
+        <figcaption>Sunset on the Salish Sea near Victoria. I was lucky enough to be on a whale watching tour at that time.</figcaption>
+
+        By the time I got to Victoria, the 1.5 months of travelling were starting to get me pretty tired. I generally avoided tourism and focused on learning about people. Still, I can't resist sharing this montage of plants from the Finnerty Gardens at the University of Victoria. Best botanical garden I visited during my trip!
+        ![A montage of plants from the Finnerty Gardens](/blog/2024-summer-travels/img/victoria/finnertyGardens.webp)
+        <figcaption>A montage of plants from the Finnerty Gardens. I was really impressed by the variety of plants from around the world.</figcaption>
+
+        ## AirBnB Hosts
+
+        My AirBnB hosts were a family of brothers and sisters born in a very different time and place than me. At the start, there were quite a few eyebrow-raising differences in our vocabularies where I was left thinking, "I'm pretty sure you're nice people, so I'm pretty sure you're not trying to say what that term means these days &#128550;" 
+
+        As I learned over time, they are nice people who grew up in difficult circumstances. It just took some patience and compassion on my end to slow down and seek to understand instead of flinching away. As one of the less personal examples, one of my hosts brought up their beliefs on vaccination safety and my first reaction was: "I really don't want to continue this conversation." Still, I controlled my actions and instead sought to listen and try to understand where they had heard what they had heard in a non-judgemental manner. My host explained how they had heard a friend mention a blog post or how their sister had a conversation at the grocery store, which led them to their present beliefs. 
+
+        <button data-src="/blog/2024-summer-travels/audio/victoria/Learning to listen (1m).mp3" class="narration-button">
+            Learning to listen
+        </button>
+
+        Listening when you want to judge, this isn't easy or natural or automatic. Though it's more effective than just saying, "No, you're wrong. What I believe is…" **If we can't even suppress our tribal hatred instincts long enough to listen, do we deserve to think we're rational while 'the other' isn't?**
+
+        ## Tristan
+
+        Tristan led the local AI club at the University of Victoria. I just randomly sent him a message on Discord, not knowing what to expect when we met up. As it turned out, it was one of those conversations where we lost track of time and the conversation itself was the thrill of the day. I don't know why exactly I use the word thrill, because it's not like some amusement park ride or adrenaline rush. It was just **this satisfaction with the present moment to the point where you forget about anything else except an eagerness to see what comes next :-)** 
+
+        We talked about so many things for two hours straight. Similarities in our personalities, similarities in the way we grew up. Talking about culture and the world and our place within it. Big talk, small plans, small talk, big plans \- it was just a quiet, simple, shared appreciation for life. It's not so easy to predict when you'll meet the kind of person where everything will just be easy and 'click'. But when that big wave comes, you just thank the oceans and pull all your attention back to the present for the surf of a lifetime.  
+        
+        <button data-src="/blog/2024-summer-travels/audio/victoria/Grace (30s).mp3" class="narration-button">
+            Summer's grace
+        </button>
+
+        ![Hollydene Park near the University of Victoria](/blog/2024-summer-travels/img/victoria/hollydenePark.webp)
+
+        <figcaption>To end off the day, Tristan dropped me off at a nearby beach where I was marvelling at the colours of life changing as the sunset hit the rocks.</figcaption> 
+        `
+    },
     'intervals': {},
     'playingMusic': {
         'audio': {}
