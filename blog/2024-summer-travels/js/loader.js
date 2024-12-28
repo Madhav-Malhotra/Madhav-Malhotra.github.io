@@ -674,6 +674,86 @@ const STATE = {
         It made me stop to appreciate time. The clock is ticking for all of us at the same pace. It doesn't matter if we use that time to grow, to cry, to stand, to pass, to feel, to drown, to jump, or to jolt. There's **no having time, no saving time, no making time, no spending time \- all you can do is experience its current flow by**. 
         `
     },
+    'credits': {
+        'img': {
+            '/blog/2024-summer-travels/img/credits/me.webp': null
+        },
+        'audio': {
+            '/blog/2024-summer-travels/audio/credits/Future Update (15s).mp3': null
+        },
+        'md': `
+        # Closing
+
+        <blockquote>Don't cry because it's over. Smile because it happened.</blockquote>
+
+        After such a long time jumping from city to city every *week*, I can't believe I'm going to be staying in one city for the next *four months* while at university. Yes, I know moving every four months seems crazy to the rest of the normal population, but it seems like forever after what I've been through &#128517; 
+
+        I keep thinking, "No meeting immigrants? No sneaking into clubs and locked buildings in universities I'm not supposed to be in?? No heartbreak??? No midnight dances dressed as a traffic sign in places I've never heard of????" 
+
+        <button data-src="/blog/2024-summer-travels/audio/credits/Future Update (15s).mp3" class="narration-button">
+            Future Madhav update
+        </button>
+
+        When I first thought of this, I was really sad and I missed all the friends I'd made from around the world. Then, my brain got to scheming again &#128513; Human imagination is quite a dual-sided blade. It can weigh me down as I reminisce about the faces I'll never get to see again. It can lift me up as I imagine screaming "@\#^\# IT\!\!\!\!" into the wind and starting driving and not stopping until I see all the oceans. It can keep me afloat as I ignore my math homework and instead run a comedy night at my university instead &#128541; 
+
+        I've had what some would call an adventure of a lifetime. Some would be happy to rest in their laurels and tell these stories to their grandkids. Me, I don't know whether I'll be alive another 8 months or 80 years. **Friends, money, fame, power \- it all comes and goes. But I'll never get another second beyond what I've been gifted**. Life isn't some destination to have seen and cross off. The only sensible thing to do then is to stop lying around and go CHASE after it.   
+        
+        <div class="life-motto">
+            "To *see* the world, things dangerous to *come* to,  
+            to *see* behind walls, to *draw closer*,   
+            to *find* each other and to *feel*.  
+            That is the purpose of life." \- artsy impact HUGE letters taking up the screen
+        </div>
+
+        ![Me](/blog/2024-summer-travels/img/credits/me.webp) 
+        Knocking the goal out of the park,  
+        Madhav  
+        2024-08-28T00:58:53+00:00
+
+        # Credits
+        Website created _entirely_ by me in Vanilla JS/HTML/CSS
+        * Except for the Markdown to HTML CMS which was <a href="https://github.com/markedjs/marked" target="_blank">Marked.js</a>.
+        * Except the pseudo-random-number generator which I found via <a href="https://stackoverflow.com/a/47593316/9179875" target="_blank">bryc on StackOverflow</a>
+        * Except the audio player icons which were regurgitated by ChatGPT
+        * And except the rest of the code, which was also ChatGPT &#128517;
+        
+        ## Music
+        - Add the Butter by <a href="https://uppbeat.io/t/night-drift/add-the-butter" target="_blank">Night Drift</a>. License: BRNI7BQMOMFBKSCJ from <a href="https://uppbeat.io/" target="_blank">Uppbeat</a>.
+        - Amusement Park by <a href="https://uppbeat.io/t/pecan-pie/amusement-park" target="_blank">Pecan Pie</a>. License: CZ7HM3YBHTKVQTFJ from <a href="https://uppbeat.io/" target="_blank">Uppbeat</a>.
+        - Awakening by <a href="https://uppbeat.io/t/roo-walker/awakening" target="_blank">Roo Walker</a>. Love its epic organ feeling! License: N7NGTXLETOAQZBBH from <a href="https://uppbeat.io/" target="_blank">Uppbeat</a>.
+        - Bring it on by <a href="https://uppbeat.io/t/noise-cake/bring-it-on" target="_blank">Noise Cake</a>. License: 9UZZBXU32NEDOMJA from <a href="https://uppbeat.io/" target="_blank">Uppbeat</a>.
+        - Clean Water Upon You by <a href="https://www.youtube.com/watch?v=ubbpyKIFhg4" target="_blank">Borrtex</a>. Licence: CC-BY-NC-ND-3.0 from Bandcamp.
+        - Dirty Games by <a href="https://uppbeat.io/t/hybridas/dirty-games" target="_blank">Hybridas</a>. It just feels cool. License: UBMWLYAOK8VQV4NS from <a href="https://uppbeat.io/" target="_blank">Uppbeat</a>.
+        - Dorisha by <a href="https://uppbeat.io/t/mountaineer/dorisha" target="_blank">Mountaineer</a>. License: MR4UITTOJJFS03N1 from <a href="https://uppbeat.io/" target="_blank">Uppbeat</a>.
+        - East Side Horns by <a href="https://uppbeat.io/t/pecan-pie/east-side-horns" target="_blank">Pecan Pie</a>. License: 3KJOUGJPJCEJRQHD from <a href="https://uppbeat.io/" target="_blank">Uppbeat</a>.
+        - Empty Moon by <a href="https://uppbeat.io/t/ian-aisling/empty-moon" target="_blank">Ian Aisling</a>. License: QE4XVYWYUOBPEBG5 from <a href="https://uppbeat.io/" target="_blank">Uppbeat</a>.
+        - Eternity by <a href="https://www.youtube.com/watch?v=tHFnMmuNqDU" target="_blank">Borrtex</a>. Licence: CC-BY-NC-ND-3.0 from Bandcamp.
+        - Flow of the Ganges by <a href="https://uppbeat.io/t/simon-folwar/flow-of-the-ganges" target="_blank">Simon Folwar</a>. License: YRNZ7CYGGX3AGCB1 from <a href="https://uppbeat.io/" target="_blank">Uppbeat</a>.
+        - Flowing Waters by <a href="https://uppbeat.io/t/hlfmn/flowing-waters" target="_blank">HLFMN</a>. Very unique eastern-western fusion. License: Q7XWTAOI9IYBHD8P from <a href="https://uppbeat.io/" target="_blank">Uppbeat</a>.
+        - Funk Me by <a href="https://uppbeat.io/t/soundroll/funk-me" target="_blank">Soundroll</a>. License: Y9YZBTMHYD8DPBTW from <a href="https://uppbeat.io/" target="_blank">Uppbeat</a>.
+        - Funky Day by <a href="https://uppbeat.io/t/infraction/funky-day" target="_blank">Infraction</a>. License: HJYIBNUTSOPXVMGE from <a href="https://uppbeat.io/" target="_blank">Uppbeat</a>.
+        - Fuzz Buzz by <a href="https://uppbeat.io/t/soundroll/fuzz-buzz" target="_blank">Soundroll</a>. License: KHHQS1AKZAKAJFLF from <a href="https://uppbeat.io/" target="_blank">Uppbeat</a>.
+        - Indi's Waltz by <a href="https://uppbeat.io/t/john-hayes/indis-waltz" target="_blank">John Hayes</a>. License: STPGRZJ3QKOS130M from <a href="https://uppbeat.io/" target="_blank">Uppbeat</a>.
+        - Memoir of Solitude by <a href="https://www.youtube.com/watch?v=WTZZV_a7_hM" target="_blank">Borrtex</a>. Licence: CC-BY-NC-ND-3.0 from Bandcamp.
+        - Moonlake by <a href="https://uppbeat.io/t/simon-folwar/moonlake" target="_blank">Simon Folwar</a>. License: OXVGVEDYRGHUKKPD from <a href="https://uppbeat.io/" target="_blank">Uppbeat</a>.
+        - Motion by <a href="https://www.youtube.com/watch?v=Shbrlkx402k" target="_blank">Borrtex</a>. Licence: CC-BY-NC-ND-3.0 from Bandcamp.
+        - New Beginnings by <a href="https://uppbeat.io/t/philip-anderson/new-beginnings" target="_blank">Philip Anderson</a>. License: ANLZZ219GZNI7M14 from <a href="https://uppbeat.io/" target="_blank">Uppbeat</a>.
+        - Nod Your Head by <a href="https://uppbeat.io/t/hey-pluto/nod-your-head" target="_blank">Hey Pluto</a>. License: NGNWBTNXV0FF66WM from <a href="https://uppbeat.io/" target="_blank">Uppbeat</a>.
+        - O by <a href="https://uppbeat.io/t/arnito/o" target="_blank">Arnito</a>. I was wondering whether to include this because I don't think most people will like it. But I think real music is unexpected. Arnito's one of the most creative musicians I've heard, so I decided to put it in anyways :-) License: J9GYMP7YBEOZIPYF from <a href="https://uppbeat.io/" target="_blank">Uppbeat</a>.
+        - Pistol Swing by <a href="https://uppbeat.io/t/soundroll/pistol-swing" target="_blank">Soundroll</a>. License: AQDXSU15JTYTFMUF from <a href="https://uppbeat.io/" target="_blank">Uppbeat</a>.
+        - Ragueria by <a href="https://uppbeat.io/t/arnito/ragueria" target="_blank">Arnito</a>. License: HFFVFXLY1HSWUSCY from <a href="https://uppbeat.io/" target="_blank">Uppbeat</a>.
+        - Sapporo by <a href="https://uppbeat.io/t/locran/sapporo" target="_blank">Locran</a>. License: EDWXAGPZP1CRWKRJ from <a href="https://uppbeat.io/" target="_blank">Uppbeat</a>.
+        - Smoke Me by <a href="https://uppbeat.io/t/atm/smoke-me" target="_blank">A.T.M.</a>. Very clean and modern. License: TTJ1HAKOS7XQS09H from <a href="https://uppbeat.io/" target="_blank">Uppbeat</a>.
+        - Stage 2 by <a href="https://uppbeat.io/t/mountaineer/stage-2" target="_blank">Mountaineer</a>. License: 6MIBBASZGVJGHDH4 from <a href="https://uppbeat.io/" target="_blank">Uppbeat</a>.
+        - Still by <a href="https://uppbeat.io/t/ilya-kuznetsov/still" target="_blank">Ilya Kuznetsov</a>. License: WDOT6ISPEK2GKPVB from <a href="https://uppbeat.io/" target="_blank">Uppbeat</a>.
+        - Summer Bumble by <a href="https://uppbeat.io/t/paul-yudin/summer-bumble" target="_blank">Paul Yudin</a>. License: JMYZIMD4TDXEVZOK from <a href="https://uppbeat.io/" target="_blank">Uppbeat</a>.
+        - Summer Nights by <a href="https://uppbeat.io/t/hey-pluto/summer-nights" target="_blank">Hey Pluto</a>. License: 58ZZGZEJMYFKBTQN from <a href="https://uppbeat.io/" target="_blank">Uppbeat</a>.
+        - The Cleaner by <a href="https://uppbeat.io/t/night-drift/the-cleaner" target="_blank">Night Drift</a>. License: HZH9DOMAWHPVHCR9 from <a href="https://uppbeat.io/" target="_blank">Uppbeat</a>.
+        - Tropicana by <a href="https://uppbeat.io/t/soundroll/tropicana" target="_blank">Soundroll</a>. License: WBL1M2EYNCK8ZNHB from <a href="https://uppbeat.io/" target="_blank">Uppbeat</a>.
+        - We are Saved by <a href="https://www.youtube.com/watch?v=BXgIrapS4xo" target="_blank">Borrtex</a>. Licence: CC-BY-NC-ND-3.0 from Bandcamp.
+        - Wonder by <a href="https://uppbeat.io/t/paint-the-skies/wonder" target="_blank">Paint the skies</a>. This always makes me feel a sense of awe. License: KCTPF8JYQLOS4NXG from <a href="https://uppbeat.io/" target="_blank">Uppbeat</a>.
+        `
+    },
     'intervals': {},
     'playingMusic': {
         'audio': {}
@@ -708,7 +788,12 @@ const STATE = {
             "/blog/2024-summer-travels/audio/music/Add the butter by Night Drift.mp3": null,
             "/blog/2024-summer-travels/audio/music/Empty Moon by Ian Aisling.mp3": null,
             "/blog/2024-summer-travels/audio/music/Bring it on By Noise Cake.mp3": null,
-            "/blog/2024-summer-travels/audio/music/Stage 2 by Mountaineer.mp3": null
+            "/blog/2024-summer-travels/audio/music/Stage 2 by Mountaineer.mp3": null,
+            "/blog/2024-summer-travels/audio/music/Clean Water Upon You by Borrtex.mp3": null,
+            "/blog/2024-summer-travels/audio/music/Eternity by Borrtex.mp3": null,
+            "/blog/2024-summer-travels/audio/music/Memoir of Solitude by Borrtex.mp3": null,
+            "/blog/2024-summer-travels/audio/music/Motion by Borrtex.mp3": null,
+            "/blog/2024-summer-travels/audio/music/We are Saved by Borrtex.mp3": null
           }
     },
     'playedMusic': {
