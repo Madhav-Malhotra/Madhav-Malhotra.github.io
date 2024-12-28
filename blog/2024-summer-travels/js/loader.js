@@ -466,6 +466,113 @@ const STATE = {
         For Natalie, it's like another switch went off. I have never seen someone dance like she did. She danced like the visual incarnation of music, just flowing in this way that I can only describe as <a href="https://www.zenpencils.com/comic/83-howard-thurman-ask-yourself/" target="_blank">truly alive</a>. It gave me a memory of my own to understand what the movie <a href="https://youtu.be/vbBVrfkFe2I?si=LR7dNq5X6gtY02ej&t=38" target="_blank">Soul was trying to show</a>: the revelation and beauty of regular old living.
         `
     },
+    'art': {
+        'img': {
+            '/blog/2024-summer-travels/img/art/boneHorn.webp': null,
+            '/blog/2024-summer-travels/img/art/bonePipe.webp': null,
+            '/blog/2024-summer-travels/img/art/boneWindCarving.webp': null,
+            '/blog/2024-summer-travels/img/art/indigenousMural.webp': null,
+            '/blog/2024-summer-travels/img/art/kentridgeKettles.webp': null,
+            '/blog/2024-summer-travels/img/art/kentridgeTree.webp': null,
+            '/blog/2024-summer-travels/img/art/lithographyPlate.webp': null,
+            '/blog/2024-summer-travels/img/art/miniatureWorldSpace.mp4': null,
+            '/blog/2024-summer-travels/img/art/miniatureWorldWar.webp': null,
+            '/blog/2024-summer-travels/img/art/picasso.webp': null,
+            '/blog/2024-summer-travels/img/art/remaiModernNeon.webp': null,
+            '/blog/2024-summer-travels/img/art/theWagon.webp': null,
+            '/blog/2024-summer-travels/img/art/whereIsGod.webp': null,
+            '/blog/2024-summer-travels/img/art/winnipegInuitGallery.webp': null
+        },
+        'audio': {
+            '/blog/2024-summer-travels/audio/art/Inuit gallery (1m).mp3': null
+        },
+        'md': `
+        # Interlude B: Art
+
+        ![Inside the Remai Modern in Saskatoon](/blog/2024-summer-travels/img/art/remaiModernNeon.webp)
+        <figcaption>Inside the Remai Modern in Saskatoon. Honestly, the most memorable museum I've ever been to.</figcaption>
+
+        ## My inspirations
+        Of all things I expected to learn during my adventures, turning into an art connoisseur was not at the top of my list &#128517; I've always had an appreciation for art. When I 'program' multimedia reflections like these, it's not conventional art. Yet when I do it for no reason other than 'I want to make something pretty' \- I **consider that pursuit of creating something impractical, yet beautiful to be art**. In that sense, I'm an artist. Yet I couldn't recite periods of art or artists I like. Or at least, I couldn't *have* before this trip.
+
+        During the trip, I was quite lucky to visit several art museums across Canada. I could spend as much time as I wanted looking at the art that interested me instead of roaming through hallways upon hallways of boring portraits. Much of what I saw was unique and actually inspired the format of this reflection. 
+
+        * In Québec, I adored "Le son du rap Québecois" \- an exhibition at the Musée de la Civilisation. It presented the evolution of rap music in Québec, starting from English rappers travelling from New York to Montréal. More importantly, it presented this musical exposition *via* music. I didn't just read text or look at objects. The entire time, I had on headphones that would play music of different eras as I walked through the exhibit. The musicians featured in the exhibition would speak to each listener to describe _how_ they created their art. As I'm sure you've guessed, I *adored* the immersion of that format and decided to make that come to life through this site. All the songs you've been hearing throughout the reflection are songs that I listened to while on a plane to Winnipeg or train to Edmonton or ferry to Victoria or bus to Campbell River or... 
+        * In Saskatoon, I fell in love with the Remai Modern. Easily the best art museum I've ever visited. One of the unique works on display was what seemed like a tech person throwing spaghetti on the wall. This exhibit would sense the real-time weather in the region and play <a href="https://drive.google.com/file/d/1ocTD96qDgN9ZcaLSR0k6-isO3yzjFW6U/view?usp=sharing" target="_blank">audio based on the weather</a>. I loved that randomness\! A) because it connected technology to art and I've always felt that even technical work can be art. **Art is not about the medium in which you deliver a message, but the intention with which you deliver it**. B) because people always go on about the rarity of this painting or that painting... But how about the rarity of an art piece that will *literally* never be experienced the same way twice? In inspiration of that, the music on this page is randomly ordered. I hope your experience isn't terrible because I have no way of predicting what it will be &#128517;
+
+        With all that inspiration out of the way, here are some new styles of art I first discovered on this trip :-) 
+
+        ## Kentridge and Lithography
+
+        William Kentridge is an artist originally from South Africa who specialises in a unique process called photogravure. His work was featured at the Remai Modern (best art museum I've ever been to), alongside the lithography of Picasso. Photogravure is a bit like lithography; it's about etching patterns onto metal plates via chemical processes. In particular, a photo is printed onto a sheet where it can be soaked in special chemicals. This sheet can then be pressed onto a metal like a copper plate. The darker and lighter areas of the photo will then form different impressions on the metal based on how much ink they had.   
+        <img src="/blog/2024-summer-travels/img/art/lithographyPlate.webp" alt="A lithography plate from William Kentridge's works" class="vert" />
+        <figcaption>Here's what a lithography plate looks like after the full photogravure process.</figcaption>
+
+        The artist can then directly engrave the sheet of metal (the 'gravure' in photogravure) to form patterns that they like. Once these patterns are etched into the metal, the metal can be coated with paint and pressed onto a piece of paper.   
+        ![Variations of a kettle made from different metal plates](/blog/2024-summer-travels/img/art/kentridgeKettles.webp)
+        <figcaption> The metal plate from above made the top left kettle imprint. It can be hard to see it at first since the imprint is horizontally flipped. Also, the scratches you noticed on the plate are the whitespace, since that's where the black paint <i>didn't</i> go.</figcaption>
+
+        What I first admired about Kentridge's work was the amount of sheer contrast it had. The black and white just grabbed my attention. Also, the thin etches from directly engraving the metal enabled very fine details. Upon closer inspection, I then began to love the dark themes in his work, many of which were informed by his experiences witnessing apartheid in South Africa.   
+        ![If you have no eye by William Kentridge](/blog/2024-summer-travels/img/art/kentridgeTree.webp)
+        <figcaption>I really like the collage snippets alongside the etched tree! I'd encourage you to click/zoom into the image to see the details.</figcaption>
+
+        Thematically and visually, it reminded me of a brazen comic I found at the University of Manitoba's Icelandic collection.   
+        <img src="/blog/2024-summer-travels/img/art/whereIsGod.webp" alt="Where is God? by Hugleikur Dagsson" class="vert" />
+        <figcaption>A Where's Waldo joke dialled to way more than 11</figcaption>
+
+        When I then learned about photogravure as a process, I was awestruck by the sheer amount of effort and detail it takes to produce the final artwork. Producing the sequential metal plates to apply to the page is like stacking a 3D layered puzzle. An example showing the difficulty involved is with Picasso's works.   
+        ![Picasso's Jacqueline au Chapeau de Paille](/blog/2024-summer-travels/img/art/picasso.webp)
+        <figcaption>Picasso's Jacqueline au Chapeau de Paille. The yellow copy is the only one which requires a single etched plate.</figcaption>
+
+        Each colour in each variant of the painting requires a different metal plate to be engraved with the features desired for that particular colour. I was nerding out about it with the guard on duty in that exhibit. If you ever visit… this is Canada; yes, you are allowed to make friends with guards without security worries. And you'll make both your days more interesting while you're at it :-)
+
+        ## Inuit Carvings
+
+        When I'd seen past Indigenous art, it had been vibrant-coloured paintings of animals from cultures like the Wendat, Anishinaabe, and Cree. Given how much I like contrast, I really liked this style of artwork.  
+        ![A vibrant mural at the Manitoba Museum](/blog/2024-summer-travels/img/art/indigenousMural.webp)
+        <figcaption>A vibrant mural at the Manitoba Museum. The contrasting colours and abstract animals are common in the art of many tribes in that region.</figcaption>
+
+        In the Winnipeg Art Gallery, however, I was lucky to witness how different Inuit bone carvings were from the prior art. Many pieces I saw had abstract depictions of everyday life etched onto whale bones. I found it very mesmerising to lean close and squint towards the small symbols, only to piece together the details and be fascinated by depictions of narwhales, hunting, etc.  
+        ![Carvings on a horn depicting whale hunting and reindeer sleds](/blog/2024-summer-travels/img/art/boneHorn.webp)
+        <figcaption>Carvings on a horn depicting whale hunting and reindeer sleds. Click/zoom to see if you can spot other details.</figcaption>
+        
+        ![Carvings on a pipe](/blog/2024-summer-travels/img/art/bonePipe.webp)
+        <figcaption>Carvings on a pipe - many indigenous artists at the time made showpieces like this to sell to European traders</figcaption>
+        
+        Other pieces carved the bones into intricate forms themselves. Some had grotesque faces for use in spiritual rituals. One piece that I was especially impressed by had incredible intricacy as it carved a whole antler down to represent wispy curves of wind.   
+        
+        <button data-src="/blog/2024-summer-travels/audio/art/Inuit gallery (1m).mp3" class="narration-button">
+            Impressions of the Inuit gallery
+        </button>
+        
+        ![A carving of a wind spirit](/blog/2024-summer-travels/img/art/boneWindCarving.webp)
+        <figcaption>A carving of a wind spirit. I can't even BEGIN to understand how all those delicate curves were etched into bone.</figcaption>
+
+        I'd say the words that summarised my experience in this exhibition of the Winnipeg Art Gallery would be 'detail' and 'discovery'. The whole exhibition had an ambiance of poise and significance to it.
+        
+        ![A longshot of the Inuit exhibition within the Winnipeg Art Gallery](/blog/2024-summer-travels/img/art/winnipegInuitGallery.webp)
+        <figcaption>The Inuit exhibition within the Winnipeg Art Gallery. As you walked along the outside curves, the exhibition would show different tribes from Greenland to Alaska.</figcaption>
+
+        ## Maquettes
+
+        In Victoria, I went to a rather unique place called Miniature Worlds. They mainly make models of historical scenes, like this depiction of the US civil war.
+        ![A miniature model of the US civil war](/blog/2024-summer-travels/img/art/miniatureWorldWar.webp)
+        <figcaption>A miniature model of the US civil war. Some details were astounding, like using cotton to mimic smoke after gunfire.</figcaption> 
+        
+        Though there was this incredible outlier which was a moving scifi space station. It was in a dark room so you couldn't see any suspension cables and everything felt like it was floating in space. 
+        <video controls="false" autoplay loop muted playsinline class="vert">
+            <source src="/blog/2024-summer-travels/img/art/miniatureWorldSpace.mp4" type="video/mp4">
+        </video>
+
+        <figcaption>No this is not an animation. It's real!</figcaption>
+
+        I found that the historical models were more informative than creative. Still, I quite liked the aesthetics of <a href="https://youtu.be/05zFiWA1Gxs" target="_blank">day-night sequences</a> represented in the many cities recreated. It really made the models feel 'encompassing' \- like you could stay there and just observe life unfolding in different eras. 
+
+        In Winnipeg, I also found a much more artistically-full model called '*The Wagon*'. A stranger viewing the model liked it so much, he stopped to talk to me about the symbolism involved. As one example, I took a VIA train with various cars across Canada, meeting lots of new people. Though it's increasingly easier to be alone and not go out of your bubble to talk to people these days. The artist represented this by having the VIA train pulling individual camper wagons instead of shared train wagons. I'll leave you to <a href="https://youtu.be/vQbVkGbXb4k" target="_blank">spot the other misanthropic themes</a> &#128513;  
+        ![The Wagon by Kim Adams](/blog/2024-summer-travels/img/art/theWagon.webp)
+        <figcaption>The Wagon by Kim Adams at the Winnipeg Art Gallery</figcaption>
+        `
+    },
     'intervals': {},
     'playingMusic': {
         'audio': {}
