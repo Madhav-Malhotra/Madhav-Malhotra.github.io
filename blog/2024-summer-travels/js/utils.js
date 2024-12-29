@@ -1,7 +1,79 @@
 import { loadSection } from './loader.js';
 
 // ==============================
-// GENERAL CODE
+// DECRYPT UTILS
+// ==============================
+
+// Helper function for base64 decoding
+function base64ToArrayBuffer(base64) {
+    const binary = atob(base64);
+    const buffer = new Uint8Array(binary.length);
+    for (let i = 0; i < binary.length; i++) {
+        buffer[i] = binary.charCodeAt(i);
+    }
+    return buffer;
+}
+
+// Sets up decryption parameters
+function getDecryptParams() {
+    // Get the URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const token = urlParams.get('t');
+    const salt = urlParams.get('s');
+    const iv = urlParams.get('i');
+
+    // Decode the iv
+    const decodedIV = iv === null ? null : base64ToArrayBuffer(decodeURIComponent(iv));
+    // Decode the salt
+    const decodedSalt = salt === null ? null : decodeURIComponent(salt);
+    // Decode the token
+    const decodedToken = token === null ? null : decodeURIComponent(token);
+
+    window.inspectSTATE['decryptParams'] = {
+        'iv': decodedIV,
+        'salt': decodeURIComponent(decodedSalt),
+        'token': decodeURIComponent(decodedToken)
+    };
+}
+
+async function decryptContent(ciphertext, iv, password, salt) {
+    const encoder = new TextEncoder();
+    const decoder = new TextDecoder();
+
+    const keyMaterial = await crypto.subtle.importKey(
+        "raw",
+        encoder.encode(password),
+        "PBKDF2",
+        false,
+        ["deriveKey"]
+    );
+    
+    const key = await crypto.subtle.deriveKey(
+        {
+            name: "PBKDF2",
+            salt: encoder.encode(salt),
+            iterations: 100000,
+            hash: "SHA-256"
+        },
+        keyMaterial,
+        { name: "AES-GCM", length: 256 },
+        false,
+        ["decrypt"]
+    );
+
+    const decrypted = await crypto.subtle.decrypt(
+        { name: "AES-GCM", iv: new Uint8Array(iv) },
+        key,
+        new Uint8Array(ciphertext)
+    );
+
+    return decoder.decode(decrypted);
+}
+
+
+
+// ==============================
+// AUDIO UTILS
 // ==============================
 
 // Setup audio controls
@@ -334,51 +406,6 @@ function audioTransition(narrationPlayer, src, volume, fadeIn = false, fadeOut =
     if (speed) player.playbackRate = speed;
 }
 
-// Allow people to click on images to make them larger.
-function imageEnlarger() {
-    const images = document.querySelectorAll('img');
-    images.forEach(img => {
-        img.addEventListener('click', () => {
-        // Open the image in a new tab
-        const src = img.getAttribute('src');
-        window.open(src, '_blank');
-        });
-    });
-}
-
-function clearAllIntervals() {
-    for (let interval in window.inspectSTATE['intervals']) {
-        clearInterval(window.inspectSTATE['intervals'][interval]);
-        delete window.inspectSTATE['intervals'][interval];
-    }
-}
-
-// Transition between sections
-function clearMainContent(postTransitionCB = () => null) {
-    // Add a transition mask
-    const transitionMask = document.createElement('div');
-    document.querySelector('#main-body').appendChild(transitionMask);
-    transitionMask.classList.add('transition-mask');
-    setTimeout(() => transitionMask.classList.add('hide'), 10);
-
-    setTimeout(() => {
-        // Get rid of the old content
-        const toClear = document.querySelector('#main-body .container');
-        toClear.innerHTML = '';
-
-        clearAllIntervals();
-
-        // Load the new content
-        postTransitionCB();
-
-        // Remove the transition mask
-        setTimeout(() => {
-            document.querySelector('.transition-mask').classList.remove('hide');
-            setTimeout(() => document.querySelector('.transition-mask').remove(), 500);
-        }, 500);
-    }, 525);
-}
-
 // Event handler for narration button click
 function onNarrationClick(event) {
     const section = document.body.className.replace('section-md', '').trim().replace('section-', '');
@@ -439,10 +466,62 @@ function onNarrationClick(event) {
     else changeNarration();
 }
 
+
+
+// ==============================
+// DOM SETUP UTILS
+// ==============================
+
+
+// Allow people to click on images to make them larger.
+function imageEnlarger() {
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+        img.addEventListener('click', () => {
+        // Open the image in a new tab
+        const src = img.getAttribute('src');
+        window.open(src, '_blank');
+        });
+    });
+}
+
+function clearAllIntervals() {
+    for (let interval in window.inspectSTATE['intervals']) {
+        clearInterval(window.inspectSTATE['intervals'][interval]);
+        delete window.inspectSTATE['intervals'][interval];
+    }
+}
+
+// Transition between sections
+function clearMainContent(postTransitionCB = () => null) {
+    // Add a transition mask
+    const transitionMask = document.createElement('div');
+    document.querySelector('#main-body').appendChild(transitionMask);
+    transitionMask.classList.add('transition-mask');
+    setTimeout(() => transitionMask.classList.add('hide'), 10);
+
+    setTimeout(() => {
+        // Get rid of the old content
+        const toClear = document.querySelector('#main-body .container');
+        toClear.innerHTML = '';
+
+        clearAllIntervals();
+
+        // Load the new content
+        postTransitionCB();
+
+        // Remove the transition mask
+        setTimeout(() => {
+            document.querySelector('.transition-mask').classList.remove('hide');
+            setTimeout(() => document.querySelector('.transition-mask').remove(), 500);
+        }, 500);
+    }, 525);
+}
+
 // Build content from markdown
 // Note: this function runs AFTER the STATE object has loaded all necessary 
 // content AND AFTER the main content has been cleared
-function buildContent(section) {
+async function buildContent(section) {
     // Clean up classes
     document.body.classList = '';
     document.body.classList.add(`section-${section}`); // added section-md later
@@ -462,7 +541,7 @@ function buildContent(section) {
     leftCol.classList.add('left-col');
     container.appendChild(leftCol);
 
-    // Clean the markdown by replacing image URLs with object URLs + trimming whitespace
+    // Clean the markdown by replacing image URLs with object URLs
     for (let url in window.inspectSTATE[section]['img']) {
         if (window.inspectSTATE[section]['img'][url] === null) {
             console.error('Image not loaded:', url);
@@ -471,8 +550,29 @@ function buildContent(section) {
         const objURL = URL.createObjectURL(window.inspectSTATE[section]['img'][url]);
         md = md.replace(url, objURL);
     }
-
+    // Trim whitespace
     md = md.split('\n').map(line => line.trimStart()).join('\n');
+    
+    // Decode any encrypted content
+    const regex = /<ywftnsrkec>(.*?)<\/ywftnsrkec>/s;
+    const encrypted = md.match(regex);
+    if (encrypted) {
+        const ciphertext = base64ToArrayBuffer(encrypted[1]);
+        const iv = window.inspectSTATE['decryptParams']['iv'];
+        const salt = window.inspectSTATE['decryptParams']['salt'];
+        const token = window.inspectSTATE['decryptParams']['token'];
+
+        if (!iv || !salt || !token) {
+            md = md.replace(regex, '');
+        } else {
+            try {
+                const decrypted = await decryptContent(ciphertext, iv, token, salt);
+                md = md.replace(regex, decrypted);
+            } catch (e) {
+                md = md.replace(regex, '');
+            }
+        }
+    }
 
     console.log('Started parsing markdown');
     leftCol.innerHTML = marked.parse(md);
@@ -553,6 +653,13 @@ function buildContent(section) {
 
     initPlayingMusic();
 }
+
+
+
+
+// ==============================
+// NAVIGATION UTILS
+// ==============================
 
 // Get anchor URL event handler for section navigation
 function anchorHandler() {
@@ -639,4 +746,4 @@ function menuHelper() {
 }
 
 export { audioEventListeners, audioTransition, imageEnlarger, clearAllIntervals, 
-         clearMainContent, buildContent, anchorHandler, menuHelper };
+         clearMainContent, buildContent, anchorHandler, menuHelper, getDecryptParams };

@@ -1,6 +1,6 @@
 import { loadSection } from './loader.js';
 import { carouselHelper, audioHelper } from './0.js';
-import { audioEventListeners, audioTransition, anchorHandler, menuHelper } from './utils.js';
+import { audioEventListeners, getDecryptParams, anchorHandler, menuHelper } from './utils.js';
 
 window.addEventListener('hashchange', anchorHandler);
 
@@ -69,5 +69,6 @@ function setup0(post0LoadCB = () => null) {
 document.addEventListener('DOMContentLoaded', () => {
     audioEventListeners();
     menuHelper();
+    getDecryptParams();
     setup0();
 });
