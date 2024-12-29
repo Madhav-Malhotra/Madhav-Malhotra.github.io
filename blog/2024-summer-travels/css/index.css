@@ -7,7 +7,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Just Another Hand', cursive;
+    font-family: 'Delicious Handrawn', cursive;
     margin: 10px 0px;
 }
 
@@ -198,9 +198,9 @@ section#menu-bar.state-expand-horiz .expanded .menu-items {
 }
 
 section#menu-bar.state-expand-horiz .expanded .menu-items h4 {
-    font-family: 'Just Another Hand', cursive;
-    font-size: 60px;
-    margin: -10px 0 -16px 0;
+    font-family: 'Delicious Handrawn', cursive;
+    font-size: 50px;
+    margin: -10px 0 0px 0;
 }
 
 section#menu-bar.state-expand-horiz .expanded .menu-items ul {
@@ -602,7 +602,7 @@ body.section-0 {
     cursor: pointer;
     color: white;
     border: none;
-    font-family: 'Just Another Hand', cursive;
+    font-family: 'Delicious Handrawn', cursive;
     opacity: 0;
     transition: opacity 0.5s ease, font-size 1s ease, outline 0.5s ease;
 }
@@ -669,7 +669,7 @@ body.section-md #temporary-hint {
     padding: 20px;
     border-radius: 20px;
     background-color: white;
-    margin: 40px 7vw 40px 10vw;
+    margin: 40px 7vw 40px 15vw;
 }
 
 .section-md #main-body .container > .left-col img,
