@@ -84,7 +84,8 @@ function audioEventListeners() {
     for (let slider of sliders) {
         slider.addEventListener('input', function() {
             const value = this.value;
-            this.style.setProperty('--value', `${value}%`);
+            const player = this.parentElement.parentElement.querySelector('audio');
+            player.volume = value;
         });
     }
     
@@ -94,9 +95,9 @@ function audioEventListeners() {
     const narrationPause = document.querySelector('#narration-controls .play-pause');
     const narrationSpeed = document.querySelector('#narration-controls .speed');
     
-    narrationSlider.addEventListener('input', function() {
-        narrationPlayer.volume = this.value;
-    });
+    // narrationSlider.addEventListener('input', function() {
+    //     narrationPlayer.volume = this.value;
+    // });
     narrationPause.onclick = () => {
         if (narrationPlayer.paused) {
             narrationPlayer.play();
@@ -135,9 +136,9 @@ function audioEventListeners() {
     const musicSlider = document.querySelector('#music-controls .volume-slider');
     const musicPause = document.querySelector('#music-controls .play-pause');
     
-    musicSlider.addEventListener('input', function() {
-        musicPlayer.volume = this.value;
-    });
+    // musicSlider.addEventListener('input', function() {
+    //     musicPlayer.volume = this.value;
+    // });
     musicPause.onclick = () => {
         if (musicPlayer.paused) {
             musicPlayer.play();
@@ -172,20 +173,20 @@ function mdSectionAudioEventListeners() {
         // If no valid songs, load more
         const otherKeys = Object.keys(window.inspectSTATE['playingMusic']['audio']);
         if (otherKeys.length === 0) {
-            initPlayingMusic();
+            initPlayingMusic(false);
         }
 
         // Start playing next valid song
         else {
             const nextKey = otherKeys[0];
             audioTransition(
-                false,  // isNarration
+                false,   // isNarration
                 URL.createObjectURL(window.inspectSTATE['playingMusic']['audio'][nextKey]), // src
-                0.3,    // volume
-                true,   // fadeIn
-                false,  // fadeOut
-                false,  // loop
-                1       // speed
+                null,    // volume
+                false,   // fadeIn
+                false,   // fadeOut
+                false,   // loop
+                1        // speed
             );
 
             // Update the label
@@ -240,19 +241,19 @@ function splitmix32(a) {
     }
 }
 
-async function initPlayingMusic() {
+async function initPlayingMusic(volReset) {
     const prng = splitmix32(new Date().getTime())
 
     function startFirstSong(randomURL) {
         // Start playing first song
         audioTransition(
-            false,  // isNarration
+            false,                      // isNarration
             URL.createObjectURL(window.inspectSTATE['playingMusic']['audio'][randomURL]), // src
-            0.2,    // volume
-            true,   // fadeIn
-            false,  // fadeOut
-            false,  // loop
-            1       // speed
+            (volReset ? 0.2 : null),    // volume
+            volReset,                   // fadeIn
+            false,                      // fadeOut
+            false,                      // loop
+            1                           // speed
         );
 
         // Update the label
@@ -290,11 +291,11 @@ async function initPlayingMusic() {
 
             // wait for prior transitions to finish before starting new ones
             if (
-                window.inspectSTATE['intervals']['fadeOutInterval'] || window.inspectSTATE['intervals']['fadeInIntervals']
+                window.inspectSTATE['intervals']['fadeOutInterval'] || window.inspectSTATE['intervals']['fadeInInterval']
             ) {
                 const localInterval = setInterval(() => {
                     if (
-                        window.inspectSTATE['intervals']['fadeOutInterval'] || window.inspectSTATE['intervals']['fadeInIntervals']
+                        window.inspectSTATE['intervals']['fadeOutInterval'] || window.inspectSTATE['intervals']['fadeInInterval']
                     ) return;
 
                     // Prior audio transition done, start new one.
@@ -330,6 +331,11 @@ async function initPlayingMusic() {
     loadSection('playingMusic', 200, () => null, true, true);
 }
 
+// Helper function for audio transition
+function clamp(val, a, b) {
+    return Math.min(b, Math.max(a, val));
+}
+
 // Audio transitions
 // Note: if using to simply transition volume without changing audio source, 
 // set fadeOut = false and src = null. fadeIn will control smooth vs instant 
@@ -346,9 +352,18 @@ function audioTransition(narrationPlayer, src, volume, fadeIn = false, fadeOut =
         player = document.querySelector('#music-player');
         slider = document.querySelector('#music-controls .volume-slider');
     }
+
+    if (volume === null) volume = player.volume;
+
+    // Helper functions
+    function finaliseAttributes() {
+        player.volume = volume;
+        slider.value = volume;
+        player.loop = loop;
+        if (speed) player.playbackRate = speed;
+    }
     
     // Todo: currently, fadeOut OR fadeIn is supported. Not both at once.
-    // Todo: keep volume unchanged when switching from one track to next.
     // Fade out current audio with sine function
     if (fadeOut) {
         const OGVolume = player.volume;
@@ -356,20 +371,20 @@ function audioTransition(narrationPlayer, src, volume, fadeIn = false, fadeOut =
         slider.value = player.volume;
         let i = 0;
 
-        window.inspectSTATE['intervals']['fadeOutInterval'] = setInterval(() => {
+        const localInterval = setInterval(() => {
             if (currentVolume > 0.001) {
-                currentVolume = OGVolume - (OGVolume * Math.sin(i) + 0.001);
+                currentVolume = clamp(OGVolume - (OGVolume * Math.sin(i) + 0.001), 0, 1);
                 slider.value = currentVolume;
-                player.volume = slider.value;
+                player.volume = currentVolume;
                 i += 0.01;
             } else {
-                clearInterval(window.inspectSTATE['intervals']['fadeOutInterval']);
+                clearInterval(localInterval);
                 window.inspectSTATE['intervals']['fadeOutInterval'] = null;
+                finaliseAttributes();
             }
         }, 3);
-        
-        player.volume = 0;
-        slider.value = 0;
+
+        window.inspectSTATE['intervals']['fadeOutInterval'] = localInterval;
     }
 
     // Change audio source and start playing new audio, if necessary
@@ -386,24 +401,28 @@ function audioTransition(narrationPlayer, src, volume, fadeIn = false, fadeOut =
     if (fadeIn) {
         let i = 0;
         let currentVolume = player.volume;
-        window.inspectSTATE['intervals']['fadeInIntervals'] = setInterval(() => {
+        slider.value = currentVolume;
+
+        const localInterval = setInterval(() => {
             if (currentVolume < volume) {
-                currentVolume = volume * Math.sin(i) + 0.001;
+                currentVolume = clamp(volume * Math.sin(i) + 0.001, 0, 1);
                 player.volume = currentVolume;
-                slider.value = player.volume;
+                slider.value = currentVolume;
                 i += 0.01;
             } else {
-                clearInterval(window.inspectSTATE['intervals']['fadeInIntervals']);
-                window.inspectSTATE['intervals']['fadeInIntervals'] = null;
+                clearInterval(localInterval);
+                window.inspectSTATE['intervals']['fadeInInterval'] = null;
+                finaliseAttributes();
             }
         }, 3);
+
+        window.inspectSTATE['intervals']['fadeInInterval'] = localInterval;
     }
 
     // Update settings
-    player.volume = volume;
-    slider.value = volume;
-    player.loop = loop;
-    if (speed) player.playbackRate = speed;
+    if (!fadeIn && !fadeOut) {
+        finaliseAttributes();
+    }
 }
 
 // Event handler for narration button click
@@ -427,7 +446,7 @@ function onNarrationClick(event) {
         audioTransition(
             true,   // isNarration
             URL.createObjectURL(window.inspectSTATE[section]['audio'][src]), // src
-            0.4,    // volume
+            1,      // volume
             true,   // fadeIn
             // fade out if narration player isn't paused
             !narrationPlayer.paused, // fadeOut
@@ -442,24 +461,26 @@ function onNarrationClick(event) {
 
     // wait for prior transitions to finish before starting new ones
     if (
-        window.inspectSTATE['intervals']['fadeOutInterval'] || window.inspectSTATE['intervals']['fadeInIntervals']
+        window.inspectSTATE['intervals']['fadeOutInterval'] || window.inspectSTATE['intervals']['fadeInInterval']
     ) {
         // Most recent click is the one that'll get played after polling ends
         if (window.inspectSTATE['intervals']['pollingNarrationInterval']) 
             clearInterval(window.inspectSTATE['intervals']['pollingNarrationInterval']);
 
-        window.inspectSTATE['intervals']['pollingNarrationInterval'] = setInterval(() => {
+        const localInterval = setInterval(() => {
             if (
-                window.inspectSTATE['intervals']['fadeOutInterval'] || window.inspectSTATE['intervals']['fadeInIntervals']
+                window.inspectSTATE['intervals']['fadeOutInterval'] || window.inspectSTATE['intervals']['fadeInInterval']
             ) return;
 
             // Prior audio transition done, start new one.
             else {
-                clearInterval(window.inspectSTATE['intervals']['pollingNarrationInterval']);
+                clearInterval(localInterval);
                 window.inspectSTATE['intervals']['pollingNarrationInterval'] = null;
                 changeNarration();
             }
-        }, 100)
+        }, 100);
+
+        window.inspectSTATE['intervals']['pollingNarrationInterval'] = localInterval;
     }
 
     // No prior transition, just run the logic without polling
@@ -651,7 +672,7 @@ async function buildContent(section) {
     document.querySelector('#music-controls .play-pause svg.play').classList.add('active');
     document.querySelector('#music-controls .play-pause svg.pause').classList.remove('active');
 
-    initPlayingMusic();
+    initPlayingMusic(true);
 }
 
 

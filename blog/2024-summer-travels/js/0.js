@@ -101,7 +101,7 @@ function audioHelper() {
     audioTransition(
         true, // isNarration
         URL.createObjectURL(window.inspectSTATE['0']['audio']['/blog/2024-summer-travels/audio/0/Housekeeping (45s).mp3']),
-        0.5,  // finalVolume
+        1,  // finalVolume
         true  // fadeIn
     );
 
@@ -113,6 +113,7 @@ function audioHelper() {
     const narrationPlayer = document.querySelector('#narration-player');
     narrationPlayer.onended = () => {
         document.querySelector('#narration-controls .speed').textContent = '1x';
+        narrationPlayer.playbackRate = 1;
         narrationPlayer.currentTime = 0;
         narrationPlayer.pause();
         document.querySelector('#narration-controls .play-pause svg.play').classList.add('active');
@@ -145,7 +146,17 @@ function audioHelper() {
         }, 15000);
 
         // Unregister event listener
-        narrationPlayer.onended = null;
+        narrationPlayer.onended = () => {
+            // Pause the player
+            narrationPlayer.currentTime = 0;
+            narrationPlayer.pause();
+            // Reset the speed
+            document.querySelector('#narration-controls .speed').textContent = '1x';
+            narrationPlayer.playbackRate = 1;
+            // Update the play/pause button
+            document.querySelector('#narration-controls .play-pause svg.play').classList.add('active');
+            document.querySelector('#narration-controls .play-pause svg.pause').classList.remove('active');
+        };
     }
 }
 

@@ -669,7 +669,7 @@ body.section-md #temporary-hint {
     padding: 20px;
     border-radius: 20px;
     background-color: white;
-    margin: 40px 7vw;
+    margin: 40px 7vw 40px 10vw;
 }
 
 .section-md #main-body .container > .left-col img,
