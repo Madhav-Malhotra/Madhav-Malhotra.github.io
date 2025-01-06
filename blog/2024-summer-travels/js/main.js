@@ -1,6 +1,7 @@
 import { loadSection } from './loader.js';
 import { carouselHelper, audioHelper } from './0.js';
-import { audioEventListeners, getDecryptParams, anchorHandler, menuHelper } from './utils.js';
+import { audioEventListeners, getDecryptParams, anchorHandler, 
+         menuHelper, setNarrationOffset } from './utils.js';
 
 window.addEventListener('hashchange', anchorHandler);
 
@@ -55,15 +56,13 @@ function setup0(post0LoadCB = () => null) {
             setTimeout(() => audioHelper(), 1000);
 
             // Preload media for default next section, if no hash
-            // WARNING: need to set enableCache = true, but refreshCache should be false in production
-            if (hash === '') loadSection('quebec', 30, () => null, true, true);
+            if (hash === '') loadSection('quebec', 30, () => null, true, false);
         }
 
         // Used to preload media for next section
         post0LoadCB();
 
-    // WARNING: need to set enableCache = true, but refreshCache should be false in production
-    }, true, true);
+    }, true, false);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -72,3 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
     getDecryptParams();
     setup0();
 });
+
+// On resize, update narration offset
+window.addEventListener('resize', setNarrationOffset);

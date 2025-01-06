@@ -223,6 +223,9 @@ section#audio-bar {
     width: 100%;
     background-color: white;
     border-top: solid 1px black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #audio-controls {
@@ -242,6 +245,7 @@ section#audio-bar {
 #music-controls.active,
 #narration-controls.active {
     height: auto;
+    max-height: 100%;
     opacity: 1;
 }
 
@@ -554,7 +558,7 @@ body.section-0 {
 
 .section-0 #main-body #carousel-controls {
     position: absolute;
-    bottom: 25px;
+    bottom: 50px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -670,6 +674,13 @@ body.section-md #temporary-hint {
     border-radius: 20px;
     background-color: white;
     margin: 40px 7vw 40px 15vw;
+}
+
+/* For medium screens and below, make the left margin smaller */
+@media (max-width: 992px) {
+    .section-md #main-body .container > .left-col {
+        margin: 40px 5vw 40px 5vw;
+    }
 }
 
 .section-md #main-body .container > .left-col img,

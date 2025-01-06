@@ -154,6 +154,32 @@ function audioEventListeners() {
 
 }
 
+function getMusicURL(title) {
+    // If 'Borrtex' is in title, we need to use a lookup table.
+    if (title.includes('Borrtex')) {
+        const BORRTEX_LOOKUP = {
+            'clean water upon you by borrtex': 'https://www.youtube.com/watch?v=ubbpyKIFhg4',
+            'eternity by borrtex': 'https://www.youtube.com/watch?v=tHFnMmuNqDU',
+            'memoir of solitude by borrtex': 'https://www.youtube.com/watch?v=WTZZV_a7_hM',
+            'motion by borrtex': 'https://www.youtube.com/watch?v=Shbrlkx402k',
+            'we are saved by borrtex': 'https://www.youtube.com/watch?v=BXgIrapS4xo'
+        }
+
+        let url = BORRTEX_LOOKUP[title.toLowerCase()];
+        if (url) return url;
+        else return 'https://www.youtube.com/@Borrtex';
+    } 
+    // For other uppbeat music, convert like this 
+    //`Amusement Park by Pecan Pie` -> `https://uppbeat.io/t/pecan-pie/amusement-park`
+    else {
+        let [song, artist] = title.trim().toLowerCase().split(' by ');
+        song = song.replaceAll(' ', '-').replaceAll("'", '');
+        artist = artist.toLowerCase().replaceAll(' ', '-').replaceAll("'", '');
+        return `https://uppbeat.io/t/${artist}/${song}`;
+    }
+}
+
+
 function mdSectionAudioEventListeners() {
     // onended event listener for narration player
     const narrationPlayer = document.querySelector('#narration-player');
@@ -192,7 +218,8 @@ function mdSectionAudioEventListeners() {
             // Update the label
             const musicLabel = document.querySelector('#music-controls #music-label');
             musicLabel.dataset.title = nextKey.split('/').pop().split('.')[0];
-            musicLabel.innerHTML = `Music: ${musicLabel.dataset.title}`;
+            const musicURL = getMusicURL(musicLabel.dataset.title);
+            musicLabel.innerHTML = `Music: <a href="${musicURL}" target="_blank">${musicLabel.dataset.title}</a>`;
 
             // Move the song to playedMusic
             window.inspectSTATE['playedMusic']['audio'][nextKey] = 
@@ -259,8 +286,9 @@ async function initPlayingMusic(volReset) {
         // Update the label
         const musicLabel = document.querySelector('#music-controls #music-label');
         musicLabel.dataset.title = randomURL.split('/').pop().split('.')[0];
-        musicLabel.innerHTML = `Music: ${musicLabel.dataset.title}`;
-
+        const musicURL = getMusicURL(musicLabel.dataset.title);
+        musicLabel.innerHTML = `Music: <a href="${musicURL}" target="_blank">${musicLabel.dataset.title}</a>`;
+        
         // Update the play/pause button
         document.querySelector('#music-controls .play-pause svg.play').classList.remove('active');
         document.querySelector('#music-controls .play-pause svg.pause').classList.add('active');
@@ -286,8 +314,7 @@ async function initPlayingMusic(volReset) {
 
         // Always preload first song
         if (i === 0) {
-            // WARNING: need to set enableCache = true, but refreshCache should be false in production
-            await loadSection('playingMusic', 0, () => null, true, true);
+            await loadSection('playingMusic', 0, () => null, true, false);
 
             // wait for prior transitions to finish before starting new ones
             if (
@@ -327,8 +354,7 @@ async function initPlayingMusic(volReset) {
     }
 
     // Lazy load the rest of the music
-    // WARNING: need to set enableCache = true, but refreshCache should be false in production
-    loadSection('playingMusic', 200, () => null, true, true);
+    loadSection('playingMusic', 200, () => null, true, false);
 }
 
 // Helper function for audio transition
@@ -539,6 +565,19 @@ function clearMainContent(postTransitionCB = () => null) {
     }, 525);
 }
 
+// Helper function to set the --narration-button-offset CSS variable for narration buttons
+function setNarrationOffset() {
+    // Set --narration-button-offset CSS variable
+    const column = document.querySelector('.section-md .left-col');
+    const styles = window.getComputedStyle(column);
+
+    // Calculate total width (column width + left margin + 60px padding)
+    const totalWidth = column.offsetWidth + parseFloat(styles.marginLeft) + 60;
+
+    // Update the CSS variable dynamically
+    document.documentElement.style.setProperty('--narration-button-offset', `${totalWidth}px`);
+}
+
 // Build content from markdown
 // Note: this function runs AFTER the STATE object has loaded all necessary 
 // content AND AFTER the main content has been cleared
@@ -595,7 +634,6 @@ async function buildContent(section) {
         }
     }
 
-    console.log('Started parsing markdown');
     leftCol.innerHTML = marked.parse(md);
 
     // Prep other DOM elements
@@ -612,15 +650,7 @@ async function buildContent(section) {
             button.onclick = onNarrationClick;
         }
 
-        // Set --narration-button-offset CSS variable
-        const column = document.querySelector('.section-md .left-col');
-        const styles = window.getComputedStyle(column);
-
-        // Calculate total width (column width + left margin + 60px padding)
-        const totalWidth = column.offsetWidth + parseFloat(styles.marginLeft) + 60;
-
-        // Update the CSS variable dynamically
-        document.documentElement.style.setProperty('--narration-button-offset', `${totalWidth}px`);    
+        setNarrationOffset();    
     }, 25);
 
     // Initing event handlers
@@ -692,12 +722,8 @@ function anchorHandler() {
     }
 
     // Otherwise, load media for section in hash
-    console.log('Started clearing main content');
     clearMainContent(() => {
-        console.log('Started loading new content');
-        // WARNING: need to set enableCache = true, but refreshCache should be false in production
         loadSection(hash, 0, () => {
-            console.log('Started building new content');
             buildContent(hash);
         }, true, true);
     });
@@ -711,7 +737,6 @@ function menuHelper() {
     
     // Setup event listeners
     toExpanded = () => {
-        console.log('Expanding menu');
         const menu = document.querySelector('#menu-bar');
         const exit = document.querySelector('#menu-bar .exit');
 
@@ -767,4 +792,5 @@ function menuHelper() {
 }
 
 export { audioEventListeners, audioTransition, imageEnlarger, clearAllIntervals, 
-         clearMainContent, buildContent, anchorHandler, menuHelper, getDecryptParams };
+         clearMainContent, buildContent, anchorHandler, menuHelper, getDecryptParams,
+         setNarrationOffset };
