@@ -3,14 +3,15 @@
 #
 # Setup:
 # 1. pkg install termux-api imagemagick jq git
-# 2. Install Termux:API and Termux:Widget from F-Droid
-# 3. Copy this script to ~/.shortcuts/
+# 2. Install Termux:API and Termux:Widget from GitHub releases
+# 3. Copy this script to ~/.shortcuts/tasks/
 # 4. Long-press home screen → Widgets → Termux:Widget
 
 # ===== CONFIGURATION =====
 REPO_DIR="$HOME/Madhav-Malhotra.github.io"
 IMAGES_DIR="$REPO_DIR/life-updates/images"
 POSTS_FILE="$REPO_DIR/life-updates/data/posts.json"
+TEMP_PHOTO="$HOME/temp_photo.jpg"
 MAX_WIDTH=1200
 QUALITY=80
 
@@ -22,6 +23,7 @@ notify() {
 error_exit() {
     termux-toast "Error: $1"
     termux-vibrate -d 200
+    rm -f "$TEMP_PHOTO"
     exit 1
 }
 
@@ -33,19 +35,9 @@ if [ ! -d "$REPO_DIR" ]; then
 fi
 
 # Pull latest changes first
-cd "$REPO_DIR"
+cd "$REPO_DIR" || error_exit "Cannot cd to repo"
 notify "Pulling latest changes..."
 git pull --rebase || error_exit "Git pull failed"
-
-# Open photo picker
-notify "Select a photo..."
-PHOTO=$(termux-storage-get)
-
-if [ -z "$PHOTO" ] || [ ! -f "$PHOTO" ]; then
-    error_exit "No photo selected"
-fi
-
-notify "Photo selected!"
 
 # Get caption
 CAPTION=$(termux-dialog text -t "Caption" -i "What's happening in this photo?" | jq -r '.text')
@@ -69,9 +61,25 @@ DEST_PATH="$IMAGES_DIR/$FILENAME"
 # Ensure images directory exists
 mkdir -p "$IMAGES_DIR"
 
+# Open photo picker - termux-storage-get copies the selected file to the specified path
+notify "Select a photo..."
+termux-storage-get "$TEMP_PHOTO"
+
+# Wait a moment for file to be written
+sleep 1
+
+if [ ! -f "$TEMP_PHOTO" ]; then
+    error_exit "No photo selected"
+fi
+
+notify "Photo selected!"
+
 # Resize and compress image
 notify "Processing image..."
-convert "$PHOTO" -auto-orient -resize "${MAX_WIDTH}>" -quality "$QUALITY" "$DEST_PATH"
+convert "$TEMP_PHOTO" -auto-orient -resize "${MAX_WIDTH}>" -quality "$QUALITY" "$DEST_PATH"
+
+# Clean up temp file
+rm -f "$TEMP_PHOTO"
 
 if [ ! -f "$DEST_PATH" ]; then
     error_exit "Image processing failed"
@@ -84,36 +92,28 @@ notify "Image saved (${SIZE})"
 # Update posts.json - prepend new post to array
 notify "Updating posts.json..."
 
-# Escape special characters in caption for JSON
-CAPTION_ESCAPED=$(echo "$CAPTION" | sed 's/\\/\\\\/g; s/"/\\"/g; s/\t/\\t/g')
-LOCATION_ESCAPED=$(echo "$LOCATION" | sed 's/\\/\\\\/g; s/"/\\"/g; s/\t/\\t/g')
-
 jq --arg img "/life-updates/images/$FILENAME" \
-   --arg cap "$CAPTION_ESCAPED" \
-   --arg loc "$LOCATION_ESCAPED" \
+   --arg cap "$CAPTION" \
+   --arg loc "$LOCATION" \
    --arg ts "$TIMESTAMP" \
    '[{"image": $img, "caption": $cap, "location": $loc, "timestamp": $ts}] + .' \
    "$POSTS_FILE" > "$POSTS_FILE.tmp"
 
-if [ $? -ne 0 ]; then
+if ! mv "$POSTS_FILE.tmp" "$POSTS_FILE"; then
     rm -f "$POSTS_FILE.tmp"
     error_exit "Failed to update posts.json"
 fi
 
-mv "$POSTS_FILE.tmp" "$POSTS_FILE"
-
 # Commit and push
 notify "Committing to git..."
-cd "$REPO_DIR"
+cd "$REPO_DIR" || error_exit "Cannot cd to repo"
 git add life-updates/
 git commit -m "Life update: $LOCATION - $TIMESTAMP"
 
 notify "Pushing to GitHub..."
-git push
-
-if [ $? -eq 0 ]; then
+if git push; then
     termux-vibrate -d 100
-    termux-toast "Posted! 🎉"
+    termux-toast "Posted!"
 else
     error_exit "Push failed - commit saved locally"
 fi
