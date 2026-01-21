@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-171137279-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-171137279-2');
+  </script>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Life updates and photo gallery from Madhav Malhotra">
+  <meta name="keywords" content="photo gallery, life updates, personal">
+  <meta name="author" content="Madhav Malhotra">
+
+  <title>Life Updates - Madhav Malhotra</title>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="../assets/img/favicon.png" type="image/png">
+
+  <!--== bootstrap ==-->
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+
+  <!--== font-awesome ==-->
+  <link href="../assets/css/font-awesome.min.css" rel="stylesheet">
+
+  <!--== animate css ==-->
+  <link href="../assets/css/animate.min.css" rel="stylesheet">
+
+  <!--== style css ==-->
+  <link href="../style.css" rel="stylesheet">
+
+  <!--== responsive css ==-->
+  <link href="../assets/css/responsive.css" rel="stylesheet">
+
+  <!--== theme color css ==-->
+  <link href="../assets/theme-color/color_3.css" rel="stylesheet">
+
+  <!--== jQuery ==-->
+  <script src="../assets/js/jquery-2.1.4.min.js"></script>
+
+  <style>
+    .life-updates-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 120px 20px 80px;
+    }
+
+    .life-updates-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .life-updates-header h1 {
+      font-size: 2.5em;
+      margin-bottom: 15px;
+      color: #DB3F58;
+    }
+
+    .life-updates-header h1::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: #DB3F58;
+      margin: 15px auto 0;
+      border-radius: 2px;
+    }
+
+    .life-updates-header p {
+      font-size: 1.1em;
+      color: #666;
+    }
+
+    /* Timeline structure */
+    #updates-feed {
+      position: relative;
+      padding-left: 60px;
+      width: 100%;
+      display: block;
+    }
+
+    /* Vertical timeline line */
+    #updates-feed::before {
+      content: '';
+      position: absolute;
+      left: 18px;
+      top: 0;
+      bottom: 0;
+      width: 6px;
+      background: #DB3F58;
+      border-radius: 3px;
+    }
+
+    .update-timeline-item {
+      position: relative;
+      margin-bottom: 40px;
+      width: 100%;
+      display: block;
+    }
+
+    /* Circle on the timeline */
+    .update-timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -47px;
+      top: 30px;
+      width: 16px;
+      height: 16px;
+      background: #DB3F58;
+      border: 3px solid #fff;
+      border-radius: 50%;
+      box-shadow: 0 0 0 4px #DB3F58;
+      z-index: 1;
+    }
+
+    /* Horizontal connector line */
+    .update-timeline-item::after {
+      content: '';
+      position: absolute;
+      left: -31px;
+      top: 37px;
+      width: 31px;
+      height: 4px;
+      background: #DB3F58;
+    }
+
+    .update-card {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      border: 4px solid #DB3F58;
+    }
+
+    .update-image-wrapper {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      background: #f0f0f0;
+    }
+
+    .update-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .update-content {
+      padding: 25px;
+    }
+
+    .update-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .update-location {
+      color: #DB3F58;
+      font-weight: 600;
+      font-size: 0.95em;
+    }
+
+    .update-date {
+      color: #999;
+      font-size: 0.9em;
+    }
+
+    .update-caption {
+      line-height: 1.7;
+      color: #444;
+      font-size: 1.05em;
+    }
+
+    .loading-indicator {
+      text-align: center;
+      padding: 40px 20px;
+      color: #999;
+      font-size: 1.1em;
+    }
+
+    .loading-indicator i {
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .end-message {
+      text-align: center;
+      padding: 40px 20px;
+      color: #999;
+      font-size: 1em;
+    }
+
+    @media (max-width: 768px) {
+      .life-updates-container {
+        padding: 100px 15px 60px;
+      }
+
+      .life-updates-header h1 {
+        font-size: 2em;
+      }
+
+      .update-content {
+        padding: 20px;
+      }
+
+      /* Adjust timeline for mobile */
+      #updates-feed {
+        padding-left: 40px;
+      }
+
+      #updates-feed::before {
+        left: 8px;
+        width: 4px;
+      }
+
+      .update-timeline-item::before {
+        left: -35px;
+        width: 14px;
+        height: 14px;
+        top: 25px;
+        box-shadow: 0 0 0 3px #DB3F58;
+      }
+
+      .update-timeline-item::after {
+        left: -21px;
+        top: 31px;
+        height: 4px;
+        width: 21px;
+      }
+    }
+
+    /* Override navbar styles to keep it always visible */
+    .custom-navbar {
+      background: #fff !important;
+      box-shadow: 0 0 10px #222 !important;
+    }
+
+    .logo a {
+      color: #DB3F58 !important;
+      margin-top: 15px !important;
+    }
+
+    .main-menu ul.navbar-nav li a {
+      color: #444 !important;
+      padding: 25px 13px !important;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!--======= PRELOADER =======-->
+  <div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+  </div>
+
+  <!--===== HEADER AREA =====-->
+  <header class="navbar custom-navbar navbar-fixed-top top-nav-collapse">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-3 col-xs-12">
+          <div class="logo">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+            <a class="theme-color" href="../index.html">Madhav</a>
+          </div>
+        </div>
+
+        <div class="col-md-9 col-sm-8 col-xs-12">
+          <nav class="main-menu">
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+                <li><a href="https://madhav-malhotra.notion.site/Learn-With-Me-cfeeac77823f45d8a295205a3cbb4704">Resources</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a class="active" href="../life-updates/index.html">Updates</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!--===== END HEADER AREA ======-->
+
+  <!--===== LIFE UPDATES AREA =====-->
+  <div class="life-updates-container">
+    <div class="life-updates-header">
+      <h1>Life Updates</h1>
+      <p>Moments and memories from my journey</p>
+    </div>
+
+    <div id="updates-feed">
+      <!-- Updates will be loaded here dynamically -->
+    </div>
+
+    <div id="loading-indicator" class="loading-indicator" style="display: none;">
+      <i class="fa fa-spinner"></i> Loading more updates...
+    </div>
+
+    <div id="end-message" class="end-message" style="display: none;">
+      That's all for now! Check back later for more updates.
+    </div>
+  </div>
+  <!--===== END LIFE UPDATES AREA =====-->
+
+  <!--====== FOOTER AREA ======-->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p>Find me here &#128071;</p>
+          <ul class="social-links footer" style="margin-top: 0.25em;">
+            <li><a href="https://www.linkedin.com/in/madhav-malhotra/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+            <li><a href="https://medium.com/@madhav.malhotra003" target="_blank"><i class="fa fa-medium"></i></a></li>
+            <li><a href="https://twitter.com/MadhavMalhotra_" target="_blank"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="https://www.youtube.com/channel/UCWopBNISjL7qCH2Qch58Skw" target="_blank"><i class="fa fa-youtube-play"></i></a></li>
+          </ul>
+
+          <br>
+
+          <p id="copyright">&copy;2020 <strong>Madhav Malhotra</strong></p>
+          <p>Icons by Font Awesome</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!--====== END FOOTER AREA ======-->
+
+  <!--== Custom scripts for footer and social links ==-->
+  <script src="../assets/js/insertParts/customCopyright.js" defer></script>
+
+  <!--== Infinite Scroll Script ==-->
+  <script>
+    // Configuration
+    const POSTS_PER_PAGE = 5;
+    let currentPage = 0;
+    let allPosts = [];
+    let isLoading = false;
+    let hasMorePosts = true;
+
+    // Load posts data
+    async function loadPostsData() {
+      try {
+        const response = await fetch('data/posts.json');
+        allPosts = await response.json();
+        // Sort by timestamp (newest first)
+        allPosts.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+        loadMorePosts();
+      } catch (error) {
+        console.error('Error loading posts:', error);
+        document.getElementById('updates-feed').innerHTML =
+          '<div class="end-message">Unable to load updates. Please try again later.</div>';
+      }
+    }
+
+    // Format date for display
+    function formatDate(dateString) {
+      const date = new Date(dateString);
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      return date.toLocaleDateString('en-US', options);
+    }
+
+    // Create update card HTML
+    function createUpdateCard(post) {
+      return `
+        <div class="update-timeline-item">
+          <div class="update-card">
+            <div class="update-image-wrapper">
+              <img src="${post.image}" alt="${post.caption}" class="update-image" loading="lazy">
+            </div>
+            <div class="update-content">
+              <div class="update-meta">
+                <span class="update-location"><i class="fa fa-map-marker"></i> ${post.location}</span>
+                <span class="update-date"><i class="fa fa-calendar"></i> ${formatDate(post.timestamp)}</span>
+              </div>
+              <p class="update-caption">${post.caption}</p>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    // Load more posts
+    function loadMorePosts() {
+      if (isLoading || !hasMorePosts) return;
+
+      isLoading = true;
+      document.getElementById('loading-indicator').style.display = 'block';
+
+      // Simulate loading delay for better UX
+      setTimeout(() => {
+        const startIndex = currentPage * POSTS_PER_PAGE;
+        const endIndex = startIndex + POSTS_PER_PAGE;
+        const postsToLoad = allPosts.slice(startIndex, endIndex);
+
+        if (postsToLoad.length === 0) {
+          hasMorePosts = false;
+          document.getElementById('loading-indicator').style.display = 'none';
+          document.getElementById('end-message').style.display = 'block';
+          return;
+        }
+
+        const updatesFeed = document.getElementById('updates-feed');
+        postsToLoad.forEach(post => {
+          updatesFeed.insertAdjacentHTML('beforeend', createUpdateCard(post));
+        });
+
+
+        currentPage++;
+        isLoading = false;
+        document.getElementById('loading-indicator').style.display = 'none';
+
+        // Check if all posts are loaded
+        if (endIndex >= allPosts.length) {
+          hasMorePosts = false;
+          document.getElementById('end-message').style.display = 'block';
+        }
+      }, 500);
+    }
+
+    // Infinite scroll detection
+    function handleScroll() {
+      const scrollPosition = window.innerHeight + window.scrollY;
+      const threshold = document.documentElement.scrollHeight - 800;
+
+      if (scrollPosition >= threshold && !isLoading && hasMorePosts) {
+        loadMorePosts();
+      }
+    }
+
+    // Initialize
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('load', loadPostsData);
+  </script>
+
+  <!--== plugins js ==-->
+  <script src="../assets/js/plugins.js"></script>
+
+  <!--== main js ==-->
+  <script src="../assets/js/main.js"></script>
+
+</body>
+
+</html>
