@@ -39,25 +39,6 @@ cd "$REPO_DIR" || error_exit "Cannot cd to repo"
 notify "Pulling latest changes..."
 git pull --rebase || error_exit "Git pull failed"
 
-# Get caption
-CAPTION=$(termux-dialog text -t "Caption" -i "What's happening in this photo?" | jq -r '.text')
-
-if [ -z "$CAPTION" ] || [ "$CAPTION" = "null" ]; then
-    error_exit "No caption entered"
-fi
-
-# Get location
-LOCATION=$(termux-dialog text -t "Location" -i "Where was this taken?" | jq -r '.text')
-
-if [ -z "$LOCATION" ] || [ "$LOCATION" = "null" ]; then
-    error_exit "No location entered"
-fi
-
-# Generate filename with timestamp
-TIMESTAMP=$(date +%Y-%m-%d)
-FILENAME="update-$(date +%Y%m%d-%H%M%S).jpg"
-DEST_PATH="$IMAGES_DIR/$FILENAME"
-
 # Ensure images directory exists
 mkdir -p "$IMAGES_DIR"
 
@@ -76,10 +57,29 @@ notify "Photo selected!"
 
 # Resize and compress image
 notify "Processing image..."
-convert "$TEMP_PHOTO" -auto-orient -resize "${MAX_WIDTH}>" -quality "$QUALITY" "$DEST_PATH"
+magick "$TEMP_PHOTO" -auto-orient -resize "${MAX_WIDTH}>" -quality "$QUALITY" "$DEST_PATH"
 
 # Clean up temp file
 rm -f "$TEMP_PHOTO"
+
+# Get caption
+CAPTION=$(termux-dialog text -t "Caption" -i "What's happening in this photo?" | jq -r '.text')
+
+if [ -z "$CAPTION" ] || [ "$CAPTION" = "null" ]; then
+    error_exit "No caption entered"
+fi
+
+# Get location
+LOCATION=$(termux-dialog text -t "Location" -i "Where was this taken?" | jq -r '.text')
+
+if [ -z "$LOCATION" ] || [ "$LOCATION" = "null" ]; then
+    error_exit "No location entered"
+fi
+
+# Generate filename with timestamp
+TIMESTAMP=$(date +%Y-%m-%d)
+FILENAME="update-$(date +%Y%m%d-%H%M%S).jpg"
+DEST_PATH="$IMAGES_DIR/$FILENAME"
 
 if [ ! -f "$DEST_PATH" ]; then
     error_exit "Image processing failed"

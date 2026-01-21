@@ -1,26 +1,8 @@
 [
   {
-    "image": "/life-updates/images/update-20260121-160237.jpg",
-    "caption": "Test",
-    "location": "Test",
-    "timestamp": "2026-01-21"
-  },
-  {
-    "image": "/life-updates/images/sample-1.jpg",
-    "caption": "This is a sample post. Replace this with your own caption describing the moment, experience, or memory captured in the photo.",
-    "location": "Sample Location",
-    "timestamp": "2026-01-21"
-  },
-  {
-    "image": "/life-updates/images/sample-2.jpg",
-    "caption": "Another sample post. Add your own images to the life-updates/images/ folder and update this JSON file with your real posts.",
-    "location": "Another Location",
-    "timestamp": "2026-01-15"
-  },
-  {
-    "image": "/life-updates/images/sample-3.jpg",
-    "caption": "The caption can be as long or short as you want. Share your thoughts, feelings, or context about what was happening in this moment.",
-    "location": "City, Country",
+    "image": "/life-updates/images/sample.jpg",
+    "caption": "Testing this out!",
+    "location": "Jellybean row, Saint John's, Newfoundland",
     "timestamp": "2026-01-10"
   }
 ]
