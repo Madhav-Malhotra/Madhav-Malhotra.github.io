@@ -1,5 +1,11 @@
 [
   {
+    "image": "/life-updates/images/update-20260121-162608.jpg",
+    "caption": "Test",
+    "location": "Test",
+    "timestamp": "2026-01-21"
+  },
+  {
     "image": "/life-updates/images/sample.jpg",
     "caption": "Testing this out!",
     "location": "Jellybean row, Saint John's, Newfoundland",
