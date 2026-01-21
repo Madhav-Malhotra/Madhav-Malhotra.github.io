@@ -8,7 +8,7 @@
 # 4. Long-press home screen → Widgets → Termux:Widget
 
 # ===== CONFIGURATION =====
-REPO_DIR="$HOME/madhav-malhotra.github.io"
+REPO_DIR="$HOME/Madhav-Malhotra.github.io"
 IMAGES_DIR="$REPO_DIR/life-updates/images"
 POSTS_FILE="$REPO_DIR/life-updates/data/posts.json"
 MAX_WIDTH=1200
