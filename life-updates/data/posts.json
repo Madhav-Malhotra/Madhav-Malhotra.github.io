@@ -1,5 +1,11 @@
 [
   {
+    "image": "/life-updates/images/update-20260121-160237.jpg",
+    "caption": "Test",
+    "location": "Test",
+    "timestamp": "2026-01-21"
+  },
+  {
     "image": "/life-updates/images/sample-1.jpg",
     "caption": "This is a sample post. Replace this with your own caption describing the moment, experience, or memory captured in the photo.",
     "location": "Sample Location",
