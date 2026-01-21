@@ -39,20 +39,6 @@ cd "$REPO_DIR" || error_exit "Cannot cd to repo"
 notify "Pulling latest changes..."
 git pull --rebase || error_exit "Git pull failed"
 
-# Get caption
-CAPTION=$(termux-dialog text -t "Caption" -i "What's happening in this photo?" | jq -r '.text')
-
-if [ -z "$CAPTION" ] || [ "$CAPTION" = "null" ]; then
-    error_exit "No caption entered"
-fi
-
-# Get location
-LOCATION=$(termux-dialog text -t "Location" -i "Where was this taken?" | jq -r '.text')
-
-if [ -z "$LOCATION" ] || [ "$LOCATION" = "null" ]; then
-    error_exit "No location entered"
-fi
-
 # Generate filename with timestamp
 TIMESTAMP=$(date +%Y-%m-%d)
 FILENAME="update-$(date +%Y%m%d-%H%M%S).jpg"
@@ -61,15 +47,23 @@ DEST_PATH="$IMAGES_DIR/$FILENAME"
 # Ensure images directory exists
 mkdir -p "$IMAGES_DIR"
 
+# Remove any old temp photo first
+rm -f "$TEMP_PHOTO"
+
 # Open photo picker - termux-storage-get copies the selected file to the specified path
 notify "Select a photo..."
 termux-storage-get "$TEMP_PHOTO"
 
-# Wait a moment for file to be written
-sleep 1
+# Wait for file to appear (up to 1 minute)
+WAIT_TIME=0
+MAX_WAIT=60
+while [ ! -f "$TEMP_PHOTO" ] && [ $WAIT_TIME -lt $MAX_WAIT ]; do
+    sleep 1
+    WAIT_TIME=$((WAIT_TIME + 1))
+done
 
 if [ ! -f "$TEMP_PHOTO" ]; then
-    error_exit "No photo selected"
+    error_exit "No photo selected (timed out)"
 fi
 
 notify "Photo selected!"
@@ -88,6 +82,20 @@ fi
 # Get file size for confirmation
 SIZE=$(du -h "$DEST_PATH" | cut -f1)
 notify "Image saved (${SIZE})"
+
+# Get caption
+CAPTION=$(termux-dialog text -t "Caption" -i "What's happening in this photo?" | jq -r '.text')
+
+if [ -z "$CAPTION" ] || [ "$CAPTION" = "null" ]; then
+    error_exit "No caption entered"
+fi
+
+# Get location
+LOCATION=$(termux-dialog text -t "Location" -i "Where was this taken?" | jq -r '.text')
+
+if [ -z "$LOCATION" ] || [ "$LOCATION" = "null" ]; then
+    error_exit "No location entered"
+fi
 
 # Update posts.json - prepend new post to array
 notify "Updating posts.json..."
