@@ -148,6 +148,7 @@
       width: 100%;
       padding-bottom: 56.25%; /* 16:9 aspect ratio */
       background: #f0f0f0;
+      overflow: hidden;
     }
 
     .update-image {
@@ -158,6 +159,47 @@
       height: 100%;
       object-fit: cover;
       display: block;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .update-image:hover {
+      transform: scale(1.1);
+    }
+
+    /* Image zoom overlay */
+    .image-zoom-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      cursor: pointer;
+    }
+
+    .image-zoom-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .image-zoom-overlay img {
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+      transform: scale(0.8);
+      transition: transform 0.3s ease;
+    }
+
+    .image-zoom-overlay.active img {
+      transform: scale(1);
     }
 
     .update-content {
@@ -177,6 +219,16 @@
       color: #DB3F58;
       font-weight: 600;
       font-size: 0.95em;
+      cursor: pointer;
+      transition: color 0.2s ease;
+    }
+
+    .update-location:hover {
+      color: #a82d44;
+    }
+
+    .update-location.copied {
+      color: #28a745;
     }
 
     .update-date {
@@ -271,6 +323,11 @@
 </head>
 
 <body>
+
+  <!-- Image Zoom Overlay -->
+  <div class="image-zoom-overlay" id="imageZoomOverlay" onclick="closeImageZoom()">
+    <img src="" alt="Zoomed image" id="zoomedImage">
+  </div>
 
   <!--======= PRELOADER =======-->
   <div id="loader-wrapper">
@@ -398,17 +455,42 @@
       return date.toLocaleDateString('en-US', options);
     }
 
+    // Extract post ID from image filename (e.g., "update-20260201-182223" from path)
+    function getPostId(imagePath) {
+      const match = imagePath.match(/update-(\d{8}-\d{6})/);
+      return match ? match[1] : null;
+    }
+
+    // Copy anchor link to clipboard
+    function copyAnchorLink(postId, element, location) {
+      const url = window.location.origin + window.location.pathname + '#' + postId;
+      navigator.clipboard.writeText(url).then(() => {
+        element.classList.add('copied');
+        element.innerHTML = '<i class="fa fa-check"></i> Link copied!';
+        setTimeout(() => {
+          element.classList.remove('copied');
+          element.innerHTML = '<i class="fa fa-link"></i> ' + location;
+        }, 2000);
+      });
+    }
+
     // Create update card HTML
     function createUpdateCard(post) {
+      const postId = getPostId(post.image);
+      const idAttr = postId ? `id="${postId}"` : '';
+      const locationClick = postId
+        ? `onclick="copyAnchorLink('${postId}', this, '${escapeAttr(post.location)}')" title="Click to copy link to this post"`
+        : '';
+      const locationIcon = postId ? 'fa-link' : 'fa-map-marker';
       return `
-        <div class="update-timeline-item">
+        <div class="update-timeline-item" ${idAttr}>
           <div class="update-card">
             <div class="update-image-wrapper">
-              <img src="${post.image}" alt="${escapeAttr(post.caption)}" class="update-image" loading="lazy">
+              <img src="${post.image}" alt="${escapeAttr(post.caption)}" class="update-image" loading="lazy" onclick="openImageZoom(this)">
             </div>
             <div class="update-content">
               <div class="update-meta">
-                <span class="update-location"><i class="fa fa-map-marker"></i> ${post.location}</span>
+                <span class="update-location" ${locationClick}><i class="fa ${locationIcon}"></i> ${post.location}</span>
                 <span class="update-date"><i class="fa fa-calendar"></i> ${formatDate(post.timestamp)}</span>
               </div>
               <p class="update-caption">${post.caption}</p>
@@ -453,6 +535,11 @@
           hasMorePosts = false;
           document.getElementById('end-message').style.display = 'block';
         }
+
+        // Scroll to anchor if this is the first load and there's a hash
+        if (currentPage === 1 && window.location.hash) {
+          scrollToAnchor();
+        }
       }, 500);
     }
 
@@ -463,6 +550,42 @@
 
       if (scrollPosition >= threshold && !isLoading && hasMorePosts) {
         loadMorePosts();
+      }
+    }
+
+    // Image zoom functions
+    function openImageZoom(imgElement) {
+      const overlay = document.getElementById('imageZoomOverlay');
+      const zoomedImg = document.getElementById('zoomedImage');
+      zoomedImg.src = imgElement.src;
+      zoomedImg.alt = imgElement.alt;
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeImageZoom() {
+      const overlay = document.getElementById('imageZoomOverlay');
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // Close zoom with Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeImageZoom();
+      }
+    });
+
+    // Scroll to anchor link after posts are loaded
+    function scrollToAnchor() {
+      if (window.location.hash) {
+        const targetId = window.location.hash.substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          setTimeout(() => {
+            targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }, 100);
+        }
       }
     }
 
