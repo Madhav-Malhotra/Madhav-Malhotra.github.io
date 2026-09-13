@@ -435,6 +435,22 @@
         allPosts = await response.json();
         // Sort by timestamp (newest first)
         allPosts.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+
+        // If URL has a hash, find and pin the matching post first
+        if (window.location.hash) {
+          const targetId = window.location.hash.substring(1);
+          const matchIndex = allPosts.findIndex(post => getPostId(post.image) === targetId);
+
+          if (matchIndex !== -1) {
+            const [matchedPost] = allPosts.splice(matchIndex, 1);
+            const updatesFeed = document.getElementById('updates-feed');
+            updatesFeed.insertAdjacentHTML('beforeend', createUpdateCard(matchedPost));
+            loadMorePosts();
+            scrollToAnchor();
+            return;
+          }
+        }
+
         loadMorePosts();
       } catch (error) {
         console.error('Error loading posts:', error);
@@ -534,11 +550,6 @@
         if (endIndex >= allPosts.length) {
           hasMorePosts = false;
           document.getElementById('end-message').style.display = 'block';
-        }
-
-        // Scroll to anchor if this is the first load and there's a hash
-        if (currentPage === 1 && window.location.hash) {
-          scrollToAnchor();
         }
       }, 500);
     }
